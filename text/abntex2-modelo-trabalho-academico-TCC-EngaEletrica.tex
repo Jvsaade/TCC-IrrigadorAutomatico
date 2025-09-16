@@ -1,0 +1,1230 @@
+%% Modelo adaptado de abtex2-modelo-trabalho-academico.tex, v-1.8 laurocesar
+%% Copyright 2012-2013 by abnTeX2 group at http://abntex2.googlecode.com/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://abntex2.googlecode.com/
+
+%%******************************************************
+%%******************************************************
+%% This work consists of the files:
+%% abntex2-modelo-trabalho-academico-TCC-EngaEletrica.tex,
+%% abntex2-modelo-include-comandos 
+%% abntex2-modelo-references.bib
+%%******************************************************
+%%******************************************************
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
+% mestrado e trabalhos monograficos em geral) em conformidade com 
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	twoside,			% para impressão em verso e anverso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{cmap}			% Mapear caracteres especiais no PDF
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[latin1]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		           % Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{listings}           % Códigos
+
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 % Quebra de linha automática
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C++
+}
+
+\lstdefinelanguage{Kotlin}{
+  comment=[l]{//},
+  commentstyle={\color{gray}\ttfamily},
+  emph={filter, first, firstOrNull, forEach, lazy, map, mapNotNull, println},
+  emphstyle={\color{OrangeRed}},
+  identifierstyle=\color{black},
+  keywords={!in, !is, abstract, actual, annotation, as, as?, break, by, catch, class, companion, const, constructor, continue, crossinline, data, delegate, do, dynamic, else, enum, expect, external, false, field, file, final, finally, for, fun, get, if, import, in, infix, init, inline, inner, interface, internal, is, lateinit, noinline, null, object, open, operator, out, override, package, param, private, property, protected, public, receiver, reified, return, return@, sealed, set, setparam, super, suspend, tailrec, this, throw, true, try, typealias, typeof, val, var, vararg, when, where, while},
+  keywordstyle={\color{NavyBlue}\bfseries},
+  escapeinside={//(`}{`)},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  morestring=[s]{"""*}{*"""},
+  ndkeywords={@Composable, @Preview, @Deprecated, @JvmField, @JvmName, @JvmOverloads, @JvmStatic, @JvmSynthetic, Array, Byte, Double, Float, Int, Integer, Iterable, Long, Runnable, Short, String, Any, Unit, Nothing},
+  ndkeywordstyle={\color{BurntOrange}\bfseries},
+  sensitive=true,
+  stringstyle={\color{ForestGreen}\ttfamily},
+}
+
+\lstset{style=mystyle}
+% ---
+		
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}			% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}   % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	                         % Citações padrão ABNT
+\usepackage{hyperref}
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Modelo de Monografia de \\ Trabalho de Conclusão de Curso com \abnTeX}
+\autor{João Vitor Saade Simão}
+\local{Belo Horizonte}
+\data{2025}
+\orientador{Prof. Ricardo de Oliveira Duarte}
+%\coorientador{Prof. }
+\instituicao{%
+  Universidade Federal de Minas Gerais -- UFMG
+  \par
+  Escola de Engenharia
+  \par
+  Curso de Graduação em Engenharia Elétrica}
+\tipotrabalho{Trabalho de Conclusão de Curso}
+
+% O preambulo deve conter o tipo do trabalho, o objetivo, o nome da instituição e a área de concentração 
+\preambulo{Monografia apresentada durante o Seminário dos Trabalhos de Conclusão do Curso de Graduação em Engenharia Elétrica da UFMG, como parte dos requisitos necessários à obtenção do título de Engenheiro Eletricista.}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		colorlinks=true,       	% false: boxed links; true: colored links
+    	linkcolor=blue,          	           % color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% ---
+\imprimirfolhaderosto
+% ---
+
+% ---
+% Dedicatória
+% ---
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{ Este trabalho é dedicado às crianças adultas que,\\
+   quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
+\end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+\begin{agradecimentos}
+Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson,
+Leslie H. Watter, Bruno Parente Lima, Flávio de Vasconcellos Corrêa, Otavio Real
+Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
+projeto abn\TeX\ foram extraídos de
+\url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que
+contribuíram para que a produção de trabalhos acadêmicos conforme
+as normas ABNT com \LaTeX\ fosse possível.
+
+Agradecimentos especiais são direcionados ao Centro de Pesquisa em Arquitetura
+da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de
+Brasília (CPAI), ao grupo de usuários
+\emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos
+novos voluntários do grupo
+\emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
+\url{http://abntex2.googlecode.com/}}~que contribuíram e que ainda
+contribuirão para a evolução do \abnTeX.
+\end{agradecimentos}
+% ---
+
+% ---
+% Epígrafe
+% ---
+\begin{epigrafe}
+    \vspace*{\fill}
+	\begin{flushright}
+		\textit{``Não vos amoldeis às estruturas deste mundo, \\
+		mas transformai-vos pela renovação da mente, \\
+		a fim de distinguir qual é a vontade de Deus: \\
+		o que é bom, o que Lhe é agradável, o que é perfeito.\\
+		(Bíblia Sagrada, Romanos 12, 2)}
+	\end{flushright}
+\end{epigrafe}
+% ---
+
+% ---
+% RESUMOS
+% ---
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+ Segundo a \citeonline[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
+ objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
+ destes itens dependem do tipo de resumo (informativo ou indicativo) e do
+ tratamento que cada item recebe no documento original. O resumo deve ser
+ precedido da referência do documento, com exceção do resumo inserido no
+ próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
+ resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
+ ponto e finalizadas também por ponto.
+
+ \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+\end{resumo}
+
+% resumo em inglês
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+   This is the english abstract.
+
+   \vspace{\onelineskip}
+ 
+   \noindent 
+   \textbf{Key-words}: latex. abntex. text editoration.
+ \end{otherlanguage*}
+\end{resumo}
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+  \item[Fig.] Area of the $i^{th}$ component
+  \item[CI] Circuito integrado
+  \item[IoT] Internet of Things
+%  \item[lauro cesar] este é o meu nome
+\end{siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+\begin{simbolos}
+  \item[$ \Gamma $] Letra grega Gama
+  \item[$ \Lambda $] Lambda
+  \item[$ \zeta $] Letra grega minúscula zeta
+  \item[$ \in $] Pertence
+\end{simbolos}
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Capítulo 1 - Introdução
+% ----------------------------------------------------------
+\chapter{Introdução}
+
+\section{Motivação e justificativa}
+Nos últimos anos, o lixo eletrônico tem se tornado um problema preocupante. Em 2019, 53,6 milhoes de toneladas métricas dele foram produzidas, sendo 7,3 kg per capta \cite{Rene_LixoEletronico}. Além do problema do imenso volume de resido produzido, o e-waste (nomenclatura em inglês) possui elementos extremamente prejudiciais à saúde humana e ao meio ambiente, como os metais pesados \cite{Baniasadi_E-Waste}. Caso não sejam urgentemente tomadas medidas para mitigar esses efeitos, consequências graves para o meio ambiente e o ser humano ocorrerão \cite{Rene_LixoEletronico}.
+
+Uma das soluções para reduzir essa quantidade imensa de lixo gerada e transformá-la em material útil é através da reciclagem. Segundo o site do Ministério do Meio Ambiente, "A reciclagem é um conjunto de técnicas de reaproveitamento de materiais descartados, reintroduzindo-os no ciclo produtivo" \cite{ReciclagemMMA}. Essa solução, porém, não é muito conveniente para o lixo eletrônico, já que, devido à sua complexidade, seu processo de reciclagem é extremamente desafiante e gera muitos resíduos tóxicos \cite{Lu_LixoEletronico}. Além disso, a reciclagem não trata o cerne do problema, que é alta geração de lixo eletrônico \cite{Lu_LixoEletronico}.
+
+Fora a reciclagem, existe um outro processo chamado upcycling, que consiste em dar uma nova função a um objeto considerado descartável \cite{UpcyclingSite}. Embora tenha sido aplicado inicialmente na indústria da moda para o reaproveitamento de tecidos antigos, esse conceito é aplicado em diversas áreas, inclusive na eletrônica\cite{UpcyclingSebrae}. A vantagem desse método é que ele permite a reutilização do material sem que sejam necessários processos caros ou tóxicos, além de postergar o descarte desses materiais.
+
+Neste trabalho, propõe-se aplicar o conceito de upcycling a dois sistemas de irrigação defeituosos, com o objetivo de evitar seu descarte e transformá-los em um novo dispositivo, mais funcional e com maior valor agregado. Essa abordagem visa não apenas reduzir o impacto ambiental, mas também promover uma cultura de reaproveitamento na área da eletrônica.
+\section{Objetivos}
+Este trabalho tem como objetivo o reaproveitamento de dois sistemas de irrigação com defeito: um da marca Amanco (sem identificação de modelo) e outro da marca Trato, modelo TD16 \cite{IrrigadorTrato}. O primeiro apresentou falhas no visor após exposição prolongada às intempéries (sol, chuva, etc.); o segundo deixou de funcionar corretamente após o esgotamento da bateria, não retomando sua operação mesmo após a substituição da mesma. Esses problemas evidenciam falhas de projeto em ambos os dispositivos, que resultaram em falhas prematuras e prejuízos para o usuário.
+
+Com o intuito de corrigir essas deficiências, serão incorporadas novas funcionalidades aos dispositivos, visando aumentar sua vida útil e proporcionar uma experiência de uso mais confiável e eficiente. 
+\section{Estado da arte}
+Com o objetivo de buscar referências para este trabalho, foi realizada uma pesquisa na internet sobre o reaproveitamento de sistemas de irrigação. No entanto, não foram encontrados projetos que abordassem especificamente esse tema. A maioria das soluções encontradas tratava da construção de sistemas de irrigação automáticos inteiramente novos, sem foco no reaproveitamento de dispositivos já existentes \cite{ServidorESP_MotorDC,SistemaIrrigacao_Arduino,SistemaIrrigacaoBlink}.
+
+Diante dessa lacuna no estado da arte, este trabalho propõe o desenvolvimento de um projeto voltado para o reaproveitamento dos dois temporizadores de irrigação mencionados anteriormente. O procedimento completo será disponibilizado na plataforma GitHub, permitindo o acesso livre e facilitado por outros interessados. Serão compartilhadas instruções detalhadas sobre a montagem do hardware, incluindo sua fixação nas carcaças originais dos dispositivos, bem como os códigos-fonte utilizados tanto no microcontrolador quanto no aplicativo de controle.
+\section{Relevância técnica}
+A utilização de displays LCD nos dispositivos de irrigação apresenta limitações técnicas significativas. Esses componentes não foram projetados para exposição direta e prolongada à luz solar intensa, o que compromete sua durabilidade \cite{Elsys_LCD,Sony_LCD}. Além disso, a visibilidade em ambientes externos é prejudicada, pois o reflexo em suas superfícies dificulta a leitura das informações, tornando-os inadequados para uso sob luz solar direta - especialmente no ambiente em que esses sistemas são implantados, como hortas, jardins e áreas externas expostas às intempéries.
+
+Outro ponto relevante é a limitação imposta pela necessidade de interação física com os dispositivos. A presença dos displays diretamente no equipamento exige que o usuário esteja próximo ao sistema sempre que for necessário visualizar seu estado ou realizar configurações. Isso representa um obstáculo em cenários típicos de uso, como hortas ou jardins de difícil acesso. A adoção de interfaces sem fio, como a comunicação via Wi-Fi, surge como uma alternativa vantajosa, permitindo o monitoramento e controle remoto do sistema. Tal abordagem não apenas melhora a experiência do usuário, mas também aumenta a praticidade e a eficiência operacional do dispositivo em campo.
+
+\section{Ambiente de Desenvolvimento e Testes}
+O processo de montagem e teste dos protótipos, assim como a construção do produto final, será realizado tanto nos laboratórios da UFMG (FabLab e PETEE) ? principalmente quando é necessário o uso de equipamentos como fontes de tensão, geradores de sinais e osciloscópios ? quanto em ambiente doméstico, quando os testes podem ser feitos sem a necessidade desses recursos. 
+
+Para a realização dos testes iniciais, serão componentes emprestados do grupo Programa de Educação Tutorial da Engenharia Elétrica (PETEE), os quais serão devidamente devolvidos ao término dessa etapa. Posteriormente, os componentes definitivos serão adquiridos em lojas de eletrônica. O teste final de funcionamento do dispositivo será conduzido em ambiente doméstico, refletindo a aplicação prática para a qual o sistema foi projetado.
+
+\section{Impacto e Contribuições do Projeto}
+Como resultado deste projeto, espera-se que usuários dos sistemas de irrigação abordados - e até mesmo de dispositivos similares - possam reaproveitar o desenvolvimento proposto em seus próprios equipamentos. Além disso, acredita-se que este trabalho possa inspirar outros projetistas a desenvolverem soluções semelhantes para diferentes tipos de dispositivos eletrônicos.
+
+Espera-se, com isso, fomentar uma cultura de reutilização tecnológica (upcycling), contribuindo para a redução do lixo eletrônico e para o aumento da vida útil de equipamentos. Adicionalmente, há a expectativa de que este projeto desperte maior interesse da população pela área de eletrônica, seja como hobby ou como profissão.
+
+\section{Organização do trabalho}
+O texto do trabalho está organizado da seguinte forma:
+\begin{itemize}
+    \item O capítulo \ref{cap_revisao_literatura} apresenta uma revisão de projetos similares, destacando suas semelhanças e diferenças em relação ao objetivo deste trabalho.
+    \item O capítulo \ref{cap_metodologia} descreve as decisões de projeto, a definição dos requisitos e os processos de montagem e programação do sistema.
+    \item O capítulo \ref{cap_resultados_discussao} traz os resultados obtidos nos testes e no produto final, discutindo em que medida os objetivos propostos foram alcançados.
+    \item O capítulo \ref{cap_conclusao} aponta os possíveis desdobramentos e sugestões para trabalhos futuros.
+\end{itemize}
+
+% ----------------------------------------------------------
+% Capítulo 2 - Revisão de literatura
+% ----------------------------------------------------------
+
+\chapter{Revisão de Literatura}\label{cap_revisao_literatura}
+
+\section{Reaproveitamento}
+
+É possível encontrar na internet alguns projetos de robótica e automação que envolvem a reutilização de materiais descartados \cite{RoboticaSucata,MetaCircuitosReciclagem}. Nesses projetos, materiais domésticos descartados eram utilizados como carcaça dos equipamentos. Embora seja uma excelente ideia para reduzir o lixo nas casas e tornar os projetos eletrônicos mais acessíveis, essa solução é diferente daquela proposta nesse trabalho, que consiste no reaproveitamento de materiais dos próprios equipamentos eletrônicos defeituosos.
+
+\section{Ferramentas e Protocolos para Acesso Remoto a Dispositivos IoT}
+
+Para comunicação do microcontrolador com o usuário, foi encontrado um projeto de irrigação automática que utilizava o SMS para transmitir informações do estado do sistema \cite{SistemaIrrigacao_Arduino}. Nesse projeto, foi utilizado o Arduino Uno para controlar um relé, que por sua vez acionava uma bomba de água. Por não possuir interface de usuário para controle e programação da irrigação, a comunicação por SMS não será adotada nesse TCC. Outro fator a se mencionar é que essa forma de comunicação não é comumente utilizada hoje em dia, sendo mais difícil o usuário se adaptar.
+
+Um meio muito utilizado nos projetos de IoT para realizar o controle e o monitoramento deles é através de plataformas Cloud. Entre elas, encontramos projetos que usaram Blynk IoT Cloud \cite{BatteryMonitorBlynk}, Arduino IoT Cloud \cite{ArduinoCloudESP32} e Azure IoT \cite{AzureIoT}.
+
+Em relação aos trabalhos utilizando Blynk IoT Cloud, o desenvolvimento de projetos nessa plataforma mostrou-se relativamente simples, sendo estes os passos para realizar o projeto:
+\begin{enumerate}
+    \item Registrar-se no site da Blynk IoT;
+    \item Acessar dispositivos $\rightarrow$ Novo modelo;
+    \item Adicionar Datastreams;
+    \item Editar a interface em Painel de Controle da Web;
+    \item Acessar Dispositivos $\rightarrow$ Novo dispositivo $\rightarrow$ A partir do modelo;
+    \item Copiar o token fornecido e colar no código a ser usado;
+    \item Editar o código e fazer upload no microcontrolador.
+\end{enumerate}
+
+A plataforma em questão também oferece em seu site vários modelos de projeto que podem ser copiados e aproveitados. Além disso, o tempo de resposta é baixo e é possível acessar o dispositivo tanto via Web quanto via aplicativo de smartphone.
+
+Contudo, existem algumas limitações importantes nessa plataforma:
+\begin{itemize}
+    \item A versão gratuita só permite uma tela.
+    \item A versão gratuita não possui Widgets para programação de tempo.
+\end{itemize}
+
+Considerando que neste TCC há a necessidade de uma tela para editar a programação e outra para ativar a programação desejada, a utilização dessa plataforma foi descartada.
+
+Em relação à plataforma Arduino IoT Cloud, foram encontradas algumas diferenças. O processo de registro e desenvolvimento de projetos nessa plataforma consiste nos seguintes passos:
+
+\begin{enumerate}
+    \item Instalar o software Arduino Create Agent;
+    \item Clicar no ícone do Arduino na barra de ícones do Windows;
+    \item Fazer Log In no site do Arduino.cc;
+    \item Criar um "Thing";
+    \item Adicionar as variáveis de entrada e saída a serem utilizadas;
+    \item Clicar em associar dispositivo;
+    \item Copiar o Device ID e Secret Key;
+    \item Colocar os dados de Wi-Fi;
+    \item Mudar o código conforme desejado (na seção Sketch);
+    \item Editar o dashboard (como o aplicativo vai aparecer no celular);
+    \item Fazer o upload do código em "Sketch".
+\end{enumerate}
+
+Embora a solução na plataforma Arduino IoT Cloud envolva mais passos que na plataforma Blynk IoT Cloud, ela oferece uma facilidade maior por permitir que o usuário edite o código e passse para o dispositivo na própria página Web. Em razão disso, essa plataforma é ideal para que usuários inexperientes na área desenvolvam seu primeiro projeto IoT. Contudo, apesar da série de benefícios da plataforma Arduino IoT Cloud, ela não oferece uma interface ideal para o projeto de irrigador automático desejado nesse trabalho, que necessita de programar e editar timers para o acionamento programado do dispositivo.
+
+Já o Azure IoT \cite{AzureIoT} representa uma solução mais robusta, fornecida pela Microsoft. Trata-se de um conjunto de serviços em nuvem voltado para conectar, monitorar e controlar dispositivos embarcados. Oferece alto nível de segurança, com suporte a múltiplos protocolos de autenticação e integração com outras ferramentas da Microsoft. Apesar de suas vantagens, essa solução foi descartada por apresentar limitações significativas para o presente projeto: exige conexão constante com a internet (não operando em rede local), possui maior complexidade de configuração e exige assinatura paga para acesso completo aos recursos, o que contraria os objetivos de simplicidade e baixo custo do irrigador automático.
+
+Existem também projetos que utilizam o protocolo MQTT \cite{MQTT_ESP8266}. Nesses projetos, é comum o uso da ferramenta Node-RED para a visualização dos dados. O MQTT (Message Queuing Telemetry Transport) é um protocolo leve de comunicação assíncrona, baseado no modelo publicador/assinante, amplamente utilizado em aplicações de Internet das Coisas (IoT) por sua eficiência na transmissão de pequenas quantidades de dados entre dispositivos. No entanto, esse tipo de abordagem não foi considerada adequada para o projeto do irrigador automático, pois requer a presença de um broker ? um servidor intermediário responsável por gerenciar a troca de mensagens entre os dispositivos. Como o foco deste projeto é desenvolver uma solução de baixo custo e com poucos sensores de leitura, a utilização do MQTT foi descartada.
+
+Outro protocolo encontrado em projetos de IoT é o Matter \cite{MatterProtocol,MatterZeroCode}. O Matter é altamente flexível e compatível com diversos padrões de comunicação sem fio, como Wi-Fi, Thread e Ethernet. Entre suas vantagens, destaca-se a facilidade de integração entre diferentes dispositivos e a criação de uma experiência de usuário unificada. No entanto, para seu funcionamento completo, é necessário o uso de um hub central ? como o Amazon Alexa, Google Nest ou Apple HomePod ? que atua como controlador e intermediador entre os dispositivos. Considerando que o projeto do irrigador automático visa uma solução de baixo custo e independente de infraestrutura adicional, a adoção do protocolo Matter foi considerada inviável para este trabalho.
+
+Outra plataforma bastante utilizada em projetos de IoT é o Firebase \cite{FirebaseESP32}, serviço de backend as a service (BaaS) oferecido pelo Google. O Firebase oferece uma série de funcionalidades que facilitam a comunicação entre dispositivos e aplicativos, como banco de dados em tempo real (Firebase Realtime Database), autenticação, notificações e hospedagem. Ele é especialmente útil em projetos que requerem sincronização instantânea de dados entre múltiplos clientes.
+
+Uma limitação importante do Firebase é que ele exige conexão com a internet, pois todos os dados são armazenados e acessados em servidores remotos do Google. Dessa forma, não é possível utilizá-lo em uma rede local sem internet. Isso representa uma desvantagem significativa para projetos que precisam operar de forma autônoma ou em ambientes sem conectividade, como pode ser o caso de sistemas de irrigação em áreas remotas. Por esse motivo, a plataforma Firebase foi considerada inadequada para o presente trabalho, que requer uma solução independente de conexão constante com a nuvem.
+
+Uma ferramenta amplamente utilizada no contexto de IoT é a ThingSpeak \cite{ThingSpeakESP32,ThingSpeakWokwi}. Essa plataforma de código aberto permite o armazenamento, visualização e análise de dados enviados por dispositivos conectados. Um de seus principais diferenciais é a integração nativa com o MATLAB, o que facilita a aplicação de algoritmos avançados de processamento e análise de grandes volumes de dados. A ThingSpeak também oferece uma variedade de recursos para visualização, como gráficos em tempo real, indicadores de temperatura e interfaces personalizáveis para monitoramento remoto. No entanto, no contexto deste projeto, que lida com um volume reduzido de dados ? restrito à leitura do nível da bateria ? e não requer análise estatística ou processamento avançado, a utilização da plataforma foi considerada desnecessária. Além disso, seu uso implicaria em uma complexidade adicional na implementação, contrariando o objetivo do projeto, que é fornecer uma solução simples, acessível e de fácil uso, mesmo por usuários sem experiência técnica prévia.
+
+Outra ferramenta relevante para projetos IoT, especialmente no desenvolvimento da interface com o usuário, é o Android Studio \cite{AndroidStudioIoT}. Trata-se do ambiente oficial de desenvolvimento de aplicativos Android, mantido pelo Google, que permite a criação de aplicações móveis completas e altamente personalizáveis. A principal vantagem dessa abordagem está em sua flexibilidade, pois o desenvolvedor tem controle total sobre a interface gráfica, a lógica de programação e a forma como os dados são enviados e recebidos ? seja por Wi-Fi, Bluetooth, ou outras interfaces de comunicação.
+
+Embora o uso do Android Studio não seja trivial, especialmente para iniciantes, ele se torna uma excelente escolha quando o projeto demanda uma interface específica, que não pode ser facilmente implementada com plataformas prontas. No caso do irrigador automático, por exemplo, é necessário que o aplicativo permita configurar horários, dias da semana e duração da irrigação de forma intuitiva ? funcionalidades que não são comumente encontradas em soluções prontas, como Blynk, Arduino IoT Cloud ou Firebase.
+
+Além disso, ao desenvolver um aplicativo próprio, o sistema pode ser ajustado para funcionar com ou sem conexão com a internet, operando diretamente em rede local se necessário. Isso se alinha aos objetivos do projeto, que busca oferecer uma solução independente, de baixo custo e funcional em ambientes com conectividade limitada. Por essas razões, optou-se pelo uso do Android Studio como ferramenta para criar a interface de controle do irrigador.
+
+Outro protocolo amplamente utilizado em aplicações IoT é o HTTP (Hypertext Transfer Protocol)\cite{ServidorWebEEPROM,ServidorESP_MotorDC,ESP-NOW_Server}. Trata-se de um protocolo de comunicação baseado em requisições e respostas, onde um cliente (como um aplicativo ou navegador) envia uma requisição para um servidor (como um microcontrolador conectado à rede), que por sua vez retorna uma resposta. O HTTP é simples de implementar e é compatível com praticamente todas as plataformas e linguagens de programação. Além disso, é possível utilizá-lo em redes locais sem a necessidade de conexão com a internet, o que representa uma vantagem importante para sistemas que precisam funcionar offline, como o irrigador automático.
+
+No contexto deste projeto, o uso do protocolo HTTP se mostra bastante vantajoso, pois permite que um aplicativo desenvolvido no Android Studio envie comandos diretamente ao microcontrolador (como um ESP8266) via rede Wi-Fi local. Isso possibilita, por exemplo, o envio de configurações de tempo de irrigação, bem como comandos de ativação ou desativação do sistema. O protocolo também permite que o microcontrolador atue como um servidor web, recebendo requisições HTTP e respondendo com confirmações ou dados, como o nível da bateria ou o status da irrigação.
+
+Considerando esses fatores, o protocolo HTTP foi considerado adequado e viável para o projeto, atendendo aos requisitos de simplicidade, flexibilidade e operação em rede local.
+
+\section{Alimentação}
+
+Foi realizada uma pesquisa sobre como é realizada a alimentação dos microcontroladores nos projetos IoT. Na maioria dos projetos encontrados \cite{ServidorESP_MotorDC,ServidorWebEEPROM}, não é informada a forma de alimentação definitiva do projeto, em razão de serem projetos de prototipagem ou cuja função é unicamente de aprendizado. Nesses projetos, os dispositivos são alimentados pela interface USB conectada ao computador, que também serve para a programação dos microcontroladores.
+
+Contudo, foi encontrado um projeto utilizarando baterias de lítio de 3,7V para alimentar o microcontrolador \cite{BatteryMonitorBlynk}. Nesse projeto, também é utilizado o módulo TP4056 para recarregamento da bateria 18650, utilizada no projeto. Embora esta seja uma solução bastante útil, por permitir a recarga do dispositivo, ela é incompatível com o projeto do irrigador, pois este deve ser projetado para ser alimentado por baterias comuns (alcalinas) para tornar o dispositivo mais acessível e prático.
+
+Existem também projetos que utilizam fontes de tensão de 12V \cite{SistemaIrrigacao_Arduino}. Nesse projeto, foi utilizado um regulador de tensão LM317 para reduzir a tensão para um nível mais baixo para o funcionamento adequado dos dispositivos. Outro projeto de irrigação também utilizou esse tipo de fonte foi feito pela Robocore \cite{Fonte12_Arduino_Irrigador}. Porém, por se tratar da placa Arduino Uno, que já possui esse tipo de entrada a alimentação com a fonte de 12V é comum. Esse tipo de alimentação não é próprio para o projeto do irrigador automático, considerando que ele deve ser capaz de funcionar em áreas onde não há acesso a tomadas, além de ser necessário utilizar um microcontrolador menor para caber na carcaça reaproveitada do irrigador.
+
+\section{Controle do motor DC}
+
+A maioria dos projetos analisados emprega o uso de ponte H como principal método para o controle de motores DC, dada sua eficiência na reversão do sentido de rotação e na modulação da velocidade por PWM \cite{ServidorESP_MotorDC}. No entanto, também foram encontradas abordagens alternativas, que utilizam circuitos discretos (utilizando transistores bipolares de potência) \cite{DCMotorWithoutMotorDriver} ou relés (para motores maiores) \cite{SistemaIrrigacao_Arduino}.
+
+Considerando que o motor usado é de baixa tensão e que o tamanho é um requisito primordial no projeto, foi preferido utilizar uma ponte H para realizar o controle do motor DC do irrigador.
+
+\section{Monitoramento do nível da bateria}
+
+Para o monitoramento do nível de bateria, o método mais encontrado é através do divisor de tensão \cite{BatteryMonitorBlynk,IoTBatteryMonitor}. Nesses sistemas, são selecionados resistores com alta resistência a fim de drenar a menor quantidade de carga possível. A utilização do divisor de tensão se deve ao fato de que muitos conversores analógicos digitais aceitam entradas de tensão com valores máximos que são menores que aqueles usados para alimentação. No microcontrolador utilizado no projeto do irrigador automático, o ESP8266, a tensão máxima no ADC é de 1V. 
+
+Por se tratar de uma solução simples e que não utiliza muita corrente, esta foi a opção escolhida para o projeto.
+
+% ----------------------------------------------------------
+% Capítulo 3 - Metodologia
+% ----------------------------------------------------------
+\chapter{Metodologia}\label{cap_metodologia}
+
+\section{Levantamento de requisitos}
+Para obter os requisitos aos quais o sistema deve atender para cumprir com seu objetivo, foram utilizadas técnicas de Engenharia de Requisitos. Para o levantamento inicial dos requisitos foi realizada uma entrevista com o professor orientador, cujo papel é de cliente e usuário do sistema a ser desenvolvido. A tabela \ref{lista-casos-uso} apresenta a lista de casos de uso que foram definidos:
+
+\begin{table}[htb]
+\IBGEtab{%
+  \caption{Lista de casos de uso}%
+  \label{lista-casos-uso}
+}{%
+  \begin{tabular}{p{1cm}p{4cm}p{10cm}}
+  \toprule
+   Nº & Caso de uso& Descrição\\
+  \midrule \midrule
+   1& Adicionar configuração.& Adiciona o horário, duração e dias da semana de irrigação. \\
+  \midrule 
+   2& Excluir configuração.& Deleta as configurações do banco de dados e no microcontrolador.\\
+  \midrule 
+   3& Verificação de status.& Envia mensagem para o microcontrolador e espera resposta para indicar correto funcionamento.\\
+  \midrule
+  4& Editar configuração.& Escolhe uma configuração já criada e altera seus dados.\\
+  \midrule
+  5& Verificar configurações.& Pergunta ao microcontrolador quais configurações estão salvas nele.\\
+  \bottomrule
+ 6& Verificar bateria.&Pergunta ao sistema se a bateria está em nível alto, médio ou baixo.\\
+\end{tabular}%
+}{%
+  \fonte{Produzido pelo autor.}%
+  \nota{Esta tabela segue o modelo fornecido pelo livro "Engenharia de Software: fundamentos, métodos e padrões".\cite{EngenhariaSoftware}}%
+  }
+\end{table}
+
+% ---
+
+%\section{Definição do microcontrolador}
+
+%As conhecidas placas d
+
+%Em relação às placas NodeMCU e Wemos, ambas possuem os chips do ESP8266.
+
+%Em relação ao Wemos D1 mini, ele também utiliza o microcontrolador ESP8266, possuindo, além disso, uma entrada mini USB, facilitando sua programação. Essa placa de desenvolvimento é uma excelente opção para esse projeto; contudo, por ser mais caro que o ESP-12E e possuir dimensões maiores, ele não foi escolhido.
+
+%Em suma, o microcontrolador ESP-12E foi escolhido para ser utilizado no projeto em função de sua alta disponibilidade no mercado e baixo custo, atendendo às necessidades de número de pinos GPIO e possuindo suporte a WiFi. Outro ponto fundamental para a escolha desse microcontrolador é que suas dimensões reduzidas atendem às restrições de espaço impostas pelo trabalho.
+
+\section{Definição do método de programação do microcontrolador}
+% ---
+O microcontrolador, devido a seu tamanho reduzido, não possui entrada USB, sendo necessário recorrer a diferentes meios para a programação do mesmo. Entre as possíveis alternativas, foram levadas em consideração quatro \cite{ProgramacaoESP12,ProgramacaoESP12E,ProgramacaoESP12_Serial}:
+\begin{alineas}
+    \item placa de programação dedicada;
+    \item outro microcontrolador (NodeMCU);
+    \item adaptador USB para serial;
+    \item sem fio (Wi-Fi).
+\end{alineas}
+
+A utilização de uma placa dedicada é uma excelente opção para um projeto de fácil execução, mesmo para usuários inexperientes em eletrônica. Contudo, levando em conta que acrescentar esse item ao projeto aumentaria os custos do mesmo em torno de R\$ 80,00, essa opção foi desconsiderada.
+
+A opção de utilizar outro microcontrolador consiste em desabilitar o microcontrolador em uma placa como o NodeMCU e aproveitar os sinais vindos do USB presente nele para programar o Módulo Wi-Fi. Essa opção traz um menor custo que a anterior, porém aumenta a dificuldade de realização.
+
+Existe também a opção de utilizar somente um adaptador que transforma a interface UART do Módulo na interface USB, própria para a programação. Para isso, são necessárias duas pilhas de 1,5V e alguns jumpers, necessários para a comunicação do adaptador com o módulo e a configuração deste. Nessa terceira opção, a dificuldade de realizar a programação não é significativamente maior que a anterior, e introduz menos custos, sendo ideal para esse projeto.
+
+Portanto, considerando que o objetivo do projeto é montar um produto de baixo custo e de fácil construção, foi escolhido utilizar o adaptador USB para serial.
+
+Para realizar a programação utilizando um adaptador USB serial, são necessárias algumas conexões:
+\begin{enumerate}
+    \item O RX do microcontrolador deve ser conectado ao TX do adaptador;
+    \item O TX do microcontrolador deve ser conectado ao RX do adaptador;
+    \item O GND do microcontrolador deve ser conectado ao GND do adaptador;
+    \item O RST do microcontrolador deve ser conectado ao GND através de um botão;
+    \item O GPIO0 do microcontrolador deve ser conectado ao GND através de um botão;
+    \item O GPIO15 do microcontrolador deve ser conectado ao GND através de um resistor de 10k$\Omega$;
+    \item O CH\_PD(EN) do microcontrolador deve ser conectado ao VDD através de um resistor de 10k$\Omega$.
+\end{enumerate}
+
+A imagem \ref{fig:basic-connections-esp12} mostra essas conexões.
+
+\begin{figure}
+    \centering
+    \caption{Conexões básicas do ESP-12E.}
+    \includegraphics[width=0.6\linewidth]{imagens/BasicConnectionsESP-12E.png}
+    \legend{Fonte: Small Bits \cite{ConnectionsESP12E}.}
+    \label{fig:basic-connections-esp12}
+\end{figure}
+
+Em relação às últimas duas conexões, a do GPIO15 e a do CH\_PD(EN), elas já estão presentes na placa adaptadora usada no irrigador da Amanco. A imagem \ref{fig:adaptador-esp12e} mostra essas conexões.
+
+\begin{figure}
+    \centering
+    \caption{Conexões do adaptador para ESP12-E}
+    \includegraphics[width=0.7\linewidth]{imagens/ESP12_Adapter.jpg}
+    \legend{Fonte: Sunrom \cite{ConnectionsAdapterESP12}.}
+    \label{fig:adaptador-esp12e}
+\end{figure}
+
+Para realizar a programação do módulo, o botão conectando o GPIO0 ao GND deve ser segurado. Ao fim da programação, o botão deve ser solto e o botão que liga o RST ao GND deve ser pressionado e solto. Assim, foi realizada a primeira programação do módulo. As programações subsequentes foram realizadas pelo método Over the Air (OTA).
+
+Para facilitar a programação do módulo, todos os componentes necessários para a programação do circuito foram montados em uma placa de fenolite perfurada. Para realizar a programação do módulo, o microcontrolador deveria ser encaixado no local designado, duas baterias de 1,5V seriam conectadas através de jumpers, e a interface USB deveria ser conectada no computador desejado para a programação.
+
+As figuras \ref{fig: placa_fenolite_frente} e \ref{fig: placa_fenolite_verso} mostram a visão superior e inferior da placa, respectivamente.
+
+\begin{figure}[htb]
+ \centering
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \caption{Frente da placa de fenolite} \label{fig: placa_fenolite_frente}
+    \includegraphics[scale=0.02]{imagens/PlacaFenoliteFRENTE.jpg}
+    \legend{Fonte: Autoria própria}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \caption{Verso da placa de fenolite} \label{fig: placa_fenolite_verso}
+    \includegraphics[scale=0.02]{imagens/PlacaFenoliteVERSO.jpg}
+    \legend{Fonte: Autoria própria}
+  \end{minipage}
+\end{figure}
+
+Em relação à programação via WiFi, ela é bastante interessante de ser feita por permitir que o firmware do microcontrolador seja atualizado mesmo quando o dispositivo já esteja soldado na placa definitiva. Para que isso seja possível, é necessário utilizar a funcioalidade Over-The-Air (OTA) do ESP. Os códigos para isso são descritos na seção \ref{sec:ota}.
+
+
+% ---
+
+% ---
+\section{Controle dos motores}
+% ---
+Para fazer o controle dos motores, é necessário verificar qual a corrente consumida pelo motor e qual o máximo de corrente que o microcontrolador consegue fornecer. Embora não tenha sido achada indicação do modelo de motor utilizado nos irrigadores, motores semelhantes alimentados com 3V consomem por volta de 150mA \cite{motorDCcorrente}. Em relação ao microcontrolador, no site da Expressif, foi informado que a corrente máxima de saída de cada pino é de 12mA \cite{CorrenteMaximaESP12}. Consequentemente, não é possível acionar o motor diretamente com a corrente do microcontrolador, sendo necessário utilizar um amplificador de corrente.
+
+Uma opção para realizar essa tarefa é utilizando um transistor Darlington TIP122 \cite{DCMotorWithoutMotorDriver}. Nessa solução, o microcontrolador aciona o  BJT com uma corrente de base, que o aciona e permite a passagem de corrente por ele.
+
+Para verificar se esse transistor é capaz de fornecer a corrente necessária, é preciso verificar qual o ganho de corrente que ele é capaz de produzir. Segundo o datasheet do TIP122 \cite{TIP122Datasheet}, o ganho máximo que ele é capaz de fornecer é de $1000mA/mA$, bem superior ao necessário para o funcionamento do motor, que seria de 20 a 40.
+
+Apesar de ser uma solução barata (por volta de R\$ 3,00) e suportar uma alta corrente (8A \cite{TIP122Datasheet}), ela é mais difícil de ser feita, já que necessitaria de soldas e isso tornaria a tarefa mais difícil para alguém inexperiente na área.
+
+Outra alternativa para solucionar esse problema é a utilização de uma ponte H, um circuito eletrônico que permite controlar a direção da corrente fornecida a uma carga, como um motor de corrente contínua. Esse dispositivo possui dois terminais de controle de entrada, que determinam o sentido de rotação do motor, e dois terminais de saída, responsáveis por fornecer a tensão e a corrente necessárias ao seu funcionamento.
+
+A figura \ref{fig:circuito-L298} mostra o circuito interno do CI L298, utilizado na ponte H.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagens/CircuitoPonteH.png}
+    \caption{Circuito interno do L298}
+    \label{fig:circuito-L298}
+\end{figure}
+
+O funcionamento desse circuito consiste em conectar os pinos de saída ao terra ou à alimentação positiva. Quando a entrada tem valor alto, o transistor BJT superior conecta a alimentação positiva à saída, enquanto o transistor inferior permanece desligado. Por outro lado, quando o nível da entrada é baixo, o transistor inferior é acionado, conectando a saída ao terra.
+
+Ao inserir pares de entrada alternados (In1=1 e In2=0, por exemplo), uma das saídas é ligada ao terra e outra à alimentação positiva, criando uma diferença de potencial no motor e fazendo uma corrente circular nele. É importante ressaltar que ao utilizar a ponte H, a corrente que sai do microcontrolador somente é utilizada para acionar o transistor, como corrente de base deste. A corrente utilizada para o funcionamento do motor, por sua vez, tem origem na fonte de alimentação, passando pelos dois transistores e pelo motor.
+
+Essa solução é a mais apropriada para o projeto, já que não acrescenta muitos custos (por volta de R\$5,00) e é mais fácil de ser montada e controlada. Outra vantagem importante é que a ponte H pode alterar facilmente o sentido da corrente no motor, algo essencial nesse projeto, considerando que o motor deve obrigatoriamente girar nos dois sentidos.
+
+A fim de confirmar se a ponte H consegue realizar esse papel, é necessário investigar quando de corrente ela é capaz de fornecer, e quanto de corrente de entrada ela exige. 
+
+Segundo informação do datasheet do CI L298, a corrente máxima de saída para a operação DC é de 2A \cite{L298Datasheet}. Em relação à placa usada, a mini ponte H, o site no qual ela foi comprada informa que a corrente máxima por canal é de 1,5 A \cite{EletrogateMiniPonteH}. Considerando que a corrente exigida pelo motor DC é de 150mA - 200mA, a ponte H utilizada é capaz de fornecer com folga a corrente de saída.
+
+Em relação à corrente de entrada, o datasheet informa que para uma entrada de nível alto, a corrente consumida é de no máximo $100\mu A$, enquanto para uma entrada de nível baixo o consumo é de $-10\mu A$, estando, portanto, dentro das restrições de corrente do microcontrolador.
+
+Outro modelo de ponte H possível para ser utilizado nesse projeto é o DRV8833. Seu funcionamento é semelhanete ao explicado para o modelo anterior. Diferente do driver L298, o DRV8833 possui transistores MOSFET como entrada, além de dois pinos extras: SLEEP e FAULT. Este primeiro pino é uma entrada e possui a funcionalidade de desativar as saídas caso esteja em valor baixo; o segundo pino, por sua vez, é uma saída, e fica em valor baixo quando há uma sobre-corrente ou sobre-temperatura. Essa segunda funcionalidade da ponte H é bastate interessante para indicar ao usuário quando há algum defeito no motor.
+
+As dimensões dos módulos de ponte H citados anteriormente são:
+\begin{itemize}
+    \setlength\itemsep{0em} % Ajuste o valor para o seu gosto
+    \item \textbf{L298:} 25mm x 21mm x 7mm
+    \item \textbf{DRV8833:} 18,5mm x 16,3mm 3,2mm
+\end{itemize}
+
+
+Considerando que o tamanho dos componentes é uma limitação importante do projeto, e levando em consideração a funcionalidade de indicação de sobrecorrente e sobretemperatura, a ponte H DRV8833 foi escolhida para o projeto.
+
+\section{Desenvolvimento do firmware}
+
+\subsection{Conexão inicial do WiFi}
+
+O primeiro passo para o desenvolvimento do firmware do microcontrolador consistiu em desenvolver uma forma de conectar o dispositivo a qualquer rede, sem a necessidade de fazer upload de um novo código. Para que isso fosse realizado, era necessário recorrer a uma das três técnicas: SmartConfig, WPS, ou Local AP. Para o microcontrolador ESP32, também existe a técnica do BluFi, na qual o bluetooth é usado para facilitar a primeira conexão com o WiFi. Como o microcontrolador usado nesse projeto, o ESP8266, não possui essa funcionalidade, essa opção foi descartada.
+
+O Wi-Fi Protected Setup (WPS) é um padrão utilizado para a conexão de dispositivos sem a necessidade de senha. Ele possui a grande vantagem de ser simples, necessitando apenas de apertar o botão do roteador. Esse método possui algumas questões em relação à segurança e ao acesso indevido de usuários indesejados. Contudo, como esse trabalho não possui foco em desenvolver um sistema protegido de acessos indevidos, essa característica não o impediria de ser utilizado. Contudo, a maior desvantagem desse método é que para se conectar a rede deve se estar próximo do roteador e ter acesso físico a ele, o que pode não ser possível em determinados casos. Além disso, essa tecnologia não se encontra em todos os roteadores comercializados, limitando bastante sua aplicação. Devido a essas razões, optou-se por não utilizar essa tecnologia.
+
+Na técnica de Local AP, o microcontrolador torna-se um ponto de acesso (Access point) ao qual um dispositivo deve se conectar e, através de uma interface web, inserir o SSID e a senha de uma das redes disponíveis \cite{EEPROM_WiFi_Salvar}. Tendo em vista que o modo de Local AP exige um maior gasto de energia e que o projeto desenvolvido nesse trabalho visa o menor gasto de energia possível, essa opção foi rejeitada.
+
+Em relação ao SmartConfig, o site da Espressif possui uma descrição a respeito:
+\begin{citacao}
+    The SmartConfig is a provisioning technology developed by TI to connect a new Wi-Fi device to a Wi-Fi network. It uses a mobile application to broadcast the network credentials from a smartphone, or a tablet, to an un-provisioned Wi-Fi device \cite{SmartConfigEspressif}.
+\end{citacao}
+
+Podem ser encontrados vários aplicativos móveis na PlayStore que possuem a funcionalidade do SmartConfig. Caso se deseje criar a própria aplicação do SmartConfig, é possível encontrar repositórios no GitHub que implementam essa funcionalidade \cite{SmartConfigAndroidApp}. Para não tornar o projeto muito complexo, foi escolhido utilizar uma aplicação da PlayStore, em vez de associar essa funcionalidade ao aplicativo de controlar a irrigação.
+Para acionar o serviço de coneção por SmartConfig, a biblioteca \texttt{ESP8266WiFi.h} disponibiliza a função mostrada em  \ref{Acionamento_SmartConfig}.
+
+\begin{lstlisting}[caption = Fun??o para acionar o serviço do SmartConfig, label = {Acionamento_SmartConfig}]
+    WiFi.beginSmartConfig()
+\end{lstlisting}
+
+Para verificar se a conexão foi feita corretamente, é possível verificar o status da conexão pela função \texttt{WiFi.status()}. Caso ela retorne \texttt{WL\_CONNECTED}, a conexão via SmartConfig foi feita com sucesso. 
+
+A função utilizada no código do microcontrolador para lidar com a conexão via SmartConfig é mostrada em \ref{Configuracao_SmartConfig}.
+
+\begin{lstlisting}[label = {Configuracao_SmartConfig}, caption = Função para configurar o SmartConfig]
+bool IniciarSmartConfig() {
+    WiFi.mode(WIFI_STA); // Define o modo de esta??o
+    Serial.println("Iniciando SmartConfig...");
+    WiFi.beginSmartConfig(); // Inicia o modo SmartConfig
+
+    unsigned long tempo_inicial = millis();
+    while (millis() - tempo_inicial < WiFiSmartConfig_Timeout) {
+        if (WiFi.status() == WL_CONNECTED) {
+            // Se conectou, salva as novas credenciais
+            String currentSSID = WiFi.SSID();
+            String currentPW = WiFi.psk();
+            SalvarCredenciais(currentSSID, currentPW); // Salva no LittleFS
+
+            Serial.println("Conectado pelo SmartConfig e credenciais salvas!");
+            Serial.print("SSID conectado: ");
+            Serial.println(currentSSID);
+            Serial.print("PW conectado: ");
+            Serial.println(currentPW);
+            return true; // Conectado e salvo
+        }
+        delay(1000); // Espera 1 segundo para o SmartConfig ou conex?o
+        Serial.print("."); // Feedback visual
+    }
+    Serial.println("\nSmartConfig Timeout.");
+    return false; // SmartConfig não conectou a tempo
+}
+\end{lstlisting}
+
+Para evitar que o microcontrolador fique buscando a conexão indefinidamente e prejudique a vida útil da bateria, a função retorna 0 depois de um tempo definido na variável \texttt{WiFiSmartConfig\_Timeout}. Caso a conexão seja feita corretamente, a função retorna 1.
+
+\subsection{Armazenamento das credenciais do WiFi}
+
+Para proporcionar uma melhor experiência ao usuário, isentando-o de recorrer ao SmartConfig toda vez que o dispositivo é reiniciado, é necessário armazenar os dados de rede usados. Como opções para armazenar esses dados, é possível utilizar o \texttt{EEPROM.h}, que emula uma Electrically Erasable Programmable Read-Only Memory(EEPROM) ou o sistema de arquivos \texttt{LittleFS.h}.
+
+Embora o microcontrolador ESP8266 não possua uma memória EEPROM, a primeira biblioteca, \texttt{EEPROM.h}, é capaz de emular o comportamento dessa memória. O site da STMicroelectronics explica a vantagem de se utilizar um emulador de EEPROM em vez de utilizar diretamente a memória flash:
+
+\begin{citacao}
+    Using flash memory to store long-term data can put additional stress on the flash memory, as erase operations are necessary to free up space but the EEPROM emulation library minimizes this stress by performing garbage collection operations to compact valid data and minimize free space. The library allows users to specify the maximum number of write operations before a garbage collection operation is performed, allowing for control over the number of erase operations needed. \cite{EEPROM_STM}.
+\end{citacao}
+
+Para salvar os dados na biblioteca EEPROM, é necessário salvar individualmente cada caractere em uma posição da memória. Esse passo a passo torna o código maior, sendo mais suscetível a erros. Além disso, considerando que também será necessário utilizar a memória para salvar os dados dos alarmes, o gerenciamento de dois tipos de dados diferentes se tornaria mais complexo.
+
+A segunda biblioteca, \texttt{LittleFS.h}, é um sistema de arquivos para utilizar a memória flash presente no ESP8266. Originalmente, o sistema de arquivos SPIFFS era utilizado, e possui as vantagens de um baixo overhead e baixo uso de memória RAM. Contudo esse sistema não suporta diretórios e consegue armazenar apenas arquivos pequenos. Atualmente, esse sistema está obsoleto, e não terá mais suporte futuramente. Em substituição a ele, surgiu o LittleFS, que possui melhor performance e suporte a diretórios, porém seu sistema de arquivos ocupa maior espaço e ele possui maior overhead. Contudo, considerando que neste trabalho o sistema de arquivos só deverá armazenar as credenciais de WiFi e os dados dos alarmes salvos, o uso do armazenamento não será uma preocupação. Por esses motivos, foi decidido utilizar a biblioteca \texttt{LittleFS.h}.
+
+
+A função SalvarCredenciais(), utilizada no corpo da função WiFiSmartConfig() é utilizada para salvar o SSID e a senha contidos na struct settings. O código dessa função é mostrado em \ref{SalvarCredenciaisFun}.
+
+\begin{lstlisting}[label = {SalvarCredenciaisFun}, caption = Função para salvar dados de login e senha do WiFi]
+void SalvarCredenciais(const String& ssid, const String& password) {
+    File configFile = LittleFS.open(CONFIG_FILE, "w"); // "w" para sobrescrever o arquivo
+    if (!configFile) {
+        Serial.println("Erro ao criar/abrir arquivo para salvar credenciais.");
+        return;
+    }
+
+    configFile.println(ssid);
+    configFile.println(password);
+    configFile.close();
+    Serial.println("Credenciais salvas no LittleFS.");
+}
+\end{lstlisting}
+
+A função \texttt{SalvarCredenciais()} abre um arquivo chamado \texttt{CONFIG\_FILE} (definido como "/wifi\_config.txt") no sistema de arquivos LittleFS no modo de escrita (\texttt{"w"}). Se o arquivo for aberto com sucesso, o SSID e a senha são escritos cada um em uma nova linha usando \texttt{configFile.println()}. Após a escrita, o arquivo é fechado com \texttt{configFile.close()}.
+
+Para recuperar os dados salvos na memória flash, foi criada a função Para recuperar os dados salvos na memória flash, foi criada a função \texttt{Recuperar\-Credenciais\-Wifi()}. Sua implementação é mostrada em \ref{RecuperarDadosWiFi}.
+
+\begin{lstlisting}[label = {RecuperarDadosWiFi}, caption = Função para recuperar os dados de login e senha do WiFi]
+bool RecuperarCredenciaisWiFi() {
+    File configFile = LittleFS.open(CONFIG_FILE, "r");
+    if (!configFile) {
+        Serial.println("Arquivo de configuração não encontrado ou erro ao abrir.");
+        globalSSID = "";
+        globalPW = "";
+        return false;
+    }
+
+    globalSSID = configFile.readStringUntil('\n');
+    globalPW = configFile.readStringUntil('\n'); // Lê a segunda linha para a senha
+    configFile.close();
+
+    // Remove espaços em branco ou caracteres de nova linha extras que podem ser lidos
+    globalSSID.trim();
+    globalPW.trim();
+
+    Serial.print("SSID lido do LittleFS: ");
+    Serial.println(globalSSID);
+    Serial.print("PW lido do LittleFS: ");
+    Serial.println(globalPW);
+
+    if (globalSSID.length() > 0 && globalPW.length() > 0) {
+        return true;
+    } else {
+        Serial.println("Credenciais vazias ou inválidas no arquivo.");
+        return false;
+    }
+}
+\end{lstlisting}
+
+A função \texttt{RecuperarCredenciaisWiFi()} tenta abrir o arquivo \texttt{CONFIG\_FILE} no modo de leitura (\texttt{"r"}). Se o arquivo for encontrado e aberto com sucesso, as credenciais são lidas linha por linha usando \texttt{configFile.readStringUntil('\textbackslash n')} e armazenadas nas variáveis globais \texttt{globalSSID} e \texttt{globalPW}. A função retorna true se as credenciais forem lidas e forem válidas (não vazias), e false caso contrário.
+
+Após a primeira conexão através do SmartConfig, as credenciais do WiFi terão sido salvas na memória flash utilizando o LittleFS. Quando o microcontrolador reiniciar, ele tentará se conectar à rede WiFi utilizando as últimas credenciais salvas. Isso é realizado pelo código mostrado em \ref{WiFi_LittleFS}.
+
+\begin{lstlisting}[caption = Função para conectar ao WiFi com dados da memória flash, label = {WiFi_LittleFS}]
+bool ConectarWiFiComCredenciaisSalvas() {
+    if (!RecuperarCredenciaisWiFi()) { // Tenta carregar as credenciais
+        Serial.println("Não foi possível carregar credenciais válidas do LittleFS.");
+        return false;
+    }
+
+    Serial.print("Tentando conectar com SSID: ");
+    Serial.println(globalSSID);
+
+    // Conecta ao Wi-Fi
+    WiFi.begin(globalSSID.c_str(), globalPW.c_str());
+
+    unsigned long tempo_inicial = millis();
+    while (millis() - tempo_inicial < WiFiConnection_Timeout) {
+        if (WiFi.status() == WL_CONNECTED) {
+            Serial.println("\nConectado com credenciais salvas!");
+            return true; // Conectado com sucesso
+        }
+        delay(500); // Espera 0.5 segundo antes de verificar novamente
+        Serial.print("."); // Feedback visual
+    }
+    Serial.println("\nTempo esgotado para conexão com credenciais salvas.");
+    return false; // Tempo esgotado, não conectou
+}
+\end{lstlisting}
+
+
+\subsection{Criando um servidor}
+
+Para a criação do servidor que lidará com as requisições feitas pelo aplicativo, é possível utilizar duas bibliotecas do Arduino IDE: \texttt{WiFiServer} e \texttt{ESP8266WebServer}.
+
+A primeira biblioteca citada possui um tratamento em baixo nível das requisições ao servidor. Com \texttt{WiFiServer}, o desenvolvedor precisa lidar diretamente com conexões do tipo \texttt{WiFiClient}, além de interpretar e responder manualmente às mensagens do protocolo HTTP. Isso pode ser útil em aplicações que demandam controle mais preciso sobre a comunicação, mas aumenta a complexidade do código. Suas funções principais incluem \texttt{begin()}, para iniciar o servidor, \texttt{available()}, para verificar se há clientes conectados, e métodos como \texttt{client.read()} e \texttt{client.print()} para ler e enviar dados ao cliente.
+
+A segunda biblioteca é de mais alto nível, simplificando o desenvolvimento dos servidores, e não exigindo tanto conhecimento dos protocolos utilizados. Essa biblioteca consegue lidar com requisições HTTP como GET e POST \cite{ESP8266_WebServer}, o que é suficiente para este trabalho. Embora essa biblioteca só consiga atender um cliente por vez, esta não é uma limitação relevante, considerando que não foi incluída nos requisitos não funcionais do projeto. Entre suas funções principais estão \texttt{begin()}, para iniciar o servidor, \texttt{handleClient()}, que processa requisições recebidas, e os métodos \texttt{on()} e \texttt{send()}, que permitem registrar rotas e enviar respostas HTTP com facilidade. Assim, o uso da \texttt{ESP8266WebServer} contribui para um desenvolvimento mais ágil e com menos propensão a erros, sendo a escolha adotada neste projeto.
+
+No início do código, o servidor foi criado utilizando a porta 80, como mostrado em \ref{criar_servidor}.
+
+\begin{lstlisting}[label={criar_servidor},caption=Criação do servidor Web]
+    ESP8266WebServer server(80);
+\end{lstlisting}
+
+Em seguida, no \texttt{void setup()}, foram definidos os endpoints do servidor através de \texttt{server.on()} e o servidor foi inicializado com \texttt{server.begin()} como mostrado em \ref{criar_endpoints}.
+
+\begin{lstlisting}[label={criar_endpoints}, caption=Criação dos endpoints e iniciação do servidor.]
+    server.on("/status", status_sistema);
+    server.on("/config", configurar_timer);
+    server.on("/bateria", nivel_bateria);
+    server.begin();
+\end{lstlisting}
+
+Após isso, no loop principal, foi executada a função da biblioteca \texttt{ESP8266WebServer.h} que verifica se há requisições de usuários. A função para realizar essa tarefa é mostrada em \ref{ServidorHandle}.
+
+\begin{lstlisting}[label={ServidorHandle},caption=Função para tratar requisições de clientes]
+    server.handleClient();
+\end{lstlisting}
+
+\subsection{Programação Over-The-Air}
+\label{sec:ota}
+
+Para realizar a programação via WiFi, foi utilizada a biblioteca \texttt{ArduinoOTA}. Para realizar as configurações para a programação do módulo pelo OTA, foi criada a função \texttt{OTA\_Inicialization()}, mostrada em \ref{ota_init}.
+
+\begin{lstlisting}[label={ota_init}, caption=Código para programação OTA]
+void OTA_Initialization() {
+    ArduinoOTA.setHostname("meutcc");
+    ArduinoOTA.setPassword("12345");
+    ArduinoOTA.onStart([]() {
+        String type;
+        if (ArduinoOTA.getCommand() == U_FLASH) {
+            type = "sketch";
+        } else { // U_SPIFFS
+            type = "filesystem";
+        }
+        Serial.println("Iniciando atualização " + type);
+        DesligarLeds();
+    });
+    ArduinoOTA.onEnd([]() {
+        Serial.println("\nFim da atualização!");
+        LigarVerde();
+    });
+    ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
+        Serial.printf("Progresso: %u%%\r\n", (progress / (total / 100)));
+    });
+    ArduinoOTA.onError([](ota_error_t error) {
+        Serial.printf("Erro[%u]: ", error);
+        if (error == OTA_AUTH_ERROR) Serial.println("Autenticação falhou");
+        else if (error == OTA_BEGIN_ERROR) Serial.println("Erro ao iniciar");
+        else if (error == OTA_CONNECT_ERROR) Serial.println("Erro de conexão");
+        else if (error == OTA_RECEIVE_ERROR) Serial.println("Erro ao receber");
+        else if (error == OTA_END_ERROR) Serial.println("Erro ao finalizar");
+        // Sinalize um erro com os LEDs
+        ConnectionError(); // Ou uma função específica para erro OTA
+    });
+    ArduinoOTA.begin();
+    Serial.println("OTA inicializado. Aguardando atualizações...");
+}
+    
+\end{lstlisting}
+
+Para o funcionamento correto dessa funcionalidade, é necessário adicionar a função mostrada em \ref{ota_loop} no loop principal.
+
+\begin{lstlisting}[label={ota_loop},caption=Função para verificar programação por OTA]
+    ArduinoOTA.handle();
+\end{lstlisting}
+
+\subsection{Monitoramento da bateria}
+
+Para fazer o monitoramento de quando é necessário trocar as pilhas do irrigador, foi criada uma função \texttt{Estado\-Bateria()}. Seu código é mostrado em \ref{Funcao_estado_bateria}.
+
+\begin{lstlisting}[caption=Função para retorno sobre estado da bateria, label={Funcao_estado_bateria}]
+BatteryState EstadoBateria(){
+    int leitura_bateria = analogRead(PINO_ADC_BATERIA);
+    float battery_voltage = (((float) leitura_bateria)/1023.0)*FATOR_DIVISOR;
+    if(battery_voltage > VOLTAGEM_ALTA)
+    {
+        return ALTO;
+    }
+    else{
+        if(battery_voltage > VOLTAGEM_BAIXA)
+            return MEDIO;
+        else
+            return BAIXO;
+    }
+}
+    
+\end{lstlisting}
+
+O tipo BatteryState foi criado através de uma \texttt{enum}, como mostrado em \ref{enum_battery_state}.
+
+\begin{lstlisting}[caption=Definição do tipo BatteryState, label={enum_battery_state}]
+enum BatteryState{
+    ALTO,
+    MEDIO,
+    BAIXO,
+};
+\end{lstlisting}
+
+As variáveis utilizadas no código foram definidas no início do código como mostrado em \ref{variaveis_monitoramento_bateria}:
+
+\begin{lstlisting}[label={variaveis_monitoramento_bateria}, caption=Definição das variáveis no início do código]
+const int PINO_ADC_BATERIA = A0;
+const float R1 = 1000000.0;
+const float R2 = 470000.0;
+const float FATOR_DIVISOR = (R1 + R2) / R2;
+const float VOLTAGEM_ALTA = 2.80;
+const float VOLTAGEM_BAIXA = 2.30;
+\end{lstlisting}
+
+\section{Desenvolvimento do aplicativo}
+
+\subsection{Persistência das Configurações}
+
+A fim de manter as configurações criadas pelo usuário salvas, mesmo após o fechamento do aplicativo, optou-se por utilizar um banco de dados no aplicativo, através da base de dados Room. Para o funcionamento correto dessa biblioteca, as linhas de código mostradas em \ref{} devem ser adicionadas ao arquivo build.gradle.kts.
+
+\begin{lstlisting}[language=Kotlin]
+    plugins{
+    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
+    }
+    dependencies{
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler.v252)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx.v261)
+    }
+\end{lstlisting}
+
+Os códigos \ref{dados_base_kt}, \ref{data_access_kt} e \ref{entidade_dados_kt} mostram os arquivos para a criação e definição do banco de dados.
+
+\begin{lstlisting}[language=Kotlin,caption=Arquivo Dados\_Base.kt,label={dados_base_kt}]
+    @Database(
+    entities = [Configuration::class],
+    version = 1
+)
+abstract class BaseDados: RoomDatabase(){
+    abstract val ConfigurationDao: ConfigurationDao
+
+    companion object {
+        @Volatile
+        private var INSTANCE: BaseDados? = null
+
+        fun getDatabase(context: Context): BaseDados {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    BaseDados::class.java,
+                    "database"
+                ).build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Kotlin, caption=Arquivo DataAccess.kt, label={data_access_kt}]
+    @Dao
+interface ConfigurationDao{
+    @Query("SELECT * FROM configuration")
+    fun getAll(): Flow<List<Configuration>>
+
+    @Upsert
+    suspend fun upsert(num: Configuration)
+
+    @Delete
+    suspend fun delete(num: Configuration)
+
+    @Query("DELETE FROM configuration")
+    suspend fun deleteAll()
+
+    @Query("SELECT * FROM Configuration WHERE id = :id")
+    suspend fun getItemById(id: Int): Configuration?
+
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Kotlin, caption=Arquivo EntidadeDados.kt, label={entidade_dados_kt}]
+@Entity
+data class Configuration(
+    @PrimaryKey(autoGenerate = true) val id: Int=0,
+    @ColumnInfo(name = "Nome do alarme") val nomeAlarme: String,
+    @ColumnInfo(name = "Ativação") val ativo: Boolean,
+    @ColumnInfo(name = "Dias da Semana") val diasSemana: String
+)
+    
+\end{lstlisting}
+
+Foi criado também um arquivo de repositório para servir de interface do banco de dados com a ViewModel. Seu código é mostrado em \ref{repo_banco_dados}.
+
+\begin{lstlisting}[language=Kotlin, label={repo_banco_dados},caption=Arquivo Repo.kt]
+    class Repository(private val Configuration_dao : ConfigurationDao){
+    val allItems : Flow<List<Configuration>> = Configuration_dao.getAll()
+
+    suspend fun insert(num: Configuration) {
+        Configuration_dao.upsert(num)
+    }
+
+    suspend fun delete(num: Configuration) {
+        Configuration_dao.delete(num)
+    }
+
+    suspend fun getItemById(id: Int): Configuration? {
+        return Configuration_dao.getItemById(id)
+    }
+
+    suspend fun deleteAll(){
+        Configuration_dao.deleteAll()
+    }
+}
+\end{lstlisting}
+
+\section{Montagem}
+
+Para a montagem dos componentes e sua fixação na placa, foi escolhido utilizar uma placa de fenolite perfurada, devido ao seu baixo preço e fácil acesso. Apesar disso, a fabricação de uma PCB específica para esse projeto é uma melhor escolha a longo prazo, devido à maior robustez e à possibilidade de utilizar menos espaço. Contudo, devido a questões como o tempo para entrega, preço de fabricação e quantidade mínima para produção, a fabricação de uma PCB foi descartada nesse momento.
+
+\subsection{Irrigador Trato}
+
+Em relação ao irrigador da marca Trato, o espaço para montagem da placa é bastante reduzido, sendo limitado superiormente pelo local de parafusamento da placa e inferiormente pelo local dos botões. Em razão disso, a fim de se aproveitar o maior espaço possível, optou-se por utilizar a placa original da Trato como referência para o corte da placa de fenolite. A imagem \ref{fig_placa_original_trato} mostra a placa original do irrigador da Trato e a imagem \ref{fig_placa_fenolite_trato} mostra a placa de fenolite cortada com os moldes da original.
+
+\begin{figure}[htb]
+ \label{placa-trato}
+ \centering
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \caption{Placa original da Trato} \label{fig_placa_original_trato}
+    \includegraphics[scale=0.15]{imagens/PlacaOriginalTrato.jpg}
+    \legend{Fonte: Autoria própria}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \caption{Placa de fenolite utilizada} \label{fig_placa_fenolite_trato}
+    \includegraphics[scale=0.15]{imagens/PlacaFenoliteTrato.jpg}
+    \legend{Fonte: Autoria própria}
+  \end{minipage}
+\end{figure}
+
+\subsection{Irrigador Amanco}
+
+Da mesma forma que no irrigador Trato, a PCB original do irrigador da Amanco foi utilizada como molde da placa de fenolite para montagem dos componentes. Alguns locais onde a placa antiga era parafusada também foram aproveitados para a fixação da nova placa.
+
+A placa utilizada pelo irrigador da Amanco é mostrada na figura \ref{fig_placa_original_amanco}. A figura \ref{fig_placa_fenolite_amanco} mostra a placa de fenolite utilizada no projeto para substituir a placa antiga.
+
+\begin{figure}[htb]
+ \label{placa-amanco}
+ \centering
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \caption{Placa original da Amanco} \label{fig_placa_original_amanco}
+    \includegraphics[scale=0.15]{imagens/PlacaOriginalAmanco.jpg}
+    \legend{Fonte: Autoria própria}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \caption{Placa de fenolite utilizada} \label{fig_placa_fenolite_amanco}
+    \includegraphics[scale=0.15]{imagens/PlacaFenoliteAmanco.jpg}
+    \legend{Fonte: Autoria própria}
+  \end{minipage}
+\end{figure}
+
+\section{Comentários}
+
+Uma das restrições importantes encontradas nesse projeto foi a questão do espaço disponível para inserir os componentes. Caso houvesse mais espaço disponível, seria interessante adicionar um RTC externo, para despertar o módulo com mais precisão de horário.
+
+
+
+% ---
+
+
+% ----------------------------------------------------------
+% Capítulo 4 - Resultados e Discussao
+% ----------------------------------------------------------
+\chapter{Resultados e Discussão}\label{cap_resultados_discussao}
+
+% ---
+\section{Vestibulum ante ipsum primis}
+% ---
+\lipsum[19-23]
+% ---
+
+% ---
+\section{Integer porta neque vitae massa}
+% ---
+\lipsum[24-29]
+% ---
+
+% ----------------------------------------------------------
+% Capítulo 5 - Conclusões
+% ----------------------------------------------------------
+\chapter{Conclusões}\label{cap_conclusao}
+
+% ---
+\section{Pellentesque sit amet pede ac sem eleifend}
+% ---
+\lipsum[30-31]
+% ---
+\section{Phasellus id magna}
+% ---
+\lipsum[33-40]
+
+% ---
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% ---
+\bookmarksetup{startatroot}% 
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{abntex2-modelo-references}
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+\begin{apendicesenv}
+
+% Imprime uma página indicando o início dos apêndices
+\partapendices
+
+% ----------------------------------------------------------
+\chapter{Quisque libero justo}
+% ----------------------------------------------------------
+
+\lipsum[50-54]
+
+% ----------------------------------------------------------
+\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra}
+% ----------------------------------------------------------
+\lipsum[55-59]
+
+\end{apendicesenv}
+% ---
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+% Imprime uma página indicando o início dos anexos
+\partanexos
+
+% ---
+\chapter{Morbi ultrices rutrum lorem}
+% ---
+\lipsum[60]
+
+% ---
+\chapter{Cras non urna sed feugiat cum sociis natoque penatibus}
+% ---
+\lipsum[61-63]
+
+% ---
+\chapter{Fusce facilisis lacinia dui}
+% ---
+\lipsum[64-65]
+
+\end{anexosenv}
+
+\end{document}

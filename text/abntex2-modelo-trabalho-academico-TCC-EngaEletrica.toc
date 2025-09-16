@@ -1,0 +1,81 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdu\c c\~ao}}{23}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motiva\c c\~ao e justificativa}{23}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objetivos}{23}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Estado da arte}{24}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Relev\^ancia t\'ecnica}{24}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Ambiente de Desenvolvimento e Testes}{25}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Impacto e Contribui\c c\~oes do Projeto}{25}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Organiza\c c\~ao do trabalho}{25}{section.1.7}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Revis\~ao de Literatura}}{27}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Reaproveitamento}{27}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Ferramentas e Protocolos para Acesso Remoto a Dispositivos IoT}{27}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Alimenta\c c\~ao}{31}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Controle do motor DC}{32}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Monitoramento do n\IeC {\'\i }vel da bateria}{32}{section.2.5}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{33}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Levantamento de requisitos}{33}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Defini\c c\~ao do m\'etodo de programa\c c\~ao do microcontrolador}{33}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Controle dos motores}{36}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Desenvolvimento do firmware}{38}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Conex\~ao inicial do WiFi}{38}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Armazenamento das credenciais do WiFi}{40}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Criando um servidor}{43}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Programa\c c\~ao Over-The-Air}{44}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Monitoramento da bateria}{45}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Desenvolvimento do aplicativo}{46}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Persist\^encia das Configura\c c\~oes}{46}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}Montagem}{49}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Irrigador Trato}{49}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Irrigador Amanco}{49}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Coment\'arios}{50}{section.3.7}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados e Discuss\~ao}}{51}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Vestibulum ante ipsum primis}{51}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Integer porta neque vitae massa}{52}{section.4.2}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclus\~oes}}{55}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Pellentesque sit amet pede ac sem eleifend}{55}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Phasellus id magna}{55}{section.5.2}%
+\vspace {\cftbeforechapterskip }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{59}{section*.17}%
+\renewcommand *{\cftappendixname }{AP\^ENDICE \space }
+\setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
+\cftinsert {A}
+\contentsline {part}{\uppercase {Ap\^endices}}{63}{section*.18}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Quisque libero justo}}{65}{appendix.A}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra}}{67}{appendix.B}%
+\cftinsert {AAA}
+\renewcommand *{\cftappendixname }{ANEXO \space }
+\setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
+\cftinsert {A}
+\contentsline {part}{\uppercase {Anexos}}{69}{section*.19}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Morbi ultrices rutrum lorem}}{71}{appendix.anexochapback.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Cras non urna sed feugiat cum sociis natoque penatibus}}{73}{appendix.anexochapback.2}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Fusce facilisis lacinia dui}}{75}{appendix.anexochapback.3}%

@@ -1,0 +1,292 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[About {Upcycling} 2017]{UpcyclingSite}
+\abntrefinfo{About\ldots}{ABOUT\ldots}{2017}
+{ABOUT {Upcycling}. 2017.
+Dispon{\'\i}vel em: \url{https://upcyclethat.com/about-upcycling/}.}
+
+\bibitem[Arduino/libraries/{ESP8266WebServer} at master ·
+  esp8266/{Arduino}]{ESP8266_WebServer}
+\abntrefinfo{Arduino/libraries/{ESP8266WebServer}\ldots}{ARDUINO/LIBRARIES/{ESP8266WebServer}\ldots}{}
+{ARDUINO/LIBRARIES/{ESP8266WebServer} at master · esp8266/{Arduino}.
+Dispon{\'\i}vel em:
+  \url{https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WebServer}.}
+
+\bibitem[Breakout PCB for ESP8266 WIFI ESP-07 ESP-12]{ConnectionsAdapterESP12}
+\abntrefinfo{Breakout\ldots}{BREAKOUT\ldots}{}
+{BREAKOUT PCB for ESP8266 WIFI ESP-07 ESP-12.
+Dispon{\'\i}vel em:
+  \url{https://www.sunrom.com/p/breakout-pcb-for-esp8266-wifi-esp-07-esp-12}.}
+
+\bibitem[Construindo um {ESP32} de automação residencial com servidor web e
+  {EEPROM} 2025]{ServidorWebEEPROM}
+\abntrefinfo{Construindo\ldots}{CONSTRUINDO\ldots}{2025}
+{CONSTRUINDO um {ESP32} de automação residencial com servidor web e {EEPROM}.
+  2025.
+Section: ESP32 Projects.
+Dispon{\'\i}vel em:
+  \url{https://iotcircuithub.com/esp32-home-automation-with-web-server-eeprom/}.}
+
+\bibitem[Create an {Android} {App} with {Android} {Studio} to control an {LED}
+  over {WiFi} using {NodeMCU}]{AndroidStudioIoT}
+\abntrefinfo{Create\ldots}{CREATE\ldots}{}
+{CREATE an {Android} {App} with {Android} {Studio} to control an {LED} over
+  {WiFi} using {NodeMCU}.
+Dispon{\'\i}vel em:
+  \url{https://iotdesignpro.com/projects/create-android-app-with-android-studio-to-control-led-over-wifi-using-nodemcu}.}
+
+\bibitem[{EDISON SCIENCE CORNER} 2023]{IoTBatteryMonitor}
+\abntrefinfo{{EDISON SCIENCE CORNER}}{{EDISON SCIENCE CORNER}}{2023}
+{{EDISON SCIENCE CORNER}. \emph{Arduino {IoT} {Cloud} {Based} {Battery}
+  {Monitor} {\textbar} {Arduino} {IoT}}. 2023.
+Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=eNFwGSiGeyw}.}
+
+\bibitem[{Education is Life (joed goh)} 2022]{ArduinoCloudESP32}
+\abntrefinfo{{Education is Life (joed goh)}}{{Education is Life (joed
+  goh)}}{2022a}
+{{Education is Life (joed goh)}. \emph{04 {Easy} {IoT} project w/ {Arduino}
+  {IoT} {Cloud} - {ESP32} {\textbar} {DHT11} {Humidity} \& {Temperature}
+  {\textbar} {Relay} \& {DC} {Motor}}. 2022.
+Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=kcMzBV3XW2E}.}
+
+\bibitem[{Education is Life (joed goh)} 2022]{FirebaseESP32}
+\abntrefinfo{{Education is Life (joed goh)}}{{Education is Life (joed
+  goh)}}{2022b}
+{{Education is Life (joed goh)}. \emph{06. {ESP32} + {Firebase} {Realtime}
+  {Database} + {Android} {Studio} - {IoT} {Development}}. 2022.
+Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=LaUzGdtLFiQ}.}
+
+\bibitem[{EEPROM} emulation: working principle 2023]{EEPROM_STM}
+\abntrefinfo{{EEPROM}\ldots}{{EEPROM}\ldots}{2023}
+{{EEPROM} emulation: working principle. 2023.
+Section: STM32 MCUs Products.
+Dispon{\'\i}vel em:
+  \url{https://community.st.com/t5/stm32-mcus-products/eeprom-emulation-working-principle/td-p/613628}.}
+
+\bibitem[elsyscom 2018]{Elsys_LCD}
+\abntrefinfo{elsyscom}{ELSYSCOM}{2018}
+{ELSYSCOM. \emph{Painel de {LCD} e sol. {Um} não foi feito para o outro}. 2018.
+Dispon{\'\i}vel em:
+  \url{https://elsys.com/blog/painel-de-lcd-e-sol-um-nao-foi-feito-para-o-outro/}.}
+
+\bibitem[{ESP32} {Matter} {Protocol} control {Multiple} {Relays} - 2025
+  2024]{MatterProtocol}
+\abntrefinfo{{ESP32}\ldots}{{ESP32}\ldots}{2024}
+{{ESP32} {Matter} {Protocol} control {Multiple} {Relays} - 2025. 2024.
+Section: ESP32 Projects.
+Dispon{\'\i}vel em:
+  \url{https://iotcircuithub.com/esp32-matter-protocol-control-relays/}.}
+
+\bibitem[{ESP32} {Web} {Server} + {ESP}-{NOW} {Relay} control with {OLED} 2025
+  2025]{ESP-NOW_Server}
+\abntrefinfo{{ESP32}\ldots}{{ESP32}\ldots}{2025}
+{{ESP32} {Web} {Server} + {ESP}-{NOW} {Relay} control with {OLED} 2025. 2025.
+Section: ESP32 Projects.
+Dispon{\'\i}vel em:
+  \url{https://iotcircuithub.com/esp32-web-server-esp-now-relay-control-with-oled/}.}
+
+\bibitem[Filho 2009]{EngenhariaSoftware}
+\abntrefinfo{Filho}{FILHO}{2009}
+{FILHO, W. de P.~P. \emph{Engenharia de software: fundamentos, métodos e
+  padrões}. Grupo Gen - LTC, 2009.
+ISBN 978-85-216-1650-4. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=mQ4XPwAACAAJ}.}
+
+\bibitem[Freitas 2021]{EEPROM_WiFi_Salvar}
+\abntrefinfo{Freitas}{FREITAS}{2021}
+{FREITAS, G. M.~d. \emph{{ESP8266} {Salvando} {Credenciais} {Wi}-{Fi} na
+  {EEPROM} {Através} de um {Access} {Point} ({AP})}. 2021.
+Dispon{\'\i}vel em:
+  \url{https://blog.smartkits.com.br/esp8266-salvando-credenciais-wi-fi-na-eeprom-atraves-de-um-access-point-ap/}.}
+
+\bibitem[Get started with {Matter} {Protocol} using {ESP} {ZeroCode}
+  2023]{MatterZeroCode}
+\abntrefinfo{Get\ldots}{GET\ldots}{2023}
+{GET started with {Matter} {Protocol} using {ESP} {ZeroCode}. 2023.
+Section: ESP32 Projects.
+Dispon{\'\i}vel em:
+  \url{https://iotcircuithub.com/matter-protocol-using-esp-zerocode/}.}
+
+\bibitem[{GPIO} {Maximum} current {Imax} - {ESP8266} {Developer}
+  {Zone}]{CorrenteMaximaESP12}
+\abntrefinfo{{GPIO}\ldots}{{GPIO}\ldots}{}
+{{GPIO} {Maximum} current {Imax} - {ESP8266} {Developer} {Zone}.
+Dispon{\'\i}vel em: \url{http://bbs.espressif.com/viewtopic.php?t=139}.}
+
+\bibitem[Hoffmann]{RoboticaSucata}
+\abntrefinfo{Hoffmann}{HOFFMANN}{}
+{HOFFMANN, F. \emph{Débora {Garofalo}}.
+Dispon{\'\i}vel em: \url{https://deboragarofalo.com.br/robotica-com-sucata/}.}
+
+\bibitem[{How} to drive a {DC} motor without a motor driver
+  module]{DCMotorWithoutMotorDriver}
+\abntrefinfo{{How}\ldots}{{How}\ldots}{}
+{{How} to drive a {DC} motor without a motor driver module.
+Dispon{\'\i}vel em:
+  \url{https://techexplorations.com/guides/arduino/motors/dc-motor-with-transistor}.}
+
+\bibitem[{Indrek} 2020]{ProgramacaoESP12E}
+\abntrefinfo{{Indrek}}{{Indrek}}{2020}
+{{Indrek}. \emph{Programming {ESP}-{12E} / {ESP}-{12F} / {NodeMCU} {With}
+  {Arduino} {IDE} {\textbar} {Step} by {Step} {Guide}}. 2020.
+Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=\\_iX67plFeLs}.}
+
+\bibitem[{IoT Frontier} 2023]{AzureIoT}
+\abntrefinfo{{IoT Frontier}}{{IoT Frontier}}{2023}
+{{IoT Frontier}. \emph{Azure {IoT} {Project} {\textbar} {Connect} {Raspberry}
+  {Pi} and {Ultrasonic} {Sensor} with {Azure} {IoT} {Hub}}. 2023.
+Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=45vG1MZOJPM}.}
+
+\bibitem[{IoT Frontier} 2024]{ThingSpeakWokwi}
+\abntrefinfo{{IoT Frontier}}{{IoT Frontier}}{2024}
+{{IoT Frontier}. \emph{{ESP32} {IoT} {Project} with {ThingSpeak} using {Wokwi}
+  {Simulator}}. 2024.
+Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=I818NJD-7Is}.}
+
+\bibitem[{IoT Projects Ideas} 2022]{BatteryMonitorBlynk}
+\abntrefinfo{{IoT Projects Ideas}}{{IoT Projects Ideas}}{2022}
+{{IoT Projects Ideas}. \emph{{ESP8266} {Monitor} its {Own} {Battery} {Level}
+  using {Blynk} {IoT} for {Battery} {Powered} {Projects}}. 2022.
+Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=Bxc2HnGHMyg}.}
+
+\bibitem[{L298} Dual H-Bridge Motor Driver {Datasheet} 2025]{L298Datasheet}
+\abntrefinfo{{L298}\ldots}{{L298}\ldots}{2025}
+{{L298} Dual H-Bridge Motor Driver {Datasheet}. 2025.
+Section: Motor Driver Datasheets.
+Dispon{\'\i}vel em: \url{https://www.st.com/resource/en/datasheet/l298.pdf}.}
+
+\bibitem[Marshall 2017]{ConnectionsESP12E}
+\abntrefinfo{Marshall}{MARSHALL}{2017}
+{MARSHALL, I. \emph{{ESP8266} - {Breakout}!} 2017.
+Dispon{\'\i}vel em:
+  \url{https://smallbits.marshall-tribe.net/blog/2017/02/23/esp8266-breakout}.}
+
+\bibitem[Mini {Motor} {DC} 3-{6V}]{motorDCcorrente}
+\abntrefinfo{Mini\ldots}{MINI\ldots}{a}
+{MINI {Motor} {DC} 3-{6V}.
+Dispon{\'\i}vel em: \url{https://www.eletrogate.com/mini-motor-dc}.}
+
+\bibitem[Mini {Ponte} {H} {Dupla} {L298N}]{EletrogateMiniPonteH}
+\abntrefinfo{Mini\ldots}{MINI\ldots}{b}
+{MINI {Ponte} {H} {Dupla} {L298N}.
+Dispon{\'\i}vel em: \url{https://www.eletrogate.com/mini-ponte-h-dupla-l298n}.}
+
+\bibitem[Oliveira 2019]{MetaCircuitosReciclagem}
+\abntrefinfo{Oliveira}{OLIVEIRA}{2019}
+{OLIVEIRA, M. \emph{Meta-{Circuitos}: democratizando o ensino maker}. 2019.
+Section: Educação.
+Dispon{\'\i}vel em:
+  \url{https://roteirobaby.com.br/2019/12/meta-circuitos-democratizando-o-ensino-maker.html}.}
+
+\bibitem[Programming an {ESP8266} ({ESP}-12x) via a {USB} to {Serial} adaptor
+  2017]{ProgramacaoESP12_Serial}
+\abntrefinfo{Programming\ldots}{PROGRAMMING\ldots}{2017}
+{PROGRAMMING an {ESP8266} ({ESP}-12x) via a {USB} to {Serial} adaptor. 2017.
+Dispon{\'\i}vel em:
+  \url{https://www.b4x.com/android/forum/threads/programming-an-esp8266-esp-12x-via-a-usb-to-serial-adaptor.79177/}.}
+
+\bibitem[Reciclagem]{ReciclagemMMA}
+\abntrefinfo{Reciclagem}{RECICLAGEM}{}
+{RECICLAGEM.
+Dispon{\'\i}vel em:
+  \url{https://antigo.mma.gov.br/informma/item/7656-reciclagem.html}.}
+
+\bibitem[Rene et al. 2021]{Rene_LixoEletronico}
+\abntrefinfo{Rene et al.}{RENE et al.}{2021}
+{RENE, E.~R. et al. Electronic waste generation, recycling and resource
+  recovery: {Technological} perspectives and trends.
+\emph{Journal of Hazardous Materials}, v.~416, p. 125664, ago. 2021.
+ISSN 0304-3894.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/pii/S0304389421006282}.}
+
+\bibitem[RoboCore]{Fonte12_Arduino_Irrigador}
+\abntrefinfo{RoboCore}{ROBOCORE}{}
+{ROBOCORE. \emph{Irrigador {Automático} com {Arduino}}.
+Dispon{\'\i}vel em: \url{https://www.robocore.net/tutoriais/334}.}
+
+\bibitem[{Robu.in} 2024]{ThingSpeakESP32}
+\abntrefinfo{{Robu.in}}{{Robu.in}}{2024}
+{{Robu.in}. \emph{How to {Send} {Data} from {ESP32} to {ThingSpeak}: {Complete}
+  {IoT} {Project} {Guide}}. 2024.
+Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=Pr-A4f05XEs}.}
+
+\bibitem[Saddam 2016]{SistemaIrrigacao_Arduino}
+\abntrefinfo{Saddam}{SADDAM}{2016}
+{SADDAM. \emph{Arduino based {Automatic} {Plant} {Irrigation} {System} with
+  {Message} {Alert}}. 2016.
+Dispon{\'\i}vel em:
+  \url{https://circuitdigest.com/microcontroller-projects/arduino-automatic-plant-watering-system}.}
+
+\bibitem[Santos 2020]{MQTT_ESP8266}
+\abntrefinfo{Santos}{SANTOS}{2020}
+{SANTOS, R. \emph{{ESP8266} {NodeMCU} {MQTT} {Publish} {BME680} {Sensor}
+  {Readings} ({Arduino}) {\textbar} {Random} {Nerd} {Tutorials}}. 2020.
+Dispon{\'\i}vel em:
+  \url{https://randomnerdtutorials.com/esp8266-nodemcu-mqtt-publish-bme680-arduino/}.}
+
+\bibitem[Santos 2024]{ServidorESP_MotorDC}
+\abntrefinfo{Santos}{SANTOS}{2024}
+{SANTOS, R. \emph{{ESP32} {Web} {Server}: {DC} {Motor} ({Arduino} {IDE})
+  {\textbar} {Random} {Nerd} {Tutorials}}. 2024.
+Dispon{\'\i}vel em:
+  \url{https://randomnerdtutorials.com/esp32-web-server-dc-motor-arduino/}.}
+
+\bibitem[simontom/{ESP32}-{SmartConfig}-{AndroidApp}: {Shows} how e-z it is to
+  use {Esptouch} {SmartConfig} ({Android} app got from
+  https://github.com/{EspressifApp}/{EsptouchForAndroid}
+  ))]{SmartConfigAndroidApp}
+\abntrefinfo{simontom/{ESP32}-{SmartConfig}-{AndroidApp}\ldots}{SIMONTOM/{ESP32}-{SmartConfig}-{AndroidApp}\ldots}{}
+{SIMONTOM/{ESP32}-{SmartConfig}-{AndroidApp}: {Shows} how e-z it is to use
+  {Esptouch} {SmartConfig} ({Android} app got from
+  https://github.com/{EspressifApp}/{EsptouchForAndroid} )).
+Dispon{\'\i}vel em:
+  \url{https://github.com/simontom/ESP32-SmartConfig-AndroidApp/tree/master}.}
+
+\bibitem[{SmartConfig} {ESP32} {ESP}-{IDF} {Programming} {Guide} v5.4.1
+  documentation]{SmartConfigEspressif}
+\abntrefinfo{{SmartConfig}\ldots}{{SmartConfig}\ldots}{}
+{{SmartConfig} {ESP32} {ESP}-{IDF} {Programming} {Guide} v5.4.1 documentation.
+Dispon{\'\i}vel em:
+  \url{https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp\\_smartconfig.html}.}
+
+\bibitem[Sony 2025]{Sony_LCD}
+\abntrefinfo{Sony}{SONY}{2025}
+{SONY. \emph{[{Notebook}] {Observações} sobre a tela {LCD} {\textbar} {Sony}
+  {Brasil}}. 2025.
+Dispon{\'\i}vel em:
+  \url{https://www.sony.com.br/electronics/support/articles/00097792}.}
+
+\bibitem[{SriTu Hobby} 2023]{SistemaIrrigacaoBlink}
+\abntrefinfo{{SriTu Hobby}}{{SriTu Hobby}}{2023}
+{{SriTu Hobby}. \emph{How to make a plant watering system with {ESP32} board
+  and {Blynk} app \#sritu\_hobby \#esp32project}. 2023.
+Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=Ix3a3ThsHfA}.}
+
+\bibitem[{TIP122} Darlington Transistor {Datasheet} 2025]{TIP122Datasheet}
+\abntrefinfo{{TIP122}\ldots}{{TIP122}\ldots}{2025}
+{{TIP122} Darlington Transistor {Datasheet}. 2025.
+Section: Transistor Datasheets.
+Dispon{\'\i}vel em: \url{https://www.onsemi.com/pdf/datasheet/tip122-d.pdf}.}
+
+\bibitem[Trato {Temporizador} {Irrigaçao} {Automático} para {Hortas} e
+  {Jardins} {\textbar} {Amazon}.com.br]{IrrigadorTrato}
+\abntrefinfo{Trato\ldots}{TRATO\ldots}{}
+{TRATO {Temporizador} {Irrigaçao} {Automático} para {Hortas} e {Jardins}
+  {\textbar} {Amazon}.com.br.
+Dispon{\'\i}vel em:
+  \url{https://www.amazon.com.br/Temporizador-Irriga\%C3\%A7\%C3\%A3o-Program\%C3\%A1vel-Autom\%C3\%A1tico-Jardins/dp/B09NC7MQ24}.}
+
+\bibitem[{witnessmenow}]{ProgramacaoESP12}
+\abntrefinfo{{witnessmenow}}{{witnessmenow}}{}
+{{witnessmenow}. \emph{3 {Simple} {Ways} of {Programming} an {ESP8266} {12X}
+  {Module}}.
+Dispon{\'\i}vel em:
+  \url{https://www.instructables.com/3-Simple-Ways-of-Programming-an-ESP8266-12X-Module/}.}
+
+\end{thebibliography}

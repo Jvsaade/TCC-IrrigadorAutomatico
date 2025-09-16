@@ -1,0 +1,87 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: abntex2-modelo-trabalho-academico-TCC-EngaEletrica.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+The style file: abntex2-alf.bst
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Database file #1: abntex2-options.bib
+Database file #2: abntex2-modelo-references.bib
+Warning--I didn't find a database entry for "NBR6028:2003"
+Warning--I didn't find a database entry for "Baniasadi_E-Waste"
+Warning--I didn't find a database entry for "Lu_LixoEletronico"
+Warning--I didn't find a database entry for "UpcyclingSebrae"
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Warning--campo year vazio ou faltando em ESP8266_WebServer
+Warning--campo year vazio ou faltando em ConnectionsAdapterESP12
+Warning--campo year vazio ou faltando em AndroidStudioIoT
+Warning--campo year vazio ou faltando em CorrenteMaximaESP12
+Warning--campo year vazio ou faltando em RoboticaSucata
+Warning--campo year vazio ou faltando em DCMotorWithoutMotorDriver
+Warning--campo year vazio ou faltando em motorDCcorrente
+Warning--campo year vazio ou faltando em EletrogateMiniPonteH
+Warning--campo year vazio ou faltando em ReciclagemMMA
+Warning--campo year vazio ou faltando em Fonte12_Arduino_Irrigador
+Warning--campo year vazio ou faltando em SmartConfigAndroidApp
+Warning--campo year vazio ou faltando em SmartConfigEspressif
+Warning--campo year vazio ou faltando em IrrigadorTrato
+Warning--campo year vazio ou faltando em ProgramacaoESP12
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v-1.9.7           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 43 entries,
+            6714 wiz_defined-function locations,
+            1424 strings with 17430 characters,
+and the built_in function-call counts, 85947 in all, are:
+= -- 12681
+> -- 357
+< -- 2757
++ -- 3376
+- -- 117
+* -- 4436
+:= -- 10027
+add.period$ -- 144
+call.type$ -- 43
+change.case$ -- 251
+chr.to.int$ -- 44
+cite$ -- 56
+duplicate$ -- 9227
+empty$ -- 2541
+format.name$ -- 544
+if$ -- 17392
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 661
+newline$ -- 228
+num.names$ -- 110
+pop$ -- 1003
+preamble$ -- 1
+purify$ -- 131
+quote$ -- 0
+skip$ -- 11767
+stack$ -- 1
+substring$ -- 3880
+swap$ -- 3087
+text.length$ -- 44
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 227
+warning$ -- 14
+while$ -- 222
+width$ -- 0
+write$ -- 576
+(There were 18 warnings)
