@@ -53,3 +53,15 @@ bool alarmExists(const String& nome) {
     }
     return false;
 }
+
+int findTime(int hora, int minuto){
+    DynamicJsonDocument doc(1024);
+    if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
+    if (!doc.is<JsonArray>()) return false;
+    for (JsonObject a : doc.as<JsonArray>()) {
+        if (a["hora"].as<int>() == hora and a["minuto"].as<int>() == minuto and a["ativo"].as<bool>() == true) {
+            return a["duracao"].as<int>();
+        }
+    }
+    return 0;
+}

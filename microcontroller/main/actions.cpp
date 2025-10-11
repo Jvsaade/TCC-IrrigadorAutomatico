@@ -24,3 +24,7 @@ void LigarAzul() {
     digitalWrite(LedVerde, LOW);
     digitalWrite(LedAzul, HIGH);
 }
+
+void Irrigation(int duracao){
+
+}

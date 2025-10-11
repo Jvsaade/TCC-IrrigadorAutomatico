@@ -16,4 +16,6 @@ bool removeAlarm(const String& nome);
 
 bool alarmExists(const String& nome);
 
+int findTime(int hora, int minuto);
+
 #endif

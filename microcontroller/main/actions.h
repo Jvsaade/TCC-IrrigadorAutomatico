@@ -14,5 +14,6 @@ void MotorSentidoHorario();
 void DesligarLeds();
 void LigarVerde();
 void LigarAzul();
+void Irrigation(int duracao);
 
 #endif

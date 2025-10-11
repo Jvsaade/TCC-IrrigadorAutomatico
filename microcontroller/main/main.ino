@@ -9,12 +9,13 @@
 #include "callMeBot.h"
 #include "alarm.h"
 #include "servidor.h"
+#include "horario.h"
 
 
 #define MAX_STRING_LENGTH 64 // Aumentado para dar mais folga (pode ser 32 se preferir, mas 64 é mais seguro)
 
 const int erroPin = 14;
-#define DEEPSLEEP_TIMEOUT 5*60000 // 30 segundos para DeepSleep
+#define DEEPSLEEP_TIMEOUT 2*60000 // 30 segundos para DeepSleep
 #if DEEPSLEEP_TIMEOUT < 60000
   #error "O valor deve ser maior que 60.000"
 #endif
@@ -109,14 +110,17 @@ void setup() {
     contagem = millis();
 
     CallMeBotConfig();
+    setupTime();
+
+    if(EstadoBateria()==BAIXO)
+        enviarMensagem("Bateria baixa! Troque quando possível.");
+
 }
 
 void loop() {
     MDNS.update();
     ArduinoOTA.handle();
     server.handleClient();
-    if(EstadoBateria()==BAIXO)
-        enviarMensagem("Bateria baixa! Troque quando possível.");
     
     delay(2000);
     LigarAzul();
@@ -124,6 +128,10 @@ void loop() {
     DesligarLeds();
     delay(2000);
     LigarVerde();
+
+    int duracao = checkSchedule();
+    if(duracao != 0)
+        Irrigation(duracao);
 
     /* 
     Entra em deepsleep quando passarem DEEPSLEEP_TIMEOUT milisegundos desde que ele entrou no loop.
