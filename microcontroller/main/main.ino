@@ -126,8 +126,10 @@ void loop() {
     LigarAzul();
     delay(2000);
     DesligarLeds();
+    MotorSentidoHorario(500);
     delay(2000);
     LigarVerde();
+    MotorSentidoAntiHorario(500);
 
     int duracao = checkSchedule();
     if(duracao != 0)

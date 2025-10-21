@@ -5,12 +5,11 @@
 
 const int LedVerde = 4;
 const int LedAzul = 5;
-const int motorIn1 = 13;
+const int motorIn1 = 14;
 const int motorIn2 = 12;
-const bool sentido = HIGH;
 
-void MotorSentidoAntiHorario();
-void MotorSentidoHorario();
+void MotorSentidoAntiHorario(int velocidade);
+void MotorSentidoHorario(int velocidade);
 void DesligarLeds();
 void LigarVerde();
 void LigarAzul();
