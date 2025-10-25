@@ -19,8 +19,11 @@ void setAlarm(){
   a["ativo"] = doc["ativo"].as<String>();
   a["dias"] = doc["diasSemana"].as<String>();
   saveJsonToFile(ALARM_FILE, data);
+  Serial.print("Alarme adicionado. Nome: "); Serial.println(nome);
+  Serial.print("Hora: "); Serial.println(a["hora"].as<String>());
+  Serial.print("Minuto: "); Serial.println(a["minuto"].as<String>());
+  Serial.print("Duração: "); Serial.println(a["duracao"].as<String>());
   server.send(200, "text/plain", "Criado");
-
 }
 
 void editAlarm(){

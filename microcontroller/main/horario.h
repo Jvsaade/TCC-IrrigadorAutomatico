@@ -7,7 +7,7 @@
 
 extern const char* ntpServer;
 const long gmtOffset_sec = -3*3600;
-const int daylightOffset_sec = 3600;
+const int daylightOffset_sec = 0;
 
 extern struct tm timeinfo;
 

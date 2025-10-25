@@ -31,5 +31,5 @@ void LigarAzul() {
 }
 
 void Irrigation(int duracao){
-
+    Serial.print("Irrigação iniciada por "); Serial.print(duracao); Serial.println(" minutos");
 }

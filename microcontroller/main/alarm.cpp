@@ -59,9 +59,12 @@ int findTime(int hora, int minuto){
     if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
     if (!doc.is<JsonArray>()) return false;
     for (JsonObject a : doc.as<JsonArray>()) {
-        if (a["hora"].as<int>() == hora and a["minuto"].as<int>() == minuto and a["ativo"].as<bool>() == true) {
+        if (a["hora"].as<int>() == hora and a["minuto"].as<int>() == minuto and a["ativo"].as<String>() == "true") {
+            Serial.println("Horário encontrado!");
+            Serial.print("Duração do alarme: "); Serial.println(a["duracao"].as<int>());
             return a["duracao"].as<int>();
         }
     }
+    Serial.println("Horário não encontrado...");
     return 0;
 }

@@ -13,6 +13,7 @@ bool getCurrentTime(int &hora, int &minuto) {
   }
   hora = timeinfo.tm_hour;
   minuto = timeinfo.tm_min;
+  Serial.print("Hora local: "); Serial.print(hora); Serial.print(":"); Serial.println(minuto);
   return true;
 }
 
