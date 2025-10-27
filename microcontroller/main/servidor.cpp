@@ -82,6 +82,13 @@ void deleteAll(){
 
 }
 
+void consultAlarm(){
+  if (!server.hasArg("name")) return server.send(400, "text/plain", "Faltando nome");
+  Serial.println("Consultando alarme...");
+  if (alarmExists(server.arg("name"))) server.send(200, "text/plain", "True");
+  else server.send(200, "text/plain", "False");
+}
+
 void inicializarServidor(){
   server.on("/setAlarm", HTTP_POST, setAlarm); // Adicionado HTTP_POST
   server.on("/editAlarm", HTTP_POST, editAlarm); // Adicionado HTTP_POST
@@ -89,5 +96,6 @@ void inicializarServidor(){
   server.on("/deleteAll", HTTP_POST, deleteAll); // Adicionado HTTP_POST
   server.on("/deactivateAlarm", HTTP_POST, deactivateAlarm); // Adicionado HTTP_POST
   server.on("/activateAlarm", HTTP_POST, activateAlarm); // Adicionado HTTP_POST
+  server.on("/consultAlarm", consultAlarm);
 
 }

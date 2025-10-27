@@ -13,6 +13,7 @@ extern struct tm timeinfo;
 
 void setupTime();
 bool getCurrentTime(int &hora, int &minuto);
+void erroHorario();
 int checkSchedule();
 
 #endif

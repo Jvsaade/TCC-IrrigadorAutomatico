@@ -15,6 +15,8 @@ void deleteAlarm();
 
 void activateAlarm();
 
+void consultAlarm();
+
 void deleteAll();
 
 void inicializarServidor();
