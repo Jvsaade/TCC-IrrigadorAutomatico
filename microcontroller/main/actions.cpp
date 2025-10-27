@@ -1,6 +1,6 @@
 #include "actions.h"
 
-void MotorSentidoAntiHorario(int velocidade) {
+void MotorSentidoAntiHorario(int velocidade, int tempo) {
     digitalWrite(motorIn1, LOW);
     analogWrite(motorIn2, velocidade);
     delay(100);
@@ -8,10 +8,10 @@ void MotorSentidoAntiHorario(int velocidade) {
 
 }
 
-void MotorSentidoHorario(int velocidade) {
+void MotorSentidoHorario(int velocidade, int tempo) {
     analogWrite(motorIn1, velocidade);
     digitalWrite(motorIn2, LOW);
-    delay(100);
+    delay(tempo);
     digitalWrite(motorIn1, LOW);
 }
 
@@ -30,6 +30,19 @@ void LigarAzul() {
     digitalWrite(LedAzul, HIGH);
 }
 
+void AbrirValvula(){
+    MotorSentidoAntiHorario(500, 100);
+}
+
+void FecharValvula(){
+    MotorSentidoHorario(500, 100);
+}
+
 void Irrigation(int duracao){
     Serial.print("Irrigação iniciada por "); Serial.print(duracao); Serial.println(" minutos");
+    AbrirValvula();
+    delay((duracao*1e3)*60);
+    FecharValvula();
+    Serial.print("Irrigação finalizada.");
+
 }
