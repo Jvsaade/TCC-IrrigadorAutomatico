@@ -15,5 +15,6 @@ void setupTime();
 bool getCurrentTime(int &hora, int &minuto);
 void erroHorario();
 int checkSchedule();
+int tempoDeepSleep();
 
 #endif

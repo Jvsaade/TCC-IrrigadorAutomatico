@@ -68,3 +68,34 @@ int findTime(int hora, int minuto){
     Serial.println("Horário não encontrado...");
     return 0;
 }
+
+int nearestSchedule(int hora, int minuto) {
+    DynamicJsonDocument doc(1024);
+    // Se não conseguir carregar o arquivo, retorna 1
+    if (!loadJsonFromFile(ALARM_FILE, doc)) return 1;
+    // Se não for um array JSON, retorna 1
+    if (!doc.is<JsonArray>()) return 1;
+    JsonArray alarmes = doc.as<JsonArray>();
+    // Se o array estiver vazio, retorna 1
+    if (alarmes.size() == 0) return 1;
+    int menorDiferenca = 24 * 60; // Valor máximo em minutos (1 dia)
+    int alarmeMaisProximo = 1; // Valor padrão se não encontrar
+    for (JsonObject alarme : alarmes) {
+        int horaAlarme = alarme["hora"].as<int>();
+        int minutoAlarme = alarme["minuto"].as<int>();
+        // Calcula diferença em minutos
+        int minutosAtuais = hora * 60 + minuto;
+        int minutosAlarme = horaAlarme * 60 + minutoAlarme;
+        int diferenca = minutosAlarme - minutosAtuais;
+        // Se a diferença for negativa, significa que o alarme é para o dia seguinte
+        if (diferenca < 0) {
+            diferenca += 24 * 60; // Adiciona um dia em minutos
+        }
+        // Encontra o alarme mais próximo
+        if (diferenca < menorDiferenca) {
+            menorDiferenca = diferenca;
+            alarmeMaisProximo = menorDiferenca; // Retorna a diferença em minutos
+        }
+    }
+    return alarmeMaisProximo;
+}
