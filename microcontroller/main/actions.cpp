@@ -1,17 +1,28 @@
 #include "actions.h"
 
-void MotorSentidoAntiHorario(int velocidade, int tempo) {
+void MotorSentidoAntiHorario(int velocidade) {
     digitalWrite(motorIn1, LOW);
     analogWrite(motorIn2, velocidade);
-    delay(100);
+    int tempoInicial = millis();
+    while(millis()-tempoInicial < 1e3 or digitalRead(stopPin) == LOW){
+        LigarVerde();
+        delay(1000);
+        LigarAzul();
+        delay(100);
+    }
     digitalWrite(motorIn2, LOW);
-
 }
 
-void MotorSentidoHorario(int velocidade, int tempo) {
+void MotorSentidoHorario(int velocidade) {
     analogWrite(motorIn1, velocidade);
     digitalWrite(motorIn2, LOW);
-    delay(tempo);
+    int tempoInicial = millis();
+    while(millis()-tempoInicial < 1e3 or digitalRead(stopPin) == LOW){
+        LigarVerde();
+        delay(1000);
+        LigarAzul();
+        delay(100);
+    }
     digitalWrite(motorIn1, LOW);
 }
 
@@ -31,11 +42,11 @@ void LigarAzul() {
 }
 
 void AbrirValvula(){
-    MotorSentidoAntiHorario(500, 100);
+    MotorSentidoAntiHorario(500);
 }
 
 void FecharValvula(){
-    MotorSentidoHorario(500, 100);
+    MotorSentidoHorario(500);
 }
 
 void Irrigation(int duracao){

@@ -7,9 +7,10 @@ const int LedVerde = 4;
 const int LedAzul = 5;
 const int motorIn1 = 14;
 const int motorIn2 = 12;
+const int stopPin = 13;
 
-void MotorSentidoAntiHorario(int velocidade, int tempo);
-void MotorSentidoHorario(int velocidade, int tempo);
+void MotorSentidoAntiHorario(int velocidade);
+void MotorSentidoHorario(int velocidade);
 void DesligarLeds();
 void LigarVerde();
 void LigarAzul();

@@ -14,7 +14,6 @@
 
 #define MAX_STRING_LENGTH 64 // Aumentado para dar mais folga (pode ser 32 se preferir, mas 64 é mais seguro)
 
-const int erroPin = 14;
 #define DEEPSLEEP_TIMEOUT 2*60000 // 30 segundos para DeepSleep
 #if DEEPSLEEP_TIMEOUT < 60000
   #error "O valor deve ser maior que 60.000"
@@ -58,7 +57,7 @@ void setup() {
     pinMode(LedAzul, OUTPUT);
     pinMode(motorIn1, OUTPUT);
     pinMode(motorIn2, OUTPUT);
-    pinMode(erroPin, INPUT); // erroPin como INPUT, ok
+    pinMode(stopPin, INPUT);
 
     Serial.println("\nIniciando...");
 
@@ -126,10 +125,10 @@ void loop() {
     LigarAzul();
     delay(2000);
     DesligarLeds();
-    MotorSentidoHorario(500, 100);
+    MotorSentidoHorario(500);
     delay(2000);
     LigarVerde();
-    MotorSentidoAntiHorario(500, 100);
+    MotorSentidoAntiHorario(500);
 
     int duracao = checkSchedule();
     if(duracao != 0)
