@@ -36,3 +36,16 @@ int checkSchedule(){
   }
   return 0;
 }
+
+/*
+  @brief Calcula o tempo em minutos para o microcontrolador ficar em deepsleep
+  @return Tempo em minutos para o DeepSleep
+*/
+
+int tempoDeepSleep(){
+  int horaAtual, minutoAtual;
+  if(!getCurrentTime(horaAtual, minutoAtual))
+    return 1;
+  return nearestSchedule(horaAtual, minutoAtual)*1e6;
+}
+

@@ -134,6 +134,7 @@ void loop() {
     if(duracao != 0)
         Irrigation(duracao);
 
+    Serial.print("O próximo alarme está a ");Serial.print(tempoDeepSleep());Serial.println(" milisegundos a frente no tempo.");
     /* 
     Entra em deepsleep quando passarem DEEPSLEEP_TIMEOUT milisegundos desde que ele entrou no loop.
     OBS: DEEPSLEEP_TIMEOUT não pode ser um número muito pequeno, pois deve ter tempo suficiente para
@@ -141,7 +142,19 @@ void loop() {
     */
 
     if (millis() - contagem > DEEPSLEEP_TIMEOUT) {
-        Serial.println("Entrando em deepsleep por 15 segundos");
-        ESP.deepSleep(15e6);
+        int wait = tempoDeepSleep();
+        if (wait > 5e6){
+            ESP.deepSleep(wait);
+            Serial.print("Entrando em DeepSleep por "); Serial.print(wait/60e6); Serial.println(" minutos.");
+        }
+        else {
+            contagem += 6e3*60; 
+        }
     }
+
+    // if (millis() - contagem > DEEPSLEEP_TIMEOUT) {
+    //     Serial.println("Entrando em deepsleep por 15 segundos");
+    //     ESP.deepSleep(15e6);
+    // }
 }
+
