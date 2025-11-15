@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
-#include <String.h> // Não é estritamente necessário para LittleFS, mas mantém compatibilidade
+#include <String.h>
 
 
 #include "bateria.h"
@@ -12,10 +12,10 @@
 #include "horario.h"
 
 
-#define MAX_STRING_LENGTH 64 // Aumentado para dar mais folga (pode ser 32 se preferir, mas 64 é mais seguro)
+#define MAX_STRING_LENGTH 64
 
 const int erroPin = 14;
-#define DEEPSLEEP_TIMEOUT 2*60000 // 30 segundos para DeepSleep
+#define DEEPSLEEP_TIMEOUT 3*60000
 #if DEEPSLEEP_TIMEOUT < 60000
   #error "O valor deve ser maior que 60.000"
 #endif
@@ -115,21 +115,35 @@ void setup() {
     if(EstadoBateria()==BAIXO)
         enviarMensagem("Bateria baixa! Troque quando possível.");
 
+    // Variáveis de controle de tempo
+
 }
 
 void loop() {
     MDNS.update();
+    static unsigned long lastCheck = 0;
+    if (millis() - lastCheck > 30000) { // A cada 30 segundos
+      lastCheck = millis();
+      MDNS.announce();
+    }
     ArduinoOTA.handle();
     server.handleClient();
     
     delay(2000);
+
     LigarAzul();
+
     delay(2000);
+
     DesligarLeds();
-    MotorSentidoHorario(500, 100);
+
+    MotorSentidoHorario(800, 1000);
+
     delay(2000);
+
     LigarVerde();
-    MotorSentidoAntiHorario(500, 100);
+
+    MotorSentidoAntiHorario(800, 1000); 
 
     int duracao = checkSchedule();
     if(duracao != 0)

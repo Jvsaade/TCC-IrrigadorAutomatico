@@ -51,6 +51,7 @@
 \contentsline {subsection}{\numberline {4.2.1}Adi\c c\~ao de alarme}{58}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Envio do alarme}{58}{subsection.4.2.2}%
 \contentsline {subsubsection}{\numberline {4.2.2.1}Erro de envio}{58}{subsubsection.4.2.2.1}%
+\contentsline {subsection}{\numberline {4.2.3}Exclus\~ao do alarme}{59}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}Integer porta neque vitae massa}{59}{section.4.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclus\~oes}}{63}{chapter.5}%

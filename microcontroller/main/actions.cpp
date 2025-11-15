@@ -3,7 +3,7 @@
 void MotorSentidoAntiHorario(int velocidade, int tempo) {
     digitalWrite(motorIn1, LOW);
     analogWrite(motorIn2, velocidade);
-    delay(100);
+    delay(tempo);
     digitalWrite(motorIn2, LOW);
 
 }
@@ -31,18 +31,26 @@ void LigarAzul() {
 }
 
 void AbrirValvula(){
-    MotorSentidoAntiHorario(500, 100);
+    MotorSentidoAntiHorario(200, 200);
 }
 
 void FecharValvula(){
-    MotorSentidoHorario(500, 100);
+    MotorSentidoHorario(200, 200);
 }
 
 void Irrigation(int duracao){
     Serial.print("Irrigação iniciada por "); Serial.print(duracao); Serial.println(" minutos");
     AbrirValvula();
-    delay((duracao*1e3)*60);
-    FecharValvula();
+    unsigned long count = millis();
+    while(millis()-count < (duracao*1e3)*60){
+        LigarAzul();
+        delay(100);
+        DesligarLeds();
+        LigarVerde();
+        delay(1000);
+        DesligarLeds();
+    }
     Serial.print("Irrigação finalizada.");
+    FecharValvula();
 
 }

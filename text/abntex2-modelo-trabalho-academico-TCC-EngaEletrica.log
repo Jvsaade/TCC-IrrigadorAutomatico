@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.23)  15 NOV 2025 08:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.23)  15 NOV 2025 09:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1087,9 +1087,9 @@ Users/jvsaa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
 
 [21]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 65.
+(Font)              <14.4> on input line 66.
 
-Overfull \hbox (6.8837pt too wide) in paragraph at lines 73--73
+Overfull \hbox (6.8837pt too wide) in paragraph at lines 74--74
  [][] [][][]\T1/lmss/bx/n/12 NULLAM ELE-MEN-TUM URNA VEL IM-PER-DIET 
  []
 
@@ -1190,13 +1190,13 @@ Package hyperref Warning: Suppressing empty link on input line 567.
 [33
 
 ]
-<imagens/BasicConnectionsESP-12E.png, id=499, 642.4pt x 381.425pt>
+<imagens/BasicConnectionsESP-12E.png, id=501, 642.4pt x 381.425pt>
 File: imagens/BasicConnectionsESP-12E.png Graphic file (type png)
 <use imagens/BasicConnectionsESP-12E.png>
 Package pdftex.def Info: imagens/BasicConnectionsESP-12E.png  used on input lin
 e 599.
 (pdftex.def)             Requested size: 273.00278pt x 162.10056pt.
-<imagens/ESP12_Adapter.jpg, id=506, 953.5625pt x 442.65375pt>
+<imagens/ESP12_Adapter.jpg, id=508, 953.5625pt x 442.65375pt>
 File: imagens/ESP12_Adapter.jpg Graphic file (type jpg)
 <use imagens/ESP12_Adapter.jpg>
 Package pdftex.def Info: imagens/ESP12_Adapter.jpg  used on input line 609.
@@ -1211,7 +1211,7 @@ Package hyperref Warning: Suppressing empty link on input line 610.
 
 
 [34]
-<imagens/PlacaFenoliteFRENTE.jpg, id=522, 9282.68pt x 6962.01pt>
+<imagens/PlacaFenoliteFRENTE.jpg, id=524, 9282.68pt x 6962.01pt>
 File: imagens/PlacaFenoliteFRENTE.jpg Graphic file (type jpg)
 <use imagens/PlacaFenoliteFRENTE.jpg>
 Package pdftex.def Info: imagens/PlacaFenoliteFRENTE.jpg  used on input line 62
@@ -1222,7 +1222,7 @@ Overfull \hbox (3.69557pt too wide) in paragraph at lines 625--626
  [][] 
  []
 
-<imagens/PlacaFenoliteVERSO.jpg, id=523, 9282.68pt x 6962.01pt>
+<imagens/PlacaFenoliteVERSO.jpg, id=525, 9282.68pt x 6962.01pt>
 File: imagens/PlacaFenoliteVERSO.jpg Graphic file (type jpg)
 <use imagens/PlacaFenoliteVERSO.jpg>
 Package pdftex.def Info: imagens/PlacaFenoliteVERSO.jpg  used on input line 632
@@ -1248,7 +1248,7 @@ Package hyperref Warning: Suppressing empty link on input line 647.
 
 
 [36 <./imagens/PlacaFenoliteFRENTE.jpg> <./imagens/PlacaFenoliteVERSO.jpg>]
-<imagens/CircuitoPonteH.png, id=549, 1293.83376pt x 681.54625pt>
+<imagens/CircuitoPonteH.png, id=551, 1293.83376pt x 681.54625pt>
 File: imagens/CircuitoPonteH.png Graphic file (type png)
 <use imagens/CircuitoPonteH.png>
 Package pdftex.def Info: imagens/CircuitoPonteH.png  used on input line 659.
@@ -1296,7 +1296,7 @@ i-bli-o-teca \T1/lmtt/m/n/12 ESP8266WebServer.h
 [44]
 
 [45]
-<imagens/DesgargaPilha.png, id=767, 823.075pt x 572.1375pt>
+<imagens/DesgargaPilha.png, id=769, 823.075pt x 572.1375pt>
 File: imagens/DesgargaPilha.png Graphic file (type png)
 <use imagens/DesgargaPilha.png>
 Package pdftex.def Info: imagens/DesgargaPilha.png  used on input line 969.
@@ -1328,19 +1328,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [50]
 
 [51]
-<imagens/PlacaOriginalTrato.jpg, id=964, 1204.5pt x 1606.0pt>
+<imagens/PlacaOriginalTrato.jpg, id=966, 1204.5pt x 1606.0pt>
 File: imagens/PlacaOriginalTrato.jpg Graphic file (type jpg)
 <use imagens/PlacaOriginalTrato.jpg>
 Package pdftex.def Info: imagens/PlacaOriginalTrato.jpg  used on input line 117
 8.
 (pdftex.def)             Requested size: 180.6672pt x 240.8896pt.
-<imagens/PlacaFenoliteTrato.jpg, id=965, 1204.5pt x 1606.0pt>
+<imagens/PlacaFenoliteTrato.jpg, id=967, 1204.5pt x 1606.0pt>
 File: imagens/PlacaFenoliteTrato.jpg Graphic file (type jpg)
 <use imagens/PlacaFenoliteTrato.jpg>
 Package pdftex.def Info: imagens/PlacaFenoliteTrato.jpg  used on input line 118
 5.
 (pdftex.def)             Requested size: 180.6672pt x 240.8896pt.
-<imagens/EsquematicoTrato.png, id=967, 443.85825pt x 275.8305pt>
+<imagens/EsquematicoTrato.png, id=969, 443.85825pt x 275.8305pt>
 File: imagens/EsquematicoTrato.png Graphic file (type png)
 <use imagens/EsquematicoTrato.png>
 Package pdftex.def Info: imagens/EsquematicoTrato.png  used on input line 1195.
@@ -1350,7 +1350,7 @@ Package pdftex.def Info: imagens/EsquematicoTrato.png  used on input line 1195.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagens/PlacaOriginalAmanco.jpg, id=970, 1606.0pt x 1204.5pt>
+<imagens/PlacaOriginalAmanco.jpg, id=972, 1606.0pt x 1204.5pt>
 File: imagens/PlacaOriginalAmanco.jpg Graphic file (type jpg)
 <use imagens/PlacaOriginalAmanco.jpg>
 Package pdftex.def Info: imagens/PlacaOriginalAmanco.jpg  used on input line 12
@@ -1361,7 +1361,7 @@ Overfull \hbox (13.3896pt too wide) in paragraph at lines 1212--1213
  [][] 
  []
 
-<imagens/PlacaFenoliteAmanco.jpg, id=971, 1606.0pt x 1204.5pt>
+<imagens/PlacaFenoliteAmanco.jpg, id=973, 1606.0pt x 1204.5pt>
 File: imagens/PlacaFenoliteAmanco.jpg Graphic file (type jpg)
 <use imagens/PlacaFenoliteAmanco.jpg>
 Package pdftex.def Info: imagens/PlacaFenoliteAmanco.jpg  used on input line 12
@@ -1375,7 +1375,7 @@ Overfull \hbox (13.3896pt too wide) in paragraph at lines 1219--1220
 
 
 [52]
-<imagens/AmancoFrentePCB.png, id=979, 531.1845pt x 371.58826pt>
+<imagens/AmancoFrentePCB.png, id=981, 531.1845pt x 371.58826pt>
 File: imagens/AmancoFrentePCB.png Graphic file (type png)
 <use imagens/AmancoFrentePCB.png>
 Package pdftex.def Info: imagens/AmancoFrentePCB.png  used on input line 1234.
@@ -1385,7 +1385,7 @@ Overfull \hbox (45.71037pt too wide) in paragraph at lines 1234--1235
  [][] 
  []
 
-<imagens/AmancoVersoPCB.png, id=980, 531.1845pt x 368.577pt>
+<imagens/AmancoVersoPCB.png, id=982, 531.1845pt x 368.577pt>
 File: imagens/AmancoVersoPCB.png Graphic file (type png)
 <use imagens/AmancoVersoPCB.png>
 Package pdftex.def Info: imagens/AmancoVersoPCB.png  used on input line 1241.
@@ -1404,13 +1404,13 @@ Overfull \hbox (45.71037pt too wide) in paragraph at lines 1241--1242
 [55 <./imagens/PlacaOriginalAmanco.jpg> <./imagens/PlacaFenoliteAmanco.jpg>]
 
 [56 <./imagens/AmancoFrentePCB.png> <./imagens/AmancoVersoPCB.png>]
-<imagens/IrrigadorTratoAberto.jpg, id=1003, 1284.8pt x 963.6pt>
+<imagens/IrrigadorTratoAberto.jpg, id=1005, 1284.8pt x 963.6pt>
 File: imagens/IrrigadorTratoAberto.jpg Graphic file (type jpg)
 <use imagens/IrrigadorTratoAberto.jpg>
 Package pdftex.def Info: imagens/IrrigadorTratoAberto.jpg  used on input line 1
 271.
 (pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
-<imagens/IrrigadorTratoFechado.jpg, id=1004, 1284.8pt x 963.6pt>
+<imagens/IrrigadorTratoFechado.jpg, id=1006, 1284.8pt x 963.6pt>
 File: imagens/IrrigadorTratoFechado.jpg Graphic file (type jpg)
 <use imagens/IrrigadorTratoFechado.jpg>
 Package pdftex.def Info: imagens/IrrigadorTratoFechado.jpg  used on input line 
@@ -1424,12 +1424,12 @@ Underfull \vbox (badness 3375) has occurred while \output is active []
 [57
 
  <./imagens/IrrigadorTratoAberto.jpg> <./imagens/IrrigadorTratoFechado.jpg>]
-<imagens/TelaInicialApp.jpg, id=1012, 542.025pt x 1204.5pt>
+<imagens/TelaInicialApp.jpg, id=1014, 542.025pt x 1204.5pt>
 File: imagens/TelaInicialApp.jpg Graphic file (type jpg)
 <use imagens/TelaInicialApp.jpg>
 Package pdftex.def Info: imagens/TelaInicialApp.jpg  used on input line 1297.
 (pdftex.def)             Requested size: 108.40308pt x 240.89574pt.
-<imagens/TelaAdicaoApp.jpg, id=1013, 542.025pt x 1204.5pt>
+<imagens/TelaAdicaoApp.jpg, id=1015, 542.025pt x 1204.5pt>
 File: imagens/TelaAdicaoApp.jpg Graphic file (type jpg)
 <use imagens/TelaAdicaoApp.jpg>
 Package pdftex.def Info: imagens/TelaAdicaoApp.jpg  used on input line 1303.
@@ -1444,13 +1444,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1308--1308
 \T1/lmr/m/n/12 após cri-a-ção
  []
 
-<imagens/TelaInicialAposAdicaoApp.jpg, id=1014, 542.025pt x 1204.5pt>
+<imagens/TelaInicialAposAdicaoApp.jpg, id=1016, 542.025pt x 1204.5pt>
 File: imagens/TelaInicialAposAdicaoApp.jpg Graphic file (type jpg)
 <use imagens/TelaInicialAposAdicaoApp.jpg>
 Package pdftex.def Info: imagens/TelaInicialAposAdicaoApp.jpg  used on input li
 ne 1309.
 (pdftex.def)             Requested size: 108.40308pt x 240.89574pt.
-<imagens/TelaInicialAposEnvioApp.jpg, id=1016, 722.7pt x 1606.0pt>
+<imagens/TelaInicialAposEnvioApp.jpg, id=1018, 722.7pt x 1606.0pt>
 File: imagens/TelaInicialAposEnvioApp.jpg Graphic file (type jpg)
 <use imagens/TelaInicialAposEnvioApp.jpg>
 Package pdftex.def Info: imagens/TelaInicialAposEnvioApp.jpg  used on input lin
@@ -1463,7 +1463,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [58 <./imagens/TelaInicialApp.jpg> <./imagens/TelaAdicaoApp.jpg> <./imagens/Tel
 aInicialAposAdicaoApp.jpg>]
-<imagens/ErroSemInternetApp.jpg, id=1022, 542.025pt x 1204.5pt>
+<imagens/ErroSemInternetApp.jpg, id=1024, 542.025pt x 1204.5pt>
 File: imagens/ErroSemInternetApp.jpg Graphic file (type jpg)
 <use imagens/ErroSemInternetApp.jpg>
 Package pdftex.def Info: imagens/ErroSemInternetApp.jpg  used on input line 133
@@ -1476,9 +1476,6 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 [59 <./imagens/TelaInicialAposEnvioApp.jpg>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [60 <./imagens/ErroSemInternetApp.jpg>]
 
@@ -1517,7 +1514,7 @@ bibitemlist
 [70]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 1384.
+(hyperref)                removing `\uppercase' on input line 1388.
 
 
 
@@ -1547,7 +1544,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [76]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 1410.
+(hyperref)                removing `\uppercase' on input line 1414.
 
 
 
@@ -1598,10 +1595,10 @@ etrica.brf' has not changed.
 (rerunfilecheck)             Checksum: 630702C42A8A7348FA7FD6D3D5B1BCF8;3892.
  ) 
 Here is how much of TeX's memory you used:
- 21649 strings out of 468134
- 355377 string characters out of 5430740
+ 21651 strings out of 468134
+ 355399 string characters out of 5430740
  1174857 words of memory out of 5000000
- 49318 multiletter control sequences out of 15000+600000
+ 49319 multiletter control sequences out of 15000+600000
  706711 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,107p,1152b,2180s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1624,9 +1621,9 @@ sers/jvsaa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:
 /Users/jvsaa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:
 /Users/jvsaa/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
 Output written on abntex2-modelo-trabalho-academico-TCC-EngaEletrica.pdf (85 pa
-ges, 27016203 bytes).
+ges, 27017141 bytes).
 PDF statistics:
- 1629 PDF objects out of 1728 (max. 8388607)
- 560 named destinations out of 1000 (max. 500000)
- 633 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1634 PDF objects out of 1728 (max. 8388607)
+ 561 named destinations out of 1000 (max. 500000)
+ 641 words of extra memory for PDF output out of 10000 (max. 10000000)
 
