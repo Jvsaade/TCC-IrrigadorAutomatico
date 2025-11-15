@@ -4,7 +4,18 @@
 \contentsline {figure}{\numberline {3}{\ignorespaces Frente da placa de fenolite}}{36}{figure.3.3}%
 \contentsline {figure}{\numberline {4}{\ignorespaces Verso da placa de fenolite}}{36}{figure.3.4}%
 \contentsline {figure}{\numberline {5}{\ignorespaces Circuito interno do L298}}{37}{figure.3.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Placa original da Trato}}{49}{figure.3.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Placa de fenolite utilizada}}{49}{figure.3.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Placa original da Amanco}}{50}{figure.3.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Placa de fenolite utilizada}}{50}{figure.3.9}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Curva de descarga de uma pilha Alcalina \cite {Duracell_MN1500}}}{47}{figure.3.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Placa original da Trato}}{53}{figure.3.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Placa de fenolite utilizada}}{53}{figure.3.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Esquem\'atico da PCB do irrigador Trato}}{54}{figure.3.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Placa original da Amanco}}{55}{figure.3.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Placa de fenolite utilizada}}{55}{figure.3.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Frente da PCB do irrigador Amanco}}{56}{figure.3.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Verso da PCB do irrigador Amanco}}{56}{figure.3.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Irrigador Trato com v\'alvula aberta.}}{57}{figure.4.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Irrigador Trato com v\'alvula fechada.}}{57}{figure.4.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Tela inicial do aplicativo.}}{58}{figure.4.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Tela de adi\c c\~ao de alarme.}}{58}{figure.4.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Tela inicial ap\'os cria\c c\~ao do alarme.}}{58}{figure.4.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Tela inicial ap\'os envio com sucesso do alarme.}}{59}{figure.4.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Mensagem de erro de conex\~ao.}}{60}{figure.4.20}%
