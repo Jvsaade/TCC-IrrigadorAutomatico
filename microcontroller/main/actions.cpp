@@ -4,11 +4,7 @@ void MotorSentidoAntiHorario(int velocidade) {
     digitalWrite(motorIn1, LOW);
     analogWrite(motorIn2, velocidade);
     int tempoInicial = millis();
-    while(millis()-tempoInicial < 1e3 or digitalRead(stopPin) == LOW){
-        LigarVerde();
-        delay(1000);
-        LigarAzul();
-        delay(100);
+    while(millis()-tempoInicial < 3e3 or digitalRead(stopPin) == LOW){
     }
     digitalWrite(motorIn2, LOW);
 }
@@ -17,11 +13,7 @@ void MotorSentidoHorario(int velocidade) {
     analogWrite(motorIn1, velocidade);
     digitalWrite(motorIn2, LOW);
     int tempoInicial = millis();
-    while(millis()-tempoInicial < 1e3 or digitalRead(stopPin) == LOW){
-        LigarVerde();
-        delay(1000);
-        LigarAzul();
-        delay(100);
+    while(millis()-tempoInicial < 3e3 or digitalRead(stopPin) == LOW){
     }
     digitalWrite(motorIn1, LOW);
 }
@@ -52,7 +44,14 @@ void FecharValvula(){
 void Irrigation(int duracao){
     Serial.print("Irrigação iniciada por "); Serial.print(duracao); Serial.println(" minutos");
     AbrirValvula();
-    delay((duracao*1e3)*60);
+    int tempoInicial = millis();
+    while(millis() - tempoInicial < (duracao*1e3)*60){
+        LigarAzul();
+        delay(100);
+        LigarVerde();
+        delay(1000);
+    }
+    //delay((duracao*1e3)*60);
     FecharValvula();
     Serial.print("Irrigação finalizada.");
 

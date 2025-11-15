@@ -14,9 +14,9 @@
 
 #define MAX_STRING_LENGTH 64 // Aumentado para dar mais folga (pode ser 32 se preferir, mas 64 é mais seguro)
 
-#define DEEPSLEEP_TIMEOUT 2*60000 // 30 segundos para DeepSleep
-#if DEEPSLEEP_TIMEOUT < 60000
-  #error "O valor deve ser maior que 60.000"
+#define DEEPSLEEP_TIMEOUT 3*60000 // 30 segundos para DeepSleep
+#if DEEPSLEEP_TIMEOUT < 180000
+  #error "O valor deve ser maior que 180.000"
 #endif
 unsigned int contagem;
 
@@ -120,15 +120,6 @@ void loop() {
     MDNS.update();
     ArduinoOTA.handle();
     server.handleClient();
-    
-    delay(2000);
-    LigarAzul();
-    delay(2000);
-    DesligarLeds();
-    MotorSentidoHorario(500);
-    delay(2000);
-    LigarVerde();
-    MotorSentidoAntiHorario(500);
 
     int duracao = checkSchedule();
     if(duracao != 0)
