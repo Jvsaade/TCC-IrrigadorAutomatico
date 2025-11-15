@@ -1,4 +1,5 @@
 \backcite {NBR6028:2003}{{9}{(document)}{Doc-Start}}
+\backcite {Duracell_MN1500}{{13}{(document)}{Doc-Start}}
 \backcite {Rene_LixoEletronico}{{23}{1.1}{section.1.1}}
 \backcite {Baniasadi_E-Waste}{{23}{1.1}{section.1.1}}
 \backcite {Rene_LixoEletronico}{{23}{1.1}{section.1.1}}
@@ -58,3 +59,4 @@
 \backcite {SmartConfigAndroidApp}{{39}{3.4.1}{subsection.3.4.1}}
 \backcite {EEPROM_STM}{{41}{3.4.2}{subsection.3.4.2}}
 \backcite {ESP8266_WebServer}{{44}{3.4.3}{subsection.3.4.3}}
+\backcite {Duracell_MN1500}{{47}{6}{figure.3.6}}

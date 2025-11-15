@@ -40,6 +40,14 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://iotdesignpro.com/projects/create-android-app-with-android-studio-to-control-led-over-wifi-using-nodemcu}.}
 
+\bibitem[{Duracell} 2019]{Duracell_MN1500}
+\abntrefinfo{{Duracell}}{{Duracell}}{2019}
+{{Duracell}. \emph{{DURACELL} {COPPERTOP} {MN1500} Size: {AA} ({LR6})
+  Alkaline-Manganese Dioxide Battery}. 2019.
+O ano de publicação foi inferido a partir do código do documento "MN15US1119".
+Dispon{\'\i}vel em:
+  \url{https://docs.rs-online.com/f2b6/A700000009430303.pdf}.}
+
 \bibitem[{EDISON SCIENCE CORNER} 2023]{IoTBatteryMonitor}
 \abntrefinfo{{EDISON SCIENCE CORNER}}{{EDISON SCIENCE CORNER}}{2023}
 {{EDISON SCIENCE CORNER}. \emph{Arduino {IoT} {Cloud} {Based} {Battery}

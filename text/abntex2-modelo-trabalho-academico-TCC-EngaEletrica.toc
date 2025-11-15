@@ -33,49 +33,59 @@
 \contentsline {subsection}{\numberline {3.4.3}Criando um servidor}{43}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Programa\c c\~ao Over-The-Air}{44}{subsection.3.4.4}%
 \contentsline {subsection}{\numberline {3.4.5}Monitoramento da bateria}{45}{subsection.3.4.5}%
-\contentsline {section}{\numberline {3.5}Desenvolvimento do aplicativo}{46}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Persist\^encia das Configura\c c\~oes}{46}{subsection.3.5.1}%
-\contentsline {section}{\numberline {3.6}Montagem}{49}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Irrigador Trato}{49}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Irrigador Amanco}{49}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}Coment\'arios}{50}{section.3.7}%
+\contentsline {subsection}{\numberline {3.4.6}Mensagem de bateria baixa}{47}{subsection.3.4.6}%
+\contentsline {section}{\numberline {3.5}Desenvolvimento do aplicativo}{48}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Persist\^encia das Configura\c c\~oes}{48}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Envio dos alarmes}{51}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Exclus\~ao dos alarmes}{51}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Altera\c c\~ao dos alarmes}{51}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Verifica\c c\~ao das configura\c c\~oes existentes}{51}{subsection.3.5.5}%
+\contentsline {section}{\numberline {3.6}Montagem}{52}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Irrigador Trato}{52}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Irrigador Amanco}{52}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Coment\'arios}{53}{section.3.7}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados e Discuss\~ao}}{51}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Vestibulum ante ipsum primis}{51}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Integer porta neque vitae massa}{52}{section.4.2}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados e Discuss\~ao}}{57}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Acionamento da v\'alvula}{57}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Teste no aplicativo}{58}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Adi\c c\~ao de alarme}{58}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Envio do alarme}{58}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Erro de envio}{58}{subsubsection.4.2.2.1}%
+\contentsline {subsection}{\numberline {4.2.3}Exclus\~ao do alarme}{59}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Integer porta neque vitae massa}{59}{section.4.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclus\~oes}}{55}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Pellentesque sit amet pede ac sem eleifend}{55}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Phasellus id magna}{55}{section.5.2}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclus\~oes}}{63}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Pellentesque sit amet pede ac sem eleifend}{63}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Phasellus id magna}{63}{section.5.2}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{59}{section*.17}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{67}{section*.17}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
 \cftinsert {A}
-\contentsline {part}{\uppercase {Ap\^endices}}{63}{section*.18}%
+\contentsline {part}{\uppercase {Ap\^endices}}{71}{section*.18}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Quisque libero justo}}{65}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Quisque libero justo}}{73}{appendix.A}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra}}{67}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra}}{75}{appendix.B}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
 \cftinsert {A}
-\contentsline {part}{\uppercase {Anexos}}{69}{section*.19}%
+\contentsline {part}{\uppercase {Anexos}}{77}{section*.19}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Morbi ultrices rutrum lorem}}{71}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Morbi ultrices rutrum lorem}}{79}{appendix.anexochapback.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Cras non urna sed feugiat cum sociis natoque penatibus}}{73}{appendix.anexochapback.2}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Cras non urna sed feugiat cum sociis natoque penatibus}}{81}{appendix.anexochapback.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Fusce facilisis lacinia dui}}{75}{appendix.anexochapback.3}%
+\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Fusce facilisis lacinia dui}}{83}{appendix.anexochapback.3}%
