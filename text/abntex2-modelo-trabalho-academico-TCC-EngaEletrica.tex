@@ -621,9 +621,7 @@ Em relação às últimas duas conexões, a do GPIO15 e a do CH\_PD(EN), elas já estã
 
 Para realizar a programação do módulo, o botão conectando o GPIO0 ao GND deve ser segurado. Ao fim da programação, o botão deve ser solto e o botão que liga o RST ao GND deve ser pressionado e solto. Assim, foi realizada a primeira programação do módulo. As programações subsequentes foram realizadas pelo método Over the Air (OTA).
 
-Para facilitar a programação do módulo, todos os componentes necessários para a programação do circuito foram montados em uma placa de fenolite perfurada. Para realizar a programação do módulo, o microcontrolador deveria ser encaixado no local designado, duas baterias de 1,5V seriam conectadas através de jumpers, e a interface USB deveria ser conectada no computador desejado para a programação.
-
-As figuras \ref{fig: placa_fenolite_frente} e \ref{fig: placa_fenolite_verso} mostram a visão superior e inferior da placa, respectivamente.
+Para facilitar a programação do módulo, todos os componentes necessários para a programação do circuito foram montados em uma placa de fenolite perfurada. Para realizar a programação do módulo, o microcontrolador deveria ser encaixado no local designado, duas baterias de 1,5V seriam conectadas através de jumpers, e a interface USB deveria ser conectada no computador desejado para a programação. As figuras \ref{fig: placa_fenolite_frente} e \ref{fig: placa_fenolite_verso} mostram a visão superior e inferior da placa, respectivamente.
 
 \begin{figure}[htb]
  \centering
@@ -642,8 +640,41 @@ As figuras \ref{fig: placa_fenolite_frente} e \ref{fig: placa_fenolite_verso} mo
   \end{minipage}
 \end{figure}
 
-Em relação à programação via WiFi, ela é bastante interessante de ser feita por permitir que o firmware do microcontrolador seja atualizado mesmo quando o dispositivo já esteja soldado na placa definitiva. Para que isso seja possível, é necessário utilizar a funcioalidade Over-The-Air (OTA) do ESP. Os códigos para isso são descritos na seção \ref{sec:ota}.
+Em relação à programação via WiFi, ela é bastante interessante de ser feita por permitir que o firmware do microcontrolador seja atualizado mesmo quando o dispositivo já esteja soldado na placa definitiva. Para que isso seja possível, é necessário utilizar a funcionalidade Over-The-Air (OTA) do ESP. Os códigos para isso são descritos na seção~\ref{sec:ota}.
 
+\section{Alimentação do circuito}
+
+Conforme definido em seção anterior, o irrigador deve ser alimentado por duas pilhas alcalinas de 1,5V, atingindo uma tensão de 3,0V. É importante, notar, porém, que o microcontrolador utilizado possui tensão nominal de alimentação de 3,3V. Além disso, a tensão das pilhas tem um comportamento decrescente conforme sua carga diminui, o que pode causar mau funcionamento ao microcontrolador, que opera com uma tensão mínima de 2,5V.
+
+Para elevar o valor de tensão nas baterias para um nível próximo ao ideal para o ESP-12E, torna-se necessário usar um conversor de tensão step-up (boost converter). Um dos requisitos importantes para a escolha desse conversor é sua tensão mínima de funcionamento, já que o máximo que duas pilhas conseguem fornecer juntas é de 3,0V. Outro requisito imprescindível é que seja possível fornecer uma tensão de saída de 3,3V. A Tabela~\ref{tab:reguladores_tensao} mostra alguns conversores boost encontrados em lojas de eletrônica.
+
+\begin{table}[htb]
+	\IBGEtab{%
+		\caption{Comparativo de reguladores de tensão Step-Up}%
+		\label{tab:reguladores_tensao}
+	}{%
+		% Ajuste os valores de p{} conforme precisar para sua página
+		\begin{tabular}{p{4cm} p{4.5cm} p{4.5cm}}
+			\toprule
+			Regulador & Tensão de entrada & Tensão de saída \\
+			\midrule \midrule
+			XL6009 & 4V-32V & 5V-35V \\
+			\midrule
+			MC34063 & 5V-24V & 6V-30V \\
+			\midrule
+			MT3608 & 2V-24V & 2,5-28V \\
+			\midrule
+			SX1308 & 2V-24V & 5V-28V \\
+			\bottomrule
+		\end{tabular}%
+	}{%
+		\fonte{Produzido pelo autor.}%
+	}
+\end{table}
+
+Como é possível observar, somente o modelo MT3608 atende aos requisitos de tensão de entrada e saída.
+
+Outro ponto importante a ser considerado na alimentação do circuito é que a o acionamento intermitente do Wi-Fi no ESP-12E pode causar picos de corrente no circuito, levando a variações temporárias na tensão. Segundo o datasheet do ESP8266, chip usado no ESP-12E, a corrente demandada em aplicações sem fio pode chegar a 170mA, enquanto o valor médio de corrente consumida é de 80mA \cite{Espressif_ESP8266_Datasheet}. Como consequência disso, existe a probabilidade que o microcontrolador apresente mal funcionamento e a irrigação seja prejudicada. A solução mais apropriada nesse caso é o uso de capacitores de bypass, que funcionam como filtros passa-baixa, reduzindo o efeito de variações repentinas nas tensão. Para essas aplicações, normalmente se usa capacitores na faixa de $0,1\mu F$ a $10\mu F$\cite{TheArtOfElectronics}. Nesse trabalho, foram usados dois capacitores, um de $10\mu F$ para filtrar frequências mais baixas, que acontecem por exemplo quando há o boot inicial, e outro de $0,1\mu F$, para filtrar frequências mais altas, presentes quando ocorre o acionamento do Wi-Fi.
 
 % ---
 
@@ -654,13 +685,13 @@ Para fazer o controle dos motores, é necessário verificar qual a corrente consum
 
 Uma opção para realizar essa tarefa é utilizando um transistor Darlington TIP122 \cite{DCMotorWithoutMotorDriver}. Nessa solução, o microcontrolador aciona o  BJT com uma corrente de base, que o aciona e permite a passagem de corrente por ele.
 
-Para verificar se esse transistor é capaz de fornecer a corrente necessária, é preciso verificar qual o ganho de corrente que ele é capaz de produzir. Segundo o datasheet do TIP122 \cite{TIP122Datasheet}, o ganho máximo que ele é capaz de fornecer é de $1000mA/mA$, bem superior ao necessário para o funcionamento do motor, que seria de 20 a 40.
+Para verificar se esse transistor é capaz de fornecer a corrente necessária, é preciso verificar qual o ganho de corrente que ele é capaz de produzir. Segundo o datasheet do TIP122 \cite{TIP122Datasheet}, o ganho máximo que ele é capaz de fornecer é de $1000$ mA/mA, bem superior ao necessário para o funcionamento do motor, que seria de 20 a 40.
 
 Apesar de ser uma solução barata (por volta de R\$ 3,00) e suportar uma alta corrente (8A \cite{TIP122Datasheet}), ela é mais difícil de ser feita, já que necessitaria de soldas e isso tornaria a tarefa mais difícil para alguém inexperiente na área.
 
 Outra alternativa para solucionar esse problema é a utilização de uma ponte H, um circuito eletrônico que permite controlar a direção da corrente fornecida a uma carga, como um motor de corrente contínua. Esse dispositivo possui dois terminais de controle de entrada, que determinam o sentido de rotação do motor, e dois terminais de saída, responsáveis por fornecer a tensão e a corrente necessárias ao seu funcionamento.
 
-A figura \ref{fig:circuito-L298} mostra o circuito interno do CI L298, utilizado na ponte H.
+A figura \ref{fig:circuito-L298} mostra o circuito interno do CI L298.
 
 \begin{figure}[h]
     \centering
@@ -669,19 +700,17 @@ A figura \ref{fig:circuito-L298} mostra o circuito interno do CI L298, utilizado
     \label{fig:circuito-L298}
 \end{figure}
 
-O funcionamento desse circuito consiste em conectar os pinos de saída ao terra ou à alimentação positiva. Quando a entrada tem valor alto, o transistor BJT superior conecta a alimentação positiva à saída, enquanto o transistor inferior permanece desligado. Por outro lado, quando o nível da entrada é baixo, o transistor inferior é acionado, conectando a saída ao terra.
+O funcionamento desse circuito consiste em conectar os pinos de saída ao terra ou à alimentação positiva. Quando a entrada tem valor alto, o transistor superior conecta a alimentação positiva à saída, enquanto o transistor inferior permanece desligado. Por outro lado, quando o nível da entrada é baixo, o transistor inferior é acionado, conectando a saída ao terra.
 
-Ao inserir pares de entrada alternados (In1=1 e In2=0, por exemplo), uma das saídas é ligada ao terra e outra à alimentação positiva, criando uma diferença de potencial no motor e fazendo uma corrente circular nele. É importante ressaltar que ao utilizar a ponte H, a corrente que sai do microcontrolador somente é utilizada para acionar o transistor, como corrente de base deste. A corrente utilizada para o funcionamento do motor, por sua vez, tem origem na fonte de alimentação, passando pelos dois transistores e pelo motor.
+Ao inserir pares de entrada alternados (In1=1 e In2=0, por exemplo), uma das saídas é ligada ao terra e outra à alimentação positiva, criando uma diferença de potencial no motor e fazendo uma corrente circular nele. É importante ressaltar que ao utilizar a ponte H, a corrente que sai do microcontrolador somente é utilizada para acionar o transistor, como corrente de base ou gate deste. A corrente utilizada para o funcionamento do motor, por sua vez, tem origem na fonte de alimentação, passando pelos dois transistores e pelo motor.
 
 Essa solução é a mais apropriada para o projeto, já que não acrescenta muitos custos (por volta de R\$5,00) e é mais fácil de ser montada e controlada. Outra vantagem importante é que a ponte H pode alterar facilmente o sentido da corrente no motor, algo essencial nesse projeto, considerando que o motor deve obrigatoriamente girar nos dois sentidos.
 
-A fim de confirmar se a ponte H consegue realizar esse papel, é necessário investigar quando de corrente ela é capaz de fornecer, e quanto de corrente de entrada ela exige. 
-
-Segundo informação do datasheet do CI L298, a corrente máxima de saída para a operação DC é de 2A \cite{L298Datasheet}. Em relação à placa usada, a mini ponte H, o site no qual ela foi comprada informa que a corrente máxima por canal é de 1,5 A \cite{EletrogateMiniPonteH}. Considerando que a corrente exigida pelo motor DC é de 150mA - 200mA, a ponte H utilizada é capaz de fornecer com folga a corrente de saída.
+A fim de confirmar se a ponte H consegue realizar esse papel, é necessário investigar quando de corrente ela é capaz de fornecer, e quanto de corrente de entrada ela exige. Segundo informação do datasheet do CI L298, a corrente máxima de saída para a operação DC é de 2A \cite{L298Datasheet}. Em relação à placa usada, a mini ponte H, o site no qual ela foi comprada informa que a corrente máxima por canal é de 1,5 A \cite{EletrogateMiniPonteH}. Considerando que a corrente exigida pelo motor DC é de 150mA - 200mA, a ponte H utilizada é capaz de fornecer com folga a corrente de saída.
 
 Em relação à corrente de entrada, o datasheet informa que para uma entrada de nível alto, a corrente consumida é de no máximo $100\mu A$, enquanto para uma entrada de nível baixo o consumo é de $-10\mu A$, estando, portanto, dentro das restrições de corrente do microcontrolador.
 
-Outro modelo de ponte H possível para ser utilizado nesse projeto é o DRV8833. Seu funcionamento é semelhanete ao explicado para o modelo anterior. Diferente do driver L298, o DRV8833 possui transistores MOSFET como entrada, além de dois pinos extras: SLEEP e FAULT. Este primeiro pino é uma entrada e possui a funcionalidade de desativar as saídas caso esteja em valor baixo; o segundo pino, por sua vez, é uma saída, e fica em valor baixo quando há uma sobre-corrente ou sobre-temperatura. Essa segunda funcionalidade da ponte H é bastate interessante para indicar ao usuário quando há algum defeito no motor.
+Outro modelo de ponte H possível para ser utilizado nesse projeto é o DRV8833. Seu funcionamento é semelhante ao explicado para o modelo anterior. Diferente do driver L298, o DRV8833 possui transistores MOSFET como entrada, além de dois pinos extras: SLEEP e FAULT. Este primeiro pino é uma entrada e possui a funcionalidade de desativar as saídas caso esteja em valor baixo; o segundo pino, por sua vez, é uma saída, e fica em valor baixo quando há uma sobre-corrente ou sobre-temperatura. Essa segunda funcionalidade da ponte H é bastate interessante para indicar ao usuário quando há algum defeito no motor.
 
 As dimensões dos módulos de ponte H citados anteriormente são:
 \begin{itemize}
@@ -691,7 +720,7 @@ As dimensões dos módulos de ponte H citados anteriormente são:
 \end{itemize}
 
 
-Considerando que o tamanho dos componentes é uma limitação importante do projeto, e levando em consideração a funcionalidade de indicação de sobrecorrente e sobretemperatura, a ponte H DRV8833 foi escolhida para o projeto.
+Considerando que o tamanho dos componentes é uma limitação importante do projeto, e levando em consideração a funcionalidade de indicação de sobre-corrente e sobre-temperatura, a ponte H DRV8833 foi escolhida para o projeto.
 
 \section{Desenvolvimento do firmware}
 
@@ -949,7 +978,9 @@ BatteryState EstadoBateria(){
     
 \end{lstlisting}
 
-O tipo BatteryState foi criado através de uma \texttt{enum}, como mostrado em \ref{enum_battery_state}.
+Seu funcionamento consiste na medição a partir da porta analógica ADC0 do ESP-12E e na multiplicação do valor encontrado por um fator, para encontrar o valor de tensão na pilha. A partir do resultado encontrado, é feita uma comparação para verificar se o nível da bateria está numa faixa aceitável para o funcionamento correto do dispositivo, ou se é necessário trocar as pilhas.
+
+Para facilitar a programação, foi criado o tipo BatteryState através de uma \texttt{enum}, como mostrado em \ref{enum_battery_state}.
 
 \begin{lstlisting}[caption=Definição do tipo BatteryState, label={enum_battery_state}]
 enum BatteryState{
@@ -1017,7 +1048,9 @@ A função \texttt{urlEncode}, da biblioteca \texttt{UrlEncode.h}, foi utilizada a
 
 \subsection{Indicações luminosas}
 
-A fim de informar o usuário sobre o estado de funcionamento do irrigador, foram implementadas algumas indicações luminosas, realizadas através dos dois leds presentes na PCB. A Tabela~\ref{tab:status_leds} resume os tipos de indicações e seus significados.
+A partir do aplicativo, é possível visualizar as configurações de irrigação e o nível de bateria do microcontrolador. Porém, estas informações não são suficientes para deixar o usuário a par da situação de funcionamento do microcontrolador, como a indicação de falha ou sucesso em alguma operação. Nos irrigadores originais, havia um display no qual eram mostradas as informações da irrigação, como horário, duração e dias da semana. Neste trabalho, para fins de aumento da vida útil da bateria, optou-se por não utilizar displays. Contudo, era necessário encontrar outro meio para a comunicação visual para informar o usuário do funcionamento do dispositivo.
+
+A forma escolhida para isso foi através de indicações luminosas feitas por dois leds, um vermelho e um verde. Para evitar ambiguidades na sinalização, cada situação indicada pelos leds possui um padrão distinto, resumido na Tabela~\ref{tab:status_leds}.
 
 \begin{table}[htb]
 	\IBGEtab{%
@@ -1152,9 +1185,141 @@ Foi criado também um arquivo de repositório para servir de interface do banco de
 
 \subsection{Envio dos alarmes}
 
+O envio das configurações de alarme para o microcontrolador é iniciado pelo usuário ao pressionar o botão "Atualizar microcontrolador" na tela principal (PrimeiraTela.kt). Esta ação aciona a função \texttt{atualizarTimers} no \texttt{CounterAppViewModel}.
+
+Conforme o código \ref{enviar_alarme_vm}, a função primeiramente filtra a lista de todos os alarmes salvos no banco de dados local, selecionando apenas aqueles que ainda não foram marcados como enviados (cuja \texttt{id} não está no mapa \texttt{\_alarmeEnviado} ou está marcada como \texttt{false}).
+
+Para cada alarme pendente, a função executa uma chamada de rede assíncrona para o microcontrolador usando a interface Retrofit. Especificamente, ela chama \texttt{IntApi.intService.setAlarm(alarm)}. Esta é uma requisição HTTP POST para o endpoint \texttt{/setAlarm}, que envia o objeto \texttt{Configuration} completo do alarme serializado como um corpo JSON.
+
+Se a resposta do microcontrolador for bem-sucedida (response.isSuccessful), o ViewModel atualiza o estado interno do aplicativo chamando \texttt{marcarAlarmeComoEnviado(alarm.id)}, garantindo que o aplicativo não tente reenviar este alarme desnecessariamente.
+
+\begin{lstlisting}[language=Kotlin, label={enviar_alarme_vm}, caption=Função de envio de alarmes no ViewModel.] fun atualizarTimers(){ viewModelScope.launch { try { val activeAlarms = allAlarms.first().filter { alarmeSalvo(it.id).not() } // Obter alarmes pendentes if (activeAlarms.isEmpty()) { _statusMessage.value = "Nenhum alarme para enviar." return@launch }
+				
+				activeAlarms.forEach { alarm ->
+					try {
+						// Usar o novo metodo setAlarm para enviar o objeto Configuration
+						val response = IntApi.intService.setAlarm(alarm)
+						if (response.isSuccessful) {
+							_statusMessage.value = "Alarme '${alarm.nomeAlarme}' enviado com sucesso (JSON)."
+							marcarAlarmeComoEnviado(alarm.id) // marca este alarme como enviado
+						} else {
+							_statusMessage.value = "Falha ao enviar alarme '${alarm.nomeAlarme}' (JSON): ${response.message()}"
+						}
+					} catch (e: IOException) {
+						_statusMessage.value = "Erro de conexão ao enviar alarme '${alarm.nomeAlarme}' (JSON): ${e.message}"
+					} catch (e: Exception) {
+						_statusMessage.value = "Erro inesperado ao enviar alarme '${alarm.nomeAlarme}' (JSON): ${e.message}"
+					}
+				}
+			} catch (e: Exception) {
+				_statusMessage.value = "Erro ao carregar alarmes: ${e.message}"
+			}
+		}
+} 
+\end{lstlisting}
+
+
 \subsection{Exclusão dos alarmes}
 
+A exclusão de alarmes pode ocorrer de duas formas: individualmente, através do ícone de lixeira em cada \texttt{AlarmCard} na \texttt{PrimeiraTela}, ou coletivamente, através do botão "Excluir todos alarmes".
+
+No caso da exclusão individual, a função \texttt{excluirAlarme} do ViewModel é chamada, como mostra o código \ref{excluir_alarme_vm}. A lógica desta função é crucial: ela primeiro verifica se o alarme já foi enviado ao microcontrolador (usando \texttt{alarmeSalvo(alarm.id)}). 
+\begin{itemize} 
+	\item Se o alarme não foi enviado (existe apenas localmente), ele é simplesmente removido do banco de dados Room com \texttt{repository.delete(alarm)}. \item Se o alarme foi enviado, o aplicativo primeiro tenta excluí-lo do microcontrolador. Ele envia uma requisição HTTP POST para o endpoint \texttt{/deleteAlarm}, passando o \texttt{nomeAlarme} como um parâmetro de consulta (@Query("name")). Somente se o microcontrolador retornar uma resposta bem-sucedida, o alarme é removido do banco de dados local. 
+\end{itemize}
+
+\begin{lstlisting}[language=Kotlin, label={excluir_alarme_vm}, caption=Função de exclusão individual no ViewModel.] 
+    fun excluirAlarme(alarm: Configuration) {
+	// Se o alarme ainda não tiver sido enviado, deleta na base de dados
+	if (!alarmeSalvo(alarm.id)){
+		viewModelScope.launch {
+			try {
+				repository.delete(alarm)
+			} catch (e: IOException){
+				_statusMessage.value = "Erro ao deletar alarme: ${e.message}"
+			}
+		}
+	}
+	// Se o alarme tiver sido enviado
+	else {
+		viewModelScope.launch {
+			try {
+				val response = IntApi.intService.deleteAlarm(alarm.nomeAlarme)
+				if (response.isSuccessful) {
+					repository.delete(alarm)
+					_statusMessage.value = "Alarme '${alarm.nomeAlarme}' excluído com sucesso."
+				} else {
+					_statusMessage.value = "Falha ao excluir alarme '${alarm.nomeAlarme}': ${response.message()}"
+				}
+			} catch (e: IOException) {
+				_statusMessage.value = "Erro ao deletar alarme: ${e.message}"
+			} catch (e: Exception){
+				_statusMessage.value = "Erro inesperado ao deletar alarme: ${e.message}"
+			}
+		}
+	}
+}
+\end{lstlisting}
+
+Para a exclusão de todos os alarmes, a função \texttt{excluirTodosAlarmes} (código \ref{excluir_todos_vm}) é chamada. Ela envia uma requisição POST para o endpoint \texttt{/deleteAll} no microcontrolador. Se a operação for bem-sucedida, o aplicativo procede com a exclusão de todos os registros do banco de dados local através de \texttt{repository.deleteAll()}.
+
+\begin{lstlisting}[language=Kotlin, label={excluir_todos_vm}, caption=Função para excluir todos os alarmes.] 
+    fun excluirTodosAlarmes(){
+	viewModelScope.launch {
+		try{
+			val response = IntApi.intService.deleteAll()
+			if (response.isSuccessful) {
+				repository.deleteAll()
+			}
+			else{
+				_statusMessage.value = "Falha ao excluir todos os alarmes: ${response.message()}"
+			}
+			_statusMessage.value = "Todos os alarmes foram excluídos."
+		}catch (e:IOException){
+			_statusMessage.value = "Erro para deletar todos os alarmes: ${e.message}"
+		}
+	}
+}
+	
+\end{lstlisting}
+
 \subsection{Alteração dos alarmes}
+
+A alteração de um alarme existente é iniciada quando o usuário clica no ícone de configuração em um \texttt{AlarmCard}, o que o leva para a \texttt{SegundaTela} com a \texttt{id} do alarme. A \texttt{SegundaTela} carrega os dados desse alarme para edição.
+
+Ao salvar as alterações (código \ref{alterar_alarme_vm}), a \texttt{SegundaTela} chama a função \texttt{editarAlarme} do ViewModel. Esta função implementa uma lógica de "encontrar e substituir" no microcontrolador. Ela envia uma requisição HTTP POST para o endpoint \texttt{/editAlarm}. Esta requisição é especial, pois envia duas informações distintas: 
+\begin{enumerate} 
+	\item O nome original do alarme (capturado quando a tela de edição foi aberta) como um parâmetro de consulta (@Query("nomeAntigo")). \item O objeto \texttt{Configuration} completo e modificado como o corpo da requisição (@Body alarm: Configuration). 
+\end{enumerate}
+
+Isso permite que o microcontrolador localize o alarme a ser alterado pelo seu nome antigo e o substitua pelas novas configurações enviadas no corpo JSON. Se o microcontrolador confirmar a alteração com sucesso, o ViewModel atualiza (\texttt{upsert}) o registro no banco de dados Room local com os novos dados. A função utiliza um \textit{callback} \texttt{onCompletion} para notificar a \texttt{SegundaTela} sobre o sucesso ou falha da operação, permitindo que ela decida se deve ou não navegar de volta para a tela principal.
+
+\begin{lstlisting}[language=Kotlin, label={alterar_alarme_vm}, caption=Função de edição de alarme no ViewModel.] 
+    fun editarAlarme(nomeAntigo: String, onCompletion: (Boolean) -> Unit) {
+	viewModelScope.launch {
+		try {
+			val novoAlarme = config.value
+			val response = IntApi.intService.editAlarm(nomeAntigo, novoAlarme)
+			if (response.isSuccessful) {
+				// Se o microcontrolador responder com sucesso, atualiza o banco de dados local
+				repository.upsert(novoAlarme)
+				_statusMessage.value = "Alarme '${novoAlarme.nomeAlarme}' editado com sucesso. Resposta: '${response.body()}'"
+				onCompletion(true) // Indica sucesso
+			} else {
+				_statusMessage.value = "Falha ao editar alarme: ${response.message()}"
+				onCompletion(false) // Indica falha
+			}
+		} catch (e: IOException) {
+			_statusMessage.value = "Erro de conexão ao editar alarme: ${e.message}"
+			onCompletion(false) // Indica falha
+		} catch (e: Exception) {
+			_statusMessage.value = "Erro inesperado ao editar alarme: ${e.message}"
+			onCompletion(false) // Indica falha
+		}
+	}
+}
+
+\end{lstlisting}
 
 \subsection{Verificação das configurações existentes}
 
@@ -1250,6 +1415,8 @@ Após os testes bem-sucedidos com a placa de fenolite, foi projetado um circuito 
 	\end{minipage}
 	\legend{Fonte: EasyEDA}
 \end{figure}
+
+Para o controle do fechamento da válvula, o irrigador Trato possui um mecanismo mecânico que bloqueia o movimento do motor quanto este atinge a abertura ou fechamento máximo. Devido a isso, a programação de abertura e fechamento do módulo consistiu simplesmente na avaliação do tempo necessário para garantir o acionamento da válvula, ligando o motor durante esse período.
 
 \subsection{Irrigador Amanco}
 
