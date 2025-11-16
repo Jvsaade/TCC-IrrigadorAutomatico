@@ -156,7 +156,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Modelo de Monografia de \\ Trabalho de Conclusão de Curso com \abnTeX}
+\titulo{Aprimoramento de sistema \\ de irrigação automatizado}
 \autor{João Vitor Saade Simão}
 \local{Belo Horizonte}
 \data{2025}
@@ -243,51 +243,38 @@
 % ---
 % Dedicatória
 % ---
-\begin{dedicatoria}
-   \vspace*{\fill}
-   \centering
-   \noindent
-   \textit{ Este trabalho é dedicado às crianças adultas que,\\
-   quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
-\end{dedicatoria}
+%\begin{dedicatoria}
+%   \vspace*{\fill}
+%   \centering
+%   \noindent
+%   \textit{ Este trabalho é dedicado às crianças adultas que,\\
+%   quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
+%\end{dedicatoria}
 % ---
 
 % ---
 % Agradecimentos
 % ---
 \begin{agradecimentos}
-Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson,
-Leslie H. Watter, Bruno Parente Lima, Flávio de Vasconcellos Corrêa, Otavio Real
-Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
-projeto abn\TeX\ foram extraídos de
-\url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que
-contribuíram para que a produção de trabalhos acadêmicos conforme
-as normas ABNT com \LaTeX\ fosse possível.
+Agradeço ao Prof. Ricardo Duarte pela orientação
 
-Agradecimentos especiais são direcionados ao Centro de Pesquisa em Arquitetura
-da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de
-Brasília (CPAI), ao grupo de usuários
-\emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos
-novos voluntários do grupo
-\emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
-\url{http://abntex2.googlecode.com/}}~que contribuíram e que ainda
-contribuirão para a evolução do \abnTeX.
+Agradeço a meu pai, Vitor César Simão, 
 \end{agradecimentos}
 % ---
 
 % ---
 % Epígrafe
 % ---
-\begin{epigrafe}
-    \vspace*{\fill}
-	\begin{flushright}
-		\textit{``Não vos amoldeis às estruturas deste mundo, \\
-		mas transformai-vos pela renovação da mente, \\
-		a fim de distinguir qual é a vontade de Deus: \\
-		o que é bom, o que Lhe é agradável, o que é perfeito.\\
-		(Bíblia Sagrada, Romanos 12, 2)}
-	\end{flushright}
-\end{epigrafe}
+%\begin{epigrafe}
+%    \vspace*{\fill}
+%	\begin{flushright}
+%		\textit{``Não vos amoldeis às estruturas deste mundo, \\
+%		mas transformai-vos pela renovação da mente, \\
+%		a fim de distinguir qual é a vontade de Deus: \\
+%		o que é bom, o que Lhe é agradável, o que é perfeito.\\
+%		(Bíblia Sagrada, Romanos 12, 2)}
+%	\end{flushright}
+%\end{epigrafe}
 % ---
 
 % ---
@@ -296,27 +283,47 @@ contribuirão para a evolução do \abnTeX.
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
- Segundo a \citeonline[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
- objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
- destes itens dependem do tipo de resumo (informativo ou indicativo) e do
- tratamento que cada item recebe no documento original. O resumo deve ser
- precedido da referência do documento, com exceção do resumo inserido no
- próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
- resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
- ponto e finalizadas também por ponto.
+ Frente ao crescente aumento do lixo eletrônico, requer-se atitudes visando a diminuição da
+ quantidade deste, a fim de reduzir a contaminação do meio ambiente com metais pesados e
+ outros materiais tóxicos presentes nesses dispositivos. A reciclagem, solução amplamente
+ usada para tratamento de lixo, não é muito recomendada nesses casos, devido à alta
+ complexidade em se reciclar esse tipo de resíduo. Uma solução bastante útil, nesse contexto,
+ é a reutilização destes equipamentos, conhecida em algumas fontes como Upcycling ou
+ Refurbishing. Este trabalho consiste na aplicação desse conceito em dois irrigadores
+ automáticos, um da marca Amanco e outro da marca Trato. Para isso, foram projetadas placas
+ de circuito impresso (PCBs) para substituírem as originais inoperantes dos dispositivos, além
+ da programação do microcontrolador ESP-12E e de um aplicativo de Android para controle dos
+ tempos e horários de irrigação. Para a programação do microcontrolador, foi utilizado o Arduino
+ IDE, a fim de facilitar a gravação do firmware e aproveitar as diversas bibliotecas desenvolvidas
+ pela comunidade. Para a programação do ESP-12E foi utilizado o recurso Over-The-Air, que
+ permite que o microcontrolador seja controlado através do Wi-Fi, sem a necessidade de fios, o
+ que se mostrou bastante útil no desenvolvimento do trabalho. Para o desenvolvimento do
+ aplicativo Android, optou-se pelo Android Studio, o Ambiente de Desenvolvimento Integrado
+ (IDE) oficial. A escolha foi pautada não apenas pelo seu suporte nativo e conjunto completo de
+ ferramentas para a plataforma, mas também pela sua usabilidade, que agiliza o processo de
+ codificação, depuração e teste. Para permitir que usuários com problemas semelhantes façam
+ uso dessa solução em seus dispositivos próprios, este projeto será disponibilizado
+ gratuitamente na plataforma GitHub. Espera-se, assim, que novos projetos sejam
+ desenvolvidos pela comunidade, a fim de reduzir ou postergar o descarte do lixo eletrônico no
+ meio ambiente.
+ \vspace{\onelineskip}
+ 
+ \noindent
 
- \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+ \textbf{Palavras-chaves}: Irrigação. \textit{Upcycling}. Microcontrolador.
 \end{resumo}
 
 % resumo em inglês
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
-   This is the english abstract.
+   Given the growing amount of electronic waste, it is necessary to adopt measures to reduce its volume and, consequently, mitigate environmental contamination caused by heavy metals and other toxic materials present in these devices. Recycling, a widely used solution for waste treatment, is not highly recommended in such cases due to the complexity involved in processing this type of residue. A useful alternative is the reuse of electronic equipment, commonly referred to in the literature as upcycling or refurbishing.
+   This work applies this concept to two automatic irrigation devices, one from the Amanco brand and the other from Trato. New printed circuit boards (PCBs) were designed to replace the original faulty ones, along with the development of firmware for the ESP-12E microcontroller and an Android application to configure irrigation schedules and durations. The Arduino IDE was used for microcontroller programming to simplify firmware deployment and take advantage of the extensive set of community-developed libraries. Over-the-air (OTA) programming was employed to update the ESP-12E via Wi-Fi, eliminating the need for wired connections and streamlining the development process.
+   For the Android application, Android Studio?the official Integrated Development Environment (IDE)?was chosen for its native support, comprehensive toolset, and usability, which facilitates coding, debugging, and testing. To enable users facing similar issues to adopt this solution in their own devices, the project will be made freely available on GitHub. It is expected that this initiative will encourage the development of new community projects, contributing to the reduction or postponement of e-waste disposal in the environment.
 
    \vspace{\onelineskip}
  
    \noindent 
-   \textbf{Key-words}: latex. abntex. text editoration.
+   \textbf{Key-words}: Irrigation. Upcycling. Microcontroller.
  \end{otherlanguage*}
 \end{resumo}
 
@@ -343,6 +350,7 @@ contribuirão para a evolução do \abnTeX.
   \item[Fig.] Area of the $i^{th}$ component
   \item[CI] Circuito integrado
   \item[IoT] Internet of Things
+  \item[PCB] Placa de Circuito Impresso
 %  \item[lauro cesar] este é o meu nome
 \end{siglas}
 % ---
@@ -1007,13 +1015,42 @@ void enviarMensagem(String message){
 
 A função \texttt{urlEncode}, da biblioteca \texttt{UrlEncode.h}, foi utilizada a fim de garantir que a mensagem seja enviada corretamente via HTTP, codificando adequadamente os caracteres.
 
+\subsection{Indicações luminosas}
+
+A fim de informar o usuário sobre o estado de funcionamento do irrigador, foram implementadas algumas indicações luminosas, realizadas através dos dois leds presentes na PCB. A Tabela~\ref{tab:status_leds} resume os tipos de indicações e seus significados.
+
+\begin{table}[htb]
+	\IBGEtab{%
+		\caption{Significado das indicações luminosas}%
+		\label{tab:status_leds}
+	}{%
+		\begin{tabular}{p{8cm}p{6cm}}
+			\toprule
+			Indicação luminosa & Significado \\
+			\midrule \midrule
+			Led vermelho pisca 5 vezes. & Erro na montagem do LittleFS. \\
+			\midrule
+			Led verde pisca 5 vezes. & Conexão Wi-Fi bem-sucedida. \\
+			\midrule
+			Led verde e vermelho piscam rápido alternadamente. & Erro de conexão Wi-Fi/SmartConfig. \\
+			\midrule
+			Led verde aceso 1 segundo e led vermelho aceso 100 ms. & Irrigação em processo. \\
+			\midrule
+			Led verde aceso 2 segundos e led vermelho aceso 2 segundos. & Entrando em Deep Sleep. \\
+			\bottomrule
+		\end{tabular}%
+	}{%
+		\fonte{Produzido pelo autor.}%
+	}
+\end{table}
+
 \section{Desenvolvimento do aplicativo}
 
 \subsection{Persistência das Configurações}
 
-A fim de manter as configurações criadas pelo usuário salvas, mesmo após o fechamento do aplicativo, optou-se por utilizar um banco de dados no aplicativo, através da base de dados Room. Para o funcionamento correto dessa biblioteca, as linhas de código mostradas em \ref{} devem ser adicionadas ao arquivo build.gradle.kts.
+A fim de manter as configurações criadas pelo usuário salvas, mesmo após o fechamento do aplicativo, optou-se por utilizar um banco de dados no aplicativo, através da base de dados Room. Para o funcionamento correto dessa biblioteca, as linhas de código mostradas em \ref{build-gradle} devem ser adicionadas ao arquivo build.gradle.kts.
 
-\begin{lstlisting}[language=Kotlin]
+\begin{lstlisting}[language=Kotlin,caption=Configuração do build.gradle.kts,label={build-gradle}]
     plugins{
     id("kotlin-kapt")
     id("com.google.devtools.ksp")
@@ -1167,19 +1204,19 @@ Num segundo momento, finalizados os testes nas placas de fenolite, foram projeta
 
 \subsection{Irrigador Trato}
 
-Em relação ao irrigador da marca Trato, o espaço para montagem da placa é bastante reduzido, sendo limitado superiormente pelo local de parafusamento da placa e inferiormente pelo local dos botões. Em razão disso, a fim de se aproveitar o maior espaço possível, optou-se por utilizar a placa original da Trato como referência para o corte da placa de fenolite, assim como para a PCB posteriormente projetada. A imagem \ref{fig_placa_original_trato} mostra a placa original do irrigador da Trato e a imagem \ref{fig_placa_fenolite_trato} mostra a placa de fenolite cortada com os moldes da original.
+Em relação ao irrigador da marca Trato, o espaço para montagem da placa é bastante reduzido, sendo limitado superiormente pelo local de parafusamento da placa e inferiormente pelo local dos botões. Em razão disso, a fim de se aproveitar o maior espaço possível, optou-se por utilizar a placa original da Trato como referência para o corte da placa de fenolite, assim como para a PCB posteriormente projetada. A Figura~\ref{fig_placa_original_trato} mostra a placa original do irrigador da Trato e a Figura~\ref{fig_placa_fenolite_trato} mostra a placa de fenolite cortada com os moldes da original.
 
 \begin{figure}[htb]
  \label{placa-trato}
  \centering
-  \begin{minipage}{0.4\textwidth}
+  \begin{minipage}{0.45\textwidth}
     \centering
     \caption{Placa original da Trato} \label{fig_placa_original_trato}
     \includegraphics[scale=0.15]{imagens/PlacaOriginalTrato.jpg}
     \legend{Fonte: Autoria própria}
   \end{minipage}
   \hfill
-  \begin{minipage}{0.4\textwidth}
+  \begin{minipage}{0.45\textwidth}
     \centering
     \caption{Placa de fenolite utilizada} \label{fig_placa_fenolite_trato}
     \includegraphics[scale=0.15]{imagens/PlacaFenoliteTrato.jpg}
@@ -1187,7 +1224,7 @@ Em relação ao irrigador da marca Trato, o espaço para montagem da placa é bastan
   \end{minipage}
 \end{figure}
 
-Após os testes bem-sucedidos com a placa de fenolite, foi projetado um circuito com a plataforma EasyEDA. O esquemático é mostrado na Figura~\ref{fig:esquematico-amanco}.
+Após os testes bem-sucedidos com a placa de fenolite, foi projetado um circuito com a plataforma EasyEDA. O esquemático e a PCB são mostrados nas Figuras \ref{fig:esquematico-amanco} e \ref{fig:frente_pcb_trato}, respectivamente.
 
 \begin{figure}[h]
 	\centering
@@ -1197,11 +1234,26 @@ Após os testes bem-sucedidos com a placa de fenolite, foi projetado um circuito 
 	\legend{Fonte: EasyEDA}
 \end{figure}
 
+\begin{figure}[htb]
+	\label{pcb_trato}
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\caption{Frente da PCB do irrigador Trato} \label{fig:frente_pcb_trato}
+		\includegraphics[scale=0.4, angle=90]{imagens/TratoFrentePCB.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\caption{Verso da PCB do irrigador Trato} \label{fig:verso_pcb_trato}
+		\includegraphics[scale=0.4,angle=90]{imagens/TratoVersoPCB.png}
+	\end{minipage}
+	\legend{Fonte: EasyEDA}
+\end{figure}
+
 \subsection{Irrigador Amanco}
 
-Da mesma forma que no irrigador Trato, a PCB original do irrigador da Amanco foi utilizada como molde da placa de fenolite e da PCB para montagem dos componentes. Alguns locais onde a placa antiga era parafusada também foram aproveitados para a fixação da nova placa.
-
-A placa utilizada pelo irrigador da Amanco é mostrada na figura \ref{fig_placa_original_amanco}. A figura \ref{fig_placa_fenolite_amanco} mostra a placa de fenolite utilizada no projeto para substituir a placa antiga.
+Da mesma forma que no irrigador Trato, a PCB original do irrigador da Amanco foi utilizada como molde da placa de fenolite e da PCB para montagem dos componentes. Alguns locais onde a placa antiga era parafusada também foram aproveitados para a fixação da nova placa. A placa utilizada pelo irrigador da Amanco é mostrada na figura \ref{fig_placa_original_amanco}. A figura \ref{fig_placa_fenolite_amanco} mostra a placa de fenolite utilizada no projeto para substituir a placa antiga.
 
 \begin{figure}[htb]
  \label{placa-amanco}
@@ -1221,9 +1273,7 @@ A placa utilizada pelo irrigador da Amanco é mostrada na figura \ref{fig_placa_o
   \end{minipage}
 \end{figure}
 
-Após o sucesso nos testes na placa de fenolite, foi feito o projeto de uma PCB usando o EasyEDA. As posições dos componentes na placa de fenolite foram usadas como referência para o posicionamento destes na PCB.
-
-A frente e o verso da PCB utilizada para substituir a placa antiga no irrigador Amanco são mostradas nas Figuras \ref{fig:frente_pcb_amanco} e \ref{fig:verso_pcb_amanco}, respectivamente.
+Após o sucesso nos testes na placa de fenolite, foi feito o projeto de uma PCB usando o EasyEDA. As posições dos componentes na placa de fenolite foram usadas como referência para o posicionamento destes na PCB. A frente e o verso da PCB utilizada para substituir a placa antiga no irrigador Amanco são mostradas nas Figuras \ref{fig:frente_pcb_amanco} e \ref{fig:verso_pcb_amanco}, respectivamente.
 
 \begin{figure}[htb]
 	\label{pcb_amanco}
@@ -1243,10 +1293,21 @@ A frente e o verso da PCB utilizada para substituir a placa antiga no irrigador 
 	\end{minipage}
 \end{figure}
 
+Durante os testes, foi verificado que o irrigador possuía dois fios conectados a um sensor de fim de curso, semelhante ao mostrado na Figura~\ref{fig:sensor-fim-curso-amanco}. Ele possui três terminais elétricos, geralmente chamados Comum (C), Normalmente Aberto (NA) e Normalmente Fechado (NF). Em estado de repouso (sem o botão pressionado), o terminal C (do meio) está conectado ao pino NF; quando o botão é acionado, a conexão passa a ser com o terminal NA. Para facilitar a abertura e fechamento da válvula, esse componente foi aproveitado, sendo que o pino NA foi conectado ao VDD, enquanto o pino central era ligado ao GPIO13. Esse terminal possuía originalmente uma conexão com o pino ULT da ponte H na PCB; esta trilha foi retirada para adaptar o pino do microcontrolador a esse novo propósito. A fim de evitar flutuações no sinal, foi utilizado um resistor de pull down no pino do ESP-12E.
+
+\begin{figure}[h!]
+	\centering
+	\caption{Sensor de fim de curso semelhante ao usado no irrigador.}
+	\includegraphics[width=0.3\linewidth]{imagens/ChaveFimCursoAmanco.jpg}
+	\label{fig:sensor-fim-curso-amanco}
+	\legend{Fonte: Eletropeças.\cite{SensorFimCurso}}
+\end{figure}
+
 \section{Comentários}
 
 Uma das restrições importantes encontradas nesse projeto foi a questão do espaço disponível para inserir os componentes. Caso houvesse mais espaço disponível, seria interessante adicionar um RTC externo, para despertar o módulo com mais precisão de horário.
 
+Outro ponto a se comentar é que a função de Deep Sleep utilizada no ESP-12E apresentou falha em algumas fabricantes do microcontrolador. Somente os módulos fabricados pela Espressif eram capazes de executar a função com sucesso.
 
 
 % ---
@@ -1338,14 +1399,81 @@ Caso o microcontrolador não esteja ativo, o aplicativo não possua conexão com a 
 
 \subsection{Exclusão do alarme}
 
-Para 
+Para excluir um alarme individualmente, é necessário selecionar o ícone da lixeira que se encontra do lado superior direito do card contendo o alarme na tela principal. Ao ser selecionado, o aplicativo tentará se comunicar com o microcontrolador, solicitando a exclusão do alarme específico. Caso haja sucesso, a tela da Figura~\ref{fig:sucesso-exclusao} aparecerá.
 
-\section{Integer porta neque vitae massa}
-% ---
-\lipsum[24-29]
-% ---
+\begin{figure}[h]
+	\centering
+	\caption{Mensagem de sucesso na exclusão do alarme.}
+	\includegraphics[width=0.3\linewidth]{imagens/TelaInicialAposExclusaoApp.jpg}
+	\label{fig:sucesso-exclusao}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
 
-% ----------------------------------------------------------
+É possível também excluir todos os alarmes simultaneamente, para garantir que o microcontrolador não tenha nenhum alarme indesejado. Para isso, é necessário pressionar o botão "Excluir todos os alarmes", na parte superior direita da tela inicial. Caso haja sucesso na exclusão de todos os alarmes, a tela da Figura~\ref{fig:sucesso-exclusao-todos} será mostrada.
+
+\begin{figure}[h]
+	\centering
+	\caption{Mensagem de sucesso na exclusão dos alarmes.}
+	\includegraphics[width=0.3\linewidth]{imagens/TelaInicialExclusaoTodosApp.jpg}
+	\label{fig:sucesso-exclusao-todos}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+\subsection{Erro de exclusão}
+
+Caso haja um erro na exclusão dos alarmes, aparecerá a mensagem de erro mostrada na Figura~\ref{fig:erro-exclusao}.
+
+\begin{figure}[h]
+	\centering
+	\caption{Mensagem de erro de conexão.}
+	\includegraphics[width=0.3\linewidth]{imagens/TelaInicialAposErroExclusaoApp.jpg}
+	\label{fig:erro-exclusao}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+\subsection{Edição do alarme}
+
+Para editar um alarme específico, é necessário selecionar o ícone de engrenagem no lado direito do card. Quando isso acontecer, o aplicativo será direcionado para a tela de edição de alarme, semelhante à tela de adição, exceto que possui as informações daquele alarme em específico. A Figura~\ref{fig:tela-edicao} mostra esta tela.
+
+O processo de edição só acontece caso o aplicativo consiga se comunicar com o microcontrolador e obtenha um retorno positivo em relação à edição do alarme. Caso isso ocorra, a tela da Figura~\ref{fig:sucesso-edicao} será mostrada. Caso contrário, quando ocorrer algum erro, será indicada uma mensagem semelhante à mostrada na Figura~\ref{fig:erro-edicao}.
+
+\begin{figure}[htb]
+	\label{fig:edicao-alarmes}
+	\centering
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\caption{Tela de edição de alarme.} \label{fig:tela-edicao}
+		\includegraphics[scale=0.2]{imagens/TelaEdicaoApp.jpg}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\caption{Mensagem de sucesso na edição do alarme.} \label{fig:sucesso-edicao}
+		\includegraphics[scale=0.2]{imagens/TelaInicialAposEdicaoApp.jpg}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\caption{Mensagem de erro na edição do alarme.} \label{fig:erro-edicao}
+		\includegraphics[scale=0.2]{imagens/TelaEdicaoErroApp.jpg}
+	\end{minipage}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+\subsection{Informação de bateria}
+
+Outro teste realizado foi do comando de verificação de bateria no aplicativo. Nesse processo, o microcontrolador faz a leitura do ADC conectado ao divisor de tensão que está ligado às pilhas do irrigador e envia o resultado do estado da bateria para o aplicativo. Essa função é executada ao pressionar o botão "Verificar bateria" no aplicativo. Caso haja sucesso nessa operação, a mensagem na Figura~\ref{fig:consulta-bateria} aparecerá.
+
+\begin{figure}[h]
+	\centering
+	\caption{Consulta do estado da bateria no aplicativo.}
+	\includegraphics[width=0.3\linewidth]{imagens/TelaInicialConsultaBateriaApp.jpg}
+	\label{fig:consulta-bateria}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+Outra forma de mensagem de bateria é quando o microcontrolador verifica que o nível desta se encontra baixo, enviando uma mensagem através do recurso CallMeBot.
+
 % Capítulo 5 - Conclusões
 % ----------------------------------------------------------
 \chapter{Conclusões}\label{cap_conclusao}
@@ -1381,52 +1509,52 @@ Para
 % ---
 % Inicia os apêndices
 % ---
-\begin{apendicesenv}
-
-% Imprime uma página indicando o início dos apêndices
-\partapendices
-
-% ----------------------------------------------------------
-\chapter{Quisque libero justo}
-% ----------------------------------------------------------
-
-\lipsum[50-54]
-
-% ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra}
-% ----------------------------------------------------------
-\lipsum[55-59]
-
-\end{apendicesenv}
-% ---
-
-% ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
-
-% ---
-% Inicia os anexos
-% ---
-\begin{anexosenv}
-
-% Imprime uma página indicando o início dos anexos
-\partanexos
-
-% ---
-\chapter{Morbi ultrices rutrum lorem}
-% ---
-\lipsum[60]
-
-% ---
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus}
-% ---
-\lipsum[61-63]
-
-% ---
-\chapter{Fusce facilisis lacinia dui}
-% ---
-\lipsum[64-65]
-
-\end{anexosenv}
+%\begin{apendicesenv}
+%
+%% Imprime uma página indicando o início dos apêndices
+%\partapendices
+%
+%% ----------------------------------------------------------
+%\chapter{Quisque libero justo}
+%% ----------------------------------------------------------
+%
+%\lipsum[50-54]
+%
+%% ----------------------------------------------------------
+%\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra}
+%% ----------------------------------------------------------
+%\lipsum[55-59]
+%
+%\end{apendicesenv}
+%% ---
+%
+%% ----------------------------------------------------------
+%% Anexos
+%% ----------------------------------------------------------
+%
+%% ---
+%% Inicia os anexos
+%% ---
+%\begin{anexosenv}
+%
+%% Imprime uma página indicando o início dos anexos
+%\partanexos
+%
+%% ---
+%\chapter{Morbi ultrices rutrum lorem}
+%% ---
+%\lipsum[60]
+%
+%% ---
+%\chapter{Cras non urna sed feugiat cum sociis natoque penatibus}
+%% ---
+%\lipsum[61-63]
+%
+%% ---
+%\chapter{Fusce facilisis lacinia dui}
+%% ---
+%\lipsum[64-65]
+%
+%\end{anexosenv}
 
 \end{document}

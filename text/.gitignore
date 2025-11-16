@@ -1,0 +1,35 @@
+# Arquivos de compilação LaTeX
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# Arquivos produzidos por BibTeX
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+
+# Arquivos temporários
+*.synctex.gz
+*.fdb_latexmk
+*.pdfsync
+*.tmp
+
+# Arquivos de backup
+*.bak
+*~
+*.swp
+
+# Ignorar PDFs gerados automaticamente (opcional)
+# Descomente para ignorar o PDF final:
+# *.pdf
