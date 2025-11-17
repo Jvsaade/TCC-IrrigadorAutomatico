@@ -1,17 +1,20 @@
 #include "actions.h"
 
-void MotorSentidoAntiHorario(int velocidade, int tempo) {
+void MotorSentidoAntiHorario(int velocidade) {
     digitalWrite(motorIn1, LOW);
     analogWrite(motorIn2, velocidade);
-    delay(tempo);
+    int tempoInicial = millis();
+    while(millis()-tempoInicial < 3e3 or digitalRead(stopPin) == LOW){
+    }
     digitalWrite(motorIn2, LOW);
-
 }
 
-void MotorSentidoHorario(int velocidade, int tempo) {
+void MotorSentidoHorario(int velocidade) {
     analogWrite(motorIn1, velocidade);
     digitalWrite(motorIn2, LOW);
-    delay(tempo);
+    int tempoInicial = millis();
+    while(millis()-tempoInicial < 3e3 or digitalRead(stopPin) == LOW){
+    }
     digitalWrite(motorIn1, LOW);
 }
 
@@ -31,26 +34,25 @@ void LigarAzul() {
 }
 
 void AbrirValvula(){
-    MotorSentidoAntiHorario(200, 200);
+    MotorSentidoAntiHorario(500);
 }
 
 void FecharValvula(){
-    MotorSentidoHorario(200, 200);
+    MotorSentidoHorario(500);
 }
 
 void Irrigation(int duracao){
     Serial.print("Irrigação iniciada por "); Serial.print(duracao); Serial.println(" minutos");
     AbrirValvula();
-    unsigned long count = millis();
-    while(millis()-count < (duracao*1e3)*60){
+    int tempoInicial = millis();
+    while(millis() - tempoInicial < (duracao*1e3)*60){
         LigarAzul();
         delay(100);
-        DesligarLeds();
         LigarVerde();
         delay(1000);
-        DesligarLeds();
     }
-    Serial.print("Irrigação finalizada.");
+    //delay((duracao*1e3)*60);
     FecharValvula();
+    Serial.print("Irrigação finalizada.");
 
 }

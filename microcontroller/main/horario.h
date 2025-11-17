@@ -14,6 +14,8 @@ extern struct tm timeinfo;
 void setupTime();
 bool getCurrentTime(int &hora, int &minuto);
 void erroHorario();
+void sucessoHorario();
 int checkSchedule();
+int tempoDeepSleep();
 
 #endif

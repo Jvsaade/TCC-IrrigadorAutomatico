@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
-#include <String.h>
+#include <String.h> // Não é estritamente necessário para LittleFS, mas mantém compatibilidade
 
 
 #include "bateria.h"
@@ -12,12 +12,11 @@
 #include "horario.h"
 
 
-#define MAX_STRING_LENGTH 64
+#define MAX_STRING_LENGTH 64 // Aumentado para dar mais folga (pode ser 32 se preferir, mas 64 é mais seguro)
 
-const int erroPin = 14;
-#define DEEPSLEEP_TIMEOUT 3*60000
-#if DEEPSLEEP_TIMEOUT < 60000
-  #error "O valor deve ser maior que 60.000"
+#define DEEPSLEEP_TIMEOUT 3*60000 // 30 segundos para DeepSleep
+#if DEEPSLEEP_TIMEOUT < 180000
+  #error "O valor deve ser maior que 180.000"
 #endif
 unsigned int contagem;
 
@@ -58,7 +57,7 @@ void setup() {
     pinMode(LedAzul, OUTPUT);
     pinMode(motorIn1, OUTPUT);
     pinMode(motorIn2, OUTPUT);
-    pinMode(erroPin, INPUT); // erroPin como INPUT, ok
+    pinMode(stopPin, INPUT);
 
     Serial.println("\nIniciando...");
 
@@ -115,40 +114,18 @@ void setup() {
     if(EstadoBateria()==BAIXO)
         enviarMensagem("Bateria baixa! Troque quando possível.");
 
-    // Variáveis de controle de tempo
-
 }
 
 void loop() {
     MDNS.update();
-    static unsigned long lastCheck = 0;
-    if (millis() - lastCheck > 30000) { // A cada 30 segundos
-      lastCheck = millis();
-      MDNS.announce();
-    }
     ArduinoOTA.handle();
     server.handleClient();
-    
-    delay(2000);
-
-    LigarAzul();
-
-    delay(2000);
-
-    DesligarLeds();
-
-    MotorSentidoHorario(800, 1000);
-
-    delay(2000);
-
-    LigarVerde();
-
-    MotorSentidoAntiHorario(800, 1000); 
 
     int duracao = checkSchedule();
     if(duracao != 0)
         Irrigation(duracao);
 
+    Serial.print("O próximo alarme está a ");Serial.print(tempoDeepSleep());Serial.println(" milisegundos a frente no tempo.");
     /* 
     Entra em deepsleep quando passarem DEEPSLEEP_TIMEOUT milisegundos desde que ele entrou no loop.
     OBS: DEEPSLEEP_TIMEOUT não pode ser um número muito pequeno, pois deve ter tempo suficiente para
@@ -156,7 +133,19 @@ void loop() {
     */
 
     if (millis() - contagem > DEEPSLEEP_TIMEOUT) {
-        Serial.println("Entrando em deepsleep por 15 segundos");
-        ESP.deepSleep(15e6);
+        int wait = tempoDeepSleep();
+        if (wait > 5e6){
+            ESP.deepSleep(wait);
+            Serial.print("Entrando em DeepSleep por "); Serial.print(wait/60e6); Serial.println(" minutos.");
+        }
+        else {
+            contagem += 6e3*60; 
+        }
     }
+
+    // if (millis() - contagem > DEEPSLEEP_TIMEOUT) {
+    //     Serial.println("Entrando em deepsleep por 15 segundos");
+    //     ESP.deepSleep(15e6);
+    // }
 }
+

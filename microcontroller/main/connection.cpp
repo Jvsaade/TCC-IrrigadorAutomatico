@@ -83,7 +83,7 @@ void SuccessfulConnection() {
         LigarVerde();
         delay(500); // 0.5 segundo
     }
-    LigarVerde(); // Deixa o LED verde ligado após a animação para indicar conexão
+    DesligarLeds(); // Deixa o LED verde ligado após a animação para indicar conexão
 }
 
 bool IniciarSmartConfig() {

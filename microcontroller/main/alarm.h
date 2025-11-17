@@ -18,4 +18,6 @@ bool alarmExists(const String& nome);
 
 int findTime(int hora, int minuto);
 
+int nearestSchedule(int hora, int minuto);
+
 #endif
