@@ -156,7 +156,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Modelo de Monografia de \\ Trabalho de Conclusão de Curso com \abnTeX}
+\titulo{Aprimoramento de sistema \\ de irrigação automatizado}
 \autor{João Vitor Saade Simão}
 \local{Belo Horizonte}
 \data{2025}
@@ -243,51 +243,41 @@
 % ---
 % Dedicatória
 % ---
-\begin{dedicatoria}
-   \vspace*{\fill}
-   \centering
-   \noindent
-   \textit{ Este trabalho é dedicado às crianças adultas que,\\
-   quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
-\end{dedicatoria}
+%\begin{dedicatoria}
+%   \vspace*{\fill}
+%   \centering
+%   \noindent
+%   \textit{ Este trabalho é dedicado às crianças adultas que,\\
+%   quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
+%\end{dedicatoria}
 % ---
 
 % ---
 % Agradecimentos
 % ---
 \begin{agradecimentos}
-Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson,
-Leslie H. Watter, Bruno Parente Lima, Flávio de Vasconcellos Corrêa, Otavio Real
-Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
-projeto abn\TeX\ foram extraídos de
-\url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que
-contribuíram para que a produção de trabalhos acadêmicos conforme
-as normas ABNT com \LaTeX\ fosse possível.
+	
+Agradeço ao meu orientador, Prof. Ricardo Duarte, que sempre se mostrou disponível e prestativo para auxiliar no desenvolvimento desse projeto.
 
-Agradecimentos especiais são direcionados ao Centro de Pesquisa em Arquitetura
-da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de
-Brasília (CPAI), ao grupo de usuários
-\emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos
-novos voluntários do grupo
-\emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
-\url{http://abntex2.googlecode.com/}}~que contribuíram e que ainda
-contribuirão para a evolução do \abnTeX.
+Agradeço a minha família, por todo apoio que me deram. Em especial a meu pai, Vitor César Simão, que me auxiliou bastante no desenvolvimento desse projeto, especialmente na parte da montagem.
+
+Agradeço à Universidade Federal de Minas Gerais e à sociedade brasileira por seus investimentos em meus estudos.
 \end{agradecimentos}
 % ---
 
 % ---
 % Epígrafe
 % ---
-\begin{epigrafe}
-    \vspace*{\fill}
-	\begin{flushright}
-		\textit{``Não vos amoldeis às estruturas deste mundo, \\
-		mas transformai-vos pela renovação da mente, \\
-		a fim de distinguir qual é a vontade de Deus: \\
-		o que é bom, o que Lhe é agradável, o que é perfeito.\\
-		(Bíblia Sagrada, Romanos 12, 2)}
-	\end{flushright}
-\end{epigrafe}
+%\begin{epigrafe}
+%    \vspace*{\fill}
+%	\begin{flushright}
+%		\textit{``Não vos amoldeis às estruturas deste mundo, \\
+%		mas transformai-vos pela renovação da mente, \\
+%		a fim de distinguir qual é a vontade de Deus: \\
+%		o que é bom, o que Lhe é agradável, o que é perfeito.\\
+%		(Bíblia Sagrada, Romanos 12, 2)}
+%	\end{flushright}
+%\end{epigrafe}
 % ---
 
 % ---
@@ -296,27 +286,47 @@ contribuirão para a evolução do \abnTeX.
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
- Segundo a \citeonline[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
- objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
- destes itens dependem do tipo de resumo (informativo ou indicativo) e do
- tratamento que cada item recebe no documento original. O resumo deve ser
- precedido da referência do documento, com exceção do resumo inserido no
- próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
- resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
- ponto e finalizadas também por ponto.
+ Frente ao crescente aumento do lixo eletrônico, requer-se atitudes visando a diminuição da
+ quantidade deste, a fim de reduzir a contaminação do meio ambiente com metais pesados e
+ outros materiais tóxicos presentes nesses dispositivos. A reciclagem, solução amplamente
+ usada para tratamento de lixo, não é muito recomendada nesses casos, devido à alta
+ complexidade em se reciclar esse tipo de resíduo. Uma solução bastante útil, nesse contexto,
+ é a reutilização destes equipamentos, conhecida em algumas fontes como \textit{Upcycling} ou
+ \textit{Refurbishing}. Este trabalho consiste na aplicação desse conceito em dois irrigadores
+ automáticos, um da marca Amanco e outro da marca Trato. Para isso, foram projetadas placas
+ de circuito impresso (PCBs) para substituírem as originais inoperantes dos dispositivos, além
+ da programação do microcontrolador ESP-12E e de um aplicativo de Android para controle dos
+ tempos e horários de irrigação. Para a programação do microcontrolador, foi utilizado o Arduino
+ IDE, a fim de facilitar a gravação do firmware e aproveitar as diversas bibliotecas desenvolvidas
+ pela comunidade. Para a programação do ESP-12E foi utilizado o recurso Over-The-Air, que
+ permite que o microcontrolador seja controlado através do Wi-Fi, sem a necessidade de fios, o
+ que se mostrou bastante útil no desenvolvimento do trabalho. Para o desenvolvimento do
+ aplicativo Android, optou-se pelo Android Studio, o Ambiente de Desenvolvimento Integrado
+ (IDE) oficial. A escolha foi pautada não apenas pelo seu suporte nativo e conjunto completo de
+ ferramentas para a plataforma, mas também pela sua usabilidade, que agiliza o processo de
+ codificação, depuração e teste. Para permitir que usuários com problemas semelhantes façam
+ uso dessa solução em seus dispositivos próprios, este projeto será disponibilizado
+ gratuitamente na plataforma GitHub. Espera-se, assim, que novos projetos sejam
+ desenvolvidos pela comunidade, a fim de reduzir ou postergar o descarte do lixo eletrônico no
+ meio ambiente.
+ \vspace{\onelineskip}
+ 
+ \noindent
 
- \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+ \textbf{Palavras-chaves}: Irrigação. \textit{Upcycling}. Microcontrolador. Reaproveitamento.
 \end{resumo}
 
 % resumo em inglês
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
-   This is the english abstract.
+   Given the growing amount of electronic waste, it is necessary to adopt measures to reduce its volume and, consequently, mitigate environmental contamination caused by heavy metals and other toxic materials present in these devices. Recycling, a widely used solution for waste treatment, is not highly recommended in such cases due to the complexity involved in processing this type of residue. A useful alternative is the reuse of electronic equipment, commonly referred to in the literature as upcycling or refurbishing.
+   This work applies this concept to two automatic irrigation devices, one from the Amanco brand and the other from Trato. New printed circuit boards (PCBs) were designed to replace the original faulty ones, along with the development of firmware for the ESP-12E microcontroller and an Android application to configure irrigation schedules and durations. The Arduino IDE was used for microcontroller programming to simplify firmware deployment and take advantage of the extensive set of community-developed libraries. Over-the-air (OTA) programming was employed to update the ESP-12E via Wi-Fi, eliminating the need for wired connections and streamlining the development process.
+   For the Android application, Android Studio?the official Integrated Development Environment (IDE)?was chosen for its native support, comprehensive toolset, and usability, which facilitates coding, debugging, and testing. To enable users facing similar issues to adopt this solution in their own devices, the project will be made freely available on GitHub. It is expected that this initiative will encourage the development of new community projects, contributing to the reduction or postponement of e-waste disposal in the environment.
 
    \vspace{\onelineskip}
  
    \noindent 
-   \textbf{Key-words}: latex. abntex. text editoration.
+   \textbf{Key-words}: Irrigation. Upcycling. Microcontroller. Reuse.
  \end{otherlanguage*}
 \end{resumo}
 
@@ -340,9 +350,10 @@ contribuirão para a evolução do \abnTeX.
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-  \item[Fig.] Area of the $i^{th}$ component
   \item[CI] Circuito integrado
   \item[IoT] Internet of Things
+  \item[PCB] Placa de Circuito Impresso
+  \item[ADC] Conversor Analógico-Digital
 %  \item[lauro cesar] este é o meu nome
 \end{siglas}
 % ---
@@ -350,12 +361,12 @@ contribuirão para a evolução do \abnTeX.
 % ---
 % inserir lista de símbolos
 % ---
-\begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
-\end{simbolos}
+%\begin{simbolos}
+%  \item[$ \Gamma $] Letra grega Gama
+%  \item[$ \Lambda $] Lambda
+%  \item[$ \zeta $] Letra grega minúscula zeta
+%  \item[$ \in $] Pertence
+%\end{simbolos}
 % ---
 
 % ---
@@ -521,6 +532,7 @@ Por se tratar de uma solução simples e que não utiliza muita corrente, esta foi 
 \chapter{Metodologia}\label{cap_metodologia}
 
 \section{Levantamento de requisitos}
+\label{sec:levantamentoRequisitos}
 Para obter os requisitos aos quais o sistema deve atender para cumprir com seu objetivo, foram utilizadas técnicas de Engenharia de Requisitos. No levantamento inicial, foi realizada uma entrevista com o professor orientador, cujo papel é de cliente e usuário do sistema a ser desenvolvido. A tabela \ref{lista-casos-uso} apresenta a lista de casos de uso que foram definidos:
 
 \begin{table}[htb]
@@ -613,9 +625,7 @@ Em relação às últimas duas conexões, a do GPIO15 e a do CH\_PD(EN), elas já estã
 
 Para realizar a programação do módulo, o botão conectando o GPIO0 ao GND deve ser segurado. Ao fim da programação, o botão deve ser solto e o botão que liga o RST ao GND deve ser pressionado e solto. Assim, foi realizada a primeira programação do módulo. As programações subsequentes foram realizadas pelo método Over the Air (OTA).
 
-Para facilitar a programação do módulo, todos os componentes necessários para a programação do circuito foram montados em uma placa de fenolite perfurada. Para realizar a programação do módulo, o microcontrolador deveria ser encaixado no local designado, duas baterias de 1,5V seriam conectadas através de jumpers, e a interface USB deveria ser conectada no computador desejado para a programação.
-
-As figuras \ref{fig: placa_fenolite_frente} e \ref{fig: placa_fenolite_verso} mostram a visão superior e inferior da placa, respectivamente.
+Para facilitar a programação do módulo, todos os componentes necessários para a programação do circuito foram montados em uma placa de fenolite perfurada. Para realizar a programação do módulo, o microcontrolador deveria ser encaixado no local designado, duas baterias de 1,5V seriam conectadas através de jumpers, e a interface USB deveria ser conectada no computador desejado para a programação. As figuras \ref{fig: placa_fenolite_frente} e \ref{fig: placa_fenolite_verso} mostram a visão superior e inferior da placa, respectivamente.
 
 \begin{figure}[htb]
  \centering
@@ -634,8 +644,41 @@ As figuras \ref{fig: placa_fenolite_frente} e \ref{fig: placa_fenolite_verso} mo
   \end{minipage}
 \end{figure}
 
-Em relação à programação via WiFi, ela é bastante interessante de ser feita por permitir que o firmware do microcontrolador seja atualizado mesmo quando o dispositivo já esteja soldado na placa definitiva. Para que isso seja possível, é necessário utilizar a funcioalidade Over-The-Air (OTA) do ESP. Os códigos para isso são descritos na seção \ref{sec:ota}.
+Em relação à programação via WiFi, ela é bastante interessante de ser feita por permitir que o firmware do microcontrolador seja atualizado mesmo quando o dispositivo já esteja soldado na placa definitiva. Para que isso seja possível, é necessário utilizar a funcionalidade Over-The-Air (OTA) do ESP. Os códigos para isso são descritos na seção~\ref{sec:ota}.
 
+\section{Alimentação do circuito}
+
+Conforme definido em seção anterior, o irrigador deve ser alimentado por duas pilhas alcalinas de 1,5V, atingindo uma tensão de 3,0V. É importante, notar, porém, que o microcontrolador utilizado possui tensão nominal de alimentação de 3,3V. Além disso, a tensão das pilhas tem um comportamento decrescente conforme sua carga diminui, o que pode causar mau funcionamento ao microcontrolador, que opera com uma tensão mínima de 2,5V.
+
+Para elevar o valor de tensão nas baterias para um nível próximo ao ideal para o ESP-12E, torna-se necessário usar um conversor de tensão step-up (boost converter). Um dos requisitos importantes para a escolha desse conversor é sua tensão mínima de funcionamento, já que o máximo que duas pilhas conseguem fornecer juntas é de 3,0V. Outro requisito imprescindível é que seja possível fornecer uma tensão de saída de 3,3V. A Tabela~\ref{tab:conversores_tensao} mostra alguns conversores boost encontrados em lojas de eletrônica.
+
+\begin{table}[htb]
+	\IBGEtab{%
+		\caption{Comparativo de conversores de tensão Step-Up}%
+		\label{tab:conversores_tensao}
+	}{%
+		% Ajuste os valores de p{} conforme precisar para sua página
+		\begin{tabular}{p{4cm} p{4.5cm} p{4.5cm}}
+			\toprule
+			Conversor & Tensão de entrada & Tensão de saída \\
+			\midrule \midrule
+			XL6009 & 4V-32V & 5V-35V \\
+			\midrule
+			MC34063 & 5V-24V & 6V-30V \\
+			\midrule
+			MT3608 & 2V-24V & 2,5-28V \\
+			\midrule
+			SX1308 & 2V-24V & 5V-28V \\
+			\bottomrule
+		\end{tabular}%
+	}{%
+		\fonte{Produzido pelo autor.}%
+	}
+\end{table}
+
+Como é possível observar, somente o modelo MT3608 atende aos requisitos de tensão de entrada e saída.
+
+Outro ponto importante a ser considerado na alimentação do circuito é que a o acionamento intermitente do Wi-Fi no ESP-12E pode causar picos de corrente no circuito, levando a variações temporárias na tensão. Segundo o datasheet do ESP8266, chip usado no ESP-12E, a corrente demandada em aplicações sem fio pode chegar a 170mA, enquanto o valor médio de corrente consumida é de 80mA \cite{Espressif_ESP8266_Datasheet}. Como consequência disso, existe a probabilidade que o microcontrolador apresente mal funcionamento e a irrigação seja prejudicada. A solução mais apropriada nesse caso é o uso de capacitores de bypass, que funcionam como filtros passa-baixa, reduzindo o efeito de variações repentinas nas tensão. Para essas aplicações, normalmente se usa capacitores na faixa de $0,1\mu F$ a $10\mu F$\cite{TheArtOfElectronics}. Nesse trabalho, foram usados dois capacitores, um de $10\mu F$ para filtrar frequências mais baixas, que acontecem por exemplo quando há o boot inicial, e outro de $0,1\mu F$, para filtrar frequências mais altas, presentes quando ocorre o acionamento do Wi-Fi.
 
 % ---
 
@@ -646,13 +689,13 @@ Para fazer o controle dos motores, é necessário verificar qual a corrente consum
 
 Uma opção para realizar essa tarefa é utilizando um transistor Darlington TIP122 \cite{DCMotorWithoutMotorDriver}. Nessa solução, o microcontrolador aciona o  BJT com uma corrente de base, que o aciona e permite a passagem de corrente por ele.
 
-Para verificar se esse transistor é capaz de fornecer a corrente necessária, é preciso verificar qual o ganho de corrente que ele é capaz de produzir. Segundo o datasheet do TIP122 \cite{TIP122Datasheet}, o ganho máximo que ele é capaz de fornecer é de $1000mA/mA$, bem superior ao necessário para o funcionamento do motor, que seria de 20 a 40.
+Para verificar se esse transistor é capaz de fornecer a corrente necessária, é preciso verificar qual o ganho de corrente que ele é capaz de produzir. Segundo o datasheet do TIP122 \cite{TIP122Datasheet}, o ganho máximo que ele é capaz de fornecer é de $1000$ mA/mA, bem superior ao necessário para o funcionamento do motor, que seria de 20 a 40.
 
 Apesar de ser uma solução barata (por volta de R\$ 3,00) e suportar uma alta corrente (8A \cite{TIP122Datasheet}), ela é mais difícil de ser feita, já que necessitaria de soldas e isso tornaria a tarefa mais difícil para alguém inexperiente na área.
 
 Outra alternativa para solucionar esse problema é a utilização de uma ponte H, um circuito eletrônico que permite controlar a direção da corrente fornecida a uma carga, como um motor de corrente contínua. Esse dispositivo possui dois terminais de controle de entrada, que determinam o sentido de rotação do motor, e dois terminais de saída, responsáveis por fornecer a tensão e a corrente necessárias ao seu funcionamento.
 
-A figura \ref{fig:circuito-L298} mostra o circuito interno do CI L298, utilizado na ponte H.
+A figura \ref{fig:circuito-L298} mostra o circuito interno do CI L298.
 
 \begin{figure}[h]
     \centering
@@ -661,19 +704,17 @@ A figura \ref{fig:circuito-L298} mostra o circuito interno do CI L298, utilizado
     \label{fig:circuito-L298}
 \end{figure}
 
-O funcionamento desse circuito consiste em conectar os pinos de saída ao terra ou à alimentação positiva. Quando a entrada tem valor alto, o transistor BJT superior conecta a alimentação positiva à saída, enquanto o transistor inferior permanece desligado. Por outro lado, quando o nível da entrada é baixo, o transistor inferior é acionado, conectando a saída ao terra.
+O funcionamento desse circuito consiste em conectar os pinos de saída ao terra ou à alimentação positiva. Quando a entrada tem valor alto, o transistor superior conecta a alimentação positiva à saída, enquanto o transistor inferior permanece desligado. Por outro lado, quando o nível da entrada é baixo, o transistor inferior é acionado, conectando a saída ao terra.
 
-Ao inserir pares de entrada alternados (In1=1 e In2=0, por exemplo), uma das saídas é ligada ao terra e outra à alimentação positiva, criando uma diferença de potencial no motor e fazendo uma corrente circular nele. É importante ressaltar que ao utilizar a ponte H, a corrente que sai do microcontrolador somente é utilizada para acionar o transistor, como corrente de base deste. A corrente utilizada para o funcionamento do motor, por sua vez, tem origem na fonte de alimentação, passando pelos dois transistores e pelo motor.
+Ao inserir pares de entrada alternados (In1=1 e In2=0, por exemplo), uma das saídas é ligada ao terra e outra à alimentação positiva, criando uma diferença de potencial no motor e fazendo uma corrente circular nele. É importante ressaltar que ao utilizar a ponte H, a corrente que sai do microcontrolador somente é utilizada para acionar o transistor, como corrente de base ou gate deste. A corrente utilizada para o funcionamento do motor, por sua vez, tem origem na fonte de alimentação, passando pelos dois transistores e pelo motor.
 
 Essa solução é a mais apropriada para o projeto, já que não acrescenta muitos custos (por volta de R\$5,00) e é mais fácil de ser montada e controlada. Outra vantagem importante é que a ponte H pode alterar facilmente o sentido da corrente no motor, algo essencial nesse projeto, considerando que o motor deve obrigatoriamente girar nos dois sentidos.
 
-A fim de confirmar se a ponte H consegue realizar esse papel, é necessário investigar quando de corrente ela é capaz de fornecer, e quanto de corrente de entrada ela exige. 
-
-Segundo informação do datasheet do CI L298, a corrente máxima de saída para a operação DC é de 2A \cite{L298Datasheet}. Em relação à placa usada, a mini ponte H, o site no qual ela foi comprada informa que a corrente máxima por canal é de 1,5 A \cite{EletrogateMiniPonteH}. Considerando que a corrente exigida pelo motor DC é de 150mA - 200mA, a ponte H utilizada é capaz de fornecer com folga a corrente de saída.
+A fim de confirmar se a ponte H consegue realizar esse papel, é necessário investigar quando de corrente ela é capaz de fornecer, e quanto de corrente de entrada ela exige. Segundo informação do datasheet do CI L298, a corrente máxima de saída para a operação DC é de 2A \cite{L298Datasheet}. Em relação à placa usada, a mini ponte H, o site no qual ela foi comprada informa que a corrente máxima por canal é de 1,5 A \cite{EletrogateMiniPonteH}. Considerando que a corrente exigida pelo motor DC é de 150mA - 200mA, a ponte H utilizada é capaz de fornecer com folga a corrente de saída.
 
 Em relação à corrente de entrada, o datasheet informa que para uma entrada de nível alto, a corrente consumida é de no máximo $100\mu A$, enquanto para uma entrada de nível baixo o consumo é de $-10\mu A$, estando, portanto, dentro das restrições de corrente do microcontrolador.
 
-Outro modelo de ponte H possível para ser utilizado nesse projeto é o DRV8833. Seu funcionamento é semelhanete ao explicado para o modelo anterior. Diferente do driver L298, o DRV8833 possui transistores MOSFET como entrada, além de dois pinos extras: SLEEP e FAULT. Este primeiro pino é uma entrada e possui a funcionalidade de desativar as saídas caso esteja em valor baixo; o segundo pino, por sua vez, é uma saída, e fica em valor baixo quando há uma sobre-corrente ou sobre-temperatura. Essa segunda funcionalidade da ponte H é bastate interessante para indicar ao usuário quando há algum defeito no motor.
+Outro modelo de ponte H possível para ser utilizado nesse projeto é o DRV8833. Seu funcionamento é semelhante ao explicado para o modelo anterior. Diferente do driver L298, o DRV8833 possui transistores MOSFET como entrada, além de dois pinos extras: SLEEP e FAULT. Este primeiro pino é uma entrada e possui a funcionalidade de desativar as saídas caso esteja em valor baixo; o segundo pino, por sua vez, é uma saída, e fica em valor baixo quando há uma sobre-corrente ou sobre-temperatura. Essa segunda funcionalidade da ponte H é bastate interessante para indicar ao usuário quando há algum defeito no motor.
 
 As dimensões dos módulos de ponte H citados anteriormente são:
 \begin{itemize}
@@ -683,7 +724,7 @@ As dimensões dos módulos de ponte H citados anteriormente são:
 \end{itemize}
 
 
-Considerando que o tamanho dos componentes é uma limitação importante do projeto, e levando em consideração a funcionalidade de indicação de sobrecorrente e sobretemperatura, a ponte H DRV8833 foi escolhida para o projeto.
+Considerando que o tamanho dos componentes é uma limitação importante do projeto, e levando em consideração a funcionalidade de indicação de sobre-corrente e sobre-temperatura, a ponte H DRV8833 foi escolhida para o projeto.
 
 \section{Desenvolvimento do firmware}
 
@@ -703,7 +744,7 @@ Em relação ao SmartConfig, o site da Espressif possui uma descrição a respeito:
 Podem ser encontrados vários aplicativos móveis na PlayStore que possuem a funcionalidade do SmartConfig. Caso se deseje criar a própria aplicação do SmartConfig, é possível encontrar repositórios no GitHub que implementam essa funcionalidade \cite{SmartConfigAndroidApp}. Para não tornar o projeto muito complexo, foi escolhido utilizar uma aplicação da PlayStore, em vez de associar essa funcionalidade ao aplicativo de controlar a irrigação.
 Para acionar o serviço de coneção por SmartConfig, a biblioteca \texttt{ESP8266WiFi.h} disponibiliza a função mostrada em  \ref{Acionamento_SmartConfig}.
 
-\begin{lstlisting}[caption = Fun??o para acionar o serviço do SmartConfig, label = {Acionamento_SmartConfig}]
+\begin{lstlisting}[caption = Função para acionar o serviço do SmartConfig, label = {Acionamento_SmartConfig}]
     WiFi.beginSmartConfig()
 \end{lstlisting}
 
@@ -787,20 +828,15 @@ bool RecuperarCredenciaisWiFi() {
         globalPW = "";
         return false;
     }
-
     globalSSID = configFile.readStringUntil('\n');
-    globalPW = configFile.readStringUntil('\n'); // Lê a segunda linha para a senha
+    globalPW = configFile.readStringUntil('\n');
     configFile.close();
-
-    // Remove espaços em branco ou caracteres de nova linha extras que podem ser lidos
     globalSSID.trim();
     globalPW.trim();
-
     Serial.print("SSID lido do LittleFS: ");
     Serial.println(globalSSID);
     Serial.print("PW lido do LittleFS: ");
     Serial.println(globalPW);
-
     if (globalSSID.length() > 0 && globalPW.length() > 0) {
         return true;
     } else {
@@ -816,28 +852,24 @@ Após a primeira conexão através do SmartConfig, as credenciais do WiFi terão sid
 
 \begin{lstlisting}[caption = Função para conectar ao WiFi com dados da memória flash, label = {WiFi_LittleFS}]
 bool ConectarWiFiComCredenciaisSalvas() {
-    if (!RecuperarCredenciaisWiFi()) { // Tenta carregar as credenciais
+    if (!RecuperarCredenciaisWiFi()) {
         Serial.println("Não foi possível carregar credenciais válidas do LittleFS.");
         return false;
     }
-
     Serial.print("Tentando conectar com SSID: ");
     Serial.println(globalSSID);
-
-    // Conecta ao Wi-Fi
     WiFi.begin(globalSSID.c_str(), globalPW.c_str());
-
     unsigned long tempo_inicial = millis();
     while (millis() - tempo_inicial < WiFiConnection_Timeout) {
         if (WiFi.status() == WL_CONNECTED) {
             Serial.println("\nConectado com credenciais salvas!");
-            return true; // Conectado com sucesso
+            return true;
         }
-        delay(500); // Espera 0.5 segundo antes de verificar novamente
-        Serial.print("."); // Feedback visual
+        delay(500);
+        Serial.print(".");
     }
     Serial.println("\nTempo esgotado para conexão com credenciais salvas.");
-    return false; // Tempo esgotado, não conectou
+    return false;
 }
 \end{lstlisting}
 
@@ -856,13 +888,16 @@ No início do código, o servidor foi criado utilizando a porta 80, como mostrado 
     ESP8266WebServer server(80);
 \end{lstlisting}
 
-Em seguida, no \texttt{void setup()}, foram definidos os endpoints do servidor através de \texttt{server.on()} e o servidor foi inicializado com \texttt{server.begin()} como mostrado em \ref{criar_endpoints}.
+Em seguida, no arquivo \texttt{servidor.cpp}, foram definidos os endpoints do servidor através de \texttt{server.on()} e o servidor foi inicializado com \texttt{server.begin()} como mostrado em \ref{criar_endpoints}.
 
 \begin{lstlisting}[label={criar_endpoints}, caption=Criação dos endpoints e iniciação do servidor.]
-    server.on("/status", status_sistema);
-    server.on("/config", configurar_timer);
-    server.on("/bateria", nivel_bateria);
-    server.begin();
+  server.on("/setAlarm", HTTP_POST, setAlarm);
+	server.on("/editAlarm", HTTP_POST, editAlarm);
+	server.on("/deleteAlarm", HTTP_POST, deleteAlarm);
+	server.on("/deleteAll", HTTP_POST, deleteAll);
+	server.on("/deactivateAlarm", HTTP_POST, deactivateAlarm);
+	server.on("/activateAlarm", HTTP_POST, activateAlarm);
+	server.on("/consultAlarm", consultAlarm);
 \end{lstlisting}
 
 Após isso, no loop principal, foi executada a função da biblioteca \texttt{ESP8266WebServer.h} que verifica se há requisições de usuários. A função para realizar essa tarefa é mostrada em \ref{ServidorHandle}.
@@ -884,7 +919,7 @@ void OTA_Initialization() {
         String type;
         if (ArduinoOTA.getCommand() == U_FLASH) {
             type = "sketch";
-        } else { // U_SPIFFS
+        } else {
             type = "filesystem";
         }
         Serial.println("Iniciando atualização " + type);
@@ -904,8 +939,7 @@ void OTA_Initialization() {
         else if (error == OTA_CONNECT_ERROR) Serial.println("Erro de conexão");
         else if (error == OTA_RECEIVE_ERROR) Serial.println("Erro ao receber");
         else if (error == OTA_END_ERROR) Serial.println("Erro ao finalizar");
-        // Sinalize um erro com os LEDs
-        ConnectionError(); // Ou uma função específica para erro OTA
+        ConnectionError();
     });
     ArduinoOTA.begin();
     Serial.println("OTA inicializado. Aguardando atualizações...");
@@ -919,7 +953,112 @@ Para o funcionamento correto dessa funcionalidade, é necessário adicionar a funç
     ArduinoOTA.handle();
 \end{lstlisting}
 
+\subsection{Adição dos alarmes}
+\label{sec:add_alarm_mic}
+
+Quando o microcontrolador recebe uma requisição para adicionar um alarme, ele executa a função \texttt{setAlarm}, mostrada no código \ref{Funcao_add_alarm}.
+
+\begin{lstlisting}[caption=Função para adicionar alarme, label={Funcao_add_alarm}]
+	void setAlarm(){
+		if (!server.hasArg("plain")) return server.send(400, "text/plain", "JSON ausente");
+		DynamicJsonDocument doc(1024);
+		if (deserializeJson(doc, server.arg("plain"))) return server.send(400, "text/plain", "Erro JSON");
+		
+		String nome = doc["nomeAlarme"].as<String>();
+		if (alarmExists(nome)) return server.send(400, "text/plain", "Já existe");
+		
+		DynamicJsonDocument data(1024);
+		loadJsonFromFile(ALARM_FILE, data);
+		JsonArray arr = data.is<JsonArray>() ? data.as<JsonArray>() : data.to<JsonArray>();
+		JsonObject a = arr.createNestedObject();
+		a["nome"] = nome;
+		a["hora"] = doc["horaAlarme"].as<String>();
+		a["minuto"] = doc["minutoAlarme"].as<String>();
+		a["duracao"] = doc["duracaoAlarme"].as<String>();
+		a["ativo"] = doc["ativo"].as<String>();
+		a["dias"] = doc["diasSemana"].as<String>();
+		saveJsonToFile(ALARM_FILE, data);
+		Serial.print("Alarme adicionado. Nome: "); Serial.println(nome);
+		Serial.print("Hora: "); Serial.println(a["hora"].as<String>());
+		Serial.print("Minuto: "); Serial.println(a["minuto"].as<String>());
+		Serial.print("Duração: "); Serial.println(a["duracao"].as<String>());
+		server.send(200, "text/plain", "Criado");
+	}
+\end{lstlisting}
+
+Antes de realizar a adição do alarme, o código consulta a base de dados para verificar se já existe algum alarme com esse nome. Caso positivo, o microcontrolador retorna um erro para o aplicativo.
+
+\subsection{Exclusão dos alarmes}
+\label{sec:exclude_config_mic}
+
+Para a exclusão de alarmes, foi implementada a função \texttt{deleteAlarm}, ativada pelo endpoint \texttt{/deleteAlarm} (via HTTP POST). Essa função utiliza a função auxiliar \texttt{removeAlarm} do arquivo \texttt{alarm.cpp} para modificar o banco de dados. O código da função \texttt{deleteAlarm} é apresentado em \ref{Funcao_delete_alarm}.
+
+\begin{lstlisting}[caption=Função para excluir um alarme, label={Funcao_delete_alarm}] 
+	void deleteAlarm(){ if (!server.hasArg("name")) return server.send(400, "text/plain", "Faltando nome"); if (removeAlarm(server.arg("name"))) server.send(200, "text/plain", "Removido"); else server.send(404, "text/plain", "Não encontrado"); } 
+\end{lstlisting}
+
+A função \texttt{deleteAlarm} primeiramente verifica se o argumento \texttt{name}, contendo o nome do alarme a ser excluído, foi fornecido na requisição. Caso positivo, ela chama a função \texttt{removeAlarm}, cujo código é mostrado em \ref{Funcao_remove_alarm_db}.
+
+\begin{lstlisting}[caption=Função para remover um alarme do banco de dados, label={Funcao_remove_alarm_db}] 
+	bool removeAlarm(const String& nome) { DynamicJsonDocument doc(1024); if (!loadJsonFromFile(ALARM_FILE, doc)) return false; if (!doc.is<JsonArray>()) return false; JsonArray arr = doc.as<JsonArray>(); for (int i = 0; i < arr.size(); i++) { if (arr[i]["nome"].as<String>() == nome) { arr.remove(i); return saveJsonToFile(ALARM_FILE, doc); } } return false; } 
+\end{lstlisting}
+
+A função \texttt{removeAlarm} carrega o arquivo JSON, itera pelo \textit{array} de alarmes e, ao encontrar o nome correspondente, remove o objeto do \textit{array} usando \texttt{arr.remove(i)}. Em seguida, salva o arquivo atualizado e retorna \texttt{true}. Se o alarme não for encontrado, retorna \texttt{false}, e a função \texttt{deleteAlarm} informa ao aplicativo que o alarme não foi encontrado (Erro 404).
+
+\subsection{Edição dos alarmes}
+\label{sec:edit_config_mic}
+
+A edição dos alarmes é gerenciada pela função \texttt{editAlarm}, mostrada em \ref{Funcao_edit_alarm}. Esta função é ativada por uma requisição HTTP POST ao endpoint \texttt{/editAlarm}.
+
+\begin{lstlisting}[caption=Função para editar um alarme, label={Funcao_edit_alarm}] 
+	void editAlarm(){ 
+		if (!server.hasArg("plain") || !server.hasArg("nomeAntigo")) return server.send(400, "text/plain", "Faltando dados"); 
+		String antigo = server.arg("nomeAntigo"); DynamicJsonDocument doc(1024); 
+		if (deserializeJson(doc, server.arg("plain"))) return server.send(400, "text/plain", "Erro JSON");
+		
+		DynamicJsonDocument data(1024); if (!loadJsonFromFile(ALARM_FILE, data)) return server.send(500, "text/plain", "Erro ao abrir");
+		JsonArray arr = data.as<JsonArray>(); for (JsonObject a : arr) { if (a["nome"].as<String>() == antigo) { 
+				if (doc.containsKey("nomeAlarme")) a["nome"] = doc["nomeAlarme"].as<String>(); 
+				if (doc.containsKey("horaAlarme")) a["hora"] = doc["horaAlarme"].as<String>(); 
+				if (doc.containsKey("minutoAlarme")) a["minuto"] = doc["minutoAlarme"].as<String>(); 
+				if (doc.containsKey("duracaoAlarme")) a["duracao"] = doc["duracaoAlarme"].as<String>(); if (doc.containsKey("ativo")) a["ativo"] = doc["ativo"].as<String>();
+				if (doc.containsKey("diasSemana")) a["dias"] = doc["diasSemana"].as<String>(); saveJsonToFile(ALARM_FILE, data); return server.send(200, "text/plain", "Editado"); } } server.send(404, "text/plain", "Não encontrado"); } 	
+\end{lstlisting}
+
+A função requer dois argumentos: \texttt{nomeAntigo}, para identificar o alarme a ser modificado, e \texttt{plain}, que contém o corpo da requisição em formato JSON com os novos dados.
+
+A lógica de edição permite atualizações parciais. O código carrega o banco de dados, localiza o alarme pelo \texttt{nomeAntigo} e, em seguida, verifica quais chaves (campos) estão presentes no JSON recebido usando \texttt{doc.containsKey()}. Apenas os campos fornecidos na requisição são atualizados no objeto JSON existente. Após a modificação, o arquivo é salvo.
+
+\subsection{Verificação dos Alarmes}
+\label{sec:verif_alarm_mic}
+
+Para que o aplicativo verifique quais alarmes estão salvos no microcontrolador, foi implementada a função \texttt{consultAlarm}, que verifica se o alarme está salvo a partir de seu nome. O código para a implementação dessa função é mostrado em \ref{Funcao_consult_alarm}.
+
+\begin{lstlisting}[caption=Função para consultar alarmes, label={Funcao_consult_alarm}]
+void consultAlarm(){
+	if (!server.hasArg("name")) return server.send(400, "text/plain", "Faltando nome");
+	Serial.println("Consultando alarme...");
+	if (alarmExists(server.arg("name"))) server.send(200, "text/plain", "True");
+	else server.send(200, "text/plain", "False");
+}
+\end{lstlisting}
+
+A função \texttt{alarmExists}, implementada no arquivo \texttt{alarm.cpp} é mostrada em \ref{Funcao_consult_database}.
+
+\begin{lstlisting}[caption=Função para verificar alarmes no banco de dados, label={Funcao_consult_database}]
+bool alarmExists(const String& nome) {
+	DynamicJsonDocument doc(1024);
+	if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
+	if (!doc.is<JsonArray>()) return false;
+	for (JsonObject a : doc.as<JsonArray>()) {
+		if (a["nome"].as<String>() == nome) return true;
+	}
+	return false;
+}
+\end{lstlisting}
+
 \subsection{Monitoramento da bateria}
+\label{sec:monit_bat}
 
 Para fazer o monitoramento de quando é necessário trocar as pilhas do irrigador, foi criada uma função \texttt{Estado\-Bateria()}. Seu código é mostrado em \ref{Funcao_estado_bateria}.
 
@@ -941,7 +1080,9 @@ BatteryState EstadoBateria(){
     
 \end{lstlisting}
 
-O tipo BatteryState foi criado através de uma \texttt{enum}, como mostrado em \ref{enum_battery_state}.
+Seu funcionamento consiste na medição a partir da porta analógica ADC0 do ESP-12E e na multiplicação do valor encontrado por um fator, para encontrar o valor de tensão na pilha. A partir do resultado encontrado, é feita uma comparação para verificar se o nível da bateria está numa faixa aceitável para o funcionamento correto do dispositivo, ou se é necessário trocar as pilhas.
+
+Para facilitar a programação, foi criado o tipo BatteryState através de uma \texttt{enum}, como mostrado em \ref{enum_battery_state}.
 
 \begin{lstlisting}[caption=Definição do tipo BatteryState, label={enum_battery_state}]
 enum BatteryState{
@@ -1007,13 +1148,88 @@ void enviarMensagem(String message){
 
 A função \texttt{urlEncode}, da biblioteca \texttt{UrlEncode.h}, foi utilizada a fim de garantir que a mensagem seja enviada corretamente via HTTP, codificando adequadamente os caracteres.
 
+\subsection{Indicações luminosas}
+
+A partir do aplicativo, é possível visualizar as configurações de irrigação e o nível de bateria do microcontrolador. Porém, estas informações não são suficientes para deixar o usuário a par da situação de funcionamento do microcontrolador, como a indicação de falha ou sucesso em alguma operação. Nos irrigadores originais, havia um display no qual eram mostradas as informações da irrigação, como horário, duração e dias da semana. Neste trabalho, para fins de aumento da vida útil da bateria, optou-se por não utilizar displays. Contudo, era necessário encontrar outro meio para a comunicação visual para informar o usuário do funcionamento do dispositivo.
+
+A forma escolhida para isso foi através de indicações luminosas feitas por dois leds, um vermelho e um verde. Para evitar ambiguidades na sinalização, cada situação indicada pelos leds possui um padrão distinto, resumido na Tabela~\ref{tab:status_leds}.
+
+\begin{table}[htb]
+	\IBGEtab{%
+		\caption{Significado das indicações luminosas}%
+		\label{tab:status_leds}
+	}{%
+		\begin{tabular}{p{8cm}p{6cm}}
+			\toprule
+			Indicação luminosa & Significado \\
+			\midrule \midrule
+			Led vermelho pisca 5 vezes. & Erro na montagem do LittleFS. \\
+			\midrule
+			Led verde pisca 5 vezes. & Conexão Wi-Fi bem-sucedida. \\
+			\midrule
+			Led verde e vermelho piscam rápido alternadamente. & Erro de conexão Wi-Fi/SmartConfig. \\
+			\midrule
+			Led verde aceso 1 segundo e led vermelho aceso 100 ms. & Irrigação em processo. \\
+			\midrule
+			Led verde aceso 2 segundos e led vermelho aceso 2 segundos. & Entrando em Deep Sleep. \\
+			\bottomrule
+		\end{tabular}%
+	}{%
+		\fonte{Produzido pelo autor.}%
+	}
+\end{table}
+
+\subsection{Determinação do tempo de Deep Sleep}
+
+Uma dos recursos mais importantes do microcontrolador para reduzir o consumo de bateria é o Deep Sleep. O ESP deve estar configurado para entrar nesse modo praticamente o tempo todo. Somente durante o período de irrigação, o microcontrolador deve estar ativo, a fim de acionar a válvula e permitir a passagem de água. Por isso, é necessário que o microcontrolador calcule o tempo até o próximo período de irrigação. A função que implementa isso é mostrada em \ref{tempo_deepsleep}.
+
+\begin{lstlisting}[caption=Função calcular o tempo de Deep Sleep, label={tempo_deepsleep}]
+int tempoDeepSleep(){
+	int horaAtual, minutoAtual;
+	if(!getCurrentTime(horaAtual, minutoAtual))
+	return 1;
+	return nearestSchedule(horaAtual, minutoAtual)*1e6;
+}
+\end{lstlisting}
+
+Inicialmente, o código tenta obter o tempo a partir da função \texttt{getCurrentTime}, da biblioteca \texttt{time.h}. Caso ocorra falha, o tempo de Deep Sleep é retornado como 1, fazendo com que o microcontrolador reinicie 1 minuto depois, para tentar novamente fazer o cálculo. Caso o tempo seja obtido corretamente, a função \texttt{nearestSchedule} é chamada. Sua implementação é mostrada em \ref{proximo_alarme}.
+
+\begin{lstlisting}[caption=Função para encontrar o próximo alarme, label={proximo_alarme}]
+int nearestSchedule(int hora, int minuto) {
+	DynamicJsonDocument doc(1024);
+	if (!loadJsonFromFile(ALARM_FILE, doc)) return 1;
+	if (!doc.is<JsonArray>()) return 1;
+	JsonArray alarmes = doc.as<JsonArray>();
+	if (alarmes.size() == 0) return 1;
+	int menorDiferenca = 24 * 60;
+	int alarmeMaisProximo = 1;
+	for (JsonObject alarme : alarmes) {
+		int horaAlarme = alarme["hora"].as<int>();
+		int minutoAlarme = alarme["minuto"].as<int>();
+		int minutosAtuais = hora * 60 + minuto;
+		int minutosAlarme = horaAlarme * 60 + minutoAlarme;
+		int diferenca = minutosAlarme - minutosAtuais;
+		if (diferenca < 0) {
+			diferenca += 24 * 60;
+		}
+		if (diferenca < menorDiferenca) {
+			menorDiferenca = diferenca;
+			alarmeMaisProximo = menorDiferenca;
+		}
+	}
+	return alarmeMaisProximo;
+}
+\end{lstlisting}
+
+O retorno dessa função fornece o alarme mais próximo do tempo atual. Esse valor é usado no arquivo \texttt{main.ino} como o tempo para que o microcontrolador fique em Deep Sleep.
+
 \section{Desenvolvimento do aplicativo}
 
 \subsection{Persistência das Configurações}
 
-A fim de manter as configurações criadas pelo usuário salvas, mesmo após o fechamento do aplicativo, optou-se por utilizar um banco de dados no aplicativo, através da base de dados Room. Para o funcionamento correto dessa biblioteca, as linhas de código mostradas em \ref{} devem ser adicionadas ao arquivo build.gradle.kts.
+A fim de manter as configurações criadas pelo usuário salvas, mesmo após o fechamento do aplicativo, optou-se por utilizar um banco de dados no aplicativo, através da base de dados Room. Para o funcionamento correto dessa biblioteca, as linhas de código mostradas em \ref{build-gradle} devem ser adicionadas ao arquivo build.gradle.kts.
 
-\begin{lstlisting}[language=Kotlin]
+\begin{lstlisting}[language=Kotlin,caption=Configuração do build.gradle.kts,label={build-gradle}]
     plugins{
     id("kotlin-kapt")
     id("com.google.devtools.ksp")
@@ -1114,12 +1330,141 @@ Foi criado também um arquivo de repositório para servir de interface do banco de
 \end{lstlisting}
 
 \subsection{Envio dos alarmes}
+\label{sec:envio_alarmes_app}
+
+O envio das configurações de alarme para o microcontrolador é iniciado pelo usuário ao pressionar o botão "Atualizar microcontrolador" na tela principal (PrimeiraTela.kt). Esta ação aciona a função \texttt{atualizarTimers} no \texttt{CounterAppViewModel}.
+
+Conforme o código \ref{enviar_alarme_vm}, a função primeiramente filtra a lista de todos os alarmes salvos no banco de dados local, selecionando apenas aqueles que ainda não foram marcados como enviados (cuja \texttt{id} não está no mapa \texttt{\_alarmeEnviado} ou está marcada como \texttt{false}).
+
+Para cada alarme pendente, a função executa uma chamada de rede assíncrona para o microcontrolador usando a interface Retrofit. Especificamente, ela chama\\ \texttt{IntApi.intService.setAlarm(alarm)}. Esta é uma requisição HTTP POST para o endpoint \texttt{/setAlarm}, que envia o objeto \texttt{Configuration} completo do alarme serializado como um corpo JSON.
+
+Se a resposta do microcontrolador for bem-sucedida (response.isSuccessful), o ViewModel atualiza o estado interno do aplicativo chamando \\ \texttt{marcarAlarmeComoEnviado(alarm.id)}, garantindo que o aplicativo não tente reenviar este alarme desnecessariamente.
+
+\begin{lstlisting}[language=Kotlin, label={enviar_alarme_vm}, caption=Função de envio de alarmes no ViewModel.] fun atualizarTimers(){ viewModelScope.launch { try { val activeAlarms = allAlarms.first().filter { alarmeSalvo(it.id).not() } // Obter alarmes pendentes if (activeAlarms.isEmpty()) { _statusMessage.value = "Nenhum alarme para enviar." return@launch }
+				
+				activeAlarms.forEach { alarm ->
+					try {
+						val response = IntApi.intService.setAlarm(alarm)
+						if (response.isSuccessful) {
+							_statusMessage.value = "Alarme '${alarm.nomeAlarme}' enviado com sucesso (JSON)."
+							marcarAlarmeComoEnviado(alarm.id) // marca este alarme como enviado
+						} else {
+							_statusMessage.value = "Falha ao enviar alarme '${alarm.nomeAlarme}' (JSON): ${response.message()}"
+						}
+					} catch (e: IOException) {
+						_statusMessage.value = "Erro de conexão ao enviar alarme '${alarm.nomeAlarme}' (JSON): ${e.message}"
+					} catch (e: Exception) {
+						_statusMessage.value = "Erro inesperado ao enviar alarme '${alarm.nomeAlarme}' (JSON): ${e.message}"
+					}
+				}
+			} catch (e: Exception) {
+				_statusMessage.value = "Erro ao carregar alarmes: ${e.message}"
+			}
+		}
+} 
+\end{lstlisting}
+
 
 \subsection{Exclusão dos alarmes}
+\label{sec:exclude_alarm_app}
+
+A exclusão de alarmes pode ocorrer de duas formas: individualmente, através do ícone de lixeira em cada \texttt{AlarmCard} na \texttt{PrimeiraTela}, ou coletivamente, através do botão "Excluir todos alarmes".
+
+No caso da exclusão individual, a função \texttt{excluirAlarme} do ViewModel é chamada, como mostra o código \ref{excluir_alarme_vm}. A lógica desta função é crucial: ela primeiro verifica se o alarme já foi enviado ao microcontrolador (usando \texttt{alarmeSalvo(alarm.id)}). 
+\begin{itemize} 
+	\item Se o alarme não foi enviado (existe apenas localmente), ele é simplesmente removido do banco de dados Room com \texttt{repository.delete(alarm)}. \item Se o alarme foi enviado, o aplicativo primeiro tenta excluí-lo do microcontrolador. Ele envia uma requisição HTTP POST para o endpoint \texttt{/deleteAlarm}, passando o \texttt{nomeAlarme} como um parâmetro de consulta (@Query("name")). Somente se o microcontrolador retornar uma resposta bem-sucedida, o alarme é removido do banco de dados local. 
+\end{itemize}
+
+\begin{lstlisting}[language=Kotlin, label={excluir_alarme_vm}, caption=Função de exclusão individual no ViewModel.] 
+    fun excluirAlarme(alarm: Configuration) {
+	if (!alarmeSalvo(alarm.id)){
+		viewModelScope.launch {
+			try {
+				repository.delete(alarm)
+			} catch (e: IOException){
+				_statusMessage.value = "Erro ao deletar alarme: ${e.message}"
+			}
+		}
+	}
+	else {
+		viewModelScope.launch {
+			try {
+				val response = IntApi.intService.deleteAlarm(alarm.nomeAlarme)
+				if (response.isSuccessful) {
+					repository.delete(alarm)
+					_statusMessage.value = "Alarme '${alarm.nomeAlarme}' excluído com sucesso."
+				} else {
+					_statusMessage.value = "Falha ao excluir alarme '${alarm.nomeAlarme}': ${response.message()}"
+				}
+			} catch (e: IOException) {
+				_statusMessage.value = "Erro ao deletar alarme: ${e.message}"
+			} catch (e: Exception){
+				_statusMessage.value = "Erro inesperado ao deletar alarme: ${e.message}"
+			}
+		}
+	}
+}
+\end{lstlisting}
+
+Para a exclusão de todos os alarmes, a função \texttt{excluirTodosAlarmes} (código \ref{excluir_todos_vm}) é chamada. Ela envia uma requisição POST para o endpoint \texttt{/deleteAll} no microcontrolador. Se a operação for bem-sucedida, o aplicativo procede com a exclusão de todos os registros do banco de dados local através de \texttt{repository.deleteAll()}.
+
+\begin{lstlisting}[language=Kotlin, label={excluir_todos_vm}, caption=Função para excluir todos os alarmes.] 
+    fun excluirTodosAlarmes(){
+	viewModelScope.launch {
+		try{
+			val response = IntApi.intService.deleteAll()
+			if (response.isSuccessful) {
+				repository.deleteAll()
+			}
+			else{
+				_statusMessage.value = "Falha ao excluir todos os alarmes: ${response.message()}"
+			}
+			_statusMessage.value = "Todos os alarmes foram excluídos."
+		}catch (e:IOException){
+			_statusMessage.value = "Erro para deletar todos os alarmes: ${e.message}"
+		}
+	}
+}
+	
+\end{lstlisting}
 
 \subsection{Alteração dos alarmes}
+\label{sec:edit_alarm_app}
+
+A alteração de um alarme existente é iniciada quando o usuário clica no ícone de configuração em um \texttt{AlarmCard}, o que o leva para a \texttt{SegundaTela} com a \texttt{id} do alarme. A \texttt{SegundaTela} carrega os dados desse alarme para edição.
+
+Ao salvar as alterações (código \ref{alterar_alarme_vm}), a \texttt{SegundaTela} chama a função \texttt{editarAlarme} do ViewModel. Esta função implementa uma lógica de encontrar e substituir no microcontrolador. Ela envia uma requisição HTTP POST para o endpoint \texttt{/editAlarm}. Esta requisição envia duas informações distintas: o nome original do alarme como um parâmetro de consulta e o objeto completo e modificado como o corpo da requisição (@Body alarm: Configuration). 
+
+Isso permite que o microcontrolador localize o alarme a ser alterado pelo seu nome antigo e o substitua pelas novas configurações enviadas no corpo JSON. Se o microcontrolador confirmar a alteração com sucesso, o ViewModel atualiza (\texttt{upsert}) o registro no banco de dados Room local com os novos dados. A função utiliza um \textit{callback} \texttt{onCompletion} para notificar a \texttt{SegundaTela} sobre o sucesso ou falha da operação, permitindo que ela decida se deve ou não navegar de volta para a tela principal.
+
+\begin{lstlisting}[language=Kotlin, label={alterar_alarme_vm}, caption=Função de edição de alarme no ViewModel.] 
+    fun editarAlarme(nomeAntigo: String, onCompletion: (Boolean) -> Unit) {
+	viewModelScope.launch {
+		try {
+			val novoAlarme = config.value
+			val response = IntApi.intService.editAlarm(nomeAntigo, novoAlarme)
+			if (response.isSuccessful) {
+				// Se o microcontrolador responder com sucesso, atualiza o banco de dados local
+				repository.upsert(novoAlarme)
+				_statusMessage.value = "Alarme '${novoAlarme.nomeAlarme}' editado com sucesso. Resposta: '${response.body()}'"
+				onCompletion(true) // Indica sucesso
+			} else {
+				_statusMessage.value = "Falha ao editar alarme: ${response.message()}"
+				onCompletion(false) // Indica falha
+			}
+		} catch (e: IOException) {
+			_statusMessage.value = "Erro de conexão ao editar alarme: ${e.message}"
+			onCompletion(false) // Indica falha
+		} catch (e: Exception) {
+			_statusMessage.value = "Erro inesperado ao editar alarme: ${e.message}"
+			onCompletion(false) // Indica falha
+		}
+	}
+}
+\end{lstlisting}
 
 \subsection{Verificação das configurações existentes}
+\label{sec:verif_config_app}
 
 Um dos itens existentes no levantamento inicial de requisitos é a verificação das configurações salvas no microcontrolador. Para a implementação desta, o aplicativo implementa uma função que consulta via HTTP o microcontrolador, enviando o nome do alarme e recebendo um retorno sobre a existência ou não deste. O código para a implementação dessa função é mostrado em \ref{consulta_config}.
 
@@ -1157,7 +1502,37 @@ fun verificaAlarme(viewModel: CounterAppViewModel){
 }
 \end{lstlisting}
 
-A função \texttt{verificaAlarme} é executada toda vez que o aplicativo é aberto e a cada um período fixo de tempo. Quando o alarme encontrado no microcontrolador, ele é marcado como verificado, passando de \ding{56} para \ding{52}. 
+A função \texttt{verificaAlarme} é executada toda vez que o aplicativo é aberto e a cada um período fixo de tempo. Quando o alarme encontrado no microcontrolador, ele é marcado como verificado, passando de \ding{56} para \ding{52}.
+
+\subsection{Verificação da bateria}
+\label{sec:verif_bat_app}
+
+Para permitir que o usuário verifique o nível da bateria do microcontrolador, foi implementado um botão "Verificar bateria" na tela principal (PrimeiraTela.kt). Esta ação invoca a função \texttt{verificarBateria} no \texttt{CounterAppViewModel}, cujo código é apresentado em \ref{verificar_bateria_vm}.
+
+A função opera de forma assíncrona dentro de um \texttt{viewModelScope}. Ela utiliza a interface Retrofit (\texttt{IntApi.intService}) para executar uma requisição HTTP GET ao endpoint \texttt{/battery} do dispositivo, conforme definido em Internet.kt.
+
+Se a chamada for bem-sucedida e receber uma resposta (\texttt{response.isSuccessful}), o corpo da resposta (um \texttt{String} contendo a informação da bateria) é atribuído ao estado \texttt{\_statusMessage}. Caso ocorra uma falha de conexão (\texttt{IOException}) ou outro erro, uma mensagem de erro apropriada é definida no mesmo estado.
+
+Este estado \texttt{\_statusMessage} é observado pela \texttt{PrimeiraTela}, que exibe o resultado (seja o status da bateria ou o erro) ao usuário através de um componente \texttt{Snackbar} temporário na parte inferior da tela.
+
+\begin{lstlisting}[language=Kotlin, label={verificar_bateria_vm}, caption=Função de verificação de bateria no ViewModel.] 
+    fun verificarBateria() {
+	viewModelScope.launch {
+		try {
+			val response = IntApi.intService.verificarBateria()
+			if (response.isSuccessful && response.body() != null) {
+				_statusMessage.value = response.body()
+			} else {
+				_statusMessage.value = "Erro: Resposta não recebida do servidor."
+			}
+		} catch (e: IOException) {
+			_statusMessage.value = "Erro de conexão com o dispositivo."
+		} catch (e: Exception) {
+			_statusMessage.value = "Ocorreu um erro inesperado."
+		}
+	}
+}
+\end{lstlisting}
 
 \section{Montagem}
 
@@ -1167,19 +1542,19 @@ Num segundo momento, finalizados os testes nas placas de fenolite, foram projeta
 
 \subsection{Irrigador Trato}
 
-Em relação ao irrigador da marca Trato, o espaço para montagem da placa é bastante reduzido, sendo limitado superiormente pelo local de parafusamento da placa e inferiormente pelo local dos botões. Em razão disso, a fim de se aproveitar o maior espaço possível, optou-se por utilizar a placa original da Trato como referência para o corte da placa de fenolite, assim como para a PCB posteriormente projetada. A imagem \ref{fig_placa_original_trato} mostra a placa original do irrigador da Trato e a imagem \ref{fig_placa_fenolite_trato} mostra a placa de fenolite cortada com os moldes da original.
+Em relação ao irrigador da marca Trato, o espaço para montagem da placa é bastante reduzido, sendo limitado superiormente pelo local de parafusamento da placa e inferiormente pelo local dos botões. Em razão disso, a fim de se aproveitar o maior espaço possível, optou-se por utilizar a placa original da Trato como referência para o corte da placa de fenolite, assim como para a PCB posteriormente projetada. A Figura~\ref{fig_placa_original_trato} mostra a placa original do irrigador da Trato e a Figura~\ref{fig_placa_fenolite_trato} mostra a placa de fenolite cortada com os moldes da original.
 
 \begin{figure}[htb]
  \label{placa-trato}
  \centering
-  \begin{minipage}{0.4\textwidth}
+  \begin{minipage}{0.45\textwidth}
     \centering
     \caption{Placa original da Trato} \label{fig_placa_original_trato}
     \includegraphics[scale=0.15]{imagens/PlacaOriginalTrato.jpg}
     \legend{Fonte: Autoria própria}
   \end{minipage}
   \hfill
-  \begin{minipage}{0.4\textwidth}
+  \begin{minipage}{0.45\textwidth}
     \centering
     \caption{Placa de fenolite utilizada} \label{fig_placa_fenolite_trato}
     \includegraphics[scale=0.15]{imagens/PlacaFenoliteTrato.jpg}
@@ -1187,7 +1562,7 @@ Em relação ao irrigador da marca Trato, o espaço para montagem da placa é bastan
   \end{minipage}
 \end{figure}
 
-Após os testes bem-sucedidos com a placa de fenolite, foi projetado um circuito com a plataforma EasyEDA. O esquemático é mostrado na Figura~\ref{fig:esquematico-amanco}.
+Após os testes bem-sucedidos com a placa de fenolite, foi projetado um circuito com a plataforma EasyEDA. O esquemático e a PCB são mostrados nas Figuras \ref{fig:esquematico-amanco} e \ref{fig:frente_pcb_trato}, respectivamente.
 
 \begin{figure}[h]
 	\centering
@@ -1197,11 +1572,28 @@ Após os testes bem-sucedidos com a placa de fenolite, foi projetado um circuito 
 	\legend{Fonte: EasyEDA}
 \end{figure}
 
+\begin{figure}[htb]
+	\label{pcb_trato}
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\caption{Frente da PCB do irrigador Trato} \label{fig:frente_pcb_trato}
+		\includegraphics[scale=0.4, angle=90]{imagens/TratoFrentePCB.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\caption{Verso da PCB do irrigador Trato} \label{fig:verso_pcb_trato}
+		\includegraphics[scale=0.4,angle=90]{imagens/TratoVersoPCB.png}
+	\end{minipage}
+	\legend{Fonte: EasyEDA}
+\end{figure}
+
+Para o controle do fechamento da válvula, o irrigador Trato possui um mecanismo mecânico que bloqueia o movimento do motor quanto este atinge a abertura ou fechamento máximo. Devido a isso, a programação de abertura e fechamento do módulo consistiu simplesmente na avaliação do tempo necessário para garantir o acionamento da válvula, ligando o motor durante esse período.
+
 \subsection{Irrigador Amanco}
 
-Da mesma forma que no irrigador Trato, a PCB original do irrigador da Amanco foi utilizada como molde da placa de fenolite e da PCB para montagem dos componentes. Alguns locais onde a placa antiga era parafusada também foram aproveitados para a fixação da nova placa.
-
-A placa utilizada pelo irrigador da Amanco é mostrada na figura \ref{fig_placa_original_amanco}. A figura \ref{fig_placa_fenolite_amanco} mostra a placa de fenolite utilizada no projeto para substituir a placa antiga.
+Da mesma forma que no irrigador Trato, a PCB original do irrigador da Amanco foi utilizada como molde da placa de fenolite e da PCB para montagem dos componentes. Alguns locais onde a placa antiga era parafusada também foram aproveitados para a fixação da nova placa. A placa utilizada pelo irrigador da Amanco é mostrada na figura \ref{fig_placa_original_amanco}. A figura \ref{fig_placa_fenolite_amanco} mostra a placa de fenolite utilizada no projeto para substituir a placa antiga.
 
 \begin{figure}[htb]
  \label{placa-amanco}
@@ -1221,9 +1613,7 @@ A placa utilizada pelo irrigador da Amanco é mostrada na figura \ref{fig_placa_o
   \end{minipage}
 \end{figure}
 
-Após o sucesso nos testes na placa de fenolite, foi feito o projeto de uma PCB usando o EasyEDA. As posições dos componentes na placa de fenolite foram usadas como referência para o posicionamento destes na PCB.
-
-A frente e o verso da PCB utilizada para substituir a placa antiga no irrigador Amanco são mostradas nas Figuras \ref{fig:frente_pcb_amanco} e \ref{fig:verso_pcb_amanco}, respectivamente.
+Após o sucesso nos testes na placa de fenolite, foi feito o projeto de uma PCB usando o EasyEDA. As posições dos componentes na placa de fenolite foram usadas como referência para o posicionamento destes na PCB. A frente e o verso da PCB utilizada para substituir a placa antiga no irrigador Amanco são mostradas nas Figuras \ref{fig:frente_pcb_amanco} e \ref{fig:verso_pcb_amanco}, respectivamente.
 
 \begin{figure}[htb]
 	\label{pcb_amanco}
@@ -1243,10 +1633,21 @@ A frente e o verso da PCB utilizada para substituir a placa antiga no irrigador 
 	\end{minipage}
 \end{figure}
 
+Durante os testes, foi verificado que o irrigador possuía dois fios conectados a um sensor de fim de curso, semelhante ao mostrado na Figura~\ref{fig:sensor-fim-curso-amanco}. Ele possui três terminais elétricos, geralmente chamados Comum (C), Normalmente Aberto (NA) e Normalmente Fechado (NF). Em estado de repouso (sem o botão pressionado), o terminal C (do meio) está conectado ao pino NF; quando o botão é acionado, a conexão passa a ser com o terminal NA. Para facilitar a abertura e fechamento da válvula, esse componente foi aproveitado, sendo que o pino NA foi conectado ao VDD, enquanto o pino central era ligado ao GPIO13. Esse terminal possuía originalmente uma conexão com o pino ULT da ponte H na PCB; esta trilha foi retirada para adaptar o pino do microcontrolador a esse novo propósito. A fim de evitar flutuações no sinal, foi utilizado um resistor de pull down no pino do ESP-12E.
+
+\begin{figure}[h!]
+	\centering
+	\caption{Sensor de fim de curso semelhante ao usado no irrigador.}
+	\includegraphics[width=0.3\linewidth]{imagens/ChaveFimCursoAmanco.jpg}
+	\label{fig:sensor-fim-curso-amanco}
+	\legend{Fonte: Eletropeças.\cite{SensorFimCurso}}
+\end{figure}
+
 \section{Comentários}
 
 Uma das restrições importantes encontradas nesse projeto foi a questão do espaço disponível para inserir os componentes. Caso houvesse mais espaço disponível, seria interessante adicionar um RTC externo, para despertar o módulo com mais precisão de horário.
 
+Outro ponto a se comentar é que a função de Deep Sleep utilizada no ESP-12E apresentou falha em algumas fabricantes do microcontrolador. Somente os módulos fabricados pela Espressif eram capazes de executar a função com sucesso.
 
 
 % ---
@@ -1285,6 +1686,7 @@ Inicialmente, foi feito um teste acionando o motor da válvula em uma direção, e 
 Para verificar o correto funcionamento do aplicativo, foram feitos testes de cada uma das funcionalidades deste.
 
 \subsection{Adição de alarme}
+\label{sec:add_alarm_res}
 
 As Figuras~\ref{fig:tela_inicial}, \ref{fig:tela_adicao} e \ref{fig:tela_apos_adicao} mostram o processo de adição do alarme.
 
@@ -1337,27 +1739,122 @@ Caso o microcontrolador não esteja ativo, o aplicativo não possua conexão com a 
 \end{figure}
 
 \subsection{Exclusão do alarme}
+\label{sec:exclude_alarm_res}
 
-Para 
+Para excluir um alarme individualmente, é necessário selecionar o ícone da lixeira que se encontra do lado superior direito do card contendo o alarme na tela principal. Ao ser selecionado, o aplicativo tentará se comunicar com o microcontrolador, solicitando a exclusão do alarme específico. Caso haja sucesso, a tela da Figura~\ref{fig:sucesso-exclusao} aparecerá.
 
-\section{Integer porta neque vitae massa}
-% ---
-\lipsum[24-29]
-% ---
+\begin{figure}[h]
+	\centering
+	\caption{Mensagem de sucesso na exclusão do alarme.}
+	\includegraphics[width=0.3\linewidth]{imagens/TelaInicialAposExclusaoApp.jpg}
+	\label{fig:sucesso-exclusao}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
 
-% ----------------------------------------------------------
+É possível também excluir todos os alarmes simultaneamente, para garantir que o microcontrolador não tenha nenhum alarme indesejado. Para isso, é necessário pressionar o botão "Excluir todos os alarmes", na parte superior direita da tela inicial. Caso haja sucesso na exclusão de todos os alarmes, a tela da Figura~\ref{fig:sucesso-exclusao-todos} será mostrada.
+
+\begin{figure}[h]
+	\centering
+	\caption{Mensagem de sucesso na exclusão dos alarmes.}
+	\includegraphics[width=0.3\linewidth]{imagens/TelaInicialExclusaoTodosApp.jpg}
+	\label{fig:sucesso-exclusao-todos}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+\subsection{Erro de exclusão}
+
+Caso haja um erro na exclusão dos alarmes, aparecerá a mensagem de erro mostrada na Figura~\ref{fig:erro-exclusao}.
+
+\begin{figure}[h]
+	\centering
+	\caption{Mensagem de erro de conexão.}
+	\includegraphics[width=0.3\linewidth]{imagens/TelaInicialAposErroExclusaoApp.jpg}
+	\label{fig:erro-exclusao}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+\subsection{Edição do alarme}
+\label{sec:edit_alarm_res}
+
+Para editar um alarme específico, é necessário selecionar o ícone de engrenagem no lado direito do card. Quando isso acontecer, o aplicativo será direcionado para a tela de edição de alarme, semelhante à tela de adição, exceto que possui as informações daquele alarme em específico. A Figura~\ref{fig:tela-edicao} mostra esta tela.
+
+O processo de edição só acontece caso o aplicativo consiga se comunicar com o microcontrolador e obtenha um retorno positivo em relação à edição do alarme. Caso isso ocorra, a tela da Figura~\ref{fig:sucesso-edicao} será mostrada. Caso contrário, quando ocorrer algum erro, será indicada uma mensagem semelhante à mostrada na Figura~\ref{fig:erro-edicao}.
+
+\begin{figure}[htb]
+	\label{fig:edicao-alarmes}
+	\centering
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\caption{Tela de edição de alarme.} \label{fig:tela-edicao}
+		\includegraphics[scale=0.2]{imagens/TelaEdicaoApp.jpg}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\caption{Mensagem de sucesso na edição do alarme.} \label{fig:sucesso-edicao}
+		\includegraphics[scale=0.2]{imagens/TelaInicialAposEdicaoApp.jpg}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\caption{Mensagem de erro na edição do alarme.} \label{fig:erro-edicao}
+		\includegraphics[scale=0.2]{imagens/TelaEdicaoErroApp.jpg}
+	\end{minipage}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+\subsection{Informação de bateria}
+\label{sec:info_bat_res}
+
+Outro teste realizado foi do comando de verificação de bateria no aplicativo. Nesse processo, o microcontrolador faz a leitura do ADC conectado ao divisor de tensão que está ligado às pilhas do irrigador e envia o resultado do estado da bateria para o aplicativo. Essa função é executada ao pressionar o botão "Verificar bateria" no aplicativo. Caso haja sucesso nessa operação, a mensagem na Figura~\ref{fig:consulta-bateria} aparecerá.
+
+\begin{figure}[h]
+	\centering
+	\caption{Consulta do estado da bateria no aplicativo.}
+	\includegraphics[width=0.3\linewidth]{imagens/TelaInicialConsultaBateriaApp.jpg}
+	\label{fig:consulta-bateria}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+Outra forma de mensagem de bateria é quando o microcontrolador verifica que o nível desta se encontra baixo, enviando uma mensagem através do recurso CallMeBot. Quando o microcontrolador entra na faixa de bateria baixa (tensão abaixo de 2,3V), ele envia uma mensagem para a API CallMeBot, que a retorna para o usuário através do Whatsapp. Para testar essa funcionalidade, foram utilizadas duas pilhas com tensão baixa. A Figura~\ref{fig:call-me-bot-message} mostra como a mensagem deve aparecer no aplicativo.
+
+\begin{figure}[h]
+	\centering
+	\caption{Mensagem de bateria baixa do Call Me Bot.}
+	\includegraphics[width=0.3\linewidth]{imagens/CallMeBotMessage.jpg}
+	\label{fig:call-me-bot-message}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
 % Capítulo 5 - Conclusões
 % ----------------------------------------------------------
 \chapter{Conclusões}\label{cap_conclusao}
 
 % ---
-\section{Pellentesque sit amet pede ac sem eleifend}
-% ---
-\lipsum[30-31]
-% ---
-\section{Phasellus id magna}
-% ---
-\lipsum[33-40]
+Relembrando os casos de uso definidos na seção \ref{sec:levantamentoRequisitos}:
+
+\begin{enumerate}
+	\item Adicionar configuração; \label{item:add_config}
+	\item Excluir configuração; \label{item:exclude_config}
+	\item Verificação de status; \label{item:verif_stat}
+	\item Editar configurações; \label{item:edit_config}
+	\item Verificar configurações; \label{item:verif_config}
+	\item Verificar bateria; \label{item:verif_bat}
+\end{enumerate}
+
+O requisito número \ref{item:add_config} foi implementado no microcontrolador na seção \ref{sec:add_alarm_mic} e no aplicativo na seção \ref{sec:envio_alarmes_app}. Seu teste foi realizado na seção \ref{sec:add_alarm_res}.
+
+O requisito número \ref{item:exclude_config} foi implementado no microcontrolador na seção \ref{sec:exclude_config_mic} e no aplicativo na seção \ref{sec:exclude_alarm_app}. Seu teste foi realizado na seção \ref{sec:exclude_alarm_res}.
+
+O requisito número \ref{item:verif_stat} foi não foi implementado como uma funcionalidade separada, considerando que não houve necessidade disso. Porém, é possível verificar se o microcontrolador está conectado ao aplicativo através da função de verificar bateria. Dependendo do resultado dessa solicitação, é possível estar ciente do status de funcionamento e conexão do microcontrolador.
+
+O requisito número \ref{item:edit_config} foi implementado no microcontrolador na seção \ref{sec:edit_config_mic} e no aplicativo na seção \ref{sec:edit_alarm_app}. Seu teste foi realizado com sucesso na seção \ref{sec:edit_alarm_res}.
+
+O requisito número \ref{item:verif_config} foi implementado no microcontrolador na seção \ref{sec:verif_alarm_mic} e no aplicativo na seção \ref{sec:verif_config_app}.
+
+O requisito número \ref{item:verif_bat} foi implementado no microcontrolador na seção \ref{sec:monit_bat} e no aplicativo na seção \ref{sec:verif_bat_app}. Seu teste foi realizado com sucesso na seção \ref{sec:info_bat_res}.
+
+Em suma, após verificar que todos os requisitos definidos inicialmente pelo cliente e usuário final do produto foram atendidos, é possível afirmar que o projeto atingiu seu objetivo.
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -1381,52 +1878,52 @@ Para
 % ---
 % Inicia os apêndices
 % ---
-\begin{apendicesenv}
-
-% Imprime uma página indicando o início dos apêndices
-\partapendices
-
-% ----------------------------------------------------------
-\chapter{Quisque libero justo}
-% ----------------------------------------------------------
-
-\lipsum[50-54]
-
-% ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra}
-% ----------------------------------------------------------
-\lipsum[55-59]
-
-\end{apendicesenv}
-% ---
-
-% ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
-
-% ---
-% Inicia os anexos
-% ---
-\begin{anexosenv}
-
-% Imprime uma página indicando o início dos anexos
-\partanexos
-
-% ---
-\chapter{Morbi ultrices rutrum lorem}
-% ---
-\lipsum[60]
-
-% ---
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus}
-% ---
-\lipsum[61-63]
-
-% ---
-\chapter{Fusce facilisis lacinia dui}
-% ---
-\lipsum[64-65]
-
-\end{anexosenv}
+%\begin{apendicesenv}
+%
+%% Imprime uma página indicando o início dos apêndices
+%\partapendices
+%
+%% ----------------------------------------------------------
+%\chapter{Quisque libero justo}
+%% ----------------------------------------------------------
+%
+%\lipsum[50-54]
+%
+%% ----------------------------------------------------------
+%\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra}
+%% ----------------------------------------------------------
+%\lipsum[55-59]
+%
+%\end{apendicesenv}
+%% ---
+%
+%% ----------------------------------------------------------
+%% Anexos
+%% ----------------------------------------------------------
+%
+%% ---
+%% Inicia os anexos
+%% ---
+%\begin{anexosenv}
+%
+%% Imprime uma página indicando o início dos anexos
+%\partanexos
+%
+%% ---
+%\chapter{Morbi ultrices rutrum lorem}
+%% ---
+%\lipsum[60]
+%
+%% ---
+%\chapter{Cras non urna sed feugiat cum sociis natoque penatibus}
+%% ---
+%\lipsum[61-63]
+%
+%% ---
+%\chapter{Fusce facilisis lacinia dui}
+%% ---
+%\lipsum[64-65]
+%
+%\end{anexosenv}
 
 \end{document}
