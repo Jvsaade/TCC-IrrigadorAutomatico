@@ -256,9 +256,12 @@
 % Agradecimentos
 % ---
 \begin{agradecimentos}
-Agradeço ao Prof. Ricardo Duarte pela orientação
+	
+Agradeço ao meu orientador, Prof. Ricardo Duarte, que sempre se mostrou disponível e prestativo para auxiliar no desenvolvimento desse projeto.
 
-Agradeço a meu pai, Vitor César Simão, 
+Agradeço a minha família, por todo apoio que me deram. Em especial a meu pai, Vitor César Simão, que me auxiliou bastante no desenvolvimento desse projeto, especialmente na parte da montagem.
+
+Agradeço à Universidade Federal de Minas Gerais e à sociedade brasileira por seus investimentos em meus estudos.
 \end{agradecimentos}
 % ---
 
@@ -288,8 +291,8 @@ Agradeço a meu pai, Vitor César Simão,
  outros materiais tóxicos presentes nesses dispositivos. A reciclagem, solução amplamente
  usada para tratamento de lixo, não é muito recomendada nesses casos, devido à alta
  complexidade em se reciclar esse tipo de resíduo. Uma solução bastante útil, nesse contexto,
- é a reutilização destes equipamentos, conhecida em algumas fontes como Upcycling ou
- Refurbishing. Este trabalho consiste na aplicação desse conceito em dois irrigadores
+ é a reutilização destes equipamentos, conhecida em algumas fontes como \textit{Upcycling} ou
+ \textit{Refurbishing}. Este trabalho consiste na aplicação desse conceito em dois irrigadores
  automáticos, um da marca Amanco e outro da marca Trato. Para isso, foram projetadas placas
  de circuito impresso (PCBs) para substituírem as originais inoperantes dos dispositivos, além
  da programação do microcontrolador ESP-12E e de um aplicativo de Android para controle dos
@@ -310,7 +313,7 @@ Agradeço a meu pai, Vitor César Simão,
  
  \noindent
 
- \textbf{Palavras-chaves}: Irrigação. \textit{Upcycling}. Microcontrolador.
+ \textbf{Palavras-chaves}: Irrigação. \textit{Upcycling}. Microcontrolador. Reaproveitamento.
 \end{resumo}
 
 % resumo em inglês
@@ -323,7 +326,7 @@ Agradeço a meu pai, Vitor César Simão,
    \vspace{\onelineskip}
  
    \noindent 
-   \textbf{Key-words}: Irrigation. Upcycling. Microcontroller.
+   \textbf{Key-words}: Irrigation. Upcycling. Microcontroller. Reuse.
  \end{otherlanguage*}
 \end{resumo}
 
@@ -347,10 +350,10 @@ Agradeço a meu pai, Vitor César Simão,
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-  \item[Fig.] Area of the $i^{th}$ component
   \item[CI] Circuito integrado
   \item[IoT] Internet of Things
   \item[PCB] Placa de Circuito Impresso
+  \item[ADC] Conversor Analógico-Digital
 %  \item[lauro cesar] este é o meu nome
 \end{siglas}
 % ---
@@ -358,12 +361,12 @@ Agradeço a meu pai, Vitor César Simão,
 % ---
 % inserir lista de símbolos
 % ---
-\begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
-\end{simbolos}
+%\begin{simbolos}
+%  \item[$ \Gamma $] Letra grega Gama
+%  \item[$ \Lambda $] Lambda
+%  \item[$ \zeta $] Letra grega minúscula zeta
+%  \item[$ \in $] Pertence
+%\end{simbolos}
 % ---
 
 % ---
@@ -529,6 +532,7 @@ Por se tratar de uma solução simples e que não utiliza muita corrente, esta foi 
 \chapter{Metodologia}\label{cap_metodologia}
 
 \section{Levantamento de requisitos}
+\label{sec:levantamentoRequisitos}
 Para obter os requisitos aos quais o sistema deve atender para cumprir com seu objetivo, foram utilizadas técnicas de Engenharia de Requisitos. No levantamento inicial, foi realizada uma entrevista com o professor orientador, cujo papel é de cliente e usuário do sistema a ser desenvolvido. A tabela \ref{lista-casos-uso} apresenta a lista de casos de uso que foram definidos:
 
 \begin{table}[htb]
@@ -646,17 +650,17 @@ Em relação à programação via WiFi, ela é bastante interessante de ser feita por 
 
 Conforme definido em seção anterior, o irrigador deve ser alimentado por duas pilhas alcalinas de 1,5V, atingindo uma tensão de 3,0V. É importante, notar, porém, que o microcontrolador utilizado possui tensão nominal de alimentação de 3,3V. Além disso, a tensão das pilhas tem um comportamento decrescente conforme sua carga diminui, o que pode causar mau funcionamento ao microcontrolador, que opera com uma tensão mínima de 2,5V.
 
-Para elevar o valor de tensão nas baterias para um nível próximo ao ideal para o ESP-12E, torna-se necessário usar um conversor de tensão step-up (boost converter). Um dos requisitos importantes para a escolha desse conversor é sua tensão mínima de funcionamento, já que o máximo que duas pilhas conseguem fornecer juntas é de 3,0V. Outro requisito imprescindível é que seja possível fornecer uma tensão de saída de 3,3V. A Tabela~\ref{tab:reguladores_tensao} mostra alguns conversores boost encontrados em lojas de eletrônica.
+Para elevar o valor de tensão nas baterias para um nível próximo ao ideal para o ESP-12E, torna-se necessário usar um conversor de tensão step-up (boost converter). Um dos requisitos importantes para a escolha desse conversor é sua tensão mínima de funcionamento, já que o máximo que duas pilhas conseguem fornecer juntas é de 3,0V. Outro requisito imprescindível é que seja possível fornecer uma tensão de saída de 3,3V. A Tabela~\ref{tab:conversores_tensao} mostra alguns conversores boost encontrados em lojas de eletrônica.
 
 \begin{table}[htb]
 	\IBGEtab{%
-		\caption{Comparativo de reguladores de tensão Step-Up}%
-		\label{tab:reguladores_tensao}
+		\caption{Comparativo de conversores de tensão Step-Up}%
+		\label{tab:conversores_tensao}
 	}{%
 		% Ajuste os valores de p{} conforme precisar para sua página
 		\begin{tabular}{p{4cm} p{4.5cm} p{4.5cm}}
 			\toprule
-			Regulador & Tensão de entrada & Tensão de saída \\
+			Conversor & Tensão de entrada & Tensão de saída \\
 			\midrule \midrule
 			XL6009 & 4V-32V & 5V-35V \\
 			\midrule
@@ -740,7 +744,7 @@ Em relação ao SmartConfig, o site da Espressif possui uma descrição a respeito:
 Podem ser encontrados vários aplicativos móveis na PlayStore que possuem a funcionalidade do SmartConfig. Caso se deseje criar a própria aplicação do SmartConfig, é possível encontrar repositórios no GitHub que implementam essa funcionalidade \cite{SmartConfigAndroidApp}. Para não tornar o projeto muito complexo, foi escolhido utilizar uma aplicação da PlayStore, em vez de associar essa funcionalidade ao aplicativo de controlar a irrigação.
 Para acionar o serviço de coneção por SmartConfig, a biblioteca \texttt{ESP8266WiFi.h} disponibiliza a função mostrada em  \ref{Acionamento_SmartConfig}.
 
-\begin{lstlisting}[caption = Fun??o para acionar o serviço do SmartConfig, label = {Acionamento_SmartConfig}]
+\begin{lstlisting}[caption = Função para acionar o serviço do SmartConfig, label = {Acionamento_SmartConfig}]
     WiFi.beginSmartConfig()
 \end{lstlisting}
 
@@ -824,20 +828,15 @@ bool RecuperarCredenciaisWiFi() {
         globalPW = "";
         return false;
     }
-
     globalSSID = configFile.readStringUntil('\n');
-    globalPW = configFile.readStringUntil('\n'); // Lê a segunda linha para a senha
+    globalPW = configFile.readStringUntil('\n');
     configFile.close();
-
-    // Remove espaços em branco ou caracteres de nova linha extras que podem ser lidos
     globalSSID.trim();
     globalPW.trim();
-
     Serial.print("SSID lido do LittleFS: ");
     Serial.println(globalSSID);
     Serial.print("PW lido do LittleFS: ");
     Serial.println(globalPW);
-
     if (globalSSID.length() > 0 && globalPW.length() > 0) {
         return true;
     } else {
@@ -853,28 +852,24 @@ Após a primeira conexão através do SmartConfig, as credenciais do WiFi terão sid
 
 \begin{lstlisting}[caption = Função para conectar ao WiFi com dados da memória flash, label = {WiFi_LittleFS}]
 bool ConectarWiFiComCredenciaisSalvas() {
-    if (!RecuperarCredenciaisWiFi()) { // Tenta carregar as credenciais
+    if (!RecuperarCredenciaisWiFi()) {
         Serial.println("Não foi possível carregar credenciais válidas do LittleFS.");
         return false;
     }
-
     Serial.print("Tentando conectar com SSID: ");
     Serial.println(globalSSID);
-
-    // Conecta ao Wi-Fi
     WiFi.begin(globalSSID.c_str(), globalPW.c_str());
-
     unsigned long tempo_inicial = millis();
     while (millis() - tempo_inicial < WiFiConnection_Timeout) {
         if (WiFi.status() == WL_CONNECTED) {
             Serial.println("\nConectado com credenciais salvas!");
-            return true; // Conectado com sucesso
+            return true;
         }
-        delay(500); // Espera 0.5 segundo antes de verificar novamente
-        Serial.print("."); // Feedback visual
+        delay(500);
+        Serial.print(".");
     }
     Serial.println("\nTempo esgotado para conexão com credenciais salvas.");
-    return false; // Tempo esgotado, não conectou
+    return false;
 }
 \end{lstlisting}
 
@@ -893,13 +888,16 @@ No início do código, o servidor foi criado utilizando a porta 80, como mostrado 
     ESP8266WebServer server(80);
 \end{lstlisting}
 
-Em seguida, no \texttt{void setup()}, foram definidos os endpoints do servidor através de \texttt{server.on()} e o servidor foi inicializado com \texttt{server.begin()} como mostrado em \ref{criar_endpoints}.
+Em seguida, no arquivo \texttt{servidor.cpp}, foram definidos os endpoints do servidor através de \texttt{server.on()} e o servidor foi inicializado com \texttt{server.begin()} como mostrado em \ref{criar_endpoints}.
 
 \begin{lstlisting}[label={criar_endpoints}, caption=Criação dos endpoints e iniciação do servidor.]
-    server.on("/status", status_sistema);
-    server.on("/config", configurar_timer);
-    server.on("/bateria", nivel_bateria);
-    server.begin();
+  server.on("/setAlarm", HTTP_POST, setAlarm);
+	server.on("/editAlarm", HTTP_POST, editAlarm);
+	server.on("/deleteAlarm", HTTP_POST, deleteAlarm);
+	server.on("/deleteAll", HTTP_POST, deleteAll);
+	server.on("/deactivateAlarm", HTTP_POST, deactivateAlarm);
+	server.on("/activateAlarm", HTTP_POST, activateAlarm);
+	server.on("/consultAlarm", consultAlarm);
 \end{lstlisting}
 
 Após isso, no loop principal, foi executada a função da biblioteca \texttt{ESP8266WebServer.h} que verifica se há requisições de usuários. A função para realizar essa tarefa é mostrada em \ref{ServidorHandle}.
@@ -921,7 +919,7 @@ void OTA_Initialization() {
         String type;
         if (ArduinoOTA.getCommand() == U_FLASH) {
             type = "sketch";
-        } else { // U_SPIFFS
+        } else {
             type = "filesystem";
         }
         Serial.println("Iniciando atualização " + type);
@@ -941,8 +939,7 @@ void OTA_Initialization() {
         else if (error == OTA_CONNECT_ERROR) Serial.println("Erro de conexão");
         else if (error == OTA_RECEIVE_ERROR) Serial.println("Erro ao receber");
         else if (error == OTA_END_ERROR) Serial.println("Erro ao finalizar");
-        // Sinalize um erro com os LEDs
-        ConnectionError(); // Ou uma função específica para erro OTA
+        ConnectionError();
     });
     ArduinoOTA.begin();
     Serial.println("OTA inicializado. Aguardando atualizações...");
@@ -956,7 +953,112 @@ Para o funcionamento correto dessa funcionalidade, é necessário adicionar a funç
     ArduinoOTA.handle();
 \end{lstlisting}
 
+\subsection{Adição dos alarmes}
+\label{sec:add_alarm_mic}
+
+Quando o microcontrolador recebe uma requisição para adicionar um alarme, ele executa a função \texttt{setAlarm}, mostrada no código \ref{Funcao_add_alarm}.
+
+\begin{lstlisting}[caption=Função para adicionar alarme, label={Funcao_add_alarm}]
+	void setAlarm(){
+		if (!server.hasArg("plain")) return server.send(400, "text/plain", "JSON ausente");
+		DynamicJsonDocument doc(1024);
+		if (deserializeJson(doc, server.arg("plain"))) return server.send(400, "text/plain", "Erro JSON");
+		
+		String nome = doc["nomeAlarme"].as<String>();
+		if (alarmExists(nome)) return server.send(400, "text/plain", "Já existe");
+		
+		DynamicJsonDocument data(1024);
+		loadJsonFromFile(ALARM_FILE, data);
+		JsonArray arr = data.is<JsonArray>() ? data.as<JsonArray>() : data.to<JsonArray>();
+		JsonObject a = arr.createNestedObject();
+		a["nome"] = nome;
+		a["hora"] = doc["horaAlarme"].as<String>();
+		a["minuto"] = doc["minutoAlarme"].as<String>();
+		a["duracao"] = doc["duracaoAlarme"].as<String>();
+		a["ativo"] = doc["ativo"].as<String>();
+		a["dias"] = doc["diasSemana"].as<String>();
+		saveJsonToFile(ALARM_FILE, data);
+		Serial.print("Alarme adicionado. Nome: "); Serial.println(nome);
+		Serial.print("Hora: "); Serial.println(a["hora"].as<String>());
+		Serial.print("Minuto: "); Serial.println(a["minuto"].as<String>());
+		Serial.print("Duração: "); Serial.println(a["duracao"].as<String>());
+		server.send(200, "text/plain", "Criado");
+	}
+\end{lstlisting}
+
+Antes de realizar a adição do alarme, o código consulta a base de dados para verificar se já existe algum alarme com esse nome. Caso positivo, o microcontrolador retorna um erro para o aplicativo.
+
+\subsection{Exclusão dos alarmes}
+\label{sec:exclude_config_mic}
+
+Para a exclusão de alarmes, foi implementada a função \texttt{deleteAlarm}, ativada pelo endpoint \texttt{/deleteAlarm} (via HTTP POST). Essa função utiliza a função auxiliar \texttt{removeAlarm} do arquivo \texttt{alarm.cpp} para modificar o banco de dados. O código da função \texttt{deleteAlarm} é apresentado em \ref{Funcao_delete_alarm}.
+
+\begin{lstlisting}[caption=Função para excluir um alarme, label={Funcao_delete_alarm}] 
+	void deleteAlarm(){ if (!server.hasArg("name")) return server.send(400, "text/plain", "Faltando nome"); if (removeAlarm(server.arg("name"))) server.send(200, "text/plain", "Removido"); else server.send(404, "text/plain", "Não encontrado"); } 
+\end{lstlisting}
+
+A função \texttt{deleteAlarm} primeiramente verifica se o argumento \texttt{name}, contendo o nome do alarme a ser excluído, foi fornecido na requisição. Caso positivo, ela chama a função \texttt{removeAlarm}, cujo código é mostrado em \ref{Funcao_remove_alarm_db}.
+
+\begin{lstlisting}[caption=Função para remover um alarme do banco de dados, label={Funcao_remove_alarm_db}] 
+	bool removeAlarm(const String& nome) { DynamicJsonDocument doc(1024); if (!loadJsonFromFile(ALARM_FILE, doc)) return false; if (!doc.is<JsonArray>()) return false; JsonArray arr = doc.as<JsonArray>(); for (int i = 0; i < arr.size(); i++) { if (arr[i]["nome"].as<String>() == nome) { arr.remove(i); return saveJsonToFile(ALARM_FILE, doc); } } return false; } 
+\end{lstlisting}
+
+A função \texttt{removeAlarm} carrega o arquivo JSON, itera pelo \textit{array} de alarmes e, ao encontrar o nome correspondente, remove o objeto do \textit{array} usando \texttt{arr.remove(i)}. Em seguida, salva o arquivo atualizado e retorna \texttt{true}. Se o alarme não for encontrado, retorna \texttt{false}, e a função \texttt{deleteAlarm} informa ao aplicativo que o alarme não foi encontrado (Erro 404).
+
+\subsection{Edição dos alarmes}
+\label{sec:edit_config_mic}
+
+A edição dos alarmes é gerenciada pela função \texttt{editAlarm}, mostrada em \ref{Funcao_edit_alarm}. Esta função é ativada por uma requisição HTTP POST ao endpoint \texttt{/editAlarm}.
+
+\begin{lstlisting}[caption=Função para editar um alarme, label={Funcao_edit_alarm}] 
+	void editAlarm(){ 
+		if (!server.hasArg("plain") || !server.hasArg("nomeAntigo")) return server.send(400, "text/plain", "Faltando dados"); 
+		String antigo = server.arg("nomeAntigo"); DynamicJsonDocument doc(1024); 
+		if (deserializeJson(doc, server.arg("plain"))) return server.send(400, "text/plain", "Erro JSON");
+		
+		DynamicJsonDocument data(1024); if (!loadJsonFromFile(ALARM_FILE, data)) return server.send(500, "text/plain", "Erro ao abrir");
+		JsonArray arr = data.as<JsonArray>(); for (JsonObject a : arr) { if (a["nome"].as<String>() == antigo) { 
+				if (doc.containsKey("nomeAlarme")) a["nome"] = doc["nomeAlarme"].as<String>(); 
+				if (doc.containsKey("horaAlarme")) a["hora"] = doc["horaAlarme"].as<String>(); 
+				if (doc.containsKey("minutoAlarme")) a["minuto"] = doc["minutoAlarme"].as<String>(); 
+				if (doc.containsKey("duracaoAlarme")) a["duracao"] = doc["duracaoAlarme"].as<String>(); if (doc.containsKey("ativo")) a["ativo"] = doc["ativo"].as<String>();
+				if (doc.containsKey("diasSemana")) a["dias"] = doc["diasSemana"].as<String>(); saveJsonToFile(ALARM_FILE, data); return server.send(200, "text/plain", "Editado"); } } server.send(404, "text/plain", "Não encontrado"); } 	
+\end{lstlisting}
+
+A função requer dois argumentos: \texttt{nomeAntigo}, para identificar o alarme a ser modificado, e \texttt{plain}, que contém o corpo da requisição em formato JSON com os novos dados.
+
+A lógica de edição permite atualizações parciais. O código carrega o banco de dados, localiza o alarme pelo \texttt{nomeAntigo} e, em seguida, verifica quais chaves (campos) estão presentes no JSON recebido usando \texttt{doc.containsKey()}. Apenas os campos fornecidos na requisição são atualizados no objeto JSON existente. Após a modificação, o arquivo é salvo.
+
+\subsection{Verificação dos Alarmes}
+\label{sec:verif_alarm_mic}
+
+Para que o aplicativo verifique quais alarmes estão salvos no microcontrolador, foi implementada a função \texttt{consultAlarm}, que verifica se o alarme está salvo a partir de seu nome. O código para a implementação dessa função é mostrado em \ref{Funcao_consult_alarm}.
+
+\begin{lstlisting}[caption=Função para consultar alarmes, label={Funcao_consult_alarm}]
+void consultAlarm(){
+	if (!server.hasArg("name")) return server.send(400, "text/plain", "Faltando nome");
+	Serial.println("Consultando alarme...");
+	if (alarmExists(server.arg("name"))) server.send(200, "text/plain", "True");
+	else server.send(200, "text/plain", "False");
+}
+\end{lstlisting}
+
+A função \texttt{alarmExists}, implementada no arquivo \texttt{alarm.cpp} é mostrada em \ref{Funcao_consult_database}.
+
+\begin{lstlisting}[caption=Função para verificar alarmes no banco de dados, label={Funcao_consult_database}]
+bool alarmExists(const String& nome) {
+	DynamicJsonDocument doc(1024);
+	if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
+	if (!doc.is<JsonArray>()) return false;
+	for (JsonObject a : doc.as<JsonArray>()) {
+		if (a["nome"].as<String>() == nome) return true;
+	}
+	return false;
+}
+\end{lstlisting}
+
 \subsection{Monitoramento da bateria}
+\label{sec:monit_bat}
 
 Para fazer o monitoramento de quando é necessário trocar as pilhas do irrigador, foi criada uma função \texttt{Estado\-Bateria()}. Seu código é mostrado em \ref{Funcao_estado_bateria}.
 
@@ -1077,6 +1179,50 @@ A forma escolhida para isso foi através de indicações luminosas feitas por dois 
 	}
 \end{table}
 
+\subsection{Determinação do tempo de Deep Sleep}
+
+Uma dos recursos mais importantes do microcontrolador para reduzir o consumo de bateria é o Deep Sleep. O ESP deve estar configurado para entrar nesse modo praticamente o tempo todo. Somente durante o período de irrigação, o microcontrolador deve estar ativo, a fim de acionar a válvula e permitir a passagem de água. Por isso, é necessário que o microcontrolador calcule o tempo até o próximo período de irrigação. A função que implementa isso é mostrada em \ref{tempo_deepsleep}.
+
+\begin{lstlisting}[caption=Função calcular o tempo de Deep Sleep, label={tempo_deepsleep}]
+int tempoDeepSleep(){
+	int horaAtual, minutoAtual;
+	if(!getCurrentTime(horaAtual, minutoAtual))
+	return 1;
+	return nearestSchedule(horaAtual, minutoAtual)*1e6;
+}
+\end{lstlisting}
+
+Inicialmente, o código tenta obter o tempo a partir da função \texttt{getCurrentTime}, da biblioteca \texttt{time.h}. Caso ocorra falha, o tempo de Deep Sleep é retornado como 1, fazendo com que o microcontrolador reinicie 1 minuto depois, para tentar novamente fazer o cálculo. Caso o tempo seja obtido corretamente, a função \texttt{nearestSchedule} é chamada. Sua implementação é mostrada em \ref{proximo_alarme}.
+
+\begin{lstlisting}[caption=Função para encontrar o próximo alarme, label={proximo_alarme}]
+int nearestSchedule(int hora, int minuto) {
+	DynamicJsonDocument doc(1024);
+	if (!loadJsonFromFile(ALARM_FILE, doc)) return 1;
+	if (!doc.is<JsonArray>()) return 1;
+	JsonArray alarmes = doc.as<JsonArray>();
+	if (alarmes.size() == 0) return 1;
+	int menorDiferenca = 24 * 60;
+	int alarmeMaisProximo = 1;
+	for (JsonObject alarme : alarmes) {
+		int horaAlarme = alarme["hora"].as<int>();
+		int minutoAlarme = alarme["minuto"].as<int>();
+		int minutosAtuais = hora * 60 + minuto;
+		int minutosAlarme = horaAlarme * 60 + minutoAlarme;
+		int diferenca = minutosAlarme - minutosAtuais;
+		if (diferenca < 0) {
+			diferenca += 24 * 60;
+		}
+		if (diferenca < menorDiferenca) {
+			menorDiferenca = diferenca;
+			alarmeMaisProximo = menorDiferenca;
+		}
+	}
+	return alarmeMaisProximo;
+}
+\end{lstlisting}
+
+O retorno dessa função fornece o alarme mais próximo do tempo atual. Esse valor é usado no arquivo \texttt{main.ino} como o tempo para que o microcontrolador fique em Deep Sleep.
+
 \section{Desenvolvimento do aplicativo}
 
 \subsection{Persistência das Configurações}
@@ -1184,20 +1330,20 @@ Foi criado também um arquivo de repositório para servir de interface do banco de
 \end{lstlisting}
 
 \subsection{Envio dos alarmes}
+\label{sec:envio_alarmes_app}
 
 O envio das configurações de alarme para o microcontrolador é iniciado pelo usuário ao pressionar o botão "Atualizar microcontrolador" na tela principal (PrimeiraTela.kt). Esta ação aciona a função \texttt{atualizarTimers} no \texttt{CounterAppViewModel}.
 
 Conforme o código \ref{enviar_alarme_vm}, a função primeiramente filtra a lista de todos os alarmes salvos no banco de dados local, selecionando apenas aqueles que ainda não foram marcados como enviados (cuja \texttt{id} não está no mapa \texttt{\_alarmeEnviado} ou está marcada como \texttt{false}).
 
-Para cada alarme pendente, a função executa uma chamada de rede assíncrona para o microcontrolador usando a interface Retrofit. Especificamente, ela chama \texttt{IntApi.intService.setAlarm(alarm)}. Esta é uma requisição HTTP POST para o endpoint \texttt{/setAlarm}, que envia o objeto \texttt{Configuration} completo do alarme serializado como um corpo JSON.
+Para cada alarme pendente, a função executa uma chamada de rede assíncrona para o microcontrolador usando a interface Retrofit. Especificamente, ela chama\\ \texttt{IntApi.intService.setAlarm(alarm)}. Esta é uma requisição HTTP POST para o endpoint \texttt{/setAlarm}, que envia o objeto \texttt{Configuration} completo do alarme serializado como um corpo JSON.
 
-Se a resposta do microcontrolador for bem-sucedida (response.isSuccessful), o ViewModel atualiza o estado interno do aplicativo chamando \texttt{marcarAlarmeComoEnviado(alarm.id)}, garantindo que o aplicativo não tente reenviar este alarme desnecessariamente.
+Se a resposta do microcontrolador for bem-sucedida (response.isSuccessful), o ViewModel atualiza o estado interno do aplicativo chamando \\ \texttt{marcarAlarmeComoEnviado(alarm.id)}, garantindo que o aplicativo não tente reenviar este alarme desnecessariamente.
 
 \begin{lstlisting}[language=Kotlin, label={enviar_alarme_vm}, caption=Função de envio de alarmes no ViewModel.] fun atualizarTimers(){ viewModelScope.launch { try { val activeAlarms = allAlarms.first().filter { alarmeSalvo(it.id).not() } // Obter alarmes pendentes if (activeAlarms.isEmpty()) { _statusMessage.value = "Nenhum alarme para enviar." return@launch }
 				
 				activeAlarms.forEach { alarm ->
 					try {
-						// Usar o novo metodo setAlarm para enviar o objeto Configuration
 						val response = IntApi.intService.setAlarm(alarm)
 						if (response.isSuccessful) {
 							_statusMessage.value = "Alarme '${alarm.nomeAlarme}' enviado com sucesso (JSON)."
@@ -1220,6 +1366,7 @@ Se a resposta do microcontrolador for bem-sucedida (response.isSuccessful), o Vi
 
 
 \subsection{Exclusão dos alarmes}
+\label{sec:exclude_alarm_app}
 
 A exclusão de alarmes pode ocorrer de duas formas: individualmente, através do ícone de lixeira em cada \texttt{AlarmCard} na \texttt{PrimeiraTela}, ou coletivamente, através do botão "Excluir todos alarmes".
 
@@ -1230,7 +1377,6 @@ No caso da exclusão individual, a função \texttt{excluirAlarme} do ViewModel é c
 
 \begin{lstlisting}[language=Kotlin, label={excluir_alarme_vm}, caption=Função de exclusão individual no ViewModel.] 
     fun excluirAlarme(alarm: Configuration) {
-	// Se o alarme ainda não tiver sido enviado, deleta na base de dados
 	if (!alarmeSalvo(alarm.id)){
 		viewModelScope.launch {
 			try {
@@ -1240,7 +1386,6 @@ No caso da exclusão individual, a função \texttt{excluirAlarme} do ViewModel é c
 			}
 		}
 	}
-	// Se o alarme tiver sido enviado
 	else {
 		viewModelScope.launch {
 			try {
@@ -1284,13 +1429,11 @@ Para a exclusão de todos os alarmes, a função \texttt{excluirTodosAlarmes} (códi
 \end{lstlisting}
 
 \subsection{Alteração dos alarmes}
+\label{sec:edit_alarm_app}
 
 A alteração de um alarme existente é iniciada quando o usuário clica no ícone de configuração em um \texttt{AlarmCard}, o que o leva para a \texttt{SegundaTela} com a \texttt{id} do alarme. A \texttt{SegundaTela} carrega os dados desse alarme para edição.
 
-Ao salvar as alterações (código \ref{alterar_alarme_vm}), a \texttt{SegundaTela} chama a função \texttt{editarAlarme} do ViewModel. Esta função implementa uma lógica de "encontrar e substituir" no microcontrolador. Ela envia uma requisição HTTP POST para o endpoint \texttt{/editAlarm}. Esta requisição é especial, pois envia duas informações distintas: 
-\begin{enumerate} 
-	\item O nome original do alarme (capturado quando a tela de edição foi aberta) como um parâmetro de consulta (@Query("nomeAntigo")). \item O objeto \texttt{Configuration} completo e modificado como o corpo da requisição (@Body alarm: Configuration). 
-\end{enumerate}
+Ao salvar as alterações (código \ref{alterar_alarme_vm}), a \texttt{SegundaTela} chama a função \texttt{editarAlarme} do ViewModel. Esta função implementa uma lógica de encontrar e substituir no microcontrolador. Ela envia uma requisição HTTP POST para o endpoint \texttt{/editAlarm}. Esta requisição envia duas informações distintas: o nome original do alarme como um parâmetro de consulta e o objeto completo e modificado como o corpo da requisição (@Body alarm: Configuration). 
 
 Isso permite que o microcontrolador localize o alarme a ser alterado pelo seu nome antigo e o substitua pelas novas configurações enviadas no corpo JSON. Se o microcontrolador confirmar a alteração com sucesso, o ViewModel atualiza (\texttt{upsert}) o registro no banco de dados Room local com os novos dados. A função utiliza um \textit{callback} \texttt{onCompletion} para notificar a \texttt{SegundaTela} sobre o sucesso ou falha da operação, permitindo que ela decida se deve ou não navegar de volta para a tela principal.
 
@@ -1318,10 +1461,10 @@ Isso permite que o microcontrolador localize o alarme a ser alterado pelo seu no
 		}
 	}
 }
-
 \end{lstlisting}
 
 \subsection{Verificação das configurações existentes}
+\label{sec:verif_config_app}
 
 Um dos itens existentes no levantamento inicial de requisitos é a verificação das configurações salvas no microcontrolador. Para a implementação desta, o aplicativo implementa uma função que consulta via HTTP o microcontrolador, enviando o nome do alarme e recebendo um retorno sobre a existência ou não deste. O código para a implementação dessa função é mostrado em \ref{consulta_config}.
 
@@ -1359,7 +1502,37 @@ fun verificaAlarme(viewModel: CounterAppViewModel){
 }
 \end{lstlisting}
 
-A função \texttt{verificaAlarme} é executada toda vez que o aplicativo é aberto e a cada um período fixo de tempo. Quando o alarme encontrado no microcontrolador, ele é marcado como verificado, passando de \ding{56} para \ding{52}. 
+A função \texttt{verificaAlarme} é executada toda vez que o aplicativo é aberto e a cada um período fixo de tempo. Quando o alarme encontrado no microcontrolador, ele é marcado como verificado, passando de \ding{56} para \ding{52}.
+
+\subsection{Verificação da bateria}
+\label{sec:verif_bat_app}
+
+Para permitir que o usuário verifique o nível da bateria do microcontrolador, foi implementado um botão "Verificar bateria" na tela principal (PrimeiraTela.kt). Esta ação invoca a função \texttt{verificarBateria} no \texttt{CounterAppViewModel}, cujo código é apresentado em \ref{verificar_bateria_vm}.
+
+A função opera de forma assíncrona dentro de um \texttt{viewModelScope}. Ela utiliza a interface Retrofit (\texttt{IntApi.intService}) para executar uma requisição HTTP GET ao endpoint \texttt{/battery} do dispositivo, conforme definido em Internet.kt.
+
+Se a chamada for bem-sucedida e receber uma resposta (\texttt{response.isSuccessful}), o corpo da resposta (um \texttt{String} contendo a informação da bateria) é atribuído ao estado \texttt{\_statusMessage}. Caso ocorra uma falha de conexão (\texttt{IOException}) ou outro erro, uma mensagem de erro apropriada é definida no mesmo estado.
+
+Este estado \texttt{\_statusMessage} é observado pela \texttt{PrimeiraTela}, que exibe o resultado (seja o status da bateria ou o erro) ao usuário através de um componente \texttt{Snackbar} temporário na parte inferior da tela.
+
+\begin{lstlisting}[language=Kotlin, label={verificar_bateria_vm}, caption=Função de verificação de bateria no ViewModel.] 
+    fun verificarBateria() {
+	viewModelScope.launch {
+		try {
+			val response = IntApi.intService.verificarBateria()
+			if (response.isSuccessful && response.body() != null) {
+				_statusMessage.value = response.body()
+			} else {
+				_statusMessage.value = "Erro: Resposta não recebida do servidor."
+			}
+		} catch (e: IOException) {
+			_statusMessage.value = "Erro de conexão com o dispositivo."
+		} catch (e: Exception) {
+			_statusMessage.value = "Ocorreu um erro inesperado."
+		}
+	}
+}
+\end{lstlisting}
 
 \section{Montagem}
 
@@ -1513,6 +1686,7 @@ Inicialmente, foi feito um teste acionando o motor da válvula em uma direção, e 
 Para verificar o correto funcionamento do aplicativo, foram feitos testes de cada uma das funcionalidades deste.
 
 \subsection{Adição de alarme}
+\label{sec:add_alarm_res}
 
 As Figuras~\ref{fig:tela_inicial}, \ref{fig:tela_adicao} e \ref{fig:tela_apos_adicao} mostram o processo de adição do alarme.
 
@@ -1565,6 +1739,7 @@ Caso o microcontrolador não esteja ativo, o aplicativo não possua conexão com a 
 \end{figure}
 
 \subsection{Exclusão do alarme}
+\label{sec:exclude_alarm_res}
 
 Para excluir um alarme individualmente, é necessário selecionar o ícone da lixeira que se encontra do lado superior direito do card contendo o alarme na tela principal. Ao ser selecionado, o aplicativo tentará se comunicar com o microcontrolador, solicitando a exclusão do alarme específico. Caso haja sucesso, a tela da Figura~\ref{fig:sucesso-exclusao} aparecerá.
 
@@ -1599,6 +1774,7 @@ Caso haja um erro na exclusão dos alarmes, aparecerá a mensagem de erro mostrada
 \end{figure}
 
 \subsection{Edição do alarme}
+\label{sec:edit_alarm_res}
 
 Para editar um alarme específico, é necessário selecionar o ícone de engrenagem no lado direito do card. Quando isso acontecer, o aplicativo será direcionado para a tela de edição de alarme, semelhante à tela de adição, exceto que possui as informações daquele alarme em específico. A Figura~\ref{fig:tela-edicao} mostra esta tela.
 
@@ -1628,6 +1804,7 @@ O processo de edição só acontece caso o aplicativo consiga se comunicar com o mi
 \end{figure}
 
 \subsection{Informação de bateria}
+\label{sec:info_bat_res}
 
 Outro teste realizado foi do comando de verificação de bateria no aplicativo. Nesse processo, o microcontrolador faz a leitura do ADC conectado ao divisor de tensão que está ligado às pilhas do irrigador e envia o resultado do estado da bateria para o aplicativo. Essa função é executada ao pressionar o botão "Verificar bateria" no aplicativo. Caso haja sucesso nessa operação, a mensagem na Figura~\ref{fig:consulta-bateria} aparecerá.
 
@@ -1639,20 +1816,45 @@ Outro teste realizado foi do comando de verificação de bateria no aplicativo. Ne
 	\legend{Fonte: Autoria própria.}
 \end{figure}
 
-Outra forma de mensagem de bateria é quando o microcontrolador verifica que o nível desta se encontra baixo, enviando uma mensagem através do recurso CallMeBot.
+Outra forma de mensagem de bateria é quando o microcontrolador verifica que o nível desta se encontra baixo, enviando uma mensagem através do recurso CallMeBot. Quando o microcontrolador entra na faixa de bateria baixa (tensão abaixo de 2,3V), ele envia uma mensagem para a API CallMeBot, que a retorna para o usuário através do Whatsapp. Para testar essa funcionalidade, foram utilizadas duas pilhas com tensão baixa. A Figura~\ref{fig:call-me-bot-message} mostra como a mensagem deve aparecer no aplicativo.
+
+\begin{figure}[h]
+	\centering
+	\caption{Mensagem de bateria baixa do Call Me Bot.}
+	\includegraphics[width=0.3\linewidth]{imagens/CallMeBotMessage.jpg}
+	\label{fig:call-me-bot-message}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
 
 % Capítulo 5 - Conclusões
 % ----------------------------------------------------------
 \chapter{Conclusões}\label{cap_conclusao}
 
 % ---
-\section{Pellentesque sit amet pede ac sem eleifend}
-% ---
-\lipsum[30-31]
-% ---
-\section{Phasellus id magna}
-% ---
-\lipsum[33-40]
+Relembrando os casos de uso definidos na seção \ref{sec:levantamentoRequisitos}:
+
+\begin{enumerate}
+	\item Adicionar configuração; \label{item:add_config}
+	\item Excluir configuração; \label{item:exclude_config}
+	\item Verificação de status; \label{item:verif_stat}
+	\item Editar configurações; \label{item:edit_config}
+	\item Verificar configurações; \label{item:verif_config}
+	\item Verificar bateria; \label{item:verif_bat}
+\end{enumerate}
+
+O requisito número \ref{item:add_config} foi implementado no microcontrolador na seção \ref{sec:add_alarm_mic} e no aplicativo na seção \ref{sec:envio_alarmes_app}. Seu teste foi realizado na seção \ref{sec:add_alarm_res}.
+
+O requisito número \ref{item:exclude_config} foi implementado no microcontrolador na seção \ref{sec:exclude_config_mic} e no aplicativo na seção \ref{sec:exclude_alarm_app}. Seu teste foi realizado na seção \ref{sec:exclude_alarm_res}.
+
+O requisito número \ref{item:verif_stat} foi não foi implementado como uma funcionalidade separada, considerando que não houve necessidade disso. Porém, é possível verificar se o microcontrolador está conectado ao aplicativo através da função de verificar bateria. Dependendo do resultado dessa solicitação, é possível estar ciente do status de funcionamento e conexão do microcontrolador.
+
+O requisito número \ref{item:edit_config} foi implementado no microcontrolador na seção \ref{sec:edit_config_mic} e no aplicativo na seção \ref{sec:edit_alarm_app}. Seu teste foi realizado com sucesso na seção \ref{sec:edit_alarm_res}.
+
+O requisito número \ref{item:verif_config} foi implementado no microcontrolador na seção \ref{sec:verif_alarm_mic} e no aplicativo na seção \ref{sec:verif_config_app}.
+
+O requisito número \ref{item:verif_bat} foi implementado no microcontrolador na seção \ref{sec:monit_bat} e no aplicativo na seção \ref{sec:verif_bat_app}. Seu teste foi realizado com sucesso na seção \ref{sec:info_bat_res}.
+
+Em suma, após verificar que todos os requisitos definidos inicialmente pelo cliente e usuário final do produto foram atendidos, é possível afirmar que o projeto atingiu seu objetivo.
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
