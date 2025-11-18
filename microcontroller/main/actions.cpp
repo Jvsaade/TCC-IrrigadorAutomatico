@@ -16,18 +16,18 @@ void MotorSentidoHorario(int velocidade, int tempo) {
 }
 
 void DesligarLeds() {
-    digitalWrite(LedVerde, LOW);
-    digitalWrite(LedAzul, LOW);
+  digitalWrite(LedVerde, LOW);
+  digitalWrite(LedAzul, LOW);
 }
 
 void LigarVerde() {
-    digitalWrite(LedAzul, LOW);
-    digitalWrite(LedVerde, HIGH);
+  digitalWrite(LedAzul, LOW);
+  digitalWrite(LedVerde, HIGH);
 }
 
 void LigarAzul() {
-    digitalWrite(LedVerde, LOW);
-    digitalWrite(LedAzul, HIGH);
+  digitalWrite(LedVerde, LOW);
+  digitalWrite(LedAzul, HIGH);
 }
 
 void AbrirValvula(){
@@ -49,5 +49,4 @@ void Irrigation(int duracao){
         delay(1000);
     }    FecharValvula();
     Serial.print("Irrigação finalizada.");
-
 }

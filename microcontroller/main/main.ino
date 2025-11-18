@@ -121,15 +121,6 @@ void loop() {
     MDNS.update();
     ArduinoOTA.handle();
     server.handleClient();
-    
-    delay(2000);
-    LigarAzul();
-    delay(2000);
-    DesligarLeds();
-    MotorSentidoHorario(800, 2500);
-    delay(2000);
-    LigarVerde();
-    MotorSentidoAntiHorario(800, 2500);
 
     int duracao = checkSchedule();
     if(duracao != 0)
@@ -145,8 +136,9 @@ void loop() {
     if (millis() - contagem > DEEPSLEEP_TIMEOUT) {
         int wait = tempoDeepSleep();
         if (wait > 5e6){
-            ESP.deepSleep(wait);
+            alertaDeepSleep();
             Serial.print("Entrando em DeepSleep por "); Serial.print(wait/60e6); Serial.println(" minutos.");
+            ESP.deepSleep(wait);
         }
         else {
             contagem += 6e3*60; 
@@ -159,3 +151,13 @@ void loop() {
     // }
 }
 
+void alertaDeepSleep(){
+    LigarAzul();
+    delay(2000);
+    LigarVerde();
+    delay(2000);
+    LigarAzul();
+    delay(2000);
+    LigarVerde();
+    delay(2000);
+}
