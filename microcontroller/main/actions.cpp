@@ -41,8 +41,13 @@ void FecharValvula(){
 void Irrigation(int duracao){
     Serial.print("Irrigação iniciada por "); Serial.print(duracao); Serial.println(" minutos");
     AbrirValvula();
-    delay((duracao*1e3)*60);
-    FecharValvula();
+    int tempoInicial = millis();
+    while(millis() - tempoInicial < (duracao*1e3)*60){
+        LigarAzul();
+        delay(100);
+        LigarVerde();
+        delay(1000);
+    }    FecharValvula();
     Serial.print("Irrigação finalizada.");
 
 }
