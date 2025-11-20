@@ -15,7 +15,7 @@
 #define MAX_STRING_LENGTH 64 // Aumentado para dar mais folga (pode ser 32 se preferir, mas 64 é mais seguro)
 
 const int erroPin = 14;
-#define DEEPSLEEP_TIMEOUT 2*60000 // 30 segundos para DeepSleep
+#define DEEPSLEEP_TIMEOUT 5*60000 // 30 segundos para DeepSleep
 #if DEEPSLEEP_TIMEOUT < 60000
   #error "O valor deve ser maior que 60.000"
 #endif
@@ -126,7 +126,7 @@ void loop() {
     if(duracao != 0)
         Irrigation(duracao);
 
-    Serial.print("O próximo alarme está a ");Serial.print(tempoDeepSleep());Serial.println(" milisegundos a frente no tempo.");
+    Serial.print("O próximo alarme está a ");Serial.print((tempoDeepSleep()+2*60*1e6)/60e6);Serial.println(" minutos a frente no tempo.");
     /* 
     Entra em deepsleep quando passarem DEEPSLEEP_TIMEOUT milisegundos desde que ele entrou no loop.
     OBS: DEEPSLEEP_TIMEOUT não pode ser um número muito pequeno, pois deve ter tempo suficiente para
@@ -135,7 +135,7 @@ void loop() {
 
     if (millis() - contagem > DEEPSLEEP_TIMEOUT) {
         int wait = tempoDeepSleep();
-        if (wait > 5e6){
+        if (wait > 60*5*1e6){
             alertaDeepSleep();
             Serial.print("Entrando em DeepSleep por "); Serial.print(wait/60e6); Serial.println(" minutos.");
             ESP.deepSleep(wait);

@@ -12,7 +12,7 @@ const int daylightOffset_sec = 0;
 extern struct tm timeinfo;
 
 void setupTime();
-bool getCurrentTime(int &hora, int &minuto);
+bool getCurrentTime(int &hora, int &minuto, int &semana);
 void erroHorario();
 void sucessoHorario();
 int checkSchedule();

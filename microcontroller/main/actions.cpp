@@ -3,7 +3,7 @@
 void MotorSentidoAntiHorario(int velocidade, int tempo) {
     digitalWrite(motorIn1, LOW);
     analogWrite(motorIn2, velocidade);
-    delay(100);
+    delay(tempo);
     digitalWrite(motorIn2, LOW);
 
 }
@@ -31,11 +31,11 @@ void LigarAzul() {
 }
 
 void AbrirValvula(){
-    MotorSentidoAntiHorario(500, 100);
+    MotorSentidoHorario(500, 100);
 }
 
 void FecharValvula(){
-    MotorSentidoHorario(500, 100);
+    MotorSentidoAntiHorario(500, 100);
 }
 
 void Irrigation(int duracao){

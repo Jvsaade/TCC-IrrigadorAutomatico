@@ -6,7 +6,7 @@
 struct tm timeinfo;
 const char *ntpServer = "pool.ntp.org";
 
-bool getCurrentTime(int &hora, int &minuto) {
+bool getCurrentTime(int &hora, int &minuto, int &semana) {
   static uint16_t cont_err = 0;
   static uint16_t cont_suc = 0;
 
@@ -27,6 +27,7 @@ bool getCurrentTime(int &hora, int &minuto) {
   }
   hora = timeinfo.tm_hour;
   minuto = timeinfo.tm_min;
+  semana = timeinfo.tm_wday;
   Serial.print("Hora local: ");
   Serial.print(hora);
   Serial.print(":");
@@ -65,21 +66,25 @@ void setupTime() {
 }
 
 int checkSchedule() {
-  int horaAtual, minutoAtual;
-  if (getCurrentTime(horaAtual, minutoAtual)) {
-    return findTime(horaAtual, minutoAtual);
+  int horaAtual, minutoAtual, diaSemana;
+  if (getCurrentTime(horaAtual, minutoAtual, diaSemana)) {
+    return findTime(horaAtual, minutoAtual, diaSemana);
   }
   return 0;
 }
 
 /*
-  @brief Calcula o tempo em minutos para o microcontrolador ficar em deepsleep
+  @brief Calcula o tempo em microsegundos para o microcontrolador ficar em deepsleep
   @return Tempo em minutos para o DeepSleep
 */
 
 int tempoDeepSleep() {
-  int horaAtual, minutoAtual;
-  if (!getCurrentTime(horaAtual, minutoAtual))
+  int horaAtual, minutoAtual, diaSemana;
+  if (!getCurrentTime(horaAtual, minutoAtual, diaSemana))
     return 1;
-  return nearestSchedule(horaAtual, minutoAtual) * 1e6;
+  int proximoAlarme = encontrarProximoAlarme(horaAtual, minutoAtual, diaSemana);
+  if(proximoAlarme < 2 * 60) // Se estiver dentro das próximas 2 horas, espera até esse tempo
+    return (proximoAlarme - 2) * 60 * 1e6; // Acorda 2 minutos antes do programado
+  else
+    return 2*60*1e6;
 }
