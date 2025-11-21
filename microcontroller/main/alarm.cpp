@@ -1,101 +1,115 @@
 #include "alarm.h"
 
 bool loadJsonFromFile(const char* path, DynamicJsonDocument& doc) {
-    File file = LittleFS.open(path, "r");
-    if (!file) return false;
-    DeserializationError error = deserializeJson(doc, file);
-    file.close();
-    return !error;
+  File file = LittleFS.open(path, "r");
+  if (!file) return false;
+  DeserializationError error = deserializeJson(doc, file);
+  file.close();
+  return !error;
 }
 
 bool saveJsonToFile(const char* path, DynamicJsonDocument& doc) {
-    File file = LittleFS.open(path, "w");
-    if (!file) return false;
-    serializeJson(doc, file);
-    file.close();
-    return true;
+  File file = LittleFS.open(path, "w");
+  if (!file) return false;
+  serializeJson(doc, file);
+  file.close();
+  return true;
 }
 
 bool updateAlarmProperty(const String& nome, const String& key, const String& value) {
-    DynamicJsonDocument doc(1024);
-    if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
-    if (!doc.is<JsonArray>()) return false;
-    JsonArray arr = doc.as<JsonArray>();
-    for (JsonObject a : arr) {
-        if (a["nome"].as<String>() == nome) {
-            a[key] = value;
-            return saveJsonToFile(ALARM_FILE, doc);
-        }
+  DynamicJsonDocument doc(1024);
+  if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
+  if (!doc.is<JsonArray>()) return false;
+  JsonArray arr = doc.as<JsonArray>();
+  for (JsonObject a : arr) {
+    if (a["nome"].as<String>() == nome) {
+      a[key] = value;
+      return saveJsonToFile(ALARM_FILE, doc);
     }
-    return false;
+  }
+  return false;
 }
 
 bool removeAlarm(const String& nome) {
-    DynamicJsonDocument doc(1024);
-    if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
-    if (!doc.is<JsonArray>()) return false;
-    JsonArray arr = doc.as<JsonArray>();
-    for (int i = 0; i < arr.size(); i++) {
-        if (arr[i]["nome"].as<String>() == nome) {
-            arr.remove(i);
-            return saveJsonToFile(ALARM_FILE, doc);
-        }
+  DynamicJsonDocument doc(1024);
+  if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
+  if (!doc.is<JsonArray>()) return false;
+  JsonArray arr = doc.as<JsonArray>();
+  for (int i = 0; i < arr.size(); i++) {
+    if (arr[i]["nome"].as<String>() == nome) {
+      arr.remove(i);
+      return saveJsonToFile(ALARM_FILE, doc);
     }
-    return false;
+  }
+  return false;
 }
 
 bool alarmExists(const String& nome) {
-    DynamicJsonDocument doc(1024);
-    if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
-    if (!doc.is<JsonArray>()) return false;
-    for (JsonObject a : doc.as<JsonArray>()) {
-        if (a["nome"].as<String>() == nome) return true;
-    }
-    return false;
+  DynamicJsonDocument doc(1024);
+  if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
+  if (!doc.is<JsonArray>()) return false;
+  for (JsonObject a : doc.as<JsonArray>()) {
+    if (a["nome"].as<String>() == nome) return true;
+  }
+  return false;
 }
 
-int findTime(int hora, int minuto){
-    DynamicJsonDocument doc(1024);
-    if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
-    if (!doc.is<JsonArray>()) return false;
-    for (JsonObject a : doc.as<JsonArray>()) {
-        if (a["hora"].as<int>() == hora and a["minuto"].as<int>() == minuto and a["ativo"].as<String>() == "true") {
-            Serial.println("Horário encontrado!");
-            Serial.print("Duração do alarme: "); Serial.println(a["duracao"].as<int>());
-            return a["duracao"].as<int>();
-        }
+int findTime(int hora, int minuto, int diaSemana) {
+  DynamicJsonDocument doc(1024);
+  if (!loadJsonFromFile(ALARM_FILE, doc)) return 0;
+  if (!doc.is<JsonArray>()) return 0;
+  
+  for (JsonObject a : doc.as<JsonArray>()) {
+    if (a["hora"].as<int>() == hora && 
+        a["minuto"].as<int>() == minuto && 
+        a["ativo"].as<String>() == "true") {
+      
+      String diasSemana = a["dias"].as<String>();
+      if (diasSemana.length() == 7 && diasSemana[diaSemana] == '1') {
+        Serial.println("Horário de irrigação!");
+        return a["duracao"].as<int>();
+      }
     }
-    Serial.println("Horário não encontrado...");
-    return 0;
+  }
+  return 0;
 }
 
-int nearestSchedule(int hora, int minuto) {
-    DynamicJsonDocument doc(1024);
-    // Se não conseguir carregar o arquivo, retorna 1
-    if (!loadJsonFromFile(ALARM_FILE, doc)) return 1;
-    // Se não for um array JSON, retorna 1
-    if (!doc.is<JsonArray>()) return 1;
-    JsonArray alarmes = doc.as<JsonArray>();
-    // Se o array estiver vazio, retorna 1
-    if (alarmes.size() == 0) return 1;
-    int menorDiferenca = 24 * 60; // Valor máximo em minutos (1 dia)
-    int alarmeMaisProximo = 1; // Valor padrão se não encontrar
-    for (JsonObject alarme : alarmes) {
-        int horaAlarme = alarme["hora"].as<int>();
-        int minutoAlarme = alarme["minuto"].as<int>();
-        // Calcula diferença em minutos
-        int minutosAtuais = hora * 60 + minuto;
-        int minutosAlarme = horaAlarme * 60 + minutoAlarme;
-        int diferenca = minutosAlarme - minutosAtuais;
-        // Se a diferença for negativa, significa que o alarme é para o dia seguinte
-        if (diferenca < 0) {
-            diferenca += 24 * 60; // Adiciona um dia em minutos
+int encontrarProximoAlarme(int hora, int minuto, int diaSemanaAtual) { // Retorna quantos minutos faltam para o próximo alarme
+  DynamicJsonDocument doc(1024);
+  if (!loadJsonFromFile(ALARM_FILE, doc)) return 1;
+  if (!doc.is<JsonArray>()) return 1;
+  JsonArray alarmes = doc.as<JsonArray>();
+  if (alarmes.size() == 0) return 1;
+
+  int minutosAtuais = hora * 60 + minuto;
+  int menorDiferenca = 7 * 24 * 60;  // 1 semana em minutos
+  bool encontrouAlarme = false;
+
+  for (JsonObject alarme : alarmes) {
+    int horaAlarme = alarme["hora"].as<int>();
+    int minutoAlarme = alarme["minuto"].as<int>();
+    String semana = alarme["dias"].as<String>();
+    int minutosAlarme = horaAlarme * 60 + minutoAlarme;
+
+    // Verifica para cada dia ativo do alarme
+    for (int diaOffset = 0; diaOffset < 7; diaOffset++) {
+      int diaAlarme = (diaSemanaAtual + diaOffset) % 7;
+
+      if (semana[diaAlarme] == '1') {
+        int diferenca = (diaOffset * 24 * 60) + (minutosAlarme - minutosAtuais);
+
+        // Ignora alarmes que já passaram no dia atual
+        if (diaOffset == 0 && diferenca < 0) {
+          continue;
         }
-        // Encontra o alarme mais próximo
-        if (diferenca < menorDiferenca) {
-            menorDiferenca = diferenca;
-            alarmeMaisProximo = menorDiferenca; // Retorna a diferença em minutos
+
+        if (diferenca < menorDiferenca && diferenca >= 0) {
+          menorDiferenca = diferenca;
+          encontrouAlarme = true;
         }
+      }
     }
-    return alarmeMaisProximo;
+  }
+
+  return encontrouAlarme ? menorDiferenca : 1;
 }

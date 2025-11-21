@@ -16,8 +16,8 @@ bool removeAlarm(const String& nome);
 
 bool alarmExists(const String& nome);
 
-int findTime(int hora, int minuto);
+int findTime(int hora, int minuto, int diaSemana);
 
-int nearestSchedule(int hora, int minuto);
+int encontrarProximoAlarme(int hora, int minuto, int diaSemanaAtual);
 
 #endif
