@@ -16,6 +16,6 @@ enum BatteryState{
     BAIXO,
 };
 
-BatteryState EstadoBateria();
+BatteryState battery_state();
 
 #endif

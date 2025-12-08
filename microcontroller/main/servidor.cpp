@@ -1,15 +1,15 @@
 #include "servidor.h"
 
-void setAlarm(){
+void _set_alarm(){
   if (!server.hasArg("plain")) return server.send(400, "text/plain", "JSON ausente");
   DynamicJsonDocument doc(1024);
   if (deserializeJson(doc, server.arg("plain"))) return server.send(400, "text/plain", "Erro JSON");
 
   String nome = doc["nomeAlarme"].as<String>();
-  if (alarmExists(nome)) return server.send(400, "text/plain", "Já existe");
+  if (_alarm_exists(nome)) return server.send(400, "text/plain", "Já existe");
 
   DynamicJsonDocument data(1024);
-  loadJsonFromFile(ALARM_FILE, data);
+  _load_json_from_file(ALARM_FILE, data);
   JsonArray arr = data.is<JsonArray>() ? data.as<JsonArray>() : data.to<JsonArray>();
   JsonObject a = arr.createNestedObject();
   a["nome"] = nome;
@@ -18,7 +18,7 @@ void setAlarm(){
   a["duracao"] = doc["duracaoAlarme"].as<String>();
   a["ativo"] = doc["ativo"].as<String>();
   a["dias"] = doc["diasSemana"].as<String>();
-  saveJsonToFile(ALARM_FILE, data);
+  _save_json_to_file(ALARM_FILE, data);
   Serial.print("Alarme adicionado. Nome: "); Serial.println(nome);
   Serial.print("Hora: "); Serial.println(a["hora"].as<String>());
   Serial.print("Minuto: "); Serial.println(a["minuto"].as<String>());
@@ -26,7 +26,7 @@ void setAlarm(){
   server.send(200, "text/plain", "Criado");
 }
 
-void editAlarm(){
+void _edit_alarm(){
   if (!server.hasArg("plain") || !server.hasArg("nomeAntigo"))
     return server.send(400, "text/plain", "Faltando dados");
   String antigo = server.arg("nomeAntigo");
@@ -35,7 +35,7 @@ void editAlarm(){
     return server.send(400, "text/plain", "Erro JSON");
 
   DynamicJsonDocument data(1024);
-  if (!loadJsonFromFile(ALARM_FILE, data)) return server.send(500, "text/plain", "Erro ao abrir");
+  if (!_load_json_from_file(ALARM_FILE, data)) return server.send(500, "text/plain", "Erro ao abrir");
   JsonArray arr = data.as<JsonArray>();
   for (JsonObject a : arr) {
       if (a["nome"].as<String>() == antigo) {
@@ -45,7 +45,7 @@ void editAlarm(){
           if (doc.containsKey("duracaoAlarme")) a["duracao"] = doc["duracaoAlarme"].as<String>();
           if (doc.containsKey("ativo")) a["ativo"] = doc["ativo"].as<String>();
           if (doc.containsKey("diasSemana")) a["dias"] = doc["diasSemana"].as<String>();
-          saveJsonToFile(ALARM_FILE, data);
+          _save_json_to_file(ALARM_FILE, data);
           return server.send(200, "text/plain", "Editado");
       }
   }
@@ -53,28 +53,28 @@ void editAlarm(){
 
 }
 
-void deleteAlarm(){
+void _delete_alarm(){
   if (!server.hasArg("name")) return server.send(400, "text/plain", "Faltando nome");
-  if (removeAlarm(server.arg("name"))) server.send(200, "text/plain", "Removido");
+  if (_remove_alarm(server.arg("name"))) server.send(200, "text/plain", "Removido");
   else server.send(404, "text/plain", "Não encontrado");
 
 }
 
-void activateAlarm(){
+void _activate_alarm(){
   if (!server.hasArg("name")) return server.send(400, "text/plain", "Faltando nome");
-  if (updateAlarmProperty(server.arg("name"), "ativo", "true")) server.send(200, "text/plain", "Ativado");
+  if (_update_alarm_Property(server.arg("name"), "ativo", "true")) server.send(200, "text/plain", "Ativado");
   else server.send(404, "text/plain", "Não encontrado");
 
 }
 
-void deactivateAlarm(){
+void _deactivate_alarm(){
   if (!server.hasArg("name")) return server.send(400, "text/plain", "Faltando nome");
-  if (updateAlarmProperty(server.arg("name"), "ativo", "false")) server.send(200, "text/plain", "Desativado");
+  if (_update_alarm_Property(server.arg("name"), "ativo", "false")) server.send(200, "text/plain", "Desativado");
   else server.send(404, "text/plain", "Não encontrado");
 
 }
 
-void deleteAll(){
+void _delete_all(){
   File file = LittleFS.open(ALARM_FILE, "w");
   file.print("[]");
   file.close();
@@ -82,20 +82,19 @@ void deleteAll(){
 
 }
 
-void consultAlarm(){
+void _consult_alarm(){
   if (!server.hasArg("name")) return server.send(400, "text/plain", "Faltando nome");
   Serial.println("Consultando alarme...");
-  if (alarmExists(server.arg("name"))) server.send(200, "text/plain", "True");
+  if (_alarm_exists(server.arg("name"))) server.send(200, "text/plain", "True");
   else server.send(200, "text/plain", "False");
 }
 
-void inicializarServidor(){
-  server.on("/setAlarm", HTTP_POST, setAlarm); // Adicionado HTTP_POST
-  server.on("/editAlarm", HTTP_POST, editAlarm); // Adicionado HTTP_POST
-  server.on("/deleteAlarm", HTTP_POST, deleteAlarm); // Adicionado HTTP_POST
-  server.on("/deleteAll", HTTP_POST, deleteAll); // Adicionado HTTP_POST
-  server.on("/deactivateAlarm", HTTP_POST, deactivateAlarm); // Adicionado HTTP_POST
-  server.on("/activateAlarm", HTTP_POST, activateAlarm); // Adicionado HTTP_POST
-  server.on("/consultAlarm", consultAlarm);
-
+void server_init(){
+  server.on("/setAlarm", HTTP_POST, _set_alarm); // Adicionado HTTP_POST
+  server.on("/editAlarm", HTTP_POST, _edit_alarm); // Adicionado HTTP_POST
+  server.on("/deleteAlarm", HTTP_POST, _delete_alarm); // Adicionado HTTP_POST
+  server.on("/deleteAll", HTTP_POST, _delete_all); // Adicionado HTTP_POST
+  server.on("/deactivateAlarm", HTTP_POST, _deactivate_alarm); // Adicionado HTTP_POST
+  server.on("/activateAlarm", HTTP_POST, _activate_alarm); // Adicionado HTTP_POST
+  server.on("/consultAlarm", _consult_alarm);
 }

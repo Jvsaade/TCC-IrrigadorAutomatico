@@ -3,17 +3,17 @@
 
 #include "arduino.h"
 
-const int LedVerde = 4;
-const int LedAzul = 5;
-const int motorIn1 = 14;
-const int motorIn2 = 12;
-const int stopPin = 13;
+const int green_led = 4;
+const int red_led = 5;
+const int in1_motor = 14;
+const int in2_motor = 12;
+const int stop_pin = 13;
 
-void MotorSentidoAntiHorario(int velocidade);
-void MotorSentidoHorario(int velocidade);
-void DesligarLeds();
-void LigarVerde();
-void LigarAzul();
-void Irrigation(int duracao);
+void _counterclockwise_motor(int velocidade);
+void _clockwise_motor(int velocidade);
+void _leds_off();
+void _green_led_on();
+void _red_led_on();
+void irrigation(int duracao);
 
 #endif

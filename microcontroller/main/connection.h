@@ -19,20 +19,20 @@ extern String globalSSID;
 extern String globalPW;
 
 
-void ConnectionError();
+void connection_error();
 
-void OTA_Initialization();
+void OTA_init();
 
-void SuccessfulConnection();
+void successful_connection();
 
-void consulta_bateria();
+void _battery_consult();
 
-bool IniciarSmartConfig();
+bool smartconfig_init();
 
-void SalvarCredenciais(const String& ssid, const String& password);
+void _save_credentials(const String& ssid, const String& password);
 
-bool RecuperarCredenciaisWiFi();
+bool _recover_wifi_credentials();
 
-bool ConectarWiFiComCredenciaisSalvas();
+bool connect_wifi_saved_credentials();
 
 #endif

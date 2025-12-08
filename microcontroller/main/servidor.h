@@ -7,18 +7,18 @@
 #include "connection.h"
 #include "alarm.h"
 
-void setAlarm();
+void _set_alarm();
 
-void editAlarm();
+void _edit_alarm();
 
-void deleteAlarm();
+void _delete_alarm();
 
-void activateAlarm();
+void _activate_alarm();
 
-void consultAlarm();
+void _consult_alarm();
 
-void deleteAll();
+void _delete_all();
 
-void inicializarServidor();
+void server_init();
 
 #endif

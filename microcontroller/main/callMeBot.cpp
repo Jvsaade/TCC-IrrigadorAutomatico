@@ -4,7 +4,7 @@ String phoneNumber = "+553189299861"; // <-- Coloque seu número aqui
 String apiKey = "3231892"; // <-- Coloque sua API Key aqui
 WiFiClientSecure client;
 
-void enviarMensagem(String message){
+void send_message(String message){
   String url = "https://api.callmebot.com/whatsapp.php?phone=" + phoneNumber + "&apikey=" + apiKey + "&text=" + urlEncode(message);    
   HTTPClient http;
   http.begin(client, url);
@@ -27,6 +27,6 @@ void enviarMensagem(String message){
   http.end();
 }
 
-void CallMeBotConfig(){
+void call_me_bot_init(){
   client.setInsecure();
 }

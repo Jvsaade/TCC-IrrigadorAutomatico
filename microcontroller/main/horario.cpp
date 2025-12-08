@@ -6,7 +6,7 @@
 struct tm timeinfo;
 const char *ntpServer = "pool.ntp.org";
 
-bool getCurrentTime(int &hora, int &minuto, int &semana) {
+bool get_current_time(int &hora, int &minuto, int &semana) {
   static uint16_t cont_err = 0;
   static uint16_t cont_suc = 0;
 
@@ -16,14 +16,14 @@ bool getCurrentTime(int &hora, int &minuto, int &semana) {
     cont_err++;
     if (cont_err == 200) {
       cont_err = 0;
-      erroHorario();
+      _hour_check_error();
     }
     return false;
   }
   cont_suc++;
   if (cont_suc == 3000) {
     cont_suc = 0;
-    sucessoHorario();
+    _hour_check_success();
   }
   hora = timeinfo.tm_hour;
   minuto = timeinfo.tm_min;
@@ -35,40 +35,40 @@ bool getCurrentTime(int &hora, int &minuto, int &semana) {
   return true;
 }
 
-void erroHorario() {
+void _hour_check_error() {
   for (int i = 0; i < 2; i++) {
-    LigarAzul();
+    _red_led_on();
     delay(1000);
-    DesligarLeds();
+    _leds_off();
     delay(1000);
-    LigarAzul();
+    _red_led_on();
     delay(100);
-    DesligarLeds();
+    _leds_off();
     delay(1000);
   }
 }
 
-void sucessoHorario() {
+void _hour_check_success() {
   for (int i = 0; i < 2; i++) {
-    LigarVerde();
+    _green_led_on();
     delay(1000);
-    DesligarLeds();
+    _leds_off();
     delay(1000);
-    LigarVerde();
+    _green_led_on();
     delay(100);
-    DesligarLeds();
+    _leds_off();
     delay(1000);
   }
 }
 
-void setupTime() {
+void time_init() {
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
 }
 
-int checkSchedule() {
+int check_schedule() {
   int horaAtual, minutoAtual, diaSemana;
-  if (getCurrentTime(horaAtual, minutoAtual, diaSemana)) {
-    return findTime(horaAtual, minutoAtual, diaSemana);
+  if (get_current_time(horaAtual, minutoAtual, diaSemana)) {
+    return _find_time(horaAtual, minutoAtual, diaSemana);
   }
   return 0;
 }
@@ -78,11 +78,11 @@ int checkSchedule() {
   @return Tempo em minutos para o DeepSleep
 */
 
-int tempoDeepSleep() {
+int deep_sleep_time() {
   int horaAtual, minutoAtual, diaSemana;
-  if (!getCurrentTime(horaAtual, minutoAtual, diaSemana))
+  if (!get_current_time(horaAtual, minutoAtual, diaSemana))
     return 1;
-  int proximoAlarme = encontrarProximoAlarme(horaAtual, minutoAtual, diaSemana);
+  int proximoAlarme = _find_nearest_alarm(horaAtual, minutoAtual, diaSemana);
   if(proximoAlarme < 2 * 60) // Se estiver dentro das próximas 2 horas, espera até esse tempo
     return (proximoAlarme - 2) * 60 * 1e6; // Acorda 2 minutos antes do programado
   else

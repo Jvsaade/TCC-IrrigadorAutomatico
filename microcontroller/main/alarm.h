@@ -6,18 +6,18 @@
 #include <ArduinoJson.h>
 #include <LittleFS.h>
 
-bool loadJsonFromFile(const char* path, DynamicJsonDocument& doc);
+bool _load_json_from_file(const char* path, DynamicJsonDocument& doc);
 
-bool saveJsonToFile(const char* path, DynamicJsonDocument& doc);
+bool _save_json_to_file(const char* path, DynamicJsonDocument& doc);
 
-bool updateAlarmProperty(const String& nome, const String& key, const String& value);
+bool _update_alarm_property(const String& nome, const String& key, const String& value);
 
-bool removeAlarm(const String& nome);
+bool _remove_alarm(const String& nome);
 
-bool alarmExists(const String& nome);
+bool _alarm_exists(const String& nome);
 
-int findTime(int hora, int minuto, int diaSemana);
+int _find_time(int hora, int minuto, int diaSemana);
 
-int encontrarProximoAlarme(int hora, int minuto, int diaSemanaAtual);
+int _find_nearest_alarm(int hora, int minuto, int diaSemanaAtual);
 
 #endif

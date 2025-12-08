@@ -24,11 +24,11 @@ unsigned int contagem;
 // As credenciais serão lidas em variáveis locais ou passadas para as funções conforme necessário.
 
 // --- Protótipos das funções ---
-bool RecuperarCredenciaisWiFi(); // Retorna true se as credenciais foram lidas com sucesso
-bool ConectarWiFiComCredenciaisSalvas(); // Substitui WiFiEEPROM()
-bool IniciarSmartConfig(); // Substitui WiFiSmartConfig()
-void SalvarCredenciais(const String& ssid, const String& password); // Agora aceita Strings
-void OTA_Initialization();
+bool _recover_wifi_credentials(); // Retorna true se as credenciais foram lidas com sucesso
+bool connect_wifi_saved_credentials(); // Substitui WiFiEEPROM()
+bool smartconfig_init(); // Substitui WiFiSmartConfig()
+void _save_credentials(const String& ssid, const String& password); // Agora aceita Strings
+void OTA_init();
 void piscapisca();
 
 // Variáveis para armazenar as credenciais lidas do LittleFS
@@ -45,7 +45,7 @@ void setup() {
             Serial.println("Falha crítica: Não foi possível montar o LittleFS mesmo após formatar.");
             // Você pode adicionar um loop infinito ou reinício aqui se for um erro fatal
             while (true) {
-                ConnectionError(); // Exibe um erro visual contínuo
+                connection_error(); // Exibe um erro visual contínuo
                 delay(1000);
             }
         }
@@ -53,30 +53,30 @@ void setup() {
     Serial.println("LittleFS montado com sucesso.");
 
     // Configura os pinos digitais
-    pinMode(LedVerde, OUTPUT);
-    pinMode(LedAzul, OUTPUT);
-    pinMode(motorIn1, OUTPUT);
-    pinMode(motorIn2, OUTPUT);
-    pinMode(stopPin, INPUT);
+    pinMode(green_led, OUTPUT);
+    pinMode(red_led, OUTPUT);
+    pinMode(in1_motor, OUTPUT);
+    pinMode(in2_motor, OUTPUT);
+    pinMode(stop_pin, INPUT);
 
     Serial.println("\nIniciando...");
 
     // Tenta conectar usando as credenciais salvas no LittleFS
-    if (ConectarWiFiComCredenciaisSalvas() == false) {
+    if (connect_wifi_saved_credentials() == false) {
         Serial.println("Erro na conexão por credenciais salvas no LittleFS.");
         Serial.println("Iniciando tentativa por SmartConfig.");
-        ConnectionError(); // Exibe erro de conexão inicial (com duração)
+        connection_error(); // Exibe erro de conexão inicial (com duração)
 
         // Se falhou, tenta SmartConfig
-        if (IniciarSmartConfig() == false) {
+        if (smartconfig_init() == false) {
             Serial.println("Erro na conexão por SmartConfig.");
-            ConnectionError(); // Exibe erro de conexão final (com duração)
+            connection_error(); // Exibe erro de conexão final (com duração)
             // Se falhar a conexão, o LED azul piscará por 10 segundos
         } else {
-            SuccessfulConnection(); // Conexão bem-sucedida via SmartConfig (com duração)
+            successful_connection(); // Conexão bem-sucedida via SmartConfig (com duração)
         }
     } else {
-        SuccessfulConnection(); // Conexão bem-sucedida via LittleFS (com duração)
+        successful_connection(); // Conexão bem-sucedida via LittleFS (com duração)
     }
 
     if (WiFi.status() == WL_CONNECTED) {
@@ -95,24 +95,24 @@ void setup() {
     }
 
     // Inicializa a atualização OTA
-    OTA_Initialization();
+    OTA_init();
     
 
     // Configura o servidor web
     server.on("/", []() {
         server.send(200, "text/plain", "Rodando...");
     });
-    inicializarServidor();
-    server.on("/battery", consulta_bateria); // Rota para testar a bateria
+    server_init();
+    server.on("/battery", _battery_consult); // Rota para testar a bateria
     server.begin(); // Inicia o servidor web
     Serial.println("Servidor HTTP iniciado.");
     contagem = millis();
 
-    CallMeBotConfig();
-    setupTime();
+    call_me_bot_init();
+    time_init();
 
-    if(EstadoBateria()==BAIXO)
-        enviarMensagem("Bateria baixa! Troque quando possível.");
+    if(battery_state()==BAIXO)
+        send_message("Bateria baixa! Troque quando possível.");
 
 }
 
@@ -121,11 +121,11 @@ void loop() {
     ArduinoOTA.handle();
     server.handleClient();
 
-    int duracao = checkSchedule();
+    int duracao = check_schedule();
     if(duracao != 0)
-        Irrigation(duracao);
+        irrigation(duracao);
 
-    Serial.print("O próximo alarme está a ");Serial.print(tempoDeepSleep());Serial.println(" milisegundos a frente no tempo.");
+    Serial.print("O próximo alarme está a ");Serial.print(deep_sleep_time());Serial.println(" milisegundos a frente no tempo.");
     /* 
     Entra em deepsleep quando passarem DEEPSLEEP_TIMEOUT milisegundos desde que ele entrou no loop.
     OBS: DEEPSLEEP_TIMEOUT não pode ser um número muito pequeno, pois deve ter tempo suficiente para
@@ -133,7 +133,7 @@ void loop() {
     */
 
     if (millis() - contagem > DEEPSLEEP_TIMEOUT) {
-        int wait = tempoDeepSleep();
+        int wait = deep_sleep_time();
         if (wait > 5e6){
             ESP.deepSleep(wait);
             Serial.print("Entrando em DeepSleep por "); Serial.print(wait/60e6); Serial.println(" minutos.");

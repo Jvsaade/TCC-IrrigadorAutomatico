@@ -1,7 +1,7 @@
 #include "bateria.h"
 
 
-BatteryState EstadoBateria(){
+BatteryState battery_state(){
     int leitura_bateria = analogRead(PINO_ADC_BATERIA);
     float battery_voltage = (((float) leitura_bateria)/1023.0)*FATOR_DIVISOR;
     if(battery_voltage > VOLTAGEM_ALTA)
@@ -16,7 +16,7 @@ BatteryState EstadoBateria(){
     }
 }
 
-float BatteryVoltage(){
+float battery_voltage(){
     int leitura_bateria = analogRead(PINO_ADC_BATERIA);
     float battery_voltage = (((float) leitura_bateria)/1023.0)*FATOR_DIVISOR;
     return battery_voltage;
