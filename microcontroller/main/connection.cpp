@@ -6,20 +6,20 @@ const unsigned int WiFiConnection_Timeout = 15000;
 String globalSSID = "";
 String globalPW = "";
 
-void ConnectionError() {
+void connection_error() {
     // Animação de erro por alguns segundos
     unsigned long duracao_animacao = 10000; // 10 segundos
     unsigned long tempo_inicial = millis();
     while (millis() - tempo_inicial < duracao_animacao) {
-        LigarAzul();
+        _red_led_on();
         delay(100);
-        LigarVerde();
+        _green_led_on();
         delay(100);
     }
-    DesligarLeds(); // Desliga os LEDs após a animação de erro
+    _leds_off(); // Desliga os LEDs após a animação de erro
 }
 
-void OTA_Initialization() {
+void OTA_init() {
     ArduinoOTA.setHostname("meutcc");
     ArduinoOTA.setPassword("12345");
     ArduinoOTA.onStart([]() {
@@ -32,12 +32,12 @@ void OTA_Initialization() {
         // NOTA: Não faça nada que demore muito aqui, ou você pode ter um Watchdog reset
         Serial.println("Iniciando atualização " + type);
         // Desligue LEDs ou motores se estiverem ativos para sinalizar atualização
-        DesligarLeds();
+        _leds_off();
     });
     ArduinoOTA.onEnd([]() {
         Serial.println("\nFim da atualização!");
         // Acenda um LED ou sinalize que a atualização terminou
-        LigarVerde(); // Sinal de sucesso
+        _green_led_on(); // Sinal de sucesso
     });
     ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
         Serial.printf("Progresso: %u%%\r\n", (progress / (total / 100)));
@@ -50,14 +50,14 @@ void OTA_Initialization() {
         else if (error == OTA_RECEIVE_ERROR) Serial.println("Erro ao receber");
         else if (error == OTA_END_ERROR) Serial.println("Erro ao finalizar");
         // Sinalize um erro com os LEDs
-        ConnectionError(); // Ou uma função específica para erro OTA
+        connection_error(); // Ou uma função específica para erro OTA
     });
     ArduinoOTA.begin();
     Serial.println("OTA inicializado. Aguardando atualizações...");
     // --- FIM DA CONFIGURAÇÃO OTA ---
 }
 
-void consulta_bateria(){
+void _battery_consult(){
     String state;
     switch(EstadoBateria()){
         case ALTO:
@@ -73,20 +73,20 @@ void consulta_bateria(){
     server.send(200, "text/plain", state);
 }
 
-void SuccessfulConnection() {
+void successful_connection() {
     // Animação de sucesso por alguns segundos
     unsigned long duracao_animacao = 5000; // 5 segundos
     unsigned long tempo_inicial = millis();
     while (millis() - tempo_inicial < duracao_animacao) {
-        DesligarLeds();
+        _leds_off();
         delay(500); // 0.5 segundo
-        LigarVerde();
+        _green_led_on();
         delay(500); // 0.5 segundo
     }
-    DesligarLeds(); // Deixa o LED verde ligado após a animação para indicar conexão
+    _leds_off(); // Deixa o LED verde ligado após a animação para indicar conexão
 }
 
-bool IniciarSmartConfig() {
+bool smartconfig_init() {
     WiFi.mode(WIFI_STA); // Define o modo de estação
     Serial.println("Iniciando SmartConfig...");
     WiFi.beginSmartConfig(); // Inicia o modo SmartConfig
@@ -97,7 +97,7 @@ bool IniciarSmartConfig() {
             // Se conectou, salva as novas credenciais
             String currentSSID = WiFi.SSID();
             String currentPW = WiFi.psk();
-            SalvarCredenciais(currentSSID, currentPW); // Salva no LittleFS
+            _save_credentials(currentSSID, currentPW); // Salva no LittleFS
 
             Serial.println("Conectado pelo SmartConfig e credenciais salvas!");
             Serial.print("SSID conectado: ");
@@ -113,7 +113,7 @@ bool IniciarSmartConfig() {
     return false; // SmartConfig não conectou a tempo
 }
 
-void SalvarCredenciais(const String& ssid, const String& password) {
+void _save_credentials(const String& ssid, const String& password) {
     File configFile = LittleFS.open(CONFIG_FILE, "w"); // "w" para sobrescrever o arquivo
     if (!configFile) {
         Serial.println("Erro ao criar/abrir arquivo para salvar credenciais.");
@@ -126,7 +126,7 @@ void SalvarCredenciais(const String& ssid, const String& password) {
     Serial.println("Credenciais salvas no LittleFS.");
 }
 
-bool RecuperarCredenciaisWiFi() {
+bool _recover_wifi_credentials() {
     File configFile = LittleFS.open(CONFIG_FILE, "r");
     if (!configFile) {
         Serial.println("Arquivo de configuração não encontrado ou erro ao abrir.");
@@ -156,8 +156,8 @@ bool RecuperarCredenciaisWiFi() {
     }
 }
 
-bool ConectarWiFiComCredenciaisSalvas() {
-    if (!RecuperarCredenciaisWiFi()) { // Tenta carregar as credenciais
+bool connect_wifi_saved_credentials() {
+    if (!_recover_wifi_credentials()) { // Tenta carregar as credenciais
         Serial.println("Não foi possível carregar credenciais válidas do LittleFS.");
         return false;
     }

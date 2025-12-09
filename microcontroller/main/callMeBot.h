@@ -11,7 +11,7 @@ extern WiFiClientSecure client;
 extern String phoneNumber; // <-- Coloque seu número aqui
 extern String apiKey; // <-- Coloque sua API Key aqui
 
-void enviarMensagem(String message);
-void CallMeBotConfig();
+void send_message(String message);
+void call_me_bot_init();
 
 #endif

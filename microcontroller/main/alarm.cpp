@@ -1,6 +1,6 @@
 #include "alarm.h"
 
-bool loadJsonFromFile(const char* path, DynamicJsonDocument& doc) {
+bool _load_json_from_file(const char* path, DynamicJsonDocument& doc) {
   File file = LittleFS.open(path, "r");
   if (!file) return false;
   DeserializationError error = deserializeJson(doc, file);
@@ -8,7 +8,7 @@ bool loadJsonFromFile(const char* path, DynamicJsonDocument& doc) {
   return !error;
 }
 
-bool saveJsonToFile(const char* path, DynamicJsonDocument& doc) {
+bool _save_json_to_file(const char* path, DynamicJsonDocument& doc) {
   File file = LittleFS.open(path, "w");
   if (!file) return false;
   serializeJson(doc, file);
@@ -16,37 +16,37 @@ bool saveJsonToFile(const char* path, DynamicJsonDocument& doc) {
   return true;
 }
 
-bool updateAlarmProperty(const String& nome, const String& key, const String& value) {
+bool _update_alarm_property(const String& nome, const String& key, const String& value) {
   DynamicJsonDocument doc(1024);
-  if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
+  if (!_load_json_from_file(ALARM_FILE, doc)) return false;
   if (!doc.is<JsonArray>()) return false;
   JsonArray arr = doc.as<JsonArray>();
   for (JsonObject a : arr) {
     if (a["nome"].as<String>() == nome) {
       a[key] = value;
-      return saveJsonToFile(ALARM_FILE, doc);
+      return _save_json_to_file(ALARM_FILE, doc);
     }
   }
   return false;
 }
 
-bool removeAlarm(const String& nome) {
+bool _remove_alarm(const String& nome) {
   DynamicJsonDocument doc(1024);
-  if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
+  if (!_load_json_from_file(ALARM_FILE, doc)) return false;
   if (!doc.is<JsonArray>()) return false;
   JsonArray arr = doc.as<JsonArray>();
   for (int i = 0; i < arr.size(); i++) {
     if (arr[i]["nome"].as<String>() == nome) {
       arr.remove(i);
-      return saveJsonToFile(ALARM_FILE, doc);
+      return _save_json_to_file(ALARM_FILE, doc);
     }
   }
   return false;
 }
 
-bool alarmExists(const String& nome) {
+bool _alarm_exists(const String& nome) {
   DynamicJsonDocument doc(1024);
-  if (!loadJsonFromFile(ALARM_FILE, doc)) return false;
+  if (!_load_json_from_file(ALARM_FILE, doc)) return false;
   if (!doc.is<JsonArray>()) return false;
   for (JsonObject a : doc.as<JsonArray>()) {
     if (a["nome"].as<String>() == nome) return true;
@@ -54,9 +54,9 @@ bool alarmExists(const String& nome) {
   return false;
 }
 
-int findTime(int hora, int minuto, int diaSemana) {
+int _find_time(int hora, int minuto, int diaSemana) {
   DynamicJsonDocument doc(1024);
-  if (!loadJsonFromFile(ALARM_FILE, doc)) return 0;
+  if (!_load_json_from_file(ALARM_FILE, doc)) return 0;
   if (!doc.is<JsonArray>()) return 0;
   
   for (JsonObject a : doc.as<JsonArray>()) {
@@ -74,9 +74,9 @@ int findTime(int hora, int minuto, int diaSemana) {
   return 0;
 }
 
-int encontrarProximoAlarme(int hora, int minuto, int diaSemanaAtual) { // Retorna quantos minutos faltam para o próximo alarme
+int _find_nearest_alarm(int hora, int minuto, int diaSemanaAtual) { // Retorna quantos minutos faltam para o próximo alarme
   DynamicJsonDocument doc(1024);
-  if (!loadJsonFromFile(ALARM_FILE, doc)) return 1;
+  if (!_load_json_from_file(ALARM_FILE, doc)) return 1;
   if (!doc.is<JsonArray>()) return 1;
   JsonArray alarmes = doc.as<JsonArray>();
   if (alarmes.size() == 0) return 1;

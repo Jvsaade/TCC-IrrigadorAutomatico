@@ -8,11 +8,11 @@ const int LedAzul = 5;
 const int motorIn1 = 14;
 const int motorIn2 = 12;
 
-void MotorSentidoAntiHorario(int velocidade, int tempo);
-void MotorSentidoHorario(int velocidade, int tempo);
-void DesligarLeds();
-void LigarVerde();
-void LigarAzul();
-void Irrigation(int duracao);
+void _counterclockwise_motor(int velocidade, int tempo);
+void _clockwise_motor(int velocidade, int tempo);
+void _leds_off();
+void _green_led_on();
+void _red_led_on();
+void irrigation(int duracao);
 
 #endif

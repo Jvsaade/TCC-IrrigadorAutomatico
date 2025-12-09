@@ -11,11 +11,11 @@ const int daylightOffset_sec = 0;
 
 extern struct tm timeinfo;
 
-void setupTime();
-bool getCurrentTime(int &hora, int &minuto, int &semana);
-void erroHorario();
-void sucessoHorario();
-int checkSchedule();
-int tempoDeepSleep();
+void time_init();
+bool get_current_time(int &hora, int &minuto, int &semana);
+void _hour_check_error();
+void _hour_check_success();
+int check_schedule();
+int deep_sleep_time();
 
 #endif
