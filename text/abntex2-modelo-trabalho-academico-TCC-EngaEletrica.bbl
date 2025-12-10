@@ -17,6 +17,16 @@ Dispon{\'\i}vel em: \url{https://upcyclethat.com/about-upcycling/}.}
 Dispon{\'\i}vel em:
   \url{https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WebServer}.}
 
+\bibitem[Baniasadi et al. 2019]{Baniasadi_E-Waste}
+\abntrefinfo{Baniasadi et al.}{BANIASADI et al.}{2019}
+{BANIASADI, M. et al. Advances in bioleaching as a sustainable method for metal
+  recovery from e-waste: {A} review.
+\emph{Journal of Industrial and Engineering Chemistry}, v.~76, p. 75--90, ago.
+  2019.
+ISSN 1226-086X.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/pii/S1226086X1930142X}.}
+
 \bibitem[Breakout PCB for ESP8266 WIFI ESP-07 ESP-12]{ConnectionsAdapterESP12}
 \abntrefinfo{Breakout\ldots}{BREAKOUT\ldots}{}
 {BREAKOUT PCB for ESP8266 WIFI ESP-07 ESP-12.
@@ -39,6 +49,22 @@ Dispon{\'\i}vel em:
   {WiFi} using {NodeMCU}.
 Dispon{\'\i}vel em:
   \url{https://iotdesignpro.com/projects/create-android-app-with-android-studio-to-control-led-over-wifi-using-nodemcu}.}
+
+\bibitem[{Duracell} 2019]{Duracell_MN1500}
+\abntrefinfo{{Duracell}}{{Duracell}}{2019}
+{{Duracell}. \emph{{DURACELL} {COPPERTOP} {MN1500} Size: {AA} ({LR6})
+  Alkaline-Manganese Dioxide Battery}. 2019.
+O ano de publicação foi inferido a partir do código do documento "MN15US1119".
+Dispon{\'\i}vel em:
+  \url{https://docs.rs-online.com/f2b6/A700000009430303.pdf}.}
+
+\bibitem[Duracell {MN} 2400 - {Battery} {AAA} type {\textbar} {Overview},
+  {Specs}, {Details} {\textbar} {SHI}]{Duracell_MN2400_Charge}
+\abntrefinfo{Duracell\ldots}{DURACELL\ldots}{}
+{DURACELL {MN} 2400 - {Battery} {AAA} type {\textbar} {Overview}, {Specs},
+  {Details} {\textbar} {SHI}.
+Dispon{\'\i}vel em:
+  \url{https://www.uk.shi.com/product/26585043/Duracell-MN-2400-Battery-AAA-type}.}
 
 \bibitem[{EDISON SCIENCE CORNER} 2023]{IoTBatteryMonitor}
 \abntrefinfo{{EDISON SCIENCE CORNER}}{{EDISON SCIENCE CORNER}}{2023}
@@ -68,6 +94,13 @@ Section: STM32 MCUs Products.
 Dispon{\'\i}vel em:
   \url{https://community.st.com/t5/stm32-mcus-products/eeprom-emulation-working-principle/td-p/613628}.}
 
+\bibitem[Eletropeças {Comercial} {Eletrônica} - {MICRO} {KAP} {MM} 1
+  {ANS}]{SensorFimCurso}
+\abntrefinfo{Eletropeças\ldots}{ELETROPEçAS\ldots}{}
+{ELETROPEçAS {Comercial} {Eletrônica} - {MICRO} {KAP} {MM} 1 {ANS}.
+Dispon{\'\i}vel em:
+  \url{https://www.eletropecas.com/chave-fim-de-curso-kap-mm1-ans/p}.}
+
 \bibitem[elsyscom 2018]{Elsys_LCD}
 \abntrefinfo{elsyscom}{ELSYSCOM}{2018}
 {ELSYSCOM. \emph{Painel de {LCD} e sol. {Um} não foi feito para o outro}. 2018.
@@ -89,6 +122,13 @@ Dispon{\'\i}vel em:
 Section: ESP32 Projects.
 Dispon{\'\i}vel em:
   \url{https://iotcircuithub.com/esp32-web-server-esp-now-relay-control-with-oled/}.}
+
+\bibitem[{Espressif Systems} 2013]{Espressif_ESP8266_Datasheet}
+\abntrefinfo{{Espressif Systems}}{{Espressif Systems}}{2013}
+{{Espressif Systems}. \emph{ESP8266EX Datasheet}. 2013.
+Version 1.0.
+Dispon{\'\i}vel em:
+  \url{https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex\\_datasheet\\_en.pdf}.}
 
 \bibitem[Filho 2009]{EngenhariaSoftware}
 \abntrefinfo{Filho}{FILHO}{2009}
@@ -122,6 +162,11 @@ Dispon{\'\i}vel em: \url{http://bbs.espressif.com/viewtopic.php?t=139}.}
 \abntrefinfo{Hoffmann}{HOFFMANN}{}
 {HOFFMANN, F. \emph{Débora {Garofalo}}.
 Dispon{\'\i}vel em: \url{https://deboragarofalo.com.br/robotica-com-sucata/}.}
+
+\bibitem[Horowitz e Hill 2015]{TheArtOfElectronics}
+\abntrefinfo{Horowitz e Hill}{HOROWITZ; HILL}{2015}
+{HOROWITZ, P.; HILL, W. \emph{The Art of Electronics}. 3. ed. New York:
+  Cambridge University Press, 2015.}
 
 \bibitem[{How} to drive a {DC} motor without a motor driver
   module]{DCMotorWithoutMotorDriver}
@@ -160,6 +205,14 @@ Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=Bxc2HnGHMyg}.}
 Section: Motor Driver Datasheets.
 Dispon{\'\i}vel em: \url{https://www.st.com/resource/en/datasheet/l298.pdf}.}
 
+\bibitem[Lu e Lopes 2024]{Lu_LixoEletronico}
+\abntrefinfo{Lu e Lopes}{LU; LOPES}{2024}
+{LU, J.; LOPES, P. Unmaking {Electronic} {Waste}.
+\emph{ACM Trans. Comput.-Hum. Interact.}, v.~31, n.~6, p. 77:1--77:30, dez.
+  2024.
+ISSN 1073-0516.
+Dispon{\'\i}vel em: \url{https://dl.acm.org/doi/10.1145/3674505}.}
+
 \bibitem[Marshall 2017]{ConnectionsESP12E}
 \abntrefinfo{Marshall}{MARSHALL}{2017}
 {MARSHALL, I. \emph{{ESP8266} - {Breakout}!} 2017.
@@ -176,6 +229,14 @@ Dispon{\'\i}vel em: \url{https://www.eletrogate.com/mini-motor-dc}.}
 {MINI {Ponte} {H} {Dupla} {L298N}.
 Dispon{\'\i}vel em: \url{https://www.eletrogate.com/mini-ponte-h-dupla-l298n}.}
 
+\bibitem[O que é upcycling e como a sua empresa pode aderir a essa tendência? -
+  {Sebrae}]{UpcyclingSebrae}
+\abntrefinfo{O\ldots}{O\ldots}{}
+{O que é upcycling e como a sua empresa pode aderir a essa tendência? -
+  {Sebrae}.
+Dispon{\'\i}vel em:
+  \url{https://sebrae.com.br/sites/PortalSebrae/ufs/pe/arquivos/o-que-e-upcycling-e-como-a-sua-empresa-pode-aderir-a-essa-tendencia,b16ac5a262798810VgnVCM1000001b00320aRCRD}.}
+
 \bibitem[Oliveira 2019]{MetaCircuitosReciclagem}
 \abntrefinfo{Oliveira}{OLIVEIRA}{2019}
 {OLIVEIRA, M. \emph{Meta-{Circuitos}: democratizando o ensino maker}. 2019.
@@ -183,12 +244,11 @@ Section: Educação.
 Dispon{\'\i}vel em:
   \url{https://roteirobaby.com.br/2019/12/meta-circuitos-democratizando-o-ensino-maker.html}.}
 
-\bibitem[Programming an {ESP8266} ({ESP}-12x) via a {USB} to {Serial} adaptor
-  2017]{ProgramacaoESP12_Serial}
-\abntrefinfo{Programming\ldots}{PROGRAMMING\ldots}{2017}
-{PROGRAMMING an {ESP8266} ({ESP}-12x) via a {USB} to {Serial} adaptor. 2017.
-Dispon{\'\i}vel em:
-  \url{https://www.b4x.com/android/forum/threads/programming-an-esp8266-esp-12x-via-a-usb-to-serial-adaptor.79177/}.}
+\bibitem[Onsemi 2025]{TIP122Datasheet}
+\abntrefinfo{Onsemi}{ONSEMI}{2025}
+{ONSEMI. \emph{{TIP122} Darlington Transistor {Datasheet}}. 2025.
+Section: Transistor Datasheets.
+Dispon{\'\i}vel em: \url{https://www.onsemi.com/pdf/datasheet/tip122-d.pdf}.}
 
 \bibitem[Reciclagem]{ReciclagemMMA}
 \abntrefinfo{Reciclagem}{RECICLAGEM}{}
@@ -248,6 +308,13 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://github.com/simontom/ESP32-SmartConfig-AndroidApp/tree/master}.}
 
+\bibitem[Simpson 2017]{ProgramacaoESP12_Serial}
+\abntrefinfo{Simpson}{SIMPSON}{2017}
+{SIMPSON, P. \emph{Programming an {ESP8266} ({ESP}-12x) via a {USB} to {Serial}
+  adaptor}. 2017.
+Dispon{\'\i}vel em:
+  \url{https://www.b4x.com/android/forum/threads/programming-an-esp8266-esp-12x-via-a-usb-to-serial-adaptor.79177/}.}
+
 \bibitem[{SmartConfig} {ESP32} {ESP}-{IDF} {Programming} {Guide} v5.4.1
   documentation]{SmartConfigEspressif}
 \abntrefinfo{{SmartConfig}\ldots}{{SmartConfig}\ldots}{}
@@ -268,12 +335,6 @@ Dispon{\'\i}vel em:
   and {Blynk} app \#sritu\_hobby \#esp32project}. 2023.
 Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=Ix3a3ThsHfA}.}
 
-\bibitem[{TIP122} Darlington Transistor {Datasheet} 2025]{TIP122Datasheet}
-\abntrefinfo{{TIP122}\ldots}{{TIP122}\ldots}{2025}
-{{TIP122} Darlington Transistor {Datasheet}. 2025.
-Section: Transistor Datasheets.
-Dispon{\'\i}vel em: \url{https://www.onsemi.com/pdf/datasheet/tip122-d.pdf}.}
-
 \bibitem[Trato {Temporizador} {Irrigaçao} {Automático} para {Hortas} e
   {Jardins} {\textbar} {Amazon}.com.br]{IrrigadorTrato}
 \abntrefinfo{Trato\ldots}{TRATO\ldots}{}
@@ -282,10 +343,10 @@ Dispon{\'\i}vel em: \url{https://www.onsemi.com/pdf/datasheet/tip122-d.pdf}.}
 Dispon{\'\i}vel em:
   \url{https://www.amazon.com.br/Temporizador-Irriga\%C3\%A7\%C3\%A3o-Program\%C3\%A1vel-Autom\%C3\%A1tico-Jardins/dp/B09NC7MQ24}.}
 
-\bibitem[{witnessmenow}]{ProgramacaoESP12}
-\abntrefinfo{{witnessmenow}}{{witnessmenow}}{}
+\bibitem[{witnessmenow} 2018]{ProgramacaoESP12}
+\abntrefinfo{{witnessmenow}}{{witnessmenow}}{2018}
 {{witnessmenow}. \emph{3 {Simple} {Ways} of {Programming} an {ESP8266} {12X}
-  {Module}}.
+  {Module}}. 2018.
 Dispon{\'\i}vel em:
   \url{https://www.instructables.com/3-Simple-Ways-of-Programming-an-ESP8266-12X-Module/}.}
 

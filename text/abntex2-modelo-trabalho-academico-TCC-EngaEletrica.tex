@@ -1681,6 +1681,108 @@ Inicialmente, foi feito um teste acionando o motor da válvula em uma direção, e 
 	\end{minipage}
 \end{figure}
 
+\section{Medição de consumo}
+
+Considerando que o projeto tem foco em baixo consumo, é importante fazer um cálculo a respeito do gasto energético do sistema em diferentes situações, a fim de prever a duração da bateria.
+
+Para realizar as medições, foi utilizado um resistor shunt em série com o circuito do irrigador, alimentado por uma fonte DC. A montagem feita para esta medição é mostrada na Figura~\ref{fig:montagem-medicao}.
+
+\begin{figure}[h!]
+	\centering
+	\caption{Montagem para medição de consumo de corrente.}
+	\includegraphics[width=0.5\linewidth, angle=90]{imagens/MontagemCorrente.jpg}
+	\label{fig:montagem-medicao}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+O valor de resistência medido no resistor shunt foi de 1,8 $\Omega$, e é mostrado no multímetro na Figura~\ref{fig:medicao-shunt}.
+
+\begin{figure}[h!]
+	\centering
+	\caption{Valor do resistor shunt.}
+	\includegraphics[width=0.5\linewidth]{imagens/ValorShunt.jpg}
+	\label{fig:medicao-shunt}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+No funcionamento do irrigador, existem três estados possíveis:
+\begin{itemize}
+	\item Espera;
+	\item Irrigação;
+	\item Deep Sleep;
+\end{itemize}
+
+As próximas seções analisarão o consumo de corrente em cada um desses estados, e em seguida será feita uma estimativa do gasto semanal e da duração em semanas de duas pilhas Duracell MN2400. A capacidade considerada para cada pilha foi de 1175 mAh, como consta em \cite{Duracell_MN2400_Charge}, resultando num total de 2350 mAh.
+
+\subsection{Espera}
+
+O estado de Espera é aquele no qual o microcontrolador está desperto (fora do Deep Sleep), mas com a válvula fechada. Nesse estado, ele está disponível para receber comandos via Wi-Fi, ou enviar um aviso de bateria baixa. As Figuras~\ref{fig:consumo-em-espera} e \ref{fig:wifi-consumo} mostram a tensão medida no resistor de shunt enquanto o irrigador está no estado de Espera.
+
+\begin{figure}[htb]
+	\label{fig:consumo-espera}
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\caption{Consumo do circuito no estado de Espera.} \label{fig:consumo-em-espera}
+		\includegraphics[width=\linewidth]{imagens/ConsumoWiFiLonge.jpg}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\caption{Forma de onda do consumo do Wi-Fi.} \label{fig:wifi-consumo}
+		\includegraphics[width=\linewidth]{imagens/ConsumoWiFiPerto.jpg}
+	\end{minipage}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+A partir dos dois gráficos, é possível estimar o consumo por minuto do estado de espera, levando em conta o acionamento frequente do Wi-Fi.
+
+Considerando que o valor de tensão médio na forma de onda mostrada na Figura~\ref{fig:consumo-em-espera} é de 90 mV, o consumo de corrente correspondente é de:
+
+\[ I_{méd} = \frac{90mV}{1,8mA} = 50 mA \]
+
+Com esse consumo de corrente, a carga recebida das pilhas durante um minuto é de $Q_{esp} = 50mA/60 = 0,83mAh$.
+
+Pela Figura~\ref{fig:wifi-consumo}, é possível estimar o consumo do microcontrolador ao enviar pacotes de internet. Aproximando a forma de onda de um trapézio, encontra-se que o consumo extra causado pela transmissão via Wi-Fi é de:
+
+\[ Q_{Wi-Fi} = \frac{[(280-90) + (180-90)]\cdot 1,5}{2 \cdot 3600 \cdot 1000 \cdot 1,8} = 0,000032 mAh\]
+
+O consumo encontrado para transmissão do Wi-Fi é irrisório em comparação com o consumo base durante o estado de Espera e, portanto, será desconsiderado.
+
+\subsection{Irrigação}
+
+No Estado de irrigação, o Wi-Fi fica desativado para receber ou transmitir mensagens, o que reduz o consumo do microcontrolador. A Figura~\ref{fig:fim-irrigacao} mostra um gráfico da tensão no resistor shunt durante o fim do estado de irrigação.
+
+\begin{figure}[h!]
+	\centering
+	\caption{Consumo de corrente no fim da irrigação.}
+	\includegraphics[width=0.6\linewidth]{imagens/ConsumoMotorLed.jpg}
+	\label{fig:fim-irrigacao}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+O consumo base durante a irrigação pode ser calculado usando o valor DC da tensão medida nesse período:
+
+\[ I_{base} = \frac{V_{base}}{R_{shunt}} = \frac{35mV}{1,8 \Omega} = 19,4 mA\]
+
+Isso corresponde a um consumo de $19,4/60 = 0,324mAh$ por minuto.
+
+Para calcular o consumo do motor, pode-se usar a área de um trapézio:
+
+\[ \frac{[(241-35)+(130-35)]\cdot 0,5}{2 \cdot 3600 \cdot 1,8} = 0,012 mAh\]
+
+\subsection{Deep Sleep}
+
+\subsection{Estimativa de consumo}
+
+A seguir serão simulados três casos hipotéticos de uso do irrigador, e será feita uma expectativa da duração em cada situação, a fim de verificar o impacto da irrigação em cada situação.
+
+\subsubsection{Caso 1}
+
+\subsubsection{Caso 2}
+
+\subsubsection{Caso 3}
+
 \section{Teste no aplicativo}
 
 Para verificar o correto funcionamento do aplicativo, foram feitos testes de cada uma das funcionalidades deste.
