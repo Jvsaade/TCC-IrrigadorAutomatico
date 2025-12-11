@@ -27,6 +27,13 @@ ISSN 1226-086X.
 Dispon{\'\i}vel em:
   \url{https://www.sciencedirect.com/science/article/pii/S1226086X1930142X}.}
 
+\bibitem[Beske 2018]{JardineiroNetSansevieria}
+\abntrefinfo{Beske}{BESKE}{2018}
+{BESKE, R. \emph{Espada-de-são-jorge ? {Sansevieria} trifasciata}. 2018.
+Jardineiro.net.
+Dispon{\'\i}vel em:
+  \url{https://www.jardineiro.net/plantas/espada-de-sao-jorge-sansevieria-trifasciata.html}.}
+
 \bibitem[Breakout PCB for ESP8266 WIFI ESP-07 ESP-12]{ConnectionsAdapterESP12}
 \abntrefinfo{Breakout\ldots}{BREAKOUT\ldots}{}
 {BREAKOUT PCB for ESP8266 WIFI ESP-07 ESP-12.
@@ -58,13 +65,12 @@ O ano de publicação foi inferido a partir do código do documento "MN15US1119".
 Dispon{\'\i}vel em:
   \url{https://docs.rs-online.com/f2b6/A700000009430303.pdf}.}
 
-\bibitem[Duracell {MN} 2400 - {Battery} {AAA} type {\textbar} {Overview},
-  {Specs}, {Details} {\textbar} {SHI}]{Duracell_MN2400_Charge}
-\abntrefinfo{Duracell\ldots}{DURACELL\ldots}{}
-{DURACELL {MN} 2400 - {Battery} {AAA} type {\textbar} {Overview}, {Specs},
-  {Details} {\textbar} {SHI}.
+\bibitem[{Duracell} 2021]{Duracell_MN2400_Charge}
+\abntrefinfo{{Duracell}}{{Duracell}}{2021}
+{{Duracell}. \emph{Technical {Data} {Sheet}: {Duracell} {Plus} {Power} {AAA}
+  ({MN2400})}. 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.uk.shi.com/product/26585043/Duracell-MN-2400-Battery-AAA-type}.}
+  \url{https://www.duracell.com/en-us/techlibrary/product-technical-data-sheets}.}
 
 \bibitem[{EDISON SCIENCE CORNER} 2023]{IoTBatteryMonitor}
 \abntrefinfo{{EDISON SCIENCE CORNER}}{{EDISON SCIENCE CORNER}}{2023}
@@ -107,6 +113,12 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://elsys.com/blog/painel-de-lcd-e-sol-um-nao-foi-feito-para-o-outro/}.}
 
+\bibitem[{Embrapa Hortaliças} 2020]{EmbrapaHortalicas}
+\abntrefinfo{{Embrapa Hortaliças}}{{Embrapa Hortaliças}}{2020}
+{{Embrapa Hortaliças}. \emph{Cultivo de {Hortaliças}: {Manjericão}}. 2020.
+Dispon{\'\i}vel em:
+  \url{https://www.embrapa.br/hortalicas/manjericao/cultivos}.}
+
 \bibitem[Entendendo {Válvulas} {Eletricamente} {Operadas} para {Controle} de
   {Processos}]{controle-eletrico-valvula}
 \abntrefinfo{Entendendo\ldots}{ENTENDENDO\ldots}{}
@@ -137,6 +149,13 @@ Dispon{\'\i}vel em:
 Version 1.0.
 Dispon{\'\i}vel em:
   \url{https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex\\_datasheet\\_en.pdf}.}
+
+\bibitem[{FazFácil} 2023]{FazFacilSamambaia}
+\abntrefinfo{{FazFácil}}{{FazFácil}}{2023}
+{{FazFácil}. \emph{Como cultivar {Samambaias}: {Luz}, {Rega} e {Adubação}}.
+  2023.
+Dispon{\'\i}vel em:
+  \url{https://www.fazfacil.com.br/jardim/como-cultivar-samambaias/}.}
 
 \bibitem[Filho 2009]{EngenhariaSoftware}
 \abntrefinfo{Filho}{FILHO}{2009}

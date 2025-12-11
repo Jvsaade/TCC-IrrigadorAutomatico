@@ -59,20 +59,20 @@
 \contentsline {subsection}{\numberline {4.2.1}Espera}{69}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Irriga\c c\~ao}{70}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Deep Sleep}{71}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Estimativa de consumo}{71}{subsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.4.1}Caso 1}{71}{subsubsection.4.2.4.1}%
-\contentsline {subsubsection}{\numberline {4.2.4.2}Caso 2}{71}{subsubsection.4.2.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.4.3}Caso 3}{71}{subsubsection.4.2.4.3}%
-\contentsline {section}{\numberline {4.3}Teste no aplicativo}{71}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Adi\c c\~ao de alarme}{71}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Envio do alarme}{71}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}Erro de envio}{72}{subsubsection.4.3.2.1}%
-\contentsline {subsection}{\numberline {4.3.3}Exclus\~ao do alarme}{72}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Erro de exclus\~ao}{72}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Edi\c c\~ao do alarme}{73}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Informa\c c\~ao de bateria}{73}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.2.4}Estimativa de consumo}{72}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}Caso 1: Baixa Frequ\^encia}{72}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}Caso 2: M\'edia Frequ\^encia}{73}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}Caso 3: Alta Frequ\^encia}{73}{subsubsection.4.2.4.3}%
+\contentsline {section}{\numberline {4.3}Teste no aplicativo}{74}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Adi\c c\~ao de alarme}{74}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Envio do alarme}{74}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}Erro de envio}{75}{subsubsection.4.3.2.1}%
+\contentsline {subsection}{\numberline {4.3.3}Exclus\~ao do alarme}{75}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Erro de exclus\~ao}{76}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Edi\c c\~ao do alarme}{76}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Informa\c c\~ao de bateria}{76}{subsection.4.3.6}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclus\~oes}}{81}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclus\~oes}}{83}{chapter.5}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{83}{section*.43}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{85}{section*.44}%

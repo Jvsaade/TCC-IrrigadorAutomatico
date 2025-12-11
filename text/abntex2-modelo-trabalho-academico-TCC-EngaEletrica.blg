@@ -16,6 +16,10 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Database file #1: abntex2-options.bib
 Database file #2: abntex2-modelo-references.bib
+Repeated entry---line 1545 of file abntex2-modelo-references.bib
+ : @misc{Duracell_MN2400_Charge
+ :                             ,
+I'm skipping whatever remains of this entry
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
@@ -23,7 +27,6 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Warning--campo year vazio ou faltando em ESP8266_WebServer
 Warning--campo year vazio ou faltando em ConnectionsAdapterESP12
 Warning--campo year vazio ou faltando em AndroidStudioIoT
-Warning--campo year vazio ou faltando em Duracell_MN2400_Charge
 Warning--campo year vazio ou faltando em SensorFimCurso
 Warning--campo year vazio ou faltando em controle-eletrico-valvula
 Warning--campo year vazio ou faltando em CorrenteMaximaESP12
@@ -43,45 +46,45 @@ Warning--campo year vazio ou faltando em solenoide
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 55 entries,
+You've used 58 entries,
             6714 wiz_defined-function locations,
-            1487 strings with 20015 characters,
-and the built_in function-call counts, 110801 in all, are:
-= -- 16075
-> -- 555
-< -- 3626
-+ -- 4352
-- -- 179
-* -- 5807
-:= -- 12902
-add.period$ -- 189
-call.type$ -- 55
-change.case$ -- 340
-chr.to.int$ -- 65
-cite$ -- 72
-duplicate$ -- 12147
-empty$ -- 3240
-format.name$ -- 837
-if$ -- 22152
+            1503 strings with 20487 characters,
+and the built_in function-call counts, 116076 in all, are:
+= -- 16715
+> -- 615
+< -- 3824
++ -- 4552
+- -- 199
+* -- 6111
+:= -- 13552
+add.period$ -- 204
+call.type$ -- 58
+change.case$ -- 360
+chr.to.int$ -- 68
+cite$ -- 74
+duplicate$ -- 12822
+empty$ -- 3409
+format.name$ -- 929
+if$ -- 23074
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 857
-newline$ -- 293
-num.names$ -- 155
-pop$ -- 1253
+missing$ -- 908
+newline$ -- 309
+num.names$ -- 175
+pop$ -- 1319
 preamble$ -- 1
-purify$ -- 171
+purify$ -- 180
 quote$ -- 0
-skip$ -- 15008
+skip$ -- 15606
 stack$ -- 1
-substring$ -- 5006
-swap$ -- 4089
-text.length$ -- 60
+substring$ -- 5253
+swap$ -- 4321
+text.length$ -- 63
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 249
-warning$ -- 18
-while$ -- 296
+type$ -- 240
+warning$ -- 17
+while$ -- 321
 width$ -- 0
-write$ -- 749
-(There were 18 warnings)
+write$ -- 794
+(There was 1 error message)

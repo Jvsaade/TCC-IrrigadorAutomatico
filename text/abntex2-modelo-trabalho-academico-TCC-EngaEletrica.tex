@@ -1839,15 +1839,84 @@ Para calcular o consumo do motor, pode-se usar a área de um trapézio:
 
 \subsection{Deep Sleep}
 
+No modo de Deep Sleep, o consumo de corrente do microcontrolador é extremamente baixo, pois o único componente acionado é o RTC, utilizado para despertá-lo, caso isso seja programado. O circuito deve estar nesse estado na maioria do tempo, a fim de estender a duração da bateria o máximo possível.
+
+Para fazer a medição do consumo de corrente nesse estado, o microcontrolador foi ligado, e esperou-se até que o tempo de 5 minutos fosse atingido. Uma vez no modo de Deep Sleep, a corrente consumida pelo circuito foi mensurada a partir de um multímetro na escala de 2mA. O valor medido é mostrado na Figura~\ref{fig:deepsleep-consumo}.
+
+\begin{figure}[h]
+	\centering
+	\caption{Consumo de corrente durante o Deep Sleep.}
+	\includegraphics[width=0.5\linewidth]{imagens/CorrenteDeepSleep.jpg}
+	\label{fig:deepsleep-consumo}
+	\legend{Fonte: Autoria própria.}
+\end{figure}
+
+Portanto, o consumo de carga durante o estado de Deep Sleep é de $0,872mAh$ a cada hora acionado.
+
 \subsection{Estimativa de consumo}
 
-A seguir serão simulados três casos hipotéticos de uso do irrigador, e será feita uma expectativa da duração em cada situação, a fim de verificar o impacto da irrigação em cada situação.
+A seguir serão simulados três casos hipotéticos de uso do irrigador para verificar o impacto da frequência de acionamento na vida útil das baterias.
 
-\subsubsection{Caso 1}
+Para fins de cálculo, assume-se que cada evento de irrigação tem uma duração fixa de 5 minutos. O consumo energético de um único evento de irrigação ($Q_{evento}$) é composto pelo consumo base do circuito durante o tempo em que a válvula está aberta, somado ao custo energético de acionar o motor para abrir e fechar a válvula.
 
-\subsubsection{Caso 2}
+Utilizando os dados obtidos nas seções anteriores:
+\begin{itemize}
+	\item Consumo base (5 min): $19,4 mA \times \frac{5}{60} h = 1,617 mAh$;
+	\item Acionamento do motor (Abrir + Fechar): $0,012 mAh \times 2 = 0,024 mAh$;
+\end{itemize}
 
-\subsubsection{Caso 3}
+Logo, o custo total por irrigação é estimado em:
+\[ Q_{evento} \approx 1,64 mAh \]
+
+O consumo semanal em Deep Sleep ($Q_{repouso}$), considerando uma semana de 168 horas, é dado pela corrente de repouso multiplicada pelo tempo total (descontando o tempo irrisório de irrigação para simplificação):
+\[ Q_{repouso} = 0,872 mA \times 168 h = 146,5 mAh \]
+
+\subsubsection{Caso 1: Baixa Frequência}
+
+Este caso considera plantas que exigem pouca água e solo mais seco, como a Espada-de-são-jorge. Segundo \cite{JardineiroNetSansevieria}, esta espécie apresenta alta resistência à estiagem, sendo recomendada a rega apenas quando o solo estiver seco, o que pode ser estimado em uma frequência de uma vez por semana.
+
+Neste cenário:
+\begin{itemize}
+	\item Irrigações semanais: 1
+	\item Consumo ativo: $1 \times 1,64 mAh = 1,64 mAh$
+	\item Consumo passivo (Deep Sleep): $146,5 mAh$
+	\item \textbf{Total semanal:} $148,14 mAh$
+\end{itemize}
+
+Estimativa de duração:
+\[ D_1 = \frac{2350 mAh}{148,14 mAh/semana} \approx 15,8 \textbf{ semanas} \]
+
+\subsubsection{Caso 2: Média Frequência}
+
+O segundo caso aborda plantas tropicais que necessitam de solo levemente úmido, mas sem encharcamento, como a Samambaia-americana. Conforme indicado em \cite{FazFacilSamambaia}, essas plantas demandam regas frequentes, mas intercaladas. Para esta simulação, definiu-se uma frequência de três vezes por semana (ex: segundas, quartas e sextas).
+
+Neste cenário:
+\begin{itemize}
+	\item Irrigações semanais: 3
+	\item Consumo ativo: $3 \times 1,64 mAh = 4,92 mAh$
+	\item Consumo passivo (Deep Sleep): $146,5 mAh$
+	\item \textbf{Total semanal:} $151,42 mAh$
+\end{itemize}
+
+Estimativa de duração:
+\[ D_2 = \frac{2350 mAh}{151,42 mAh/semana} \approx 15,5 \textbf{ semanas} \]
+
+\subsubsection{Caso 3: Alta Frequência}
+
+O último caso considera hortaliças ou ervas que possuem alta taxa de transpiração e necessitam de solo constantemente úmido, como o Manjericão. Segundo a Embrapa \cite{EmbrapaHortalicas}, o fornecimento de água deve ser contínuo para garantir o desenvolvimento das folhas. Assim, estabelece-se uma irrigação diária.
+
+Neste cenário:
+\begin{itemize}
+	\item Irrigações semanais: 7
+	\item Consumo ativo: $7 \times 1,64 mAh = 11,48 mAh$
+	\item Consumo passivo (Deep Sleep): $146,5 mAh$
+	\item \textbf{Total semanal:} $157,98 mAh$
+\end{itemize}
+
+Estimativa de duração:
+\[ D_3 = \frac{2350 mAh}{157,98 mAh/semana} \approx 14,8 \textbf{ semanas} \]
+
+Observa-se que, devido ao consumo de corrente em Deep Sleep do hardware utilizado ($0,872 mA$), o impacto da frequência de irrigação na autonomia total é reduzido, variando pouco entre os cenários extremos (de 14,8 para 15,8 semanas). Para otimizações futuras, seria necessário reduzir a corrente de repouso do circuito.
 
 \section{Teste no aplicativo}
 
