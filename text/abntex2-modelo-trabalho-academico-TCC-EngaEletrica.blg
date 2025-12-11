@@ -25,6 +25,7 @@ Warning--campo year vazio ou faltando em ConnectionsAdapterESP12
 Warning--campo year vazio ou faltando em AndroidStudioIoT
 Warning--campo year vazio ou faltando em Duracell_MN2400_Charge
 Warning--campo year vazio ou faltando em SensorFimCurso
+Warning--campo year vazio ou faltando em controle-eletrico-valvula
 Warning--campo year vazio ou faltando em CorrenteMaximaESP12
 Warning--campo year vazio ou faltando em RoboticaSucata
 Warning--campo year vazio ou faltando em DCMotorWithoutMotorDriver
@@ -36,50 +37,51 @@ Warning--campo year vazio ou faltando em Fonte12_Arduino_Irrigador
 Warning--campo year vazio ou faltando em SmartConfigAndroidApp
 Warning--campo year vazio ou faltando em SmartConfigEspressif
 Warning--campo year vazio ou faltando em IrrigadorTrato
+Warning--campo year vazio ou faltando em solenoide
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-alf.bst versão v-1.9.7           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 51 entries,
+You've used 55 entries,
             6714 wiz_defined-function locations,
-            1470 strings with 19162 characters,
-and the built_in function-call counts, 102025 in all, are:
-= -- 14785
-> -- 525
-< -- 3318
-+ -- 3994
-- -- 169
-* -- 5355
-:= -- 11898
-add.period$ -- 177
-call.type$ -- 51
-change.case$ -- 318
-chr.to.int$ -- 61
-cite$ -- 66
-duplicate$ -- 11139
-empty$ -- 3006
-format.name$ -- 791
-if$ -- 20428
+            1487 strings with 20015 characters,
+and the built_in function-call counts, 110801 in all, are:
+= -- 16075
+> -- 555
+< -- 3626
++ -- 4352
+- -- 179
+* -- 5807
+:= -- 12902
+add.period$ -- 189
+call.type$ -- 55
+change.case$ -- 340
+chr.to.int$ -- 65
+cite$ -- 72
+duplicate$ -- 12147
+empty$ -- 3240
+format.name$ -- 837
+if$ -- 22152
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 797
-newline$ -- 273
-num.names$ -- 145
-pop$ -- 1173
+missing$ -- 857
+newline$ -- 293
+num.names$ -- 155
+pop$ -- 1253
 preamble$ -- 1
-purify$ -- 159
+purify$ -- 171
 quote$ -- 0
-skip$ -- 13756
+skip$ -- 15008
 stack$ -- 1
-substring$ -- 4608
-swap$ -- 3755
-text.length$ -- 56
+substring$ -- 5006
+swap$ -- 4089
+text.length$ -- 60
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 229
-warning$ -- 16
-while$ -- 276
+type$ -- 249
+warning$ -- 18
+while$ -- 296
 width$ -- 0
-write$ -- 697
-(There were 16 warnings)
+write$ -- 749
+(There were 18 warnings)

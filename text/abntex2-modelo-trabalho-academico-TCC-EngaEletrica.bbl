@@ -107,6 +107,14 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://elsys.com/blog/painel-de-lcd-e-sol-um-nao-foi-feito-para-o-outro/}.}
 
+\bibitem[Entendendo {Válvulas} {Eletricamente} {Operadas} para {Controle} de
+  {Processos}]{controle-eletrico-valvula}
+\abntrefinfo{Entendendo\ldots}{ENTENDENDO\ldots}{}
+{ENTENDENDO {Válvulas} {Eletricamente} {Operadas} para {Controle} de
+  {Processos}.
+Dispon{\'\i}vel em:
+  \url{https://pt.cnynto.com/article/electrically-operated-valves-guide.html}.}
+
 \bibitem[{ESP32} {Matter} {Protocol} control {Multiple} {Relays} - 2025
   2024]{MatterProtocol}
 \abntrefinfo{{ESP32}\ldots}{{ESP32}\ldots}{2024}
@@ -213,6 +221,12 @@ Dispon{\'\i}vel em: \url{https://www.st.com/resource/en/datasheet/l298.pdf}.}
 ISSN 1073-0516.
 Dispon{\'\i}vel em: \url{https://dl.acm.org/doi/10.1145/3674505}.}
 
+\bibitem[Marques 2025]{valvulas-automaticas}
+\abntrefinfo{Marques}{MARQUES}{2025}
+{MARQUES, L. \emph{Válvula automática: como funciona e onde aplicar}. 2025.
+Dispon{\'\i}vel em:
+  \url{https://www.samsonbrasil.com.br/valvulas-automaticas/}.}
+
 \bibitem[Marshall 2017]{ConnectionsESP12E}
 \abntrefinfo{Marshall}{MARSHALL}{2017}
 {MARSHALL, I. \emph{{ESP8266} - {Breakout}!} 2017.
@@ -228,6 +242,13 @@ Dispon{\'\i}vel em: \url{https://www.eletrogate.com/mini-motor-dc}.}
 \abntrefinfo{Mini\ldots}{MINI\ldots}{b}
 {MINI {Ponte} {H} {Dupla} {L298N}.
 Dispon{\'\i}vel em: \url{https://www.eletrogate.com/mini-ponte-h-dupla-l298n}.}
+
+\bibitem[MTi 2022]{valvula-solenoide}
+\abntrefinfo{MTi}{MTI}{2022}
+{MTI. \emph{Válvula {Solenoide}: {O} que é, {Como} {Funciona} e {Para} que
+  {Serve}}. 2022.
+Dispon{\'\i}vel em:
+  \url{https://mtibrasil.com.br/blog/pneumatica-geral/valvulas-pneumaticas/valvula-solenoide-o-que-e-como-funciona-e-para-que-serve/}.}
 
 \bibitem[O que é upcycling e como a sua empresa pode aderir a essa tendência? -
   {Sebrae}]{UpcyclingSebrae}
@@ -342,6 +363,14 @@ Dispon{\'\i}vel em: \url{https://www.youtube.com/watch?v=Ix3a3ThsHfA}.}
   {\textbar} {Amazon}.com.br.
 Dispon{\'\i}vel em:
   \url{https://www.amazon.com.br/Temporizador-Irriga\%C3\%A7\%C3\%A3o-Program\%C3\%A1vel-Autom\%C3\%A1tico-Jardins/dp/B09NC7MQ24}.}
+
+\bibitem[Valvulas {Solenóides} {\textbar} {Brasil} {\textbar}
+  www.femicbombasdevacuo.com.br]{solenoide}
+\abntrefinfo{Valvulas\ldots}{VALVULAS\ldots}{}
+{VALVULAS {Solenóides} {\textbar} {Brasil} {\textbar}
+  www.femicbombasdevacuo.com.br.
+Dispon{\'\i}vel em:
+  \url{https://www.femicbombasdevacuo.com.br/valvulas-solenoides}.}
 
 \bibitem[{witnessmenow} 2018]{ProgramacaoESP12}
 \abntrefinfo{{witnessmenow}}{{witnessmenow}}{2018}

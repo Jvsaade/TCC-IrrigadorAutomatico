@@ -21,57 +21,58 @@
 \contentsline {section}{\numberline {2.3}Alimenta\c c\~ao}{25}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Controle do motor DC}{26}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Monitoramento do n\IeC {\'\i }vel da bateria}{26}{section.2.5}%
+\contentsline {section}{\numberline {2.6}V\'alvulas de controle}{27}{section.2.6}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{27}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Levantamento de requisitos}{27}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Defini\c c\~ao do m\'etodo de programa\c c\~ao do microcontrolador}{27}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Alimenta\c c\~ao do circuito}{30}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Controle dos motores}{31}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Desenvolvimento do firmware}{33}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Conex\~ao inicial do WiFi}{33}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Armazenamento das credenciais do WiFi}{35}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Criando um servidor}{38}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Programa\c c\~ao Over-The-Air}{39}{subsection.3.5.4}%
-\contentsline {subsection}{\numberline {3.5.5}Adi\c c\~ao dos alarmes}{40}{subsection.3.5.5}%
-\contentsline {subsection}{\numberline {3.5.6}Exclus\~ao dos alarmes}{41}{subsection.3.5.6}%
-\contentsline {subsection}{\numberline {3.5.7}Edi\c c\~ao dos alarmes}{42}{subsection.3.5.7}%
-\contentsline {subsection}{\numberline {3.5.8}Verifica\c c\~ao dos Alarmes}{43}{subsection.3.5.8}%
-\contentsline {subsection}{\numberline {3.5.9}Monitoramento da bateria}{43}{subsection.3.5.9}%
-\contentsline {subsection}{\numberline {3.5.10}Mensagem de bateria baixa}{45}{subsection.3.5.10}%
-\contentsline {subsection}{\numberline {3.5.11}Indica\c c\~oes luminosas}{46}{subsection.3.5.11}%
-\contentsline {subsection}{\numberline {3.5.12}Determina\c c\~ao do tempo de Deep Sleep}{47}{subsection.3.5.12}%
-\contentsline {section}{\numberline {3.6}Desenvolvimento do aplicativo}{48}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Persist\^encia das Configura\c c\~oes}{48}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Envio dos alarmes}{50}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Exclus\~ao dos alarmes}{52}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}Altera\c c\~ao dos alarmes}{53}{subsection.3.6.4}%
-\contentsline {subsection}{\numberline {3.6.5}Verifica\c c\~ao das configura\c c\~oes existentes}{54}{subsection.3.6.5}%
-\contentsline {subsection}{\numberline {3.6.6}Verifica\c c\~ao da bateria}{55}{subsection.3.6.6}%
-\contentsline {section}{\numberline {3.7}Montagem}{56}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Irrigador Trato}{57}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Irrigador Amanco}{57}{subsection.3.7.2}%
-\contentsline {section}{\numberline {3.8}Coment\'arios}{59}{section.3.8}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Levantamento de requisitos}{31}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Defini\c c\~ao do m\'etodo de programa\c c\~ao do microcontrolador}{31}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Alimenta\c c\~ao do circuito}{34}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Controle dos motores}{35}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Desenvolvimento do firmware}{37}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Conex\~ao inicial do WiFi}{37}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Armazenamento das credenciais do WiFi}{39}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Criando um servidor}{42}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Programa\c c\~ao Over-The-Air}{43}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Adi\c c\~ao dos alarmes}{44}{subsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.5.6}Exclus\~ao dos alarmes}{45}{subsection.3.5.6}%
+\contentsline {subsection}{\numberline {3.5.7}Edi\c c\~ao dos alarmes}{46}{subsection.3.5.7}%
+\contentsline {subsection}{\numberline {3.5.8}Verifica\c c\~ao dos Alarmes}{47}{subsection.3.5.8}%
+\contentsline {subsection}{\numberline {3.5.9}Monitoramento da bateria}{47}{subsection.3.5.9}%
+\contentsline {subsection}{\numberline {3.5.10}Mensagem de bateria baixa}{49}{subsection.3.5.10}%
+\contentsline {subsection}{\numberline {3.5.11}Indica\c c\~oes luminosas}{50}{subsection.3.5.11}%
+\contentsline {subsection}{\numberline {3.5.12}Determina\c c\~ao do tempo de Deep Sleep}{51}{subsection.3.5.12}%
+\contentsline {section}{\numberline {3.6}Desenvolvimento do aplicativo}{52}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Persist\^encia das Configura\c c\~oes}{52}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Envio dos alarmes}{54}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Exclus\~ao dos alarmes}{55}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Altera\c c\~ao dos alarmes}{57}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.5}Verifica\c c\~ao das configura\c c\~oes existentes}{58}{subsection.3.6.5}%
+\contentsline {subsection}{\numberline {3.6.6}Verifica\c c\~ao da bateria}{59}{subsection.3.6.6}%
+\contentsline {section}{\numberline {3.7}Montagem}{60}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Irrigador Trato}{60}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Irrigador Amanco}{61}{subsection.3.7.2}%
+\contentsline {section}{\numberline {3.8}Coment\'arios}{62}{section.3.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados e Discuss\~ao}}{63}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Acionamento da v\'alvula}{63}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Medi\c c\~ao de consumo}{64}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Espera}{65}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Irriga\c c\~ao}{66}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Deep Sleep}{67}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Estimativa de consumo}{67}{subsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.4.1}Caso 1}{67}{subsubsection.4.2.4.1}%
-\contentsline {subsubsection}{\numberline {4.2.4.2}Caso 2}{67}{subsubsection.4.2.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.4.3}Caso 3}{67}{subsubsection.4.2.4.3}%
-\contentsline {section}{\numberline {4.3}Teste no aplicativo}{67}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Adi\c c\~ao de alarme}{67}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Envio do alarme}{67}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}Erro de envio}{68}{subsubsection.4.3.2.1}%
-\contentsline {subsection}{\numberline {4.3.3}Exclus\~ao do alarme}{68}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Erro de exclus\~ao}{68}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Edi\c c\~ao do alarme}{69}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Informa\c c\~ao de bateria}{69}{subsection.4.3.6}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados e Discuss\~ao}}{67}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Acionamento da v\'alvula}{67}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Medi\c c\~ao de consumo}{68}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Espera}{69}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Irriga\c c\~ao}{70}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Deep Sleep}{71}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Estimativa de consumo}{71}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}Caso 1}{71}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}Caso 2}{71}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}Caso 3}{71}{subsubsection.4.2.4.3}%
+\contentsline {section}{\numberline {4.3}Teste no aplicativo}{71}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Adi\c c\~ao de alarme}{71}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Envio do alarme}{71}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}Erro de envio}{72}{subsubsection.4.3.2.1}%
+\contentsline {subsection}{\numberline {4.3.3}Exclus\~ao do alarme}{72}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Erro de exclus\~ao}{72}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Edi\c c\~ao do alarme}{73}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Informa\c c\~ao de bateria}{73}{subsection.4.3.6}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclus\~oes}}{77}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclus\~oes}}{81}{chapter.5}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{79}{section*.13}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{83}{section*.43}%

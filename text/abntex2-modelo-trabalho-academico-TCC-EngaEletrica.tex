@@ -131,6 +131,8 @@
 \usepackage[alf]{abntex2cite}	                         % Citações padrão ABNT
 \usepackage{hyperref}
 
+\usepackage{caption} % Para \captionof
+
 % --- 
 % CONFIGURAÇÕES DE PACOTES
 % --- 
@@ -526,6 +528,70 @@ Para o monitoramento do nível de bateria, o método mais encontrado é através do 
 
 Por se tratar de uma solução simples e que não utiliza muita corrente, esta foi a opção escolhida para o projeto.
 
+\section{Válvulas de controle}
+
+Para fazer o controle da passagem de água, existem vários mecanismos possíveis. Dentre eles, podemos citar \cite{valvulas-automaticas}:
+
+\begin{itemize}
+	\item \textbf{Válvula esfera}: consiste em uma esfera perfurada que gira para controlar o fluxo. Figura~\ref{fig:valvula-esfera}.
+	\item \textbf{Válvula globo}: possui uma tampa que pode ser ajustada para alterar o fluxo de fluido. Figura~\ref{fig:valvula-globo}.
+	\item \textbf{Válvula borboleta}: possui um disco que gira em torno de um eixo central. São Ideais para controle de gases e líquidos em sistemas de grande porte. Figura~\ref{fig:valvula-borboleta}.
+	\item \textbf{Válvula diafragma}: utiliza uma membrana flexível que impede o contato do fluido com as partes metálicas da válvula. Figura~\ref{fig:valvula-diafragma}.
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	
+	% Primeira linha
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{imagens/ValvulaEsfera.jpg}
+		\captionof{figure}{Válvula esfera}
+		\label{fig:valvula-esfera}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{imagens/ValvulaGlobo.jpg}
+		\captionof{figure}{Válvula globo}
+		\label{fig:valvula-globo}
+	\end{minipage}
+	
+	\vspace{0.5cm}
+	
+	% Segunda linha
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{imagens/ValvulaBorboleta.jpg}
+		\captionof{figure}{Válvula borboleta}
+		\label{fig:valvula-borboleta}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{imagens/ValvulaDiafragma.jpg}
+		\captionof{figure}{Válvula diafragma} % Corrigido o título
+		\label{fig:valvula-diafragma}
+	\end{minipage}
+	
+	\caption{Tipos de válvulas industriais}
+	\label{fig:todas-valvulas}
+\end{figure}
+
+Neste trabalho, ambos os irrigadores possuem um mecanismo semelhante ao usado em válvulas diafragma.
+
+Em relação ao mecanismo elétrico de acionamento das válvulas, existem alguns tipos diferentes. A mais encontrada é a chamada válvula solenoide, na qual uma corrente elétrica percorre uma bobina, criando um campo magnético \cite{solenoide}. Esse campo movimenta um êmbolo no interior da válvula, liberando ou interrompendo a passagem de água. A Figura~\ref{fig:valvula-solenoide} ilustra os dois estados dessa válvula.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagens/ValvulasSolenoides.jpg}
+	\caption{Estados de uma válvula solenoide \cite{valvula-solenoide}}
+	\label{fig:valvula-solenoide}
+\end{figure}
+
+Outra forma de controlar eletricamente a passagem de água é através de motores de passo ou servo-motores. Esse tipo de motor é aplicado quando há uma necessidade de controle fino da quantidade de líquido que passa \cite{controle-eletrico-valvula}. 
+
+Para aplicações nas quais se deseja abrir ou fechar totalmente a válvula, pode-se usar um motor DC, acompanhados ou não de um sensor de fim de curso, para desacionar o motor. Nesse trabalho, ambos os irrigadores utilizam motores DC para acionarem a válvula.
 % ----------------------------------------------------------
 % Capítulo 3 - Metodologia
 % ----------------------------------------------------------

@@ -1,37 +1,43 @@
 \babel@toc {brazil}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Conex\~oes b\'asicas do ESP-12E.}}{29}{figure.3.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Conex\~oes do adaptador para ESP12-E}}{29}{figure.3.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Frente da placa de fenolite}}{30}{figure.3.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Verso da placa de fenolite}}{30}{figure.3.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Circuito interno do L298}}{32}{figure.3.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Curva de descarga de uma pilha Alcalina \cite {Duracell_MN1500}}}{45}{figure.3.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Placa original da Trato}}{57}{figure.3.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Placa de fenolite utilizada}}{57}{figure.3.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Esquem\'atico da PCB do irrigador Trato}}{58}{figure.3.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Frente da PCB do irrigador Trato}}{59}{figure.3.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Verso da PCB do irrigador Trato}}{59}{figure.3.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Placa original da Amanco}}{60}{figure.3.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Placa de fenolite utilizada}}{60}{figure.3.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Frente da PCB do irrigador Amanco}}{61}{figure.3.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Verso da PCB do irrigador Amanco}}{61}{figure.3.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Sensor de fim de curso semelhante ao usado no irrigador.}}{62}{figure.3.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Irrigador Trato com v\'alvula aberta.}}{63}{figure.4.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Irrigador Trato com v\'alvula fechada.}}{63}{figure.4.18}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Montagem para medi\c c\~ao de consumo de corrente.}}{64}{figure.4.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Valor do resistor shunt.}}{65}{figure.4.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Consumo do circuito no estado de Espera.}}{65}{figure.4.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Forma de onda do consumo do Wi-Fi.}}{65}{figure.4.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Consumo de corrente no fim da irriga\c c\~ao.}}{66}{figure.4.23}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Tela inicial do aplicativo.}}{68}{figure.4.24}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Tela de adi\c c\~ao de alarme.}}{68}{figure.4.25}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Tela inicial ap\'os cria\c c\~ao do alarme.}}{68}{figure.4.26}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Tela inicial ap\'os envio com sucesso do alarme.}}{69}{figure.4.27}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Mensagem de erro de conex\~ao.}}{70}{figure.4.28}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Mensagem de sucesso na exclus\~ao do alarme.}}{71}{figure.4.29}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Mensagem de sucesso na exclus\~ao dos alarmes.}}{72}{figure.4.30}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Mensagem de erro de conex\~ao.}}{73}{figure.4.31}%
-\contentsline {figure}{\numberline {32}{\ignorespaces Tela de edi\c c\~ao de alarme.}}{74}{figure.4.32}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Mensagem de sucesso na edi\c c\~ao do alarme.}}{74}{figure.4.33}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Mensagem de erro na edi\c c\~ao do alarme.}}{74}{figure.4.34}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Consulta do estado da bateria no aplicativo.}}{75}{figure.4.35}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Mensagem de bateria baixa do Call Me Bot.}}{75}{figure.4.36}%
+\contentsline {figure}{\numberline {1}{\ignorespaces V\'alvula esfera}}{28}{figure.caption.11}%
+\contentsline {figure}{\numberline {2}{\ignorespaces V\'alvula globo}}{28}{figure.caption.11}%
+\contentsline {figure}{\numberline {3}{\ignorespaces V\'alvula borboleta}}{28}{figure.caption.11}%
+\contentsline {figure}{\numberline {4}{\ignorespaces V\'alvula diafragma}}{28}{figure.caption.11}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Tipos de v\'alvulas industriais}}{28}{figure.caption.11}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Estados de uma v\'alvula solenoide \cite {valvula-solenoide}}}{29}{figure.caption.12}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Conex\~oes b\'asicas do ESP-12E.}}{33}{figure.caption.14}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Conex\~oes do adaptador para ESP12-E}}{33}{figure.caption.15}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Frente da placa de fenolite}}{34}{figure.caption.16}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Verso da placa de fenolite}}{34}{figure.caption.16}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Circuito interno do L298}}{36}{figure.caption.18}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Curva de descarga de uma pilha Alcalina \cite {Duracell_MN1500}}}{49}{figure.caption.19}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Placa original da Trato}}{61}{figure.caption.21}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Placa de fenolite utilizada}}{61}{figure.caption.21}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Esquem\'atico da PCB do irrigador Trato}}{62}{figure.caption.22}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Frente da PCB do irrigador Trato}}{63}{figure.caption.23}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Verso da PCB do irrigador Trato}}{63}{figure.caption.23}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Placa original da Amanco}}{64}{figure.caption.24}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Placa de fenolite utilizada}}{64}{figure.caption.24}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Frente da PCB do irrigador Amanco}}{65}{figure.caption.25}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Verso da PCB do irrigador Amanco}}{65}{figure.caption.25}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Sensor de fim de curso semelhante ao usado no irrigador.}}{66}{figure.caption.26}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Irrigador Trato com v\'alvula aberta.}}{67}{figure.caption.27}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Irrigador Trato com v\'alvula fechada.}}{67}{figure.caption.27}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Montagem para medi\c c\~ao de consumo de corrente.}}{68}{figure.caption.28}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Valor do resistor shunt.}}{69}{figure.caption.29}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Consumo do circuito no estado de Espera.}}{69}{figure.caption.30}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Forma de onda do consumo do Wi-Fi.}}{69}{figure.caption.30}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Consumo de corrente no fim da irriga\c c\~ao.}}{70}{figure.caption.31}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Tela inicial do aplicativo.}}{72}{figure.caption.32}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Tela de adi\c c\~ao de alarme.}}{72}{figure.caption.32}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Tela inicial ap\'os cria\c c\~ao do alarme.}}{72}{figure.caption.32}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Tela inicial ap\'os envio com sucesso do alarme.}}{73}{figure.caption.33}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Mensagem de erro de conex\~ao.}}{74}{figure.caption.34}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Mensagem de sucesso na exclus\~ao do alarme.}}{75}{figure.caption.35}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Mensagem de sucesso na exclus\~ao dos alarmes.}}{76}{figure.caption.36}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Mensagem de erro de conex\~ao.}}{77}{figure.caption.37}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Tela de edi\c c\~ao de alarme.}}{78}{figure.caption.38}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Mensagem de sucesso na edi\c c\~ao do alarme.}}{78}{figure.caption.38}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Mensagem de erro na edi\c c\~ao do alarme.}}{78}{figure.caption.38}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Consulta do estado da bateria no aplicativo.}}{79}{figure.caption.39}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Mensagem de bateria baixa do Call Me Bot.}}{79}{figure.caption.40}%
