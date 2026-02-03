@@ -12,4 +12,4 @@ O código para Android Studio do aplicativo para controle do irrigador está no 
 ## Montagem
 
 A montagem a seguir mostra um diagrama de blocos com as conexões feitas entre os componentes do circuito.
-[Diagrama de blocos](images/BlockDiagram.png)
+[images/BlockDiagram.png](https://github.com/Jvsaade/TCC-IrrigadorAutomatico/blob/b8dee5f04bdc02dd7c86da437a3c880b4f6174dd/images/BlockDiagram.png)
