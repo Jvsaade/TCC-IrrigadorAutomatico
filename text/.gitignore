@@ -33,3 +33,16 @@
 # Ignorar PDFs gerados automaticamente (opcional)
 # Descomente para ignorar o PDF final:
 # *.pdf
+
+*.bib
+*.brf
+*.bst
+*.cls
+*.gz
+*.idx
+*.ilg
+*.ind
+*.jpg
+*.png
+*.sty
+*.tex
